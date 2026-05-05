@@ -1,0 +1,10 @@
+{
+  "buildCommand": "pnpm --filter @workspace/betvoxa-clone run build",
+  "outputDirectory": "artifacts/betvoxa-clone/dist/public",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
