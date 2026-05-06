@@ -20,15 +20,15 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 flex-wrap">
               <div className="flex items-center gap-1.5 bg-[#201C1A] rounded-md px-3 py-1.5 border border-[#332D29]">
-                <Lock size={12} className="text-[#D97706]" />
+                <Lock size={12} className="text-[rgb(249, 115, 22)]" />
                 <span className="text-xs text-[#D0C7BC]">SSL Secured</span>
               </div>
               <div className="flex items-center gap-1.5 bg-[#201C1A] rounded-md px-3 py-1.5 border border-[#332D29]">
-                <Shield size={12} className="text-[#D97706]" />
+                <Shield size={12} className="text-[rgb(249, 115, 22)]" />
                 <span className="text-xs text-[#D0C7BC]">Licensed Only</span>
               </div>
               <div className="flex items-center gap-1.5 bg-[#201C1A] rounded-md px-3 py-1.5 border border-[#332D29]">
-                <Award size={12} className="text-[#D97706]" />
+                <Award size={12} className="text-[rgb(249, 115, 22)]" />
                 <span className="text-xs text-[#D0C7BC]">Expert Reviews</span>
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function Footer() {
               {["Casino Bonuses", "Free Spins", "No Deposit Bonuses", "VIP Programs", "Live Casino"].map((item) => (
                 <li key={item}>
                   <Link href="/casino-bonuses">
-                    <span className="text-[#C2B8AB] hover:text-[#D97706] text-sm transition-colors cursor-pointer">{item}</span>
+                    <span className="text-[#C2B8AB] hover:text-[rgb(249, 115, 22)] text-sm transition-colors cursor-pointer">{item}</span>
                   </Link>
                 </li>
               ))}
@@ -55,7 +55,7 @@ export default function Footer() {
               {["Betting Sites", "Football Betting", "Horse Racing", "Tennis Betting", "Cricket Betting"].map((item) => (
                 <li key={item}>
                   <Link href="/betting-sites">
-                    <span className="text-[#C2B8AB] hover:text-[#D97706] text-sm transition-colors cursor-pointer">{item}</span>
+                    <span className="text-[#C2B8AB] hover:text-[rgb(249, 115, 22)] text-sm transition-colors cursor-pointer">{item}</span>
                   </Link>
                 </li>
               ))}
@@ -75,7 +75,7 @@ export default function Footer() {
               ].map((c) => (
                 <li key={c.code}>
                   <Link href={`/country/${c.code}`}>
-                    <span className="text-[#C2B8AB] hover:text-[#D97706] text-sm transition-colors cursor-pointer">{c.name}</span>
+                    <span className="text-[#C2B8AB] hover:text-[rgb(249, 115, 22)] text-sm transition-colors cursor-pointer">{c.name}</span>
                   </Link>
                 </li>
               ))}
@@ -87,7 +87,7 @@ export default function Footer() {
         <div className="py-6 border-b border-[#2A2623]">
           <p className="text-[#A89F94] text-xs leading-relaxed max-w-4xl">
             <strong className="text-[#D0C7BC]">Responsible Gambling:</strong> Gambling should be entertaining. If you feel you may have a gambling problem, please seek help.
-            Resources are available at <span className="text-[#D97706]/70">GamCare</span>, <span className="text-[#D97706]/70">BeGambleAware</span>, and <span className="text-[#D97706]/70">Gamblers Anonymous</span>.
+            Resources are available at <span className="text-[rgb(249, 115, 22)]/70">GamCare</span>, <span className="text-[rgb(249, 115, 22)]/70">BeGambleAware</span>, and <span className="text-[rgb(249, 115, 22)]/70">Gamblers Anonymous</span>.
             BetVoxa only recommends licensed and regulated operators. Must be 18+ to bet. Please gamble responsibly.
           </p>
         </div>

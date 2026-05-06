@@ -39,7 +39,7 @@ export default function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl border-b border-[#D97706]/12 shadow-lg shadow-black/5"
+            ? "bg-white/90 backdrop-blur-xl border-b border-[rgb(249, 115, 22)]/12 shadow-lg shadow-black/5"
             : "bg-transparent"
         }`}
         initial={{ y: -80 }}
@@ -66,8 +66,8 @@ export default function Navbar() {
                   <span
                     className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                       location === link.href
-                        ? "text-[#D97706]"
-                        : "text-[#1F1A17] hover:text-[#D97706]"
+                        ? "text-[rgb(249, 115, 22)]"
+                        : "text-[#1F1A17] hover:text-[rgb(249, 115, 22)]"
                     }`}
                   >
                     {link.label}
@@ -82,7 +82,7 @@ export default function Navbar() {
                 onMouseLeave={() => setCountryDropdown(false)}
               >
                 <button
-                  className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-[#1F1A17] hover:text-[#D97706] transition-colors"
+                  className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-[#1F1A17] hover:text-[rgb(249, 115, 22)] transition-colors"
                   data-testid="button-country-dropdown"
                 >
                   Country Pages
@@ -102,7 +102,7 @@ export default function Navbar() {
                     >
                       {countries.map((c) => (
                         <Link key={c.code} href={`/country/${c.code}`} data-testid={`link-country-${c.code}`}>
-                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-[#1F1A17] hover:bg-[#D97706]/8 hover:text-[#D97706] transition-colors cursor-pointer">
+                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-[#1F1A17] hover:bg-[rgb(249, 115, 22)]/8 hover:text-[rgb(249, 115, 22)] transition-colors cursor-pointer">
                             <span>{c.flag}</span>
                             <span>{c.name}</span>
                           </div>
@@ -117,7 +117,7 @@ export default function Navbar() {
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
               <Link href="/casino-bonuses" data-testid="button-claim-bonus-nav">
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-[#D97706] text-[#1F1A17] rounded-md text-sm font-bold hover:bg-[#DC6803] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.28)] active:scale-95">
+                <button className="flex items-center gap-2 px-5 py-2.5 bg-[rgb(249, 115, 22)] text-[#1F1A17] rounded-md text-sm font-bold hover:bg-[#DC6803] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.28)] active:scale-95">
                   <Trophy size={14} />
                   Claim Bonus
                 </button>
@@ -126,7 +126,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 text-[#1F1A17] hover:text-[#D97706]"
+              className="md:hidden p-2 text-[#1F1A17] hover:text-[rgb(249, 115, 22)]"
               onClick={() => setMobileOpen(!mobileOpen)}
               data-testid="button-mobile-menu"
             >
@@ -148,7 +148,7 @@ export default function Navbar() {
           >
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <div className="text-xl font-semibold py-4 border-b border-[#E7E1D6] text-[#1F1A17] hover:text-[#D97706] transition-colors cursor-pointer">
+                <div className="text-xl font-semibold py-4 border-b border-[#E7E1D6] text-[#1F1A17] hover:text-[rgb(249, 115, 22)] transition-colors cursor-pointer">
                   {link.label}
                 </div>
               </Link>
@@ -158,14 +158,14 @@ export default function Navbar() {
             </div>
             {countries.map((c) => (
               <Link key={c.code} href={`/country/${c.code}`}>
-                <div className="flex items-center gap-2 py-3 text-[#1F1A17] hover:text-[#D97706] transition-colors cursor-pointer border-b border-[#ECE6DB]">
+                <div className="flex items-center gap-2 py-3 text-[#1F1A17] hover:text-[rgb(249, 115, 22)] transition-colors cursor-pointer border-b border-[#ECE6DB]">
                   <span>{c.flag}</span>
                   <span>{c.name}</span>
                 </div>
               </Link>
             ))}
             <Link href="/casino-bonuses">
-              <button className="mt-6 w-full py-4 bg-[#D97706] text-[#1F1A17] rounded-lg font-bold text-lg hover:bg-[#DC6803] transition-colors">
+              <button className="mt-6 w-full py-4 bg-[rgb(249, 115, 22)] text-[#1F1A17] rounded-lg font-bold text-lg hover:bg-[#DC6803] transition-colors">
                 Claim Bonus
               </button>
             </Link>
