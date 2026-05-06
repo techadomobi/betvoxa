@@ -12,7 +12,7 @@ export default function Footer() {
               <img
                 src="/logo.png"
                 alt="BetVoxa"
-                className="w-32 h-42 rounded-md object-contain"
+                className="w-39 h-49 rounded-md object-contain"
               />
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
