@@ -39,7 +39,7 @@ export default function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#0B0A09]/90 backdrop-blur-xl border-b border-[#E0AE2E]/10 shadow-lg shadow-black/40"
+            ? "bg-[#0B0A09]/90 backdrop-blur-xl border-b border-[#D97706]/10 shadow-lg shadow-black/40"
             : "bg-transparent"
         }`}
         initial={{ y: -80 }}
@@ -51,7 +51,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" data-testid="link-logo">
               <div className="flex items-center gap-2 group cursor-pointer">
-                <div className="w-8 h-8 bg-[#E0AE2E] rounded-md flex items-center justify-center font-bold text-[#0B0A09] text-sm group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 bg-[#D97706] rounded-md flex items-center justify-center font-bold text-[#0B0A09] text-sm group-hover:scale-105 transition-transform">
                   B
                 </div>
                 <span className="font-serif text-xl font-bold text-white tracking-tight">
@@ -67,7 +67,7 @@ export default function Navbar() {
                   <span
                     className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                       location === link.href
-                        ? "text-[#E0AE2E]"
+                        ? "text-[#D97706]"
                         : "text-white/70 hover:text-white"
                     }`}
                   >
@@ -99,11 +99,11 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-1 w-52 bg-[#111009] border border-[#E0AE2E]/15 rounded-lg shadow-xl overflow-hidden"
+                      className="absolute top-full left-0 mt-1 w-52 bg-[#111009] border border-[#D97706]/15 rounded-lg shadow-xl overflow-hidden"
                     >
                       {countries.map((c) => (
                         <Link key={c.code} href={`/country/${c.code}`} data-testid={`link-country-${c.code}`}>
-                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-white/80 hover:bg-[#E0AE2E]/10 hover:text-[#E0AE2E] transition-colors cursor-pointer">
+                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-white/80 hover:bg-[#D97706]/10 hover:text-[#D97706] transition-colors cursor-pointer">
                             <span>{c.flag}</span>
                             <span>{c.name}</span>
                           </div>
@@ -118,7 +118,7 @@ export default function Navbar() {
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
               <Link href="/casino-bonuses" data-testid="button-claim-bonus-nav">
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-[#E0AE2E] text-[#0B0A09] rounded-md text-sm font-bold hover:bg-[#f0c040] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.4)] active:scale-95">
+                <button className="flex items-center gap-2 px-5 py-2.5 bg-[#D97706] text-[#0B0A09] rounded-md text-sm font-bold hover:bg-[#DC6803] transition-all hover:shadow-[0_0_20px_rgba(217,119,6,0.4)] active:scale-95">
                   <Trophy size={14} />
                   Claim Bonus
                 </button>
@@ -149,7 +149,7 @@ export default function Navbar() {
           >
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <div className="text-xl font-semibold py-4 border-b border-white/10 text-white/80 hover:text-[#E0AE2E] transition-colors cursor-pointer">
+                <div className="text-xl font-semibold py-4 border-b border-white/10 text-white/80 hover:text-[#D97706] transition-colors cursor-pointer">
                   {link.label}
                 </div>
               </Link>
@@ -159,14 +159,14 @@ export default function Navbar() {
             </div>
             {countries.map((c) => (
               <Link key={c.code} href={`/country/${c.code}`}>
-                <div className="flex items-center gap-2 py-3 text-white/70 hover:text-[#E0AE2E] transition-colors cursor-pointer border-b border-white/5">
+                <div className="flex items-center gap-2 py-3 text-white/70 hover:text-[#D97706] transition-colors cursor-pointer border-b border-white/5">
                   <span>{c.flag}</span>
                   <span>{c.name}</span>
                 </div>
               </Link>
             ))}
             <Link href="/casino-bonuses">
-              <button className="mt-6 w-full py-4 bg-[#E0AE2E] text-[#0B0A09] rounded-lg font-bold text-lg hover:bg-[#f0c040] transition-colors">
+              <button className="mt-6 w-full py-4 bg-[#D97706] text-[#0B0A09] rounded-lg font-bold text-lg hover:bg-[#DC6803] transition-colors">
                 Claim Bonus
               </button>
             </Link>
