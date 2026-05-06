@@ -37,15 +37,15 @@ export default function BonusCard({
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, ease: "easeOut" }}
       whileHover={{ y: -3, boxShadow: "0 0 30px rgba(249,115,22,0.12)" }}
-      className="group relative bg-white border border-[#ECE6DB] rounded-xl p-5 flex flex-col gap-4 transition-all duration-300 hover:border-[rgb(249, 115, 22)]/12"
+      className="group relative bg-white border border-[#ECE6DB] rounded-xl p-5 flex flex-col gap-4 transition-all duration-300 hover:border-[#F97316]/12"
     >
       {rank && (
-        <div className="absolute -top-3 -left-3 w-7 h-7 rounded-full bg-[rgb(249, 115, 22)] text-[#0B0A09] text-xs font-bold flex items-center justify-center shadow-lg">
+        <div className="absolute -top-3 -left-3 w-7 h-7 rounded-full bg-[#F97316] text-[#0B0A09] text-xs font-bold flex items-center justify-center shadow-lg">
           {rank}
         </div>
       )}
       {featured && (
-        <div className="absolute top-3 right-3 bg-[rgb(249, 115, 22)]/8 border border-[rgb(249, 115, 22)]/12 text-[rgb(249, 115, 22)] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">
+        <div className="absolute top-3 right-3 bg-[#F97316]/8 border border-[#F97316]/12 text-[#F97316] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">
           Featured
         </div>
       )}
@@ -56,7 +56,7 @@ export default function BonusCard({
           <div className="flex items-center gap-2 mb-1">
             <span className="font-semibold text-[#1F1A17] text-base">{name}</span>
             {badge && (
-              <span className="bg-[#FFF8E2] border border-[rgb(249, 115, 22)]/12 text-[#8A6515] text-[10px] font-bold uppercase px-1.5 py-0.5 rounded">
+              <span className="bg-[#FFF8E2] border border-[#F97316]/12 text-[#8A6515] text-[10px] font-bold uppercase px-1.5 py-0.5 rounded">
                 {badge}
               </span>
             )}
@@ -67,7 +67,7 @@ export default function BonusCard({
                 <Star
                   key={i}
                   size={11}
-                  className={i < Math.round(rating) ? "fill-[rgb(249, 115, 22)] text-[rgb(249, 115, 22)]" : "fill-white/20 text-[#C9C3B8]"}
+                  className={i < Math.round(rating) ? "fill-[#F97316] text-[#F97316]" : "fill-white/20 text-[#C9C3B8]"}
                 />
               ))}
             </div>
@@ -82,7 +82,7 @@ export default function BonusCard({
       </div>
 
       {/* Bonus Offer Box */}
-      <div className="bg-[#FFF8E2] border border-[rgb(249, 115, 22)]/12 rounded-lg p-3">
+      <div className="bg-[#FFF8E2] border border-[#F97316]/12 rounded-lg p-3">
         <div className="text-[10px] text-[#8A6515] font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-gift flex-shrink-0"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22v-7"/><path d="M7 12c0-1.657.895-3 2-3s2 1.343 2 3"/><path d="M17 12c0-1.657.895-3 2-3s2 1.343 2 3"/></svg>
           Bonus offer
@@ -108,7 +108,7 @@ export default function BonusCard({
       <div className="flex flex-col gap-1.5">
         {features.map((f) => (
           <span key={f} className="flex items-center gap-1.5 text-xs text-[#6F665D]">
-            <Check size={10} className="text-[rgb(249, 115, 22)] flex-shrink-0 mt-0.5" />
+            <Check size={10} className="text-[#F97316] flex-shrink-0 mt-0.5" />
             {f}
           </span>
         ))}
@@ -118,7 +118,7 @@ export default function BonusCard({
       <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full px-4 py-2.5 bg-[rgb(249, 115, 22)] text-[#0B0A09] rounded-lg text-sm font-bold hover:bg-[#DC6803] transition-colors shadow-[0_0_16px_rgba(249,115,22,0.2)] flex items-center justify-center gap-1.5"
+        className="w-full px-4 py-2.5 bg-[#F97316] text-[#0B0A09] rounded-lg text-sm font-bold hover:bg-[#DC6803] transition-colors shadow-[0_0_16px_rgba(249,115,22,0.2)] flex items-center justify-center gap-1.5"
         data-testid={`button-claim-${name.toLowerCase().replace(/\s+/g, "-")}`}
       >
         Claim bonus

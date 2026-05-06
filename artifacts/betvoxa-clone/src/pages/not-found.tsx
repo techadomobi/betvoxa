@@ -10,7 +10,7 @@ export default function NotFound() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center max-w-md"
       >
-        <div className="text-[rgb(249, 115, 22)] font-serif text-9xl font-bold mb-4 text-glow">404</div>
+        <div className="text-[#F97316] font-serif text-9xl font-bold mb-4 text-glow">404</div>
         <h1 className="font-serif text-3xl font-bold text-[#1F1A17] mb-4">Page Not Found</h1>
         <p className="text-[#6F665D] mb-8">
           The page you're looking for doesn't exist. The odds were against you finding it.
@@ -19,7 +19,7 @@ export default function NotFound() {
           <motion.button
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[rgb(249, 115, 22)] text-[#0B0A09] rounded-lg font-bold hover:bg-[#DC6803] transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-[#0B0A09] rounded-lg font-bold hover:bg-[#DC6803] transition-colors"
             data-testid="button-back-home"
           >
             <Home size={16} />
