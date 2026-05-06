@@ -9,9 +9,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-[#E0AE2E] rounded-md flex items-center justify-center font-bold text-[#0B0A09] text-sm">
-                B
-              </div>
+              <img
+                src="/logo.png"
+                alt="BetVoxa"
+                className="w-8 h-8 rounded-md object-contain"
+              />
               <span className="font-serif text-xl font-bold text-white">BetVoxa</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">

@@ -51,9 +51,11 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" data-testid="link-logo">
               <div className="flex items-center gap-2 group cursor-pointer">
-                <div className="w-8 h-8 bg-[#E0AE2E] rounded-md flex items-center justify-center font-bold text-[#0B0A09] text-sm group-hover:scale-105 transition-transform">
-                  B
-                </div>
+                <img
+                  src="/logo.png"
+                  alt="BetVoxa"
+                  className="w-8 h-8 rounded-md object-contain group-hover:scale-105 transition-transform"
+                />
                 <span className="font-serif text-xl font-bold text-white tracking-tight">
                   BetVoxa
                 </span>
