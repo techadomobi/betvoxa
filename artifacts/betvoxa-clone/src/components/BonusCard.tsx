@@ -37,7 +37,7 @@ export default function BonusCard({
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, ease: "easeOut" }}
       whileHover={{ y: -3, boxShadow: "0 0 30px rgba(224,174,46,0.12)" }}
-      className="group relative bg-[#111009] border border-white/8 rounded-xl p-5 flex flex-col gap-4 transition-all duration-300 hover:border-[#E0AE2E]/30"
+      className="group relative bg-white border border-[#ECE6DB] rounded-xl p-5 flex flex-col gap-4 transition-all duration-300 hover:border-[#E0AE2E]/12"
     >
       {rank && (
         <div className="absolute -top-3 -left-3 w-7 h-7 rounded-full bg-[#E0AE2E] text-[#0B0A09] text-xs font-bold flex items-center justify-center shadow-lg">
@@ -45,7 +45,7 @@ export default function BonusCard({
         </div>
       )}
       {featured && (
-        <div className="absolute top-3 right-3 bg-[#E0AE2E]/10 border border-[#E0AE2E]/30 text-[#E0AE2E] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">
+        <div className="absolute top-3 right-3 bg-[#E0AE2E]/8 border border-[#E0AE2E]/12 text-[#E0AE2E] text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full">
           Featured
         </div>
       )}
@@ -54,9 +54,9 @@ export default function BonusCard({
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <span className="font-semibold text-white text-base">{name}</span>
+            <span className="font-semibold text-[#1F1A17] text-base">{name}</span>
             {badge && (
-              <span className="bg-[#1B3950] text-[#E0AE2E] text-[10px] font-bold uppercase px-1.5 py-0.5 rounded">
+              <span className="bg-[#FFF8E2] border border-[#E0AE2E]/12 text-[#8A6515] text-[10px] font-bold uppercase px-1.5 py-0.5 rounded">
                 {badge}
               </span>
             )}
@@ -67,47 +67,47 @@ export default function BonusCard({
                 <Star
                   key={i}
                   size={11}
-                  className={i < Math.round(rating) ? "fill-[#E0AE2E] text-[#E0AE2E]" : "fill-white/20 text-white/20"}
+                  className={i < Math.round(rating) ? "fill-[#E0AE2E] text-[#E0AE2E]" : "fill-white/20 text-[#C9C3B8]"}
                 />
               ))}
             </div>
-            <span className="text-white/40 text-xs">({reviews.toLocaleString()})</span>
+            <span className="text-[#8D847A] text-xs">({reviews.toLocaleString()})</span>
           </div>
         </div>
 
         {/* Logo */}
-        <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-white text-[#0B0A09] flex items-center justify-center font-bold text-sm font-mono">
+        <div className="flex-shrink-0 w-14 h-14 rounded-lg bg-white text-[#1F1A17] border border-[#E7E1D6] flex items-center justify-center font-bold text-sm font-mono">
           {initials}
         </div>
       </div>
 
       {/* Bonus Offer Box */}
-      <div className="bg-[#1B3950]/40 border border-[#E0AE2E]/30 rounded-lg p-3">
-        <div className="text-[10px] text-[#E0AE2E] font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
+      <div className="bg-[#FFF8E2] border border-[#E0AE2E]/12 rounded-lg p-3">
+        <div className="text-[10px] text-[#8A6515] font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-gift flex-shrink-0"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><path d="M12 22v-7"/><path d="M7 12c0-1.657.895-3 2-3s2 1.343 2 3"/><path d="M17 12c0-1.657.895-3 2-3s2 1.343 2 3"/></svg>
           Bonus offer
         </div>
-        <div className="text-white text-base font-bold">{bonusTitle}</div>
+        <div className="text-[#1F1A17] text-base font-bold">{bonusTitle}</div>
       </div>
 
-      {bonusDetail && <div className="text-white/60 text-xs">{bonusDetail}</div>}
+      {bonusDetail && <div className="text-[#5F554C] text-xs">{bonusDetail}</div>}
 
       {/* Wagering and Min Deposit */}
-      <div className="flex justify-between text-xs text-white/50">
+      <div className="flex justify-between text-xs text-[#6F665D]">
         <div>
-          <div className="text-white/40">Wagering</div>
-          <div className="text-white/70 font-semibold">{wagering}</div>
+          <div className="text-[#8D847A]">Wagering</div>
+          <div className="text-[#4A433C] font-semibold">{wagering}</div>
         </div>
         <div className="text-right">
-          <div className="text-white/40">Min deposit</div>
-          <div className="text-white/70 font-semibold">{minDeposit}</div>
+          <div className="text-[#8D847A]">Min deposit</div>
+          <div className="text-[#4A433C] font-semibold">{minDeposit}</div>
         </div>
       </div>
 
       {/* Features */}
       <div className="flex flex-col gap-1.5">
         {features.map((f) => (
-          <span key={f} className="flex items-center gap-1.5 text-xs text-white/50">
+          <span key={f} className="flex items-center gap-1.5 text-xs text-[#6F665D]">
             <Check size={10} className="text-[#E0AE2E] flex-shrink-0 mt-0.5" />
             {f}
           </span>

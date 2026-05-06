@@ -39,7 +39,7 @@ export default function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#0B0A09]/90 backdrop-blur-xl border-b border-[#E0AE2E]/10 shadow-lg shadow-black/40"
+            ? "bg-white/90 backdrop-blur-xl border-b border-[#E0AE2E]/12 shadow-lg shadow-black/5"
             : "bg-transparent"
         }`}
         initial={{ y: -80 }}
@@ -54,7 +54,7 @@ export default function Navbar() {
                 <img
                   src="/logo.png"
                   alt="BetVoxa"
-                  className="w-39 h-49 rounded-md object-contain group-hover:scale-105 transition-transform"
+                  className="w-8 h-8 rounded-md object-contain group-hover:scale-105 transition-transform"
                 />
               </div>
             </Link>
@@ -66,8 +66,8 @@ export default function Navbar() {
                   <span
                     className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                       location === link.href
-                        ? "text-[#E0AE2E]"
-                        : "text-white/70 hover:text-white"
+                        ? "text-[#8A6515]"
+                        : "text-[#5F554C] hover:text-[#1F1A17]"
                     }`}
                   >
                     {link.label}
@@ -82,7 +82,7 @@ export default function Navbar() {
                 onMouseLeave={() => setCountryDropdown(false)}
               >
                 <button
-                  className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-white/70 hover:text-white transition-colors"
+                  className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-[#5F554C] hover:text-[#1F1A17] transition-colors"
                   data-testid="button-country-dropdown"
                 >
                   Country Pages
@@ -98,11 +98,11 @@ export default function Navbar() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-1 w-52 bg-[#111009] border border-[#E0AE2E]/15 rounded-lg shadow-xl overflow-hidden"
+                      className="absolute top-full left-0 mt-1 w-52 bg-white border border-[#E7E1D6] rounded-lg shadow-xl overflow-hidden"
                     >
                       {countries.map((c) => (
                         <Link key={c.code} href={`/country/${c.code}`} data-testid={`link-country-${c.code}`}>
-                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-white/80 hover:bg-[#E0AE2E]/10 hover:text-[#E0AE2E] transition-colors cursor-pointer">
+                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-[#4A433C] hover:bg-[#E0AE2E]/8 hover:text-[#8A6515] transition-colors cursor-pointer">
                             <span>{c.flag}</span>
                             <span>{c.name}</span>
                           </div>
@@ -117,7 +117,7 @@ export default function Navbar() {
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
               <Link href="/casino-bonuses" data-testid="button-claim-bonus-nav">
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-[#E0AE2E] text-[#0B0A09] rounded-md text-sm font-bold hover:bg-[#f0c040] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.4)] active:scale-95">
+                <button className="flex items-center gap-2 px-5 py-2.5 bg-[#E0AE2E] text-[#1F1A17] rounded-md text-sm font-bold hover:bg-[#f0c040] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.28)] active:scale-95">
                   <Trophy size={14} />
                   Claim Bonus
                 </button>
@@ -126,7 +126,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 text-white/80 hover:text-white"
+              className="md:hidden p-2 text-[#4A433C] hover:text-[#1F1A17]"
               onClick={() => setMobileOpen(!mobileOpen)}
               data-testid="button-mobile-menu"
             >
@@ -144,28 +144,28 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-[#0B0A09] pt-16 px-6 flex flex-col gap-2 overflow-y-auto"
+            className="fixed inset-0 z-40 bg-[#F8F7F2] pt-16 px-6 flex flex-col gap-2 overflow-y-auto"
           >
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <div className="text-xl font-semibold py-4 border-b border-white/10 text-white/80 hover:text-[#E0AE2E] transition-colors cursor-pointer">
+                <div className="text-xl font-semibold py-4 border-b border-[#E7E1D6] text-[#4A433C] hover:text-[#8A6515] transition-colors cursor-pointer">
                   {link.label}
                 </div>
               </Link>
             ))}
-            <div className="text-xs font-bold uppercase text-white/40 mt-4 mb-1 tracking-widest">
+            <div className="text-xs font-bold uppercase text-[#8D847A] mt-4 mb-1 tracking-widest">
               Country Pages
             </div>
             {countries.map((c) => (
               <Link key={c.code} href={`/country/${c.code}`}>
-                <div className="flex items-center gap-2 py-3 text-white/70 hover:text-[#E0AE2E] transition-colors cursor-pointer border-b border-white/5">
+                <div className="flex items-center gap-2 py-3 text-[#5F554C] hover:text-[#8A6515] transition-colors cursor-pointer border-b border-[#ECE6DB]">
                   <span>{c.flag}</span>
                   <span>{c.name}</span>
                 </div>
               </Link>
             ))}
             <Link href="/casino-bonuses">
-              <button className="mt-6 w-full py-4 bg-[#E0AE2E] text-[#0B0A09] rounded-lg font-bold text-lg hover:bg-[#f0c040] transition-colors">
+              <button className="mt-6 w-full py-4 bg-[#E0AE2E] text-[#1F1A17] rounded-lg font-bold text-lg hover:bg-[#f0c040] transition-colors">
                 Claim Bonus
               </button>
             </Link>

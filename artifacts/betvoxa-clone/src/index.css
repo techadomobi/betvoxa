@@ -50,54 +50,54 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* Base variables (Dark mode default for BetVoxa) */
+/* Base variables (Light mode default for BetVoxa) */
 :root {
-  --button-outline: rgba(255,255,255, .10);
-  --badge-outline: rgba(255,255,255, .05);
-  --opaque-button-border-intensity: -8;
-  --elevate-1: rgba(255,255,255, .04);
-  --elevate-2: rgba(255,255,255, .09);
+  --button-outline: rgba(16,24,40, .10);
+  --badge-outline: rgba(16,24,40, .06);
+  --opaque-button-border-intensity: 6;
+  --elevate-1: rgba(16,24,40, .03);
+  --elevate-2: rgba(16,24,40, .07);
 
-  /* Deep Near Black */
-  --background: 30 9% 5%;
-  --foreground: 0 0% 98%;
-  --border: 30 9% 15%;
+  /* Warm Ivory */
+  --background: 42 33% 97%;
+  --foreground: 30 10% 12%;
+  --border: 30 12% 86%;
   
-  --card: 30 9% 8%;
-  --card-foreground: 0 0% 98%;
-  --card-border: 30 9% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 30 10% 12%;
+  --card-border: 30 12% 86%;
   
-  --popover: 30 9% 5%;
-  --popover-foreground: 0 0% 98%;
-  --popover-border: 30 9% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 10% 12%;
+  --popover-border: 30 12% 86%;
   
   /* Gold */
   --primary: 43 76% 53%;
-  --primary-foreground: 30 9% 5%;
+  --primary-foreground: 30 10% 12%;
   
   /* Navy Blue */
-  --secondary: 206 49% 21%;
-  --secondary-foreground: 0 0% 98%;
+  --secondary: 206 25% 92%;
+  --secondary-foreground: 30 10% 12%;
   
-  --muted: 30 9% 15%;
-  --muted-foreground: 0 0% 65%;
+  --muted: 42 22% 94%;
+  --muted-foreground: 30 8% 42%;
   
-  --accent: 43 76% 15%;
-  --accent-foreground: 43 76% 85%;
+  --accent: 43 76% 92%;
+  --accent-foreground: 30 10% 12%;
   
   --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
+  --destructive-foreground: 0 0% 100%;
   
-  --input: 30 9% 15%;
+  --input: 30 12% 86%;
   --ring: 43 76% 53%;
   
-  --sidebar: 30 9% 8%;
-  --sidebar-foreground: 0 0% 98%;
-  --sidebar-border: 30 9% 15%;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 30 10% 12%;
+  --sidebar-border: 30 12% 86%;
   --sidebar-primary: 43 76% 53%;
-  --sidebar-primary-foreground: 30 9% 5%;
-  --sidebar-accent: 30 9% 15%;
-  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-primary-foreground: 30 10% 12%;
+  --sidebar-accent: 42 22% 94%;
+  --sidebar-accent-foreground: 30 10% 12%;
   --sidebar-ring: 43 76% 53%;
 
   --app-font-sans: 'DM Sans', sans-serif;
@@ -105,14 +105,14 @@
   --app-font-mono: Menlo, monospace;
   --radius: .5rem;
 
-  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.5);
-  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.5);
-  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.5), 0px 1px 2px -1px hsl(0 0% 0% / 0.5);
-  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.5), 0px 1px 2px -1px hsl(0 0% 0% / 0.5);
-  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.5), 0px 2px 4px -1px hsl(0 0% 0% / 0.5);
-  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.5), 0px 4px 6px -1px hsl(0 0% 0% / 0.5);
-  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.5), 0px 8px 10px -1px hsl(0 0% 0% / 0.5);
-  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.5);
+  --shadow-2xs: 0px 1px 1px 0px hsl(30 10% 12% / 0.04);
+  --shadow-xs: 0px 1px 1px 0px hsl(30 10% 12% / 0.04);
+  --shadow-sm: 0px 1px 2px 0px hsl(30 10% 12% / 0.05), 0px 1px 2px -1px hsl(30 10% 12% / 0.05);
+  --shadow: 0px 1px 2px 0px hsl(30 10% 12% / 0.05), 0px 1px 2px -1px hsl(30 10% 12% / 0.05);
+  --shadow-md: 0px 2px 4px -1px hsl(30 10% 12% / 0.08), 0px 1px 2px -1px hsl(30 10% 12% / 0.04);
+  --shadow-lg: 0px 4px 8px -2px hsl(30 10% 12% / 0.10), 0px 2px 4px -2px hsl(30 10% 12% / 0.05);
+  --shadow-xl: 0px 8px 16px -4px hsl(30 10% 12% / 0.12), 0px 2px 4px -2px hsl(30 10% 12% / 0.05);
+  --shadow-2xl: 0px 12px 24px -8px hsl(30 10% 12% / 0.14);
 
   --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
   --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
@@ -124,9 +124,13 @@
 }
 
 .dark {
-  --background: 30 9% 5%;
-  --foreground: 0 0% 98%;
-  /* Use identical variables as :root for dark mode since the whole site is dark mode by default */
+  --background: 42 33% 97%;
+  --foreground: 30 10% 12%;
+  --border: 30 12% 86%;
+  --card: 0 0% 100%;
+  --card-foreground: 30 10% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 30 10% 12%;
 }
 
 @layer base {
@@ -135,6 +139,7 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground;
+    background-image: radial-gradient(circle at top, rgba(224, 174, 46, 0.08), transparent 40%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
@@ -158,9 +163,9 @@
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 10px rgba(224, 174, 46, 0.5);
+    text-shadow: 0 0 10px rgba(224, 174, 46, 0.35);
   }
   .box-glow {
-    box-shadow: 0 0 15px rgba(224, 174, 46, 0.2);
+    box-shadow: 0 0 15px rgba(224, 174, 46, 0.14);
   }
 }

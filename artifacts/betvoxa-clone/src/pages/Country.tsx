@@ -140,13 +140,13 @@ export default function Country() {
   const data = countryData[code || "united-kingdom"] || countryData["united-kingdom"];
 
   return (
-    <div className="min-h-screen bg-[#0B0A09]">
+    <div className="min-h-screen bg-[#F8F7F2]">
       {/* HERO */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#1B3950]/20 to-transparent" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/">
-            <div className="flex items-center gap-2 text-white/50 hover:text-white transition-colors mb-6 cursor-pointer w-fit" data-testid="link-back-home">
+            <div className="flex items-center gap-2 text-[#6F665D] hover:text-[#1F1A17] transition-colors mb-6 cursor-pointer w-fit" data-testid="link-back-home">
               <ArrowLeft size={15} />
               <span className="text-sm">Back to Home</span>
             </div>
@@ -156,10 +156,10 @@ export default function Country() {
               <span className="text-6xl">{data.flag}</span>
               <div>
                 <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-1">Country Guide</div>
-                <h1 className="font-serif text-5xl md:text-6xl font-bold text-white">{data.name}</h1>
+                <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1F1A17]">{data.name}</h1>
               </div>
             </div>
-            <p className="text-white/55 text-lg max-w-2xl leading-relaxed">{data.intro}</p>
+            <p className="text-[#5F554C] text-lg max-w-2xl leading-relaxed">{data.intro}</p>
           </motion.div>
         </div>
       </section>
@@ -178,10 +178,10 @@ export default function Country() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 }}
-              className="bg-[#111009] border border-white/8 rounded-xl p-4"
+              className="bg-white border border-[#ECE6DB] rounded-xl p-4"
             >
               <div className="text-[#E0AE2E] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
-              <div className="text-white font-medium text-sm">{item.value}</div>
+              <div className="text-[#1F1A17] font-medium text-sm">{item.value}</div>
             </motion.div>
           ))}
         </div>
@@ -189,7 +189,7 @@ export default function Country() {
 
       {/* TOP BONUSES */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <h2 className="font-serif text-3xl font-bold text-white mb-6">
+        <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-6">
           Top Casino Bonuses in {data.name}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -200,9 +200,9 @@ export default function Country() {
       </section>
 
       {/* TOP BETTING SITES */}
-      <section className="bg-[#080706] py-16">
+      <section className="bg-[#F3F1EA] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl font-bold text-white mb-6">
+          <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-6">
             Top Betting Sites in {data.name}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -214,17 +214,17 @@ export default function Country() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 whileHover={{ borderColor: "rgba(224,174,46,0.3)" }}
-                className="bg-[#111009] border border-white/8 rounded-xl p-5 flex items-center gap-4 transition-all duration-300"
+                className="bg-white border border-[#ECE6DB] rounded-xl p-5 flex items-center gap-4 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#E0AE2E]/20 to-[#1B3950]/40 border border-white/10 flex items-center justify-center font-bold text-[#E0AE2E] text-sm font-mono flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#E0AE2E]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#E0AE2E] text-sm font-mono flex-shrink-0">
                   {site.initials}
                 </div>
                 <div className="flex-1">
-                  <div className="font-semibold text-white">{site.name}</div>
+                  <div className="font-semibold text-[#1F1A17]">{site.name}</div>
                   <div className="text-[#E0AE2E] text-sm">{site.bonus}</div>
                   <div className="flex mt-1">
                     {Array.from({ length: 5 }).map((_, j) => (
-                      <span key={j} className={`text-[10px] ${j < Math.round(site.rating) ? "text-[#E0AE2E]" : "text-white/20"}`}>★</span>
+                      <span key={j} className={`text-[10px] ${j < Math.round(site.rating) ? "text-[#E0AE2E]" : "text-[#C9C3B8]"}`}>★</span>
                     ))}
                   </div>
                 </div>
@@ -251,9 +251,9 @@ export default function Country() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Shield size={20} className="text-[#E0AE2E]" />
-              <h2 className="font-serif text-2xl font-bold text-white">Legal Framework</h2>
+              <h2 className="font-serif text-2xl font-bold text-[#1F1A17]">Legal Framework</h2>
             </div>
-            <p className="text-white/55 leading-relaxed">{data.legalInfo}</p>
+            <p className="text-[#5F554C] leading-relaxed">{data.legalInfo}</p>
           </motion.div>
 
           <motion.div
@@ -261,12 +261,12 @@ export default function Country() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-serif text-2xl font-bold text-white mb-4">Player Tips</h2>
+            <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-4">Player Tips</h2>
             <div className="flex flex-col gap-3">
               {data.tips.map((tip) => (
                 <div key={tip} className="flex items-start gap-3">
                   <Check size={15} className="text-[#E0AE2E] mt-0.5 flex-shrink-0" />
-                  <span className="text-white/60 text-sm leading-relaxed">{tip}</span>
+                  <span className="text-[#5F554C] text-sm leading-relaxed">{tip}</span>
                 </div>
               ))}
             </div>
@@ -275,14 +275,14 @@ export default function Country() {
       </section>
 
       {/* PAYMENT METHODS */}
-      <section className="bg-[#080706] py-16">
+      <section className="bg-[#F3F1EA] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-2xl font-bold text-white mb-6">Payment Methods in {data.name}</h2>
+          <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-6">Payment Methods in {data.name}</h2>
           <div className="flex flex-wrap gap-3">
             {data.paymentMethods.map((method) => (
               <span
                 key={method}
-                className="bg-[#111009] border border-white/10 text-white/70 px-4 py-2 rounded-lg text-sm hover:border-[#E0AE2E]/30 transition-colors"
+                className="bg-white border border-[#E7E1D6] text-[#4A433C] px-4 py-2 rounded-lg text-sm hover:border-[#E0AE2E]/12 transition-colors"
               >
                 {method}
               </span>
@@ -293,7 +293,7 @@ export default function Country() {
 
       {/* OTHER COUNTRIES */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-2xl font-bold text-white mb-6">Other Country Guides</h2>
+        <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-6">Other Country Guides</h2>
         <div className="flex flex-wrap gap-3">
           {Object.entries(countryData)
             .filter(([key]) => key !== code)
@@ -301,11 +301,11 @@ export default function Country() {
               <Link key={key} href={`/country/${key}`}>
                 <motion.div
                   whileHover={{ scale: 1.04 }}
-                  className="flex items-center gap-2 bg-[#111009] border border-white/8 hover:border-[#E0AE2E]/30 rounded-lg px-4 py-2.5 cursor-pointer transition-all"
+                  className="flex items-center gap-2 bg-white border border-[#ECE6DB] hover:border-[#E0AE2E]/12 rounded-lg px-4 py-2.5 cursor-pointer transition-all"
                   data-testid={`link-other-country-${key}`}
                 >
                   <span className="text-xl">{country.flag}</span>
-                  <span className="text-white/70 text-sm hover:text-white transition-colors">{country.name}</span>
+                  <span className="text-[#4A433C] text-sm hover:text-[#1F1A17] transition-colors">{country.name}</span>
                 </motion.div>
               </Link>
             ))}
