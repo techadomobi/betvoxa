@@ -79,7 +79,7 @@ export default function CasinoBonuses() {
     <div className="min-h-screen bg-[#F8F7F2]">
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(224,174,46,0.07),transparent)]" />
+        {/* hero background removed to improve text contrast */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">Expert-verified</div>

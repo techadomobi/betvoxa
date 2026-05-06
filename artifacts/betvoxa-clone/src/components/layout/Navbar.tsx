@@ -66,8 +66,8 @@ export default function Navbar() {
                   <span
                     className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                       location === link.href
-                        ? "text-[#8A6515]"
-                        : "text-[#5F554C] hover:text-[#1F1A17]"
+                        ? "text-[#D97706]"
+                        : "text-[#1F1A17] hover:text-[#D97706]"
                     }`}
                   >
                     {link.label}
@@ -82,7 +82,7 @@ export default function Navbar() {
                 onMouseLeave={() => setCountryDropdown(false)}
               >
                 <button
-                  className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-[#5F554C] hover:text-[#1F1A17] transition-colors"
+                  className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-[#1F1A17] hover:text-[#D97706] transition-colors"
                   data-testid="button-country-dropdown"
                 >
                   Country Pages
@@ -102,7 +102,7 @@ export default function Navbar() {
                     >
                       {countries.map((c) => (
                         <Link key={c.code} href={`/country/${c.code}`} data-testid={`link-country-${c.code}`}>
-                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-[#4A433C] hover:bg-[#D97706]/8 hover:text-[#8A6515] transition-colors cursor-pointer">
+                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-[#1F1A17] hover:bg-[#D97706]/8 hover:text-[#D97706] transition-colors cursor-pointer">
                             <span>{c.flag}</span>
                             <span>{c.name}</span>
                           </div>
@@ -126,7 +126,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 text-[#4A433C] hover:text-[#1F1A17]"
+              className="md:hidden p-2 text-[#1F1A17] hover:text-[#D97706]"
               onClick={() => setMobileOpen(!mobileOpen)}
               data-testid="button-mobile-menu"
             >
@@ -148,7 +148,7 @@ export default function Navbar() {
           >
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <div className="text-xl font-semibold py-4 border-b border-[#E7E1D6] text-[#4A433C] hover:text-[#8A6515] transition-colors cursor-pointer">
+                <div className="text-xl font-semibold py-4 border-b border-[#E7E1D6] text-[#1F1A17] hover:text-[#D97706] transition-colors cursor-pointer">
                   {link.label}
                 </div>
               </Link>
@@ -158,7 +158,7 @@ export default function Navbar() {
             </div>
             {countries.map((c) => (
               <Link key={c.code} href={`/country/${c.code}`}>
-                <div className="flex items-center gap-2 py-3 text-[#5F554C] hover:text-[#8A6515] transition-colors cursor-pointer border-b border-[#ECE6DB]">
+                <div className="flex items-center gap-2 py-3 text-[#1F1A17] hover:text-[#D97706] transition-colors cursor-pointer border-b border-[#ECE6DB]">
                   <span>{c.flag}</span>
                   <span>{c.name}</span>
                 </div>

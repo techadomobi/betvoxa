@@ -143,7 +143,7 @@ export default function Country() {
     <div className="min-h-screen bg-[#F8F7F2]">
       {/* HERO */}
       <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1B3950]/20 to-transparent" />
+        {/* hero background removed to improve text contrast */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/">
             <div className="flex items-center gap-2 text-[#6F665D] hover:text-[#1F1A17] transition-colors mb-6 cursor-pointer w-fit" data-testid="link-back-home">

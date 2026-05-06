@@ -140,9 +140,7 @@ export default function Home() {
       {/* ─── HERO ─── */}
       <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0B0A09]/60 to-[#0B0A09]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_20%,rgba(217,119,6,0.08),transparent)]" />
-          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=1920&q=80')", backgroundSize: "cover", backgroundPosition: "center" }} />
+          {/* background overlays removed to ensure hero text visibility */}
         </motion.div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {Array.from({ length: 24 }).map((_, i) => (
