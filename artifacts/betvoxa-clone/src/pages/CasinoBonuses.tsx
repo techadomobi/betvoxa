@@ -52,7 +52,7 @@ const faqs = [
 const vipTiers = [
   { tier: "Bronze", desc: "Entry level — cashback, priority support", color: "#CD7F32" },
   { tier: "Silver", desc: "Enhanced cashback, faster withdrawals, bonus boosts", color: "#C0C0C0" },
-  { tier: "Gold", desc: "Personal account manager, higher limits, exclusive events", color: "#D97706" },
+  { tier: "Gold", desc: "Personal account manager, higher limits, exclusive events", color: "#E0AE2E" },
   { tier: "Platinum", desc: "Luxury gifts, private jets, VIP event invitations, bespoke bonuses", color: "#E5E4E2" },
 ];
 
@@ -79,10 +79,10 @@ export default function CasinoBonuses() {
     <div className="min-h-screen bg-[#0B0A09]">
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(217,119,6,0.07),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(224,174,46,0.07),transparent)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">Expert-verified</div>
+            <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">Expert-verified</div>
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-4">Casino Bonuses</h1>
             <p className="text-white/55 text-lg max-w-xl">Compare and claim the best casino bonuses from top operators worldwide. Updated daily by our expert team.</p>
           </motion.div>
@@ -100,7 +100,7 @@ export default function CasinoBonuses() {
           ].map((stat, i) => (
             <motion.div key={stat.label} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
               className="bg-[#111009] border border-white/8 rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-[#D97706] mb-1">{stat.value}</div>
+              <div className="text-2xl font-bold text-[#E0AE2E] mb-1">{stat.value}</div>
               <div className="text-white/50 text-xs">{stat.label}</div>
             </motion.div>
           ))}
@@ -110,13 +110,13 @@ export default function CasinoBonuses() {
       {/* ─── BEST PICKS ─── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <h2 className="font-serif text-2xl font-bold text-white mb-5 flex items-center gap-2">
-          <Trophy size={20} className="text-[#D97706]" /> Best Picks This Month
+          <Trophy size={20} className="text-[#E0AE2E]" /> Best Picks This Month
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {topPicks.map((pick, i) => (
             <motion.div key={pick.label} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
-              className="bg-[#D97706]/5 border border-[#D97706]/20 rounded-xl p-4">
-              <div className="text-[#D97706] text-xs font-bold uppercase tracking-wider mb-1">{pick.label}</div>
+              className="bg-[#E0AE2E]/5 border border-[#E0AE2E]/20 rounded-xl p-4">
+              <div className="text-[#E0AE2E] text-xs font-bold uppercase tracking-wider mb-1">{pick.label}</div>
               <div className="text-white font-semibold mb-0.5">{pick.name}</div>
               <div className="text-white/50 text-xs">{pick.detail}</div>
             </motion.div>
@@ -127,7 +127,7 @@ export default function CasinoBonuses() {
       {/* ─── COMPARISON TABLE ─── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <h2 className="font-serif text-2xl font-bold text-white mb-5 flex items-center gap-2">
-          <TrendingUp size={20} className="text-[#D97706]" /> Quick Comparison
+          <TrendingUp size={20} className="text-[#E0AE2E]" /> Quick Comparison
         </h2>
         <div className="overflow-x-auto rounded-xl border border-white/8">
           <table className="w-full text-sm">
@@ -143,21 +143,21 @@ export default function CasinoBonuses() {
             </thead>
             <tbody>
               {allBonuses.slice(0, 8).map((b, i) => (
-                <tr key={b.name} className={`border-b border-white/5 ${i % 2 === 0 ? "bg-[#0e0c0a]" : "bg-[#111009]"} hover:bg-[#D97706]/5 transition-colors`}>
+                <tr key={b.name} className={`border-b border-white/5 ${i % 2 === 0 ? "bg-[#0e0c0a]" : "bg-[#111009]"} hover:bg-[#E0AE2E]/5 transition-colors`}>
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-md bg-[#D97706]/15 flex items-center justify-center text-[#D97706] text-xs font-bold">{b.initials.slice(0, 3)}</div>
+                      <div className="w-7 h-7 rounded-md bg-[#E0AE2E]/15 flex items-center justify-center text-[#E0AE2E] text-xs font-bold">{b.initials.slice(0, 3)}</div>
                       <span className="text-white font-medium">{b.name}</span>
                     </div>
                   </td>
-                  <td className="px-5 py-3.5 text-[#D97706] font-medium">{b.bonusTitle}</td>
+                  <td className="px-5 py-3.5 text-[#E0AE2E] font-medium">{b.bonusTitle}</td>
                   <td className="px-5 py-3.5 text-white/60">{b.wagering}</td>
                   <td className="px-5 py-3.5 text-white/60">{b.minDeposit}</td>
                   <td className="px-5 py-3.5">
-                    <div className="flex">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={11} className={j < Math.round(b.rating) ? "fill-[#D97706] text-[#D97706]" : "fill-white/20 text-white/20"} />)}</div>
+                    <div className="flex">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={11} className={j < Math.round(b.rating) ? "fill-[#E0AE2E] text-[#E0AE2E]" : "fill-white/20 text-white/20"} />)}</div>
                   </td>
                   <td className="px-5 py-3.5 text-right">
-                    <button className="px-3 py-1.5 bg-[#D97706] text-[#0B0A09] rounded-md text-xs font-bold hover:bg-[#DC6803] transition-colors" data-testid={`button-table-claim-${b.name.toLowerCase().replace(/\s+/g, "-")}`}>Claim</button>
+                    <button className="px-3 py-1.5 bg-[#E0AE2E] text-[#0B0A09] rounded-md text-xs font-bold hover:bg-[#f0c040] transition-colors" data-testid={`button-table-claim-${b.name.toLowerCase().replace(/\s+/g, "-")}`}>Claim</button>
                   </td>
                 </tr>
               ))}
@@ -173,7 +173,7 @@ export default function CasinoBonuses() {
           <div className="flex flex-wrap gap-2">
             {countries.map((c) => (
               <button key={c} onClick={() => setCountryFilter(c)}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${countryFilter === c ? "bg-[#D97706] text-[#0B0A09]" : "bg-white/5 text-white/60 hover:bg-white/10 border border-white/10"}`}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${countryFilter === c ? "bg-[#E0AE2E] text-[#0B0A09]" : "bg-white/5 text-white/60 hover:bg-white/10 border border-white/10"}`}
                 data-testid={`filter-country-${c.toLowerCase().replace(/\s+/g, "-")}`}>{c}</button>
             ))}
           </div>
@@ -213,7 +213,7 @@ export default function CasinoBonuses() {
               { step: "4", title: "Make a Deposit", desc: "Meet the minimum deposit requirement and your bonus will be credited instantly." },
             ].map((s, i) => (
               <motion.div key={s.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center">
-                <div className="w-12 h-12 rounded-full bg-[#D97706] text-[#0B0A09] font-bold text-xl flex items-center justify-center mx-auto mb-3">{s.step}</div>
+                <div className="w-12 h-12 rounded-full bg-[#E0AE2E] text-[#0B0A09] font-bold text-xl flex items-center justify-center mx-auto mb-3">{s.step}</div>
                 <h3 className="text-white font-semibold mb-1">{s.title}</h3>
                 <p className="text-white/50 text-sm">{s.desc}</p>
               </motion.div>
@@ -225,19 +225,19 @@ export default function CasinoBonuses() {
       {/* ─── GAME TYPES ─── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">What to play</div>
+          <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">What to play</div>
           <h2 className="font-serif text-4xl font-bold text-white mb-4">Casino Game Types</h2>
           <p className="text-white/50 max-w-xl mx-auto">From classic slots to immersive live dealer tables — find games that match your style and budget.</p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {gameTypes.map((g, i) => (
             <motion.div key={g.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -4, borderColor: "rgba(217,119,6,0.25)" }}
+              whileHover={{ y: -4, borderColor: "rgba(224,174,46,0.25)" }}
               className="bg-[#111009] border border-white/8 rounded-2xl p-6 transition-all duration-300">
               <div className="text-4xl mb-3">{g.icon}</div>
               <div className="flex items-baseline gap-2 mb-1">
                 <h3 className="font-semibold text-white">{g.name}</h3>
-                <span className="text-[#D97706] text-xs font-bold">{g.count}</span>
+                <span className="text-[#E0AE2E] text-xs font-bold">{g.count}</span>
               </div>
               <p className="text-white/50 text-sm leading-relaxed">{g.desc}</p>
             </motion.div>
@@ -256,7 +256,7 @@ export default function CasinoBonuses() {
               <div className="flex flex-col gap-2">
                 {[
                   { label: "Excellent", value: "0–20x", color: "bg-green-500" },
-                  { label: "Good", value: "21–35x", color: "bg-[#D97706]" },
+                  { label: "Good", value: "21–35x", color: "bg-[#E0AE2E]" },
                   { label: "Average", value: "36–50x", color: "bg-orange-500" },
                   { label: "Poor", value: "50x+", color: "bg-red-500" },
                 ].map((item) => (
@@ -270,7 +270,7 @@ export default function CasinoBonuses() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="bg-[#111009] border border-white/8 rounded-2xl p-6">
-              <h3 className="font-semibold text-white mb-4 flex items-center gap-2"><Check size={16} className="text-[#D97706]" /> Key Terms Glossary</h3>
+              <h3 className="font-semibold text-white mb-4 flex items-center gap-2"><Check size={16} className="text-[#E0AE2E]" /> Key Terms Glossary</h3>
               <div className="flex flex-col gap-3 text-sm">
                 {[
                   { term: "RTP", def: "Return to Player — the theoretical payout % of a game" },
@@ -283,7 +283,7 @@ export default function CasinoBonuses() {
                   { term: "Max Win", def: "Maximum amount you can win from a bonus or single spin" },
                 ].map((item) => (
                   <div key={item.term} className="flex gap-3">
-                    <span className="text-[#D97706] font-semibold w-24 flex-shrink-0">{item.term}</span>
+                    <span className="text-[#E0AE2E] font-semibold w-24 flex-shrink-0">{item.term}</span>
                     <span className="text-white/55">{item.def}</span>
                   </div>
                 ))}
@@ -296,7 +296,7 @@ export default function CasinoBonuses() {
       {/* ─── VIP PROGRAMS ─── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">For serious players</div>
+          <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">For serious players</div>
           <h2 className="font-serif text-4xl font-bold text-white mb-4">VIP &amp; Loyalty Programs</h2>
           <p className="text-white/50 max-w-xl mx-auto">High-rollers and loyal players unlock exclusive perks that go far beyond standard welcome bonuses.</p>
         </motion.div>
@@ -313,9 +313,9 @@ export default function CasinoBonuses() {
             </motion.div>
           ))}
         </div>
-        <div className="mt-10 bg-[#D97706]/5 border border-[#D97706]/20 rounded-2xl p-6 md:p-8">
+        <div className="mt-10 bg-[#E0AE2E]/5 border border-[#E0AE2E]/20 rounded-2xl p-6 md:p-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-[#D97706]/15 flex items-center justify-center flex-shrink-0"><Gift size={28} className="text-[#D97706]" /></div>
+            <div className="w-14 h-14 rounded-2xl bg-[#E0AE2E]/15 flex items-center justify-center flex-shrink-0"><Gift size={28} className="text-[#E0AE2E]" /></div>
             <div>
               <h3 className="font-serif text-2xl font-bold text-white mb-2">How to Unlock VIP Status</h3>
               <p className="text-white/55 leading-relaxed">VIP status is typically earned through loyalty points accumulated with real-money wagers. Some casinos invite high-rollers directly. Points are earned per £1–10 wagered and can be redeemed for bonus cash, free spins, or physical gifts.</p>
@@ -328,7 +328,7 @@ export default function CasinoBonuses() {
       <section className="py-20 bg-[#080706]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">Life-changing wins</div>
+            <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">Life-changing wins</div>
             <h2 className="font-serif text-4xl font-bold text-white mb-4">Top Progressive Jackpot Slots</h2>
             <p className="text-white/50 max-w-xl mx-auto">These networked jackpot slots have paid out millions to lucky players. Available at multiple recommended casinos.</p>
           </motion.div>
@@ -342,7 +342,7 @@ export default function CasinoBonuses() {
               { name: "Beach Life", provider: "Playtech", record: "£3.4M", theme: "Summer Beach", rtp: "93.03%" },
             ].map((slot, i) => (
               <motion.div key={slot.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
-                whileHover={{ borderColor: "rgba(217,119,6,0.3)", y: -3 }}
+                whileHover={{ borderColor: "rgba(224,174,46,0.3)", y: -3 }}
                 className="bg-[#111009] border border-white/8 rounded-xl p-5 transition-all duration-300">
                 <div className="flex items-start justify-between mb-3">
                   <div>
@@ -350,7 +350,7 @@ export default function CasinoBonuses() {
                     <div className="text-white/40 text-xs">{slot.provider}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-[#D97706] font-bold text-sm">Record</div>
+                    <div className="text-[#E0AE2E] font-bold text-sm">Record</div>
                     <div className="text-white font-semibold">{slot.record}</div>
                   </div>
                 </div>
@@ -373,11 +373,11 @@ export default function CasinoBonuses() {
         <div className="flex flex-col gap-3">
           {faqs.map((faq, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-              className={`bg-[#111009] border rounded-xl overflow-hidden transition-all duration-300 ${openFaq === i ? "border-[#D97706]/30" : "border-white/8"}`}>
+              className={`bg-[#111009] border rounded-xl overflow-hidden transition-all duration-300 ${openFaq === i ? "border-[#E0AE2E]/30" : "border-white/8"}`}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 className="w-full flex items-center justify-between px-6 py-4 text-left" data-testid={`button-faq-casino-${i}`}>
                 <span className="font-medium text-white text-sm">{faq.q}</span>
-                {openFaq === i ? <ChevronUp size={15} className="text-[#D97706] flex-shrink-0" /> : <ChevronDown size={15} className="text-white/40 flex-shrink-0" />}
+                {openFaq === i ? <ChevronUp size={15} className="text-[#E0AE2E] flex-shrink-0" /> : <ChevronDown size={15} className="text-white/40 flex-shrink-0" />}
               </button>
               <AnimatePresence>
                 {openFaq === i && (
@@ -403,8 +403,8 @@ export default function CasinoBonuses() {
             ].map((item, i) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 className="bg-[#111009] border border-white/8 rounded-2xl p-6 text-center">
-                <div className="w-12 h-12 rounded-xl bg-[#D97706]/10 flex items-center justify-center mx-auto mb-4">
-                  <item.icon size={22} className="text-[#D97706]" />
+                <div className="w-12 h-12 rounded-xl bg-[#E0AE2E]/10 flex items-center justify-center mx-auto mb-4">
+                  <item.icon size={22} className="text-[#E0AE2E]" />
                 </div>
                 <h3 className="font-semibold text-white mb-2">{item.title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>

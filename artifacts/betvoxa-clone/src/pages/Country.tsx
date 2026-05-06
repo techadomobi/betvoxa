@@ -155,7 +155,7 @@ export default function Country() {
             <div className="flex items-center gap-4 mb-4">
               <span className="text-6xl">{data.flag}</span>
               <div>
-                <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-1">Country Guide</div>
+                <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-1">Country Guide</div>
                 <h1 className="font-serif text-5xl md:text-6xl font-bold text-white">{data.name}</h1>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function Country() {
               transition={{ delay: i * 0.08 }}
               className="bg-[#111009] border border-white/8 rounded-xl p-4"
             >
-              <div className="text-[#D97706] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
+              <div className="text-[#E0AE2E] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
               <div className="text-white font-medium text-sm">{item.value}</div>
             </motion.div>
           ))}
@@ -213,24 +213,24 @@ export default function Country() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                whileHover={{ borderColor: "rgba(217,119,6,0.3)" }}
+                whileHover={{ borderColor: "rgba(224,174,46,0.3)" }}
                 className="bg-[#111009] border border-white/8 rounded-xl p-5 flex items-center gap-4 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#D97706]/20 to-[#1B3950]/40 border border-white/10 flex items-center justify-center font-bold text-[#D97706] text-sm font-mono flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#E0AE2E]/20 to-[#1B3950]/40 border border-white/10 flex items-center justify-center font-bold text-[#E0AE2E] text-sm font-mono flex-shrink-0">
                   {site.initials}
                 </div>
                 <div className="flex-1">
                   <div className="font-semibold text-white">{site.name}</div>
-                  <div className="text-[#D97706] text-sm">{site.bonus}</div>
+                  <div className="text-[#E0AE2E] text-sm">{site.bonus}</div>
                   <div className="flex mt-1">
                     {Array.from({ length: 5 }).map((_, j) => (
-                      <span key={j} className={`text-[10px] ${j < Math.round(site.rating) ? "text-[#D97706]" : "text-white/20"}`}>★</span>
+                      <span key={j} className={`text-[10px] ${j < Math.round(site.rating) ? "text-[#E0AE2E]" : "text-white/20"}`}>★</span>
                     ))}
                   </div>
                 </div>
                 <motion.button
                   whileHover={{ scale: 1.04 }}
-                  className="px-4 py-2 bg-[#D97706] text-[#0B0A09] rounded-lg text-sm font-bold flex items-center gap-1 hover:bg-[#DC6803] transition-colors"
+                  className="px-4 py-2 bg-[#E0AE2E] text-[#0B0A09] rounded-lg text-sm font-bold flex items-center gap-1 hover:bg-[#f0c040] transition-colors"
                   data-testid={`button-visit-country-${site.name.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   Visit <ExternalLink size={11} />
@@ -250,7 +250,7 @@ export default function Country() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <Shield size={20} className="text-[#D97706]" />
+              <Shield size={20} className="text-[#E0AE2E]" />
               <h2 className="font-serif text-2xl font-bold text-white">Legal Framework</h2>
             </div>
             <p className="text-white/55 leading-relaxed">{data.legalInfo}</p>
@@ -265,7 +265,7 @@ export default function Country() {
             <div className="flex flex-col gap-3">
               {data.tips.map((tip) => (
                 <div key={tip} className="flex items-start gap-3">
-                  <Check size={15} className="text-[#D97706] mt-0.5 flex-shrink-0" />
+                  <Check size={15} className="text-[#E0AE2E] mt-0.5 flex-shrink-0" />
                   <span className="text-white/60 text-sm leading-relaxed">{tip}</span>
                 </div>
               ))}
@@ -282,7 +282,7 @@ export default function Country() {
             {data.paymentMethods.map((method) => (
               <span
                 key={method}
-                className="bg-[#111009] border border-white/10 text-white/70 px-4 py-2 rounded-lg text-sm hover:border-[#D97706]/30 transition-colors"
+                className="bg-[#111009] border border-white/10 text-white/70 px-4 py-2 rounded-lg text-sm hover:border-[#E0AE2E]/30 transition-colors"
               >
                 {method}
               </span>
@@ -301,7 +301,7 @@ export default function Country() {
               <Link key={key} href={`/country/${key}`}>
                 <motion.div
                   whileHover={{ scale: 1.04 }}
-                  className="flex items-center gap-2 bg-[#111009] border border-white/8 hover:border-[#D97706]/30 rounded-lg px-4 py-2.5 cursor-pointer transition-all"
+                  className="flex items-center gap-2 bg-[#111009] border border-white/8 hover:border-[#E0AE2E]/30 rounded-lg px-4 py-2.5 cursor-pointer transition-all"
                   data-testid={`link-other-country-${key}`}
                 >
                   <span className="text-xl">{country.flag}</span>
