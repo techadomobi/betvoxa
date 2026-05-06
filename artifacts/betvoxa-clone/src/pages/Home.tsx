@@ -173,7 +173,7 @@ export default function Home() {
             </Link>
             <Link href="/betting-sites" data-testid="button-hero-explore">
               <motion.button whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-                className="px-8 py-4 bg-white border border-[#1B3950] text-[#1F1A17] rounded-xl font-bold text-lg hover:bg-[#1B3950]/80 transition-all">
+                className="px-8 py-4 bg-[#1B3950] border border-[#1B3950] text-white rounded-xl font-bold text-lg hover:bg-[#1B3950]/80 transition-all">
                 Explore Sites
               </motion.button>
             </Link>
