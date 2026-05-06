@@ -12,9 +12,8 @@ export default function Footer() {
               <img
                 src="/logo.png"
                 alt="BetVoxa"
-                className="w-8 h-8 rounded-md object-contain"
+                className="w-12 h-22 rounded-md object-contain"
               />
-              <span className="font-serif text-xl font-bold text-white">BetVoxa</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs mb-6">
               Your trusted guide to the world's best betting and casino offers. We compare, review, and verify every operator so you can bet with confidence.
