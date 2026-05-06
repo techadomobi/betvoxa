@@ -132,7 +132,7 @@ export default function BettingSites() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(27,57,80,0.3),transparent)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">Expert Reviews</div>
+            <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">Expert Reviews</div>
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1F1A17] mb-4">Best Betting Sites</h1>
             <p className="text-[#5F554C] text-lg max-w-xl">Compare top sportsbooks, read expert reviews, and find the best odds for every bet. All operators independently verified.</p>
           </motion.div>
@@ -150,7 +150,7 @@ export default function BettingSites() {
           ].map((stat, i) => (
             <motion.div key={stat.label} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
               className="bg-white border border-[#ECE6DB] rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-[#E0AE2E] mb-1">{stat.value}</div>
+              <div className="text-2xl font-bold text-[#D97706] mb-1">{stat.value}</div>
               <div className="text-[#6F665D] text-xs">{stat.label}</div>
             </motion.div>
           ))}
@@ -164,25 +164,25 @@ export default function BettingSites() {
           {sportsbooks.map((site, i) => (
             <motion.div key={site.name}
               initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.45, delay: i * 0.05 }}
-              whileHover={{ borderColor: "rgba(224,174,46,0.3)" }}
-              className={`bg-white border rounded-2xl p-6 transition-all duration-300 ${site.featured ? "border-[#E0AE2E]/12" : "border-[#ECE6DB]"}`}>
+              whileHover={{ borderColor: "rgba(217,119,6,0.3)" }}
+              className={`bg-white border rounded-2xl p-6 transition-all duration-300 ${site.featured ? "border-[#D97706]/12" : "border-[#ECE6DB]"}`}>
               {site.featured && (
-                <div className="inline-flex items-center gap-1.5 bg-[#E0AE2E]/8 border border-[#E0AE2E]/12 text-[#E0AE2E] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-4">
-                  <Star size={9} className="fill-[#E0AE2E]" /> Editor's Choice
+                <div className="inline-flex items-center gap-1.5 bg-[#D97706]/8 border border-[#D97706]/12 text-[#D97706] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-4">
+                  <Star size={9} className="fill-[#D97706]" /> Editor's Choice
                 </div>
               )}
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#E0AE2E]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#E0AE2E] text-xl font-mono mb-3">{site.initials}</div>
-                  <div className="flex mb-1">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={12} className={j < Math.round(site.rating) ? "fill-[#E0AE2E] text-[#E0AE2E]" : "fill-white/20 text-[#C9C3B8]"} />)}</div>
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#D97706]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#D97706] text-xl font-mono mb-3">{site.initials}</div>
+                  <div className="flex mb-1">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={12} className={j < Math.round(site.rating) ? "fill-[#D97706] text-[#D97706]" : "fill-white/20 text-[#C9C3B8]"} />)}</div>
                   <div className="text-[#8D847A] text-xs">({site.reviews.toLocaleString()})</div>
                 </div>
                 <div className="flex-1">
                   <h3 className="font-serif font-bold text-[#1F1A17] text-2xl mb-1">{site.name}</h3>
-                  <div className="text-[#E0AE2E] font-medium text-sm mb-3">{site.bonus}</div>
+                  <div className="text-[#D97706] font-medium text-sm mb-3">{site.bonus}</div>
                   <p className="text-[#5F554C] text-sm leading-relaxed mb-4">{site.desc}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-4">
-                    {site.features.map((f) => <div key={f} className="flex items-center gap-2 text-sm text-[#5F554C]"><Check size={12} className="text-[#E0AE2E] flex-shrink-0" />{f}</div>)}
+                    {site.features.map((f) => <div key={f} className="flex items-center gap-2 text-sm text-[#5F554C]"><Check size={12} className="text-[#D97706] flex-shrink-0" />{f}</div>)}
                   </div>
                   <div className="grid grid-cols-2 gap-4 mb-3">
                     <div>
@@ -200,7 +200,7 @@ export default function BettingSites() {
                 </div>
                 <div className="flex flex-col gap-2 flex-shrink-0 justify-start md:items-end">
                   <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                    className="flex items-center gap-2 px-5 py-2.5 bg-[#E0AE2E] text-[#0B0A09] rounded-lg font-bold text-sm hover:bg-[#f0c040] transition-colors shadow-[0_0_16px_rgba(224,174,46,0.2)]"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-[#D97706] text-[#0B0A09] rounded-lg font-bold text-sm hover:bg-[#DC6803] transition-colors shadow-[0_0_16px_rgba(217,119,6,0.2)]"
                     data-testid={`button-visit-${site.name.toLowerCase().replace(/\s+/g, "-")}`}>
                     Visit Site <ExternalLink size={13} />
                   </motion.button>
@@ -220,7 +220,7 @@ export default function BettingSites() {
       <section className="bg-[#F3F1EA] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">Our methodology</div>
+            <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">Our methodology</div>
             <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">How We Rate Betting Sites</h2>
             <p className="text-[#6F665D] max-w-xl mx-auto">Our rigorous scoring system ensures every recommendation is backed by real testing and independent analysis.</p>
           </motion.div>
@@ -228,11 +228,11 @@ export default function BettingSites() {
             {methodologyPoints.map((p, i) => (
               <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                 className="bg-white border border-[#ECE6DB] rounded-xl p-5 flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[#E0AE2E]/8 flex items-center justify-center flex-shrink-0"><p.icon size={18} className="text-[#E0AE2E]" /></div>
+                <div className="w-10 h-10 rounded-lg bg-[#D97706]/8 flex items-center justify-center flex-shrink-0"><p.icon size={18} className="text-[#D97706]" /></div>
                 <div>
                   <div className="flex items-baseline gap-2 mb-1">
                     <span className="font-semibold text-[#1F1A17]">{p.title}</span>
-                    <span className="text-[#E0AE2E] text-sm font-bold">{p.pct}</span>
+                    <span className="text-[#D97706] text-sm font-bold">{p.pct}</span>
                   </div>
                   <p className="text-[#6F665D] text-sm leading-relaxed">{p.desc}</p>
                 </div>
@@ -245,7 +245,7 @@ export default function BettingSites() {
       {/* ─── BETTING GUIDE ─── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">Start here</div>
+          <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">Start here</div>
           <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">Beginner's Guide to Sports Betting</h2>
           <p className="text-[#6F665D] max-w-xl mx-auto">New to online betting? Follow these six steps to get started safely and claim your first bonus.</p>
         </motion.div>
@@ -253,7 +253,7 @@ export default function BettingSites() {
           {bettingGuide.map((s, i) => (
             <motion.div key={s.step} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
               className="bg-white border border-[#ECE6DB] rounded-2xl p-6 relative">
-              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#E0AE2E] text-[#0B0A09] font-bold text-sm flex items-center justify-center shadow-lg">{s.step}</div>
+              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#D97706] text-[#0B0A09] font-bold text-sm flex items-center justify-center shadow-lg">{s.step}</div>
               <h3 className="font-semibold text-[#1F1A17] text-lg mb-2 mt-1">{s.title}</h3>
               <p className="text-[#6F665D] text-sm leading-relaxed">{s.desc}</p>
             </motion.div>
@@ -265,7 +265,7 @@ export default function BettingSites() {
       <section className="py-20 bg-[#F3F1EA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">Find the best price</div>
+            <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">Find the best price</div>
             <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">Odds Comparison Snapshot</h2>
             <p className="text-[#6F665D] max-w-xl mx-auto">Small differences in odds add up significantly over time. Always compare before placing your bet.</p>
           </motion.div>
@@ -277,7 +277,7 @@ export default function BettingSites() {
                   <th className="text-center px-5 py-3 text-[#5F554C] font-medium">Bet365</th>
                   <th className="text-center px-5 py-3 text-[#5F554C] font-medium">DraftKings</th>
                   <th className="text-center px-5 py-3 text-[#5F554C] font-medium">FanDuel</th>
-                  <th className="text-center px-5 py-3 text-[#E0AE2E] font-medium">Betfair</th>
+                  <th className="text-center px-5 py-3 text-[#D97706] font-medium">Betfair</th>
                 </tr>
               </thead>
               <tbody>
@@ -288,7 +288,7 @@ export default function BettingSites() {
                     <tr key={row.event} className={`border-b border-[#EFE9DE] ${i % 2 === 0 ? "bg-[#FAF8F3]" : "bg-white"}`}>
                       <td className="px-5 py-3.5 text-[#4A433C] text-sm">{row.event}</td>
                       {[row.bet365, row.draftkings, row.fanDuel, row.betfair].map((odd, j) => (
-                        <td key={j} className={`text-center px-5 py-3.5 font-medium ${parseFloat(odd) === best ? "text-[#E0AE2E] font-bold" : "text-[#5F554C]"}`}>{odd}</td>
+                        <td key={j} className={`text-center px-5 py-3.5 font-medium ${parseFloat(odd) === best ? "text-[#D97706] font-bold" : "text-[#5F554C]"}`}>{odd}</td>
                       ))}
                     </tr>
                   );
@@ -321,7 +321,7 @@ export default function BettingSites() {
                   <td className="px-5 py-3.5 text-[#1F1A17] font-medium">{row.sport}</td>
                   <td className="px-5 py-3.5">
                     <div className="flex gap-2 flex-wrap">
-                      {row.sites.map((s) => <span key={s} className="bg-[#E0AE2E]/8 border border-[#E0AE2E]/12 text-[#E0AE2E] text-xs px-2 py-0.5 rounded-full">{s}</span>)}
+                      {row.sites.map((s) => <span key={s} className="bg-[#D97706]/8 border border-[#D97706]/12 text-[#D97706] text-xs px-2 py-0.5 rounded-full">{s}</span>)}
                     </div>
                   </td>
                   <td className="px-5 py-3.5 text-[#6F665D] text-xs">{row.markets}</td>
@@ -337,13 +337,13 @@ export default function BettingSites() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <div className="text-[#E0AE2E] text-sm font-semibold uppercase tracking-widest mb-3">Real-time action</div>
+              <div className="text-[#D97706] text-sm font-semibold uppercase tracking-widest mb-3">Real-time action</div>
               <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-4">Guide to Live (In-Play) Betting</h2>
               <p className="text-[#5F554C] mb-4 leading-relaxed">Live betting lets you place wagers after an event has started, with odds updating in real-time based on what's happening. It requires quick decision-making and a good understanding of the sport.</p>
               <p className="text-[#5F554C] mb-6 leading-relaxed">Bet365 is the market leader for live betting, offering streaming on 140,000+ events per year alongside live odds. The cash-out feature lets you settle bets before the event ends.</p>
               <div className="flex flex-col gap-2">
                 {["Watch the game — don't bet blind", "Use cash out to manage risk", "Odds move fast — be decisive", "Pre-match research gives you an edge"].map((tip) => (
-                  <div key={tip} className="flex items-center gap-2 text-sm text-[#5F554C]"><Check size={12} className="text-[#E0AE2E]" />{tip}</div>
+                  <div key={tip} className="flex items-center gap-2 text-sm text-[#5F554C]"><Check size={12} className="text-[#D97706]" />{tip}</div>
                 ))}
               </div>
             </motion.div>
@@ -359,7 +359,7 @@ export default function BettingSites() {
                   { name: "William Hill", feature: "Strong horse racing live markets" },
                 ].map((item) => (
                   <div key={item.name} className="flex items-center gap-3 py-2 border-b border-[#EFE9DE] last:border-0">
-                    <div className="w-8 h-8 rounded-lg bg-[#E0AE2E]/15 flex items-center justify-center text-[#E0AE2E] text-xs font-bold">{item.name.slice(0, 2)}</div>
+                    <div className="w-8 h-8 rounded-lg bg-[#D97706]/15 flex items-center justify-center text-[#D97706] text-xs font-bold">{item.name.slice(0, 2)}</div>
                     <div>
                       <div className="text-[#1F1A17] text-sm font-medium">{item.name}</div>
                       <div className="text-[#7A7268] text-xs">{item.feature}</div>
@@ -404,7 +404,7 @@ export default function BettingSites() {
                   <td className="px-5 py-3.5 text-green-400 text-xs font-medium">{row.dep}</td>
                   <td className="px-5 py-3.5 text-[#5F554C] text-xs">{row.with}</td>
                   <td className="px-5 py-3.5 text-[#5F554C] text-xs">{row.fee}</td>
-                  <td className={`px-5 py-3.5 text-xs font-medium ${row.bonus === "Yes" ? "text-[#E0AE2E]" : "text-[#8D847A]"}`}>{row.bonus}</td>
+                  <td className={`px-5 py-3.5 text-xs font-medium ${row.bonus === "Yes" ? "text-[#D97706]" : "text-[#8D847A]"}`}>{row.bonus}</td>
                 </tr>
               ))}
             </tbody>
@@ -422,11 +422,11 @@ export default function BettingSites() {
           <div className="flex flex-col gap-3">
             {faqs.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-                className={`bg-white border rounded-xl overflow-hidden transition-all ${openFaq === i ? "border-[#E0AE2E]/12" : "border-[#ECE6DB]"}`}>
+                className={`bg-white border rounded-xl overflow-hidden transition-all ${openFaq === i ? "border-[#D97706]/12" : "border-[#ECE6DB]"}`}>
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between px-6 py-4 text-left" data-testid={`button-faq-betting-${i}`}>
                   <span className="font-medium text-[#1F1A17] text-sm">{faq.q}</span>
-                  {openFaq === i ? <ChevronUp size={15} className="text-[#E0AE2E] flex-shrink-0" /> : <ChevronDown size={15} className="text-[#8D847A] flex-shrink-0" />}
+                  {openFaq === i ? <ChevronUp size={15} className="text-[#D97706] flex-shrink-0" /> : <ChevronDown size={15} className="text-[#8D847A] flex-shrink-0" />}
                 </button>
                 <AnimatePresence>
                   {openFaq === i && (
@@ -444,7 +444,7 @@ export default function BettingSites() {
       {/* ─── RESPONSIBLE GAMBLING ─── */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <Shield size={32} className="text-[#E0AE2E] mx-auto mb-4" />
+          <Shield size={32} className="text-[#D97706] mx-auto mb-4" />
           <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-4">Bet Responsibly</h2>
           <p className="text-[#6F665D] mb-6 leading-relaxed">Gambling should always be entertaining. Set deposit limits, take breaks, and never chase losses. All sites recommended by BetVoxa offer responsible gambling tools including self-exclusion, deposit limits, and reality checks.</p>
           <div className="flex flex-wrap justify-center gap-3">

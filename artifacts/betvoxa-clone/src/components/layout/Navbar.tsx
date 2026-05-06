@@ -39,7 +39,7 @@ export default function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl border-b border-[#E0AE2E]/12 shadow-lg shadow-black/5"
+            ? "bg-white/90 backdrop-blur-xl border-b border-[#D97706]/12 shadow-lg shadow-black/5"
             : "bg-transparent"
         }`}
         initial={{ y: -80 }}
@@ -102,7 +102,7 @@ export default function Navbar() {
                     >
                       {countries.map((c) => (
                         <Link key={c.code} href={`/country/${c.code}`} data-testid={`link-country-${c.code}`}>
-                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-[#4A433C] hover:bg-[#E0AE2E]/8 hover:text-[#8A6515] transition-colors cursor-pointer">
+                          <div className="flex items-center gap-2 px-4 py-3 text-sm text-[#4A433C] hover:bg-[#D97706]/8 hover:text-[#8A6515] transition-colors cursor-pointer">
                             <span>{c.flag}</span>
                             <span>{c.name}</span>
                           </div>
@@ -117,7 +117,7 @@ export default function Navbar() {
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
               <Link href="/casino-bonuses" data-testid="button-claim-bonus-nav">
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-[#E0AE2E] text-[#1F1A17] rounded-md text-sm font-bold hover:bg-[#f0c040] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.28)] active:scale-95">
+                <button className="flex items-center gap-2 px-5 py-2.5 bg-[#D97706] text-[#1F1A17] rounded-md text-sm font-bold hover:bg-[#DC6803] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.28)] active:scale-95">
                   <Trophy size={14} />
                   Claim Bonus
                 </button>
@@ -165,7 +165,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link href="/casino-bonuses">
-              <button className="mt-6 w-full py-4 bg-[#E0AE2E] text-[#1F1A17] rounded-lg font-bold text-lg hover:bg-[#f0c040] transition-colors">
+              <button className="mt-6 w-full py-4 bg-[#D97706] text-[#1F1A17] rounded-lg font-bold text-lg hover:bg-[#DC6803] transition-colors">
                 Claim Bonus
               </button>
             </Link>

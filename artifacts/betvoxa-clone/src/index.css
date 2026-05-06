@@ -163,9 +163,9 @@
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 10px rgba(224, 174, 46, 0.35);
+    text-shadow: 0 0 10px rgba(217, 119, 6, 0.35);
   }
   .box-glow {
-    box-shadow: 0 0 15px rgba(224, 174, 46, 0.14);
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.14);
   }
 }
