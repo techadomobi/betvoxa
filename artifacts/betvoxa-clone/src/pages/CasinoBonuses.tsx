@@ -187,7 +187,7 @@ export default function CasinoBonuses() {
           </div>
         </div>
         <div className="text-white/40 text-sm mb-5">Showing <span className="text-white">{filtered.length}</span> bonuses</div>
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((bonus, i) => <BonusCard key={bonus.name} rank={i + 1} {...bonus} />)}
           {filtered.length === 0 && (
             <div className="text-center py-16 text-white/30">

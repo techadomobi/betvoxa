@@ -192,7 +192,7 @@ export default function Country() {
         <h2 className="font-serif text-3xl font-bold text-white mb-6">
           Top Casino Bonuses in {data.name}
         </h2>
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {data.topBonuses.map((bonus, i) => (
             <BonusCard key={bonus.name} rank={i + 1} {...bonus} />
           ))}

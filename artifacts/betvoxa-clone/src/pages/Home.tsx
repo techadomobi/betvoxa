@@ -234,7 +234,7 @@ export default function Home() {
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Top Casino Offers</h2>
           <p className="text-white/50 text-lg max-w-xl mx-auto">Exclusive bonuses from the world's leading operators, verified and updated daily.</p>
         </motion.div>
-        <div className="flex flex-col gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {topCasinos.map((casino) => <BonusCard key={casino.name} {...casino} />)}
         </div>
         <div className="text-center mt-8">
