@@ -12,12 +12,7 @@ export default function BlogDetail() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const endpoint = import.meta.env.VITE_BLOG_LIST_API as string | undefined;
-
-        if (!endpoint) {
-          setBlog(fallbackBlogResponse.data.find((post) => post.slug === slug) || null);
-          return;
-        }
+        const endpoint = (import.meta.env.VITE_BLOG_LIST_API as string | undefined) || "/blogs.json";
 
         const response = await fetch(endpoint);
         const payload: BlogApiResponse = await response.json();

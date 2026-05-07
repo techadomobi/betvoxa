@@ -8,33 +8,23 @@ export default function Blog() {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const [usingFallback, setUsingFallback] = useState(false);
 
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const endpoint = import.meta.env.VITE_BLOG_LIST_API as string | undefined;
-
-        if (!endpoint) {
-          setBlogs(fallbackBlogResponse.data);
-          setUsingFallback(true);
-          return;
-        }
+        const endpoint = (import.meta.env.VITE_BLOG_LIST_API as string | undefined) || "/blogs.json";
 
         const response = await fetch(endpoint);
         const payload: BlogApiResponse = await response.json();
 
         if (response.ok && payload?.responseCode === 200 && Array.isArray(payload?.data)) {
           setBlogs(payload.data);
-          setUsingFallback(false);
           return;
         }
 
         setBlogs(fallbackBlogResponse.data);
-        setUsingFallback(true);
       } catch {
         setBlogs(fallbackBlogResponse.data);
-        setUsingFallback(true);
       } finally {
         setLoading(false);
       }
@@ -92,11 +82,6 @@ export default function Blog() {
 
       {/* Blog Grid */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {usingFallback && (
-          <div className="mb-6 rounded-lg border border-[#F97316]/30 bg-[#F97316]/10 px-4 py-3 text-sm text-[#8A4A0E]">
-            API not configured. Showing fallback data from the real response structure.
-          </div>
-        )}
         {loading ? (
           <div className="text-center py-12">
             <p className="text-[#5F554C]">Loading articles...</p>
