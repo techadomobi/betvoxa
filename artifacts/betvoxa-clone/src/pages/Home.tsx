@@ -157,7 +157,7 @@ export default function Home() {
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
             className="font-serif text-5xl md:text-7xl font-bold text-[#1F1A17] leading-tight mb-6">
-            Best Betting <span style={{ fontFamily: 'Playfair Display' }} className="text-[#F97316] text-glow">& </span> <span className="text-[#F97316] text-glow">Casino Offers</span> Worldwide
+            Best Betting <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-[#F97316] text-glow">& </span> <span className="text-[#F97316] text-glow">Casino Offers</span> Worldwide
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.45 }}
             className="text-[#5F554C] text-lg md:text-xl max-w-2xl mx-auto mb-10">
