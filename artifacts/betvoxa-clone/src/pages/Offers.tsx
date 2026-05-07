@@ -62,7 +62,12 @@ const Offers: React.FC = () => {
 
         try {
           response = await fetch(apiUrl);
-          if (!response.ok) throw new Error('API call failed');
+          // If the remote returns HTML (e.g. a 404 HTML page) or non-JSON, fall back to local file
+          const contentType = response.headers.get('content-type') || '';
+          if (!response.ok || !contentType.includes('application/json')) {
+            // try local fallback
+            response = await fetch('/offers.json');
+          }
         } catch (e) {
           // fallback to local file when API unreachable
           response = await fetch('/offers.json');
@@ -72,10 +77,21 @@ const Offers: React.FC = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const data: OffersResponse = await response.json();
+        // Try to parse JSON, but be defensive against unexpected shapes (HTML, plain text)
+        let parsed: any;
+        try {
+          parsed = await response.json();
+        } catch (e) {
+          // If parsing fails, try the local file explicitly
+          const fallback = await fetch('/offers.json');
+          parsed = await fallback.json();
+        }
 
-        if (data.responseCode === 200 && data.responseResult) {
-          setOffers(data.responseResult);
+        // Accept either the wrapped API shape or a plain array of offers
+        if (Array.isArray(parsed)) {
+          setOffers(parsed as Offer[]);
+        } else if (parsed && typeof parsed === 'object' && 'responseCode' in parsed && parsed.responseResult) {
+          setOffers(parsed.responseResult as Offer[]);
         } else {
           throw new Error('Invalid response format');
         }
