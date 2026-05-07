@@ -2,50 +2,45 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Calendar, ArrowRight, Search } from "lucide-react";
-
-interface BlogPost {
-  _id: string;
-  title: string;
-  excerpt: string;
-  coverImage: string;
-  slug: string;
-  category: string;
-  date: string;
-  writerName: string;
-  seoTitle: string;
-}
+import { fallbackBlogResponse, BlogApiResponse, BlogPost } from "@/lib/blogData";
 
 export default function Blog() {
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [usingFallback, setUsingFallback] = useState(false);
 
   useEffect(() => {
-    // Hardcoded blog data - replace with API call when backend is ready
-    const blogData = [
-      {
-        _id: "69fa3d945de96c278a7d240f",
-        title: "RocketPlay Casino Australia: The Ultimate Review & Guide 2026",
-        excerpt: "Looking for the best online casino in Australia for real money in 2026? Read our in-depth RocketPlay Australia review covering welcome bonuses, free spins, online pokies, live casino games, fast payouts, crypto banking, and the exclusive Zillion Coins VIP loyalty program.",
-        coverImage: "https://click.creditsdeal.com/coverImage_1778007444401.jpeg",
-        slug: "rocketplay-casino-australia-review-2026",
-        category: "Online Casino Reviews",
-        date: "2026-05-05T18:57:24.413Z",
-        writerName: "Kevin",
-      },
-      {
-        _id: "69f5c29f2c053e8930c08f2b",
-        title: "Test Casino",
-        excerpt: "test",
-        coverImage: "https://click.creditsdeal.com/coverImage_1777713823317.png",
-        slug: "tes-blog-gamezhunt",
-        category: "games",
-        date: "2026-05-02T09:23:43.335Z",
-        writerName: "Shubham Dholke",
-      },
-    ];
-    setBlogs(blogData);
-    setLoading(false);
+    const fetchBlogs = async () => {
+      try {
+        const endpoint = import.meta.env.VITE_BLOG_LIST_API as string | undefined;
+
+        if (!endpoint) {
+          setBlogs(fallbackBlogResponse.data);
+          setUsingFallback(true);
+          return;
+        }
+
+        const response = await fetch(endpoint);
+        const payload: BlogApiResponse = await response.json();
+
+        if (response.ok && payload?.responseCode === 200 && Array.isArray(payload?.data)) {
+          setBlogs(payload.data);
+          setUsingFallback(false);
+          return;
+        }
+
+        setBlogs(fallbackBlogResponse.data);
+        setUsingFallback(true);
+      } catch {
+        setBlogs(fallbackBlogResponse.data);
+        setUsingFallback(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlogs();
   }, []);
 
   const filteredBlogs = blogs.filter(
@@ -97,6 +92,11 @@ export default function Blog() {
 
       {/* Blog Grid */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {usingFallback && (
+          <div className="mb-6 rounded-lg border border-[#F97316]/30 bg-[#F97316]/10 px-4 py-3 text-sm text-[#8A4A0E]">
+            API not configured. Showing fallback data from the real response structure.
+          </div>
+        )}
         {loading ? (
           <div className="text-center py-12">
             <p className="text-[#5F554C]">Loading articles...</p>

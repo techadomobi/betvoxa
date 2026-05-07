@@ -1,29 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
-import { Calendar, User, ArrowLeft, Share2 } from "lucide-react";
-
-interface ContentBlock {
-  type: "paragraph" | "image" | "heading";
-  text?: string;
-  url?: string;
-  _id: string;
-}
-
-interface BlogPost {
-  _id: string;
-  title: string;
-  content: ContentBlock[];
-  excerpt: string;
-  coverImage: string;
-  slug: string;
-  category: string;
-  date: string;
-  writerName: string;
-  seoTitle: string;
-  metaDescription: string;
-  seoKeywords: string[];
-}
+import { User, ArrowLeft, Share2 } from "lucide-react";
+import { fallbackBlogResponse, BlogApiResponse, BlogPost } from "@/lib/blogData";
 
 export default function BlogDetail() {
   const { slug } = useParams() as { slug: string };
@@ -31,63 +10,32 @@ export default function BlogDetail() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const allBlogs: Record<string, BlogPost> = {
-      "rocketplay-casino-australia-review-2026": {
-        _id: "69fa3d945de96c278a7d240f",
-        title: "RocketPlay Casino Australia: The Ultimate Review & Guide 2026",
-        excerpt: "Looking for the best online casino in Australia for real money in 2026? Read our in-depth RocketPlay Australia review covering welcome bonuses, free spins, online pokies, live casino games, fast payouts, crypto banking, and the exclusive Zillion Coins VIP loyalty program.",
-        coverImage: "https://click.creditsdeal.com/coverImage_1778007444401.jpeg",
-        slug: "rocketplay-casino-australia-review-2026",
-        category: "Online Casino Reviews",
-        date: "2026-05-05T18:57:24.413Z",
-        writerName: "Kevin",
-        seoTitle: "RocketPlay Casino Australia Review 2026 – Bonuses, Pokies & Real Money Guide",
-        metaDescription: "Discover why RocketPlay is the best online casino Australia has to offer in 2026. Claim up to AUD $1,100 welcome bonus, 325 free spins, fast crypto payouts, 3000+ online pokies, live dealer games & Zillion Coins rewards.",
-        seoKeywords: ["online casino bonus Australia", "free spins Australia casino", "welcome bonus casino AU", "no deposit bonus Australia", "best pokies Australia", "live casino Australia", "fast payout online casino Australia"],
-        content: [
-          {
-            type: "paragraph",
-            text: "<h3 style=\"font-weight: 700; font-size: 20px; color: rgb(51, 51, 51); margin-bottom: 10px;\">Introduction: Why Australian Players Are Choosing RocketPlay</h3><p style=\"color: rgb(51, 51, 51);\">When it comes to finding a <span style=\"font-weight: 700;\">trusted online casino Australia</span> players can rely on, the market has never been more competitive. Among the <span style=\"font-weight: 700;\">Australian online casino sites</span>, one name keeps rising to the top in 2026: <span style=\"font-weight: 700;\">RocketPlay Australia</span>.</p>",
-            _id: "69fa3d945de96c278a7d2410",
-          },
-          {
-            type: "paragraph",
-            text: "<h3 style=\"font-weight: 700; font-size: 20px; color: rgb(51, 51, 51); margin-bottom: 10px;\">What Is RocketPlay? An Overview for Australian Players</h3><p style=\"color: rgb(51, 51, 51);\"><span style=\"font-weight: 700;\">RocketPlay casino Australia</span> is a feature-rich online gambling platform designed to deliver a premium experience for players across Australia. Built with Aussie players firmly in mind, the site combines thousands of <span style=\"font-weight: 700;\">slot games Australia</span>, a full-scale <span style=\"font-weight: 700;\">live casino Australia</span> lobby, flexible low-deposit banking, and one of the most rewarding bonus structures in the market.</p>",
-            _id: "69fa3d945de96c278a7d2411",
-          },
-          {
-            type: "paragraph",
-            text: "<h3 style=\"font-weight: 700; font-size: 20px; color: rgb(51, 51, 51); margin-bottom: 10px;\">Key Facts at a Glance</h3><ul style=\"color: rgb(51, 51, 51);\"><li><span style=\"font-weight: 700;\">Overall Rating:</span> 9.4 / 10</li><li><span style=\"font-weight: 700;\">Game Library:</span> 3,000+ titles</li><li><span style=\"font-weight: 700;\">Welcome Bonus:</span> Up to AUD $1,100 + 325 Free Spins</li><li><span style=\"font-weight: 700;\">Minimum Deposit:</span> AUD $10</li><li><span style=\"font-weight: 700;\">Payout Speed:</span> Under 1 hour (crypto)</li></ul>",
-            _id: "69fa3d945de96c278a7d2412",
-          },
-        ],
-      },
-      "tes-blog-gamezhunt": {
-        _id: "69f5c29f2c053e8930c08f2b",
-        title: "Test Casino",
-        excerpt: "test",
-        coverImage: "https://click.creditsdeal.com/coverImage_1777713823317.png",
-        slug: "tes-blog-gamezhunt",
-        category: "games",
-        date: "2026-05-02T09:23:43.335Z",
-        writerName: "Shubham Dholke",
-        seoTitle: "Test",
-        metaDescription: "test",
-        seoKeywords: [],
-        content: [
-          {
-            type: "paragraph",
-            text: "<p>test casino</p>",
-            _id: "69f5c29f2c053e8930c08f2c",
-          },
-        ],
-      },
+    const fetchBlog = async () => {
+      try {
+        const endpoint = import.meta.env.VITE_BLOG_LIST_API as string | undefined;
+
+        if (!endpoint) {
+          setBlog(fallbackBlogResponse.data.find((post) => post.slug === slug) || null);
+          return;
+        }
+
+        const response = await fetch(endpoint);
+        const payload: BlogApiResponse = await response.json();
+
+        if (response.ok && payload?.responseCode === 200 && Array.isArray(payload?.data)) {
+          setBlog(payload.data.find((post) => post.slug === slug) || null);
+          return;
+        }
+
+        setBlog(fallbackBlogResponse.data.find((post) => post.slug === slug) || null);
+      } catch {
+        setBlog(fallbackBlogResponse.data.find((post) => post.slug === slug) || null);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    if (slug && allBlogs[slug]) {
-      setBlog(allBlogs[slug]);
-    }
-    setLoading(false);
+    fetchBlog();
   }, [slug]);
 
   if (loading) {
