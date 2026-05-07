@@ -35,6 +35,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-[#F97316]">Home</Link></li>
               <li><Link href="/casino-bonuses" className="hover:text-[#F97316]">Casino bonuses</Link></li>
               <li><Link href="/betting-sites" className="hover:text-[#F97316]">Betting sites</Link></li>
+              <li><Link href="/offers" className="hover:text-[#F97316]">Offers</Link></li>
               <li><Link href="/blog" className="hover:text-[#F97316]">Blog</Link></li>
             </ul>
           </div>

@@ -15,6 +15,7 @@ import TermsAndConditions from "@/pages/TermsAndConditions";
 import ResponsibleGambling from "@/pages/ResponsibleGambling";
 import Blog from "@/pages/Blog";
 import BlogDetail from "@/pages/BlogDetail";
+import Offers from "@/pages/Offers";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ function Router() {
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms-and-conditions" component={TermsAndConditions} />
         <Route path="/responsible-gambling" component={ResponsibleGambling} />
+        <Route path="/offers" component={Offers} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
         <Route component={NotFound} />
