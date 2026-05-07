@@ -12,6 +12,7 @@ import BettingSites from "@/pages/BettingSites";
 import Country from "@/pages/Country";
 import Privacy from "@/pages/Privacy";
 import TermsAndConditions from "@/pages/TermsAndConditions";
+import ResponsibleGambling from "@/pages/ResponsibleGambling";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/country/:code" component={Country} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms" component={TermsAndConditions} />
+        <Route path="/responsible-gambling" component={ResponsibleGambling} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

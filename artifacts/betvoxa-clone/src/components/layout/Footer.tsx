@@ -18,7 +18,7 @@ export default function Footer() {
                     src="/logo.png"
                     alt="BetVoxa"
                     onError={() => setLogoError(true)}
-                    className="h-49 w-auto rounded-md object-contain group-hover:scale-105 transition-transform"
+                    className="h-10 w-auto rounded-md object-contain group-hover:scale-105 transition-transform"
                   />
                 ) : (
                   <div className="w-10 h-10 bg-[#F1C40F] rounded flex items-center justify-center text-black font-bold">B</div>
@@ -42,10 +42,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-[#FFFFFF] mb-4">Countries</h4>
             <ul className="space-y-3 text-[#CFCFCF] text-sm">
-              <li>United Kingdom</li>
-              <li>United States</li>
-              <li>Australia</li>
-              <li>Canada</li>
+              <li><Link href="/country/united-kingdom" className="hover:text-white">United Kingdom</Link></li>
+              <li><Link href="/country/united-states" className="hover:text-white">United States</Link></li>
+              <li><Link href="/country/australia" className="hover:text-white">Australia</Link></li>
+              <li><Link href="/country/canada" className="hover:text-white">Canada</Link></li>
             </ul>
           </div>
 
