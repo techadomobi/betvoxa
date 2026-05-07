@@ -32,6 +32,7 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/casino-bonuses", label: "Casino Bonuses" },
     { href: "/betting-sites", label: "Betting Sites" },
+    { href: "/blog", label: "Blog" },
   ];
 
   return (

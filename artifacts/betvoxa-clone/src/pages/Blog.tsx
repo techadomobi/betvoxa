@@ -21,23 +21,31 @@ export default function Blog() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await fetch(
-          "https://api.example.com/blog?page=1&limit=10"
-        );
-        if (response.ok) {
-          const data = await response.json();
-          setBlogs(data.data || []);
-        }
-      } catch (error) {
-        console.error("Failed to fetch blogs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
+    // Hardcoded blog data - replace with API call when backend is ready
+    const blogData = [
+      {
+        _id: "69fa3d945de96c278a7d240f",
+        title: "RocketPlay Casino Australia: The Ultimate Review & Guide 2026",
+        excerpt: "Looking for the best online casino in Australia for real money in 2026? Read our in-depth RocketPlay Australia review covering welcome bonuses, free spins, online pokies, live casino games, fast payouts, crypto banking, and the exclusive Zillion Coins VIP loyalty program.",
+        coverImage: "https://click.creditsdeal.com/coverImage_1778007444401.jpeg",
+        slug: "rocketplay-casino-australia-review-2026",
+        category: "Online Casino Reviews",
+        date: "2026-05-05T18:57:24.413Z",
+        writerName: "Kevin",
+      },
+      {
+        _id: "69f5c29f2c053e8930c08f2b",
+        title: "Test Casino",
+        excerpt: "test",
+        coverImage: "https://click.creditsdeal.com/coverImage_1777713823317.png",
+        slug: "tes-blog-gamezhunt",
+        category: "games",
+        date: "2026-05-02T09:23:43.335Z",
+        writerName: "Shubham Dholke",
+      },
+    ];
+    setBlogs(blogData);
+    setLoading(false);
   }, []);
 
   const filteredBlogs = blogs.filter(
