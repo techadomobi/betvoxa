@@ -44,6 +44,9 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
+    // Disable sourcemaps in production builds to avoid "Can't resolve original location"
+    // errors from Rollup when Vercel or environment strips/changes source paths.
+    sourcemap: false,
   },
   server: {
     port,
