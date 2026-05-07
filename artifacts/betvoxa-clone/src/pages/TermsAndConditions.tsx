@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { AlertCircle, FileText, Mail, Globe, CheckCircle2, Info, Scale, ExternalLink, Warning } from "lucide-react";
+import { AlertCircle, BookOpen, FileText, Mail, Globe, CheckCircle2, Info, Scale, ExternalLink, Warning } from "lucide-react";
 
 export default function TermsAndConditions() {
   const containerVariants = {
