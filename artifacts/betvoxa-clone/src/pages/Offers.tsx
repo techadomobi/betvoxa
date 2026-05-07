@@ -144,9 +144,14 @@ const Offers: React.FC = () => {
   const availableOffers = filteredOffers.filter((o) => isOfferAvailable(o));
   const restrictedOffers = filteredOffers.filter((o) => !isOfferAvailable(o));
 
-  if (restrictedOffers.length > 0 && availableOffers.length === 0) {
-    setShowGeoWarning(true);
-  }
+  // Update geo warning when offers change
+  useEffect(() => {
+    if (restrictedOffers.length > 0 && availableOffers.length === 0) {
+      setShowGeoWarning(true);
+    } else {
+      setShowGeoWarning(false);
+    }
+  }, [availableOffers, restrictedOffers]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
