@@ -57,19 +57,14 @@ const Offers: React.FC = () => {
       setError(null);
 
       try {
-        const apiUrl = import.meta.env.VITE_OFFERS_API;
+        const apiUrl = import.meta.env.VITE_OFFERS_API || 'https://betvoxa-api-server.vercel.app/casinos';
         let response: Response;
 
-        if (apiUrl) {
-          try {
-            response = await fetch(apiUrl);
-            if (!response.ok) {
-              throw new Error('API call failed');
-            }
-          } catch {
-            response = await fetch('/offers.json');
-          }
-        } else {
+        try {
+          response = await fetch(apiUrl);
+          if (!response.ok) throw new Error('API call failed');
+        } catch (e) {
+          // fallback to local file when API unreachable
           response = await fetch('/offers.json');
         }
 

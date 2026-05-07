@@ -69,7 +69,9 @@ export default function Navbar() {
                     className={`px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer ${
                       location === link.href
                         ? "text-[#F97316]"
-                        : "text-[#1F1A17] hover:text-[#F97316]"
+                        : scrolled
+                        ? "text-[#1F1A17] hover:text-[#F97316]"
+                        : "text-white hover:text-[#F97316]"
                     }`}
                   >
                     {link.label}
@@ -84,7 +86,9 @@ export default function Navbar() {
                 onMouseLeave={() => setCountryDropdown(false)}
               >
                 <button
-                  className="flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-[#1F1A17] hover:text-[#F97316] transition-colors"
+                  className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    scrolled ? 'text-[#1F1A17] hover:text-[#F97316]' : 'text-white hover:text-[#F97316]'
+                  }`}
                   data-testid="button-country-dropdown"
                 >
                   Country Pages
@@ -118,17 +122,17 @@ export default function Navbar() {
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
-              <Link href="/casino-bonuses" data-testid="button-claim-bonus-nav">
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-[#F97316] text-[#1F1A17] rounded-md text-sm font-bold hover:bg-[#DC6803] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.28)] active:scale-95">
-                  <Trophy size={14} />
-                  Claim Bonus
-                </button>
-              </Link>
+                <Link href="/casino-bonuses" data-testid="button-claim-bonus-nav">
+                  <button className={`flex items-center gap-2 px-5 py-2.5 bg-[#F97316] ${scrolled ? 'text-[#1F1A17]' : 'text-white'} rounded-md text-sm font-bold hover:bg-[#DC6803] transition-all hover:shadow-[0_0_20px_rgba(224,174,46,0.28)] active:scale-95`}>
+                    <Trophy size={14} />
+                    Claim Bonus
+                  </button>
+                </Link>
             </div>
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden p-2 text-[#1F1A17] hover:text-[#F97316]"
+              className={`md:hidden p-2 ${scrolled ? 'text-[#1F1A17] hover:text-[#F97316]' : 'text-white hover:text-[#F97316]'}`}
               onClick={() => setMobileOpen(!mobileOpen)}
               data-testid="button-mobile-menu"
             >
