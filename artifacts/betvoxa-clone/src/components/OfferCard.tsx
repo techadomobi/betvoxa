@@ -46,7 +46,7 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, userCountry, geoRestricted
         {/* Left Section - Logo with Category Badge */}
         <div className="relative w-full md:w-2/5 bg-gray-100">
           {/* Category Badge - Red Ribbon on Left */}
-          <div className="absolute top-0 left-0 bg-red-600 text-white px-3 py-2 font-bold text-xs md:text-sm z-10 whitespace-nowrap transform -rotate-45 -translate-x-12 translate-y-4 origin-left md:rotate-0 md:translate-x-0 md:translate-y-0 md:transform-none md:w-full md:rounded-none md:px-4 md:py-2">
+          <div className="absolute top-0 left-0 bg-[#F97316] text-white px-3 py-2 font-bold text-xs md:text-sm z-10 whitespace-nowrap transform -rotate-45 -translate-x-12 translate-y-4 origin-left md:rotate-0 md:translate-x-0 md:translate-y-0 md:transform-none md:w-full md:rounded-none md:px-4 md:py-2">
             {categoryBadge}
           </div>
 
@@ -144,7 +144,7 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, userCountry, geoRestricted
             className={`w-full py-2.5 md:py-3 rounded-lg font-bold text-white transition-all duration-200 font-poppins uppercase text-sm md:text-base ${
               geoRestricted
                 ? 'bg-gray-400 cursor-not-allowed opacity-60'
-                : 'bg-red-600 hover:bg-red-700 active:scale-95'
+                : 'bg-[#F97316] hover:bg-[#DC6803] active:scale-95'
             }`}
           >
             {geoRestricted ? 'Not Available' : offer.buttonName || 'Join Now'}

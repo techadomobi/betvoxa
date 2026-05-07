@@ -180,11 +180,7 @@ const Offers: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center gap-2 mb-6 p-3 bg-blue-50 border border-blue-200 rounded-lg"
           >
-            <Globe size={18} className="text-blue-600" />
-            <p className="text-sm text-blue-800">
-              Showing offers available for <strong>{userCountry}</strong>
-            </p>
-          </motion.div>
+         </motion.div>
         )}
 
         {/* Search Section */}
