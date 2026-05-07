@@ -54,7 +54,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-[#FFFFFF] mb-4">Legal</h4>
             <ul className="space-y-3 text-[#CFCFCF] text-sm">
               <li><Link href="/privacy" className="hover:text-white">Privacy policy</Link></li>
-              <li><Link href="/terms" className="hover:text-white">Terms & conditions</Link></li>
+              <li><Link href="/terms-and-conditions" className="hover:text-white">Terms & conditions</Link></li>
               <li><Link href="/responsible-gambling" className="hover:text-white">Responsible gambling</Link></li>
             </ul>
           </div>
