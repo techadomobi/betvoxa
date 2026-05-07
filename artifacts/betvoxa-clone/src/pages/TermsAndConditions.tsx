@@ -1,350 +1,229 @@
 import { motion } from "framer-motion";
+import {
+  AlertCircle,
+  BookOpen,
+  CheckCircle2,
+  FileText,
+  Globe,
+  Info,
+  Lock,
+  Mail,
+  Scale,
+  Shield,
+  TriangleAlert,
+} from "lucide-react";
 
 export default function TermsAndConditions() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
   const sections = [
     {
+      icon: CheckCircle2,
       title: "1. Acceptance of Terms",
-      content: [
-        "By accessing or using BetVoxa.com, you agree to comply with these Terms & Conditions. If you do not agree, please discontinue use of the website.",
+      body: [
+        "By accessing or using BetVoxa, you agree to these Terms & Conditions and all applicable laws.",
+        "If you do not agree with any part of these terms, please discontinue use of the website.",
       ],
     },
     {
-      title: "2. Nature of Service",
-      content: [
-        "BetVoxa is an informational and promotional platform that provides:",
-        "• Reviews",
-        "• Bonus information",
-        "• Deals and offers",
-        "• Promotional content",
-        "We do not own, operate, or provide any casino or gaming services.",
+      icon: Info,
+      title: "2. Service Scope",
+      body: [
+        "BetVoxa is an informational and marketing platform that publishes bonus offers, reviews, and comparisons.",
+        "We do not operate gambling services, process bets, hold user funds, or manage player accounts.",
       ],
     },
     {
-      title: "3. Third-Party Platforms",
-      content: [
-        "• Our website contains links to third-party websites",
-        "• We do not control or manage these platforms",
-        "• Any interaction, registration, or transaction is between you and the third party",
-        "• BetVoxa is not responsible for: Losses or damages, payment issues, or account-related disputes",
+      icon: Globe,
+      title: "3. Third-Party Websites",
+      body: [
+        "Our content may contain links to third-party operators and partners.",
+        "Your relationship with those services is independent from BetVoxa and governed by their own policies.",
+        "BetVoxa is not responsible for third-party losses, account restrictions, payout disputes, or policy changes.",
       ],
     },
     {
-      title: "4. No Guarantees",
-      content: [
-        "• We do not guarantee winnings, profits, or outcomes",
-        "• Bonuses and offers are subject to third-party terms",
-        "• Information may change without notice",
+      icon: Shield,
+      title: "4. Eligibility and Legal Use",
+      body: [
+        "You confirm that you are of legal gambling age in your jurisdiction and that online gambling is lawful where you reside.",
+        "It is your responsibility to verify local regulations before registering or depositing on any external platform.",
       ],
     },
     {
-      title: "5. User Responsibilities",
-      content: [
-        "By using this website, you confirm that:",
-        "• You are of legal age in your jurisdiction",
-        "• Online gaming is legal in your location",
-        "• You understand the risks associated with gambling",
+      icon: BookOpen,
+      title: "5. Content and Intellectual Property",
+      body: [
+        "All text, branding, graphics, and editorial material on BetVoxa are protected intellectual property.",
+        "Copying, distributing, modifying, or republishing website content without written permission is prohibited.",
       ],
     },
     {
-      title: "6. Intellectual Property",
-      content: [
-        "All content on BetVoxa (text, design, branding) is protected and may not be copied or reused without permission.",
+      icon: TriangleAlert,
+      title: "6. No Warranties",
+      body: [
+        "All information is provided on an as-is and as-available basis.",
+        "Bonus details, promotions, and terms may change without notice by third-party operators.",
+        "We do not guarantee accuracy, uninterrupted availability, or outcomes associated with any offer.",
       ],
     },
     {
+      icon: AlertCircle,
       title: "7. Limitation of Liability",
-      content: [
-        "BetVoxa shall not be held liable for:",
-        "• Any financial losses",
-        "• Third-party actions",
-        "• Website downtime or inaccuracies",
+      body: [
+        "To the maximum extent permitted by law, BetVoxa is not liable for direct, indirect, incidental, or consequential damages.",
+        "This includes losses resulting from reliance on third-party content, platform outages, or incorrect promotional details.",
       ],
     },
     {
-      title: "8. Changes to Terms",
-      content: [
-        "We reserve the right to update these Terms at any time. Continued use of the website implies acceptance of changes.",
+      icon: Scale,
+      title: "8. Governing Principles",
+      body: [
+        "These terms are interpreted according to applicable consumer and digital publishing standards.",
+        "If any section is deemed unenforceable, remaining provisions continue in full effect.",
       ],
     },
   ];
 
-  const disclaimers = [
+  const quickRules = [
+    "Read full bonus terms before claiming promotions",
+    "Never gamble with money you cannot afford to lose",
+    "Set deposit and time limits before playing",
+    "Use licensed operators only",
+    "Contact support when terms are unclear",
+  ];
+
+  const faq = [
     {
-      title: "General Disclaimer",
-      content:
-        "BetVoxa is an independent informational platform. We do not provide gambling services or operate any casino.",
+      q: "Does BetVoxa provide gambling services?",
+      a: "No. BetVoxa is an informational platform. We do not provide betting products, handle deposits, or process withdrawals.",
     },
     {
-      title: "Affiliate Disclosure",
-      content:
-        "Some links on this website are affiliate links. We may earn a commission when users sign up through these links. This does not affect our reviews or content integrity.",
+      q: "Are all bonuses guaranteed to be available?",
+      a: "No. Promotions are controlled by third-party operators and may expire, change, or become unavailable by region.",
     },
     {
-      title: "No Financial Advice",
-      content: "Content on this website is for informational purposes only. We do not provide financial, legal, or betting advice.",
+      q: "Who should I contact for account issues at a casino?",
+      a: "You should contact the operator directly through their official support channels, as account management is outside BetVoxa.",
     },
     {
-      title: "Risk Warning",
-      content: "Gambling involves risk and may lead to financial loss. Please play responsibly.",
-    },
-    {
-      title: "Legal Compliance",
-      content:
-        "Users must ensure that: Online gambling is legal in their country and they comply with local laws and regulations.",
-    },
-    {
-      title: "Accuracy of Information",
-      content:
-        "We strive to keep information accurate and updated, but: Offers may change without notice and third-party platforms may modify their terms anytime.",
+      q: "Can these terms change?",
+      a: "Yes. We may update these terms at any time, and the revised version becomes effective when published on this page.",
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F8F7F2] to-[#F3F1EA]">
-      {/* ─── ANIMATED BACKGROUND ─── */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-[#F97316]/5 rounded-full blur-3xl"
-          animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-0 left-0 w-96 h-96 bg-[#F97316]/3 rounded-full blur-3xl"
-          animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute -top-20 -right-20 w-[26rem] h-[26rem] rounded-full bg-[#F97316]/10 blur-3xl"
+          animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
-      {/* ─── HERO ─── */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="space-y-4">
-            <motion.div className="flex items-center gap-3" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
-                <FileText size={40} className="text-[#F97316]" />
-              </motion.div>
-              <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest">Legal Agreement</div>
-            </motion.div>
-            <motion.h1 className="font-serif text-6xl md:text-7xl font-bold text-[#1F1A17] mb-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-              Terms & Conditions
-            </motion.h1>
-            <motion.p className="text-[#5F554C] text-lg max-w-2xl leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-              Effective Date: <span className="font-semibold text-[#F97316]">05 May 2026</span>
-            </motion.p>
-            <motion.p className="text-[#5F554C] text-lg max-w-3xl leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-              Please read these Terms & Conditions carefully before using BetVoxa.com. By accessing our website, you agree to be bound by these terms.
-            </motion.p>
-          </motion.div>
-        </div>
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="space-y-4"
+        >
+          <div className="inline-flex items-center gap-2 text-[#F97316] text-xs tracking-wider uppercase font-semibold bg-[#F97316]/10 px-3 py-1 rounded-full">
+            <FileText size={14} />
+            Legal Page
+          </div>
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-[#1F1A17]">Terms & Conditions</h1>
+          <p className="text-[#5F554C] max-w-3xl text-lg leading-relaxed">
+            These Terms define how BetVoxa content may be used, what responsibilities users hold, and how third-party links should be interpreted.
+            Please read carefully before using offers or visiting partner platforms.
+          </p>
+          <p className="text-[#6A5E53] text-sm">Effective date: 07 May 2026</p>
+        </motion.div>
       </section>
 
-      {/* ─── KEY HIGHLIGHTS ─── */}
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-        <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {[
-            { icon: Scale, label: "Fair Terms", desc: "Clear, transparent terms for all users" },
-            { icon: CheckCircle2, label: "Your Rights", desc: "We respect and protect your user rights" },
-            { icon: Info, label: "Accountability", desc: "We take responsibility for our platform" },
-          ].map((item, i) => {
+            { icon: Shield, title: "Transparent", text: "Clear coverage of rights and obligations." },
+            { icon: Lock, title: "Safe Use", text: "Guidance for secure and lawful use." },
+            { icon: Scale, title: "Fair Terms", text: "Balanced legal framework for users." },
+          ].map((item) => {
             const Icon = item.icon;
             return (
-              <motion.div key={i} variants={itemVariants} className="bg-white/60 backdrop-blur-md border border-[#F97316]/20 rounded-2xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg hover:shadow-[#F97316]/10">
-                <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }} className="mb-4">
-                  <Icon size={32} className="text-[#F97316]" />
-                </motion.div>
-                <h3 className="font-semibold text-[#1F1A17] mb-2 text-lg">{item.label}</h3>
-                <p className="text-[#5F554C] text-sm">{item.desc}</p>
-              </motion.div>
+              <div key={item.title} className="bg-white border border-[#ECE6DB] rounded-2xl p-5">
+                <div className="w-10 h-10 rounded-xl bg-[#F97316]/10 flex items-center justify-center mb-3">
+                  <Icon size={20} className="text-[#F97316]" />
+                </div>
+                <h3 className="font-semibold text-[#1F1A17] mb-1">{item.title}</h3>
+                <p className="text-[#5F554C] text-sm">{item.text}</p>
+              </div>
             );
           })}
-        </motion.div>
-      </section>
-
-      {/* ─── CONTENT SECTIONS ─── */}
-      <section className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <motion.div className="space-y-6" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          {sections.map((section, i) => {
-            const IconComponent = section.icon;
-            return (
-              <motion.div
-                key={i}
-                variants={itemVariants}
-                className="group"
-                whileHover={{ x: 8 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
-                <motion.div className="bg-white border border-[#ECE6DB] rounded-2xl p-8 shadow-md hover:shadow-lg hover:shadow-[#F97316]/10 transition-all duration-300 overflow-hidden relative">
-                  {/* Background gradient effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-[#F97316]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={{ x: -400 }}
-                    whileHover={{ x: 400 }}
-                    transition={{ duration: 0.6 }}
-                  />
-
-                  <div className="relative z-10">
-                    <div className="flex items-start gap-4 mb-4">
-                      <motion.div
-                        className="w-14 h-14 rounded-xl bg-[#F97316]/10 flex items-center justify-center flex-shrink-0"
-                        whileHover={{ rotate: 10, scale: 1.1 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                      >
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                          <circle cx="12" cy="12" r="10" stroke="#F97316" strokeWidth="1.5" fill="rgba(249,115,22,0.06)" />
-                        </svg>
-                      </motion.div>
-                      <h2 className="font-serif text-2xl font-bold text-[#1F1A17] pt-2">{section.title}</h2>
-                    </div>
-
-                    <div className="space-y-3 ml-0">
-                      {section.content.map((paragraph, j) => (
-                        <motion.p
-                          key={j}
-                          className="text-[#5F554C] leading-relaxed text-base"
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          transition={{ delay: j * 0.1 }}
-                          viewport={{ once: true }}
-                        >
-                          {paragraph}
-                        </motion.p>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-
-        {/* ─── CONTACT SECTION ─── */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="mt-20">
-          <motion.div className="text-center mb-8">
-            <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-3">9. Contact Information</h2>
-            <p className="text-[#5F554C] text-lg">Questions about these terms? Get in touch</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { icon: Mail, title: "Email", value: "support@betvoxa.com", href: "mailto:support@betvoxa.com" },
-              { icon: Globe, title: "Website", value: "https://www.betvoxa.com", href: "https://www.betvoxa.com" },
-            ].map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <motion.a
-                  key={i}
-                  href={item.href}
-                  variants={itemVariants}
-                  className="bg-gradient-to-br from-white to-[#F97316]/5 border border-[#F97316]/20 rounded-2xl p-6 hover:shadow-lg hover:shadow-[#F97316]/15 transition-all duration-300 group cursor-pointer"
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="flex items-center gap-4">
-                    <motion.div
-                      className="w-16 h-16 rounded-xl bg-[#F97316]/15 flex items-center justify-center flex-shrink-0"
-                      whileHover={{ rotate: 12, scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <Icon size={28} className="text-[#F97316]" />
-                    </motion.div>
-                    <div>
-                      <div className="text-sm font-semibold text-[#1F1A17]">{item.title}</div>
-                      <div className="text-[#5F554C] text-base group-hover:text-[#F97316] transition-colors">{item.value}</div>
-                    </div>
-                  </div>
-                </motion.a>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* ─── DISCLAIMERS SECTION ─── */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 }} className="mt-20">
-          <motion.div className="text-center mb-10">
-            <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-3">Important Disclaimers</h2>
-            <p className="text-[#5F554C] text-lg">Understanding our limitations and responsibilities</p>
-          </motion.div>
-
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-            {disclaimers.map((disclaimer, i) => {
-              const IconComponent = disclaimer.icon;
-              return (
-                <motion.div
-                  key={i}
-                  variants={itemVariants}
-                  whileHover={{ y: -8, shadow: "0 20px 40px rgba(249, 115, 22, 0.15)" }}
-                  className="relative bg-white border border-[#ECE6DB] rounded-2xl p-6 overflow-hidden group"
-                >
-                  {/* Gradient background on hover */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-[#F97316]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  />
-
-                  <div className="relative z-10">
-                    <motion.div
-                      className="w-12 h-12 rounded-xl bg-[#F97316]/15 flex items-center justify-center mb-4"
-                      whileHover={{ rotate: 12, scale: 1.15 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                        <rect x="3" y="3" width="18" height="18" rx="4" stroke="#F97316" strokeWidth="1.2" fill="rgba(249,115,22,0.04)" />
-                      </svg>
-                    </motion.div>
-                    <h3 className="font-semibold text-[#1F1A17] mb-3 text-base group-hover:text-[#F97316] transition-colors">
-                      {disclaimer.title}
-                    </h3>
-                    <p className="text-[#5F554C] text-sm leading-relaxed">{disclaimer.content}</p>
-                  </div>
-
-                  {/* Border animation on hover */}
-                  <motion.div
-                    className="absolute inset-0 rounded-2xl border-2 border-transparent"
-                    whileHover={{ borderColor: "rgba(249, 115, 22, 0.3)" }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* ─── FOOTER CTA ─── */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="relative py-16 bg-gradient-to-r from-[#F97316]/10 to-[#F97316]/5 border-t border-[#F97316]/20"
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }} className="flex items-center justify-center gap-3 mb-4">
-            <CheckCircle2 size={24} className="text-[#F97316]" />
-            <p className="text-[#1F1A17] font-semibold">You're all set!</p>
-          </motion.div>
-          <motion.p className="text-[#5F554C] text-base leading-relaxed" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.3 }}>
-            By using BetVoxa, you acknowledge that you have read and understood these Terms & Conditions. We encourage you to review this policy regularly for any updates.
-          </motion.p>
         </div>
-      </motion.section>
+      </section>
+
+      <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="space-y-5">
+          {sections.map((section, idx) => {
+            const Icon = section.icon;
+            return (
+              <motion.article
+                key={section.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8"
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center flex-shrink-0">
+                    <Icon size={22} className="text-[#F97316]" />
+                  </div>
+                  <h2 className="font-serif text-2xl font-bold text-[#1F1A17]">{section.title}</h2>
+                </div>
+                <div className="space-y-2">
+                  {section.body.map((line) => (
+                    <p key={line} className="text-[#5F554C] leading-relaxed">{line}</p>
+                  ))}
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="bg-[#1F1A17] rounded-2xl p-6 md:p-8 text-[#F1ECE3]">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3">Responsible Use Checklist</h2>
+          <p className="text-[#DDD3C5] mb-4">Before joining any partner platform, use this checklist:</p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {quickRules.map((rule) => (
+              <li key={rule} className="text-sm bg-white/5 border border-white/10 rounded-lg px-4 py-3">{rule}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1F1A17] mb-5">Frequently Asked Questions</h2>
+          <div className="space-y-4">
+            {faq.map((item) => (
+              <div key={item.q} className="border border-[#EFE8DB] rounded-xl p-4 bg-[#FCFBF8]">
+                <h3 className="font-semibold text-[#1F1A17] mb-2">{item.q}</h3>
+                <p className="text-[#5F554C] text-sm leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 border-t border-[#EFE8DB] pt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <div className="text-[#5F554C] text-sm">Questions about these terms?</div>
+            <a href="mailto:support@betvoxa.com" className="inline-flex items-center gap-2 text-[#F97316] hover:text-[#DC6803] text-sm font-medium">
+              <Mail size={16} />
+              support@betvoxa.com
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

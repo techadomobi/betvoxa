@@ -139,6 +139,57 @@ export default function Country() {
   const { code } = useParams<{ code: string }>();
   const data = countryData[code || "united-kingdom"] || countryData["united-kingdom"];
 
+  const marketSnapshot = [
+    {
+      label: "Market maturity",
+      value: data.code === "uk" ? "Highly mature" : data.code === "us" ? "Fast growth" : "Established",
+      note: "Reflects regulation depth and operator competition in this region.",
+    },
+    {
+      label: "Player protection",
+      value: data.code === "uk" || data.code === "de" ? "Strict" : "Moderate to strict",
+      note: "Based on local self-exclusion systems, ad restrictions, and affordability controls.",
+    },
+    {
+      label: "Withdrawal speed",
+      value: "Same day to 3 days",
+      note: "Varies by payment method, KYC completion, and operator policy.",
+    },
+    {
+      label: "Best onboarding method",
+      value: data.paymentMethods[0],
+      note: "Usually the most common and verified option for local users.",
+    },
+  ];
+
+  const strategyChecklist = [
+    "Compare wagering requirements before claiming welcome bonuses",
+    "Check minimum odds or game restrictions linked to bonus conversion",
+    "Confirm if live betting qualifies for promotions",
+    "Read withdrawal limits and verification timelines",
+    "Use bankroll segmentation for pre-match and live markets",
+    "Track bets weekly to prevent emotional decisions",
+  ];
+
+  const countryFaq = [
+    {
+      q: `Is online betting legal in ${data.name}?`,
+      a: `Yes, with jurisdiction-specific rules. Always use licensed operators approved by ${data.regulator}.`,
+    },
+    {
+      q: `What is the legal betting age in ${data.name}?`,
+      a: `The legal age requirement is ${data.legalAge}. Age verification is required on regulated platforms.`,
+    },
+    {
+      q: "How can I choose safer operators?",
+      a: "Prioritize licensed sites, transparent bonus terms, strong support, and clear responsible-gambling tools.",
+    },
+    {
+      q: "Are betting winnings taxed?",
+      a: "Tax treatment differs by region and player status. Check your local authority or a tax advisor for accurate guidance.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#F8F7F2]">
       {/* HERO */}
@@ -291,6 +342,47 @@ export default function Country() {
         </div>
       </section>
 
+      {/* MARKET SNAPSHOT */}
+      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-3">Market Snapshot: {data.name}</h2>
+        <p className="text-[#5F554C] mb-6 max-w-3xl">
+          This quick snapshot helps players evaluate operator quality, compliance standards, and practical onboarding expectations in {data.name}.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {marketSnapshot.map((item, i) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="bg-white border border-[#ECE6DB] rounded-xl p-5"
+            >
+              <div className="text-[#F97316] text-xs font-semibold uppercase tracking-wider mb-2">{item.label}</div>
+              <div className="font-semibold text-[#1F1A17] mb-2">{item.value}</div>
+              <p className="text-[#5F554C] text-sm">{item.note}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* START SMART CHECKLIST */}
+      <section className="bg-[#1F1A17] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-bold text-[#F2EDE4] mb-3">Start Smart in {data.name}</h2>
+          <p className="text-[#D7CCBC] mb-6 max-w-3xl">
+            Use this operational checklist before claiming bonuses or placing your first bets.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {strategyChecklist.map((item) => (
+              <div key={item} className="bg-white/5 border border-white/10 rounded-xl p-4 text-[#EFE6D9] text-sm">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* OTHER COUNTRIES */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-6">Other Country Guides</h2>
@@ -309,6 +401,19 @@ export default function Country() {
                 </motion.div>
               </Link>
             ))}
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-6">Frequently Asked Questions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {countryFaq.map((item) => (
+            <div key={item.q} className="bg-white border border-[#ECE6DB] rounded-xl p-5">
+              <h3 className="font-semibold text-[#1F1A17] mb-2">{item.q}</h3>
+              <p className="text-[#5F554C] text-sm leading-relaxed">{item.a}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

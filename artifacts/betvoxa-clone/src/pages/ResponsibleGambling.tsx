@@ -76,6 +76,35 @@ export default function ResponsibleGambling() {
     },
   ];
 
+  const impactStats = [
+    { label: "Primary Goal", value: "Play Safely" },
+    { label: "Minimum Age", value: "18+" },
+    { label: "Helpline", value: "1-800-GAMBLER" },
+  ];
+
+  const recoveryPlan = [
+    {
+      phase: "Week 1",
+      title: "Stabilize",
+      detail: "Pause gambling activity, activate self-exclusion where needed, and inform a trusted contact.",
+    },
+    {
+      phase: "Week 2-4",
+      title: "Rebuild Routine",
+      detail: "Replace gambling time with structured routines: exercise, social contact, and financial planning.",
+    },
+    {
+      phase: "Month 2",
+      title: "Track Triggers",
+      detail: "Identify emotional and situational triggers. Use a short journal to map urges and recovery actions.",
+    },
+    {
+      phase: "Month 3",
+      title: "Long-Term Maintenance",
+      detail: "Keep active limits, periodic check-ins, and support contact points to reduce relapse risk.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F8F7F2] to-[#F3F1EA]">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
@@ -85,12 +114,25 @@ export default function ResponsibleGambling() {
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-4">Responsible Gambling</h1>
+          <div className="inline-flex items-center gap-2 text-[#F97316] text-xs tracking-wider uppercase font-semibold bg-[#F97316]/10 px-3 py-1 rounded-full mb-4">
+            <AlertTriangle size={14} />
+            Player Protection
+          </div>
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-[#1F1A17] mb-4">Responsible Gambling</h1>
           <p className="text-[#5F554C] text-lg max-w-3xl">
             Gambling should be entertaining, not a source of stress. BetVoxa encourages safe play,
             informed decisions, and timely support when needed.
           </p>
         </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          {impactStats.map((item) => (
+            <div key={item.label} className="bg-white border border-[#ECE6DB] rounded-xl px-5 py-4">
+              <div className="text-[#F97316] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
+              <div className="text-[#1F1A17] font-semibold">{item.value}</div>
+            </div>
+          ))}
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
           {cards.map((card, idx) => {
@@ -132,6 +174,24 @@ export default function ResponsibleGambling() {
               </li>
             ))}
           </ul>
+        </motion.section>
+
+        <motion.section
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8 mb-8"
+        >
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1F1A17] mb-4">90-Day Recovery Plan</h2>
+          <div className="space-y-4">
+            {recoveryPlan.map((step) => (
+              <div key={step.phase} className="border border-[#EFE8DB] rounded-xl p-4 bg-[#FCFBF8]">
+                <div className="text-[#F97316] text-xs font-semibold uppercase tracking-wider mb-1">{step.phase}</div>
+                <h3 className="font-semibold text-[#1F1A17] mb-2">{step.title}</h3>
+                <p className="text-[#5F554C] text-sm leading-relaxed">{step.detail}</p>
+              </div>
+            ))}
+          </div>
         </motion.section>
 
         <motion.section

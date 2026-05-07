@@ -25,7 +25,7 @@ function Router() {
         <Route path="/betting-sites" component={BettingSites} />
         <Route path="/country/:code" component={Country} />
         <Route path="/privacy" component={Privacy} />
-        <Route path="/terms" component={TermsAndConditions} />
+        <Route path="/terms-and-conditions" component={TermsAndConditions} />
         <Route path="/responsible-gambling" component={ResponsibleGambling} />
         <Route component={NotFound} />
       </Switch>
