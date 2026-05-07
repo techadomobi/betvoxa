@@ -1,8 +1,8 @@
 import { Link } from "wouter";
-import { 
-  TrendingUp, DollarSign, Zap, Trophy, Play, Search, BarChart3, Database, Shield, 
-  Link as LinkIcon, BarChart2, Lock, AlertCircle, CheckCircle2, Mail, MessageCircle, 
-  Phone, MapPin, Facebook, Twitter, Linkedin, Youtube, Instagram, HelpCircle, Book, 
+import {
+  TrendingUp, DollarSign, Zap, Trophy, Play, Search, BarChart3, Database, Shield,
+  Link as LinkIcon, BarChart2, Lock, AlertCircle, CheckCircle2, Mail, MessageCircle,
+  Phone, MapPin, Facebook, Twitter, Linkedin, Youtube, Instagram, HelpCircle, Book,
   Activity, Code, Briefcase, Heart
 } from "lucide-react";
 
@@ -103,8 +103,15 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="flex flex-col">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#F97316] font-serif mb-2">BetVoxa</h2>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <Link href="/" data-testid="link-logo">
+                <div className="flex items-center gap-2 group cursor-pointer">
+                  <img
+                    src="/logo.png"
+                    alt="BetVoxa"
+                    className="w-49 h-59 rounded-md object-contain group-hover:scale-105 transition-transform"
+                  />
+                </div>
+              </Link>              <p className="text-gray-600 text-sm leading-relaxed">
                 Your trusted guide to betting and casino offers worldwide.
               </p>
             </div>
