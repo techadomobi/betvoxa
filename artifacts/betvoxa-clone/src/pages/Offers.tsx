@@ -173,16 +173,6 @@ const Offers: React.FC = () => {
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Country Detection Info */}
-        {userCountry && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 mb-6 p-3 bg-blue-50 border border-blue-200 rounded-lg"
-          >
-         </motion.div>
-        )}
-
         {/* Search Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
