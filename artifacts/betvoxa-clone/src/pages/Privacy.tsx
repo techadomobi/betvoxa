@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Mail, Globe, Lock, Eye, Zap, AlertCircle, CheckCircle2, Cookie, FileText } from "lucide-react";
+import { Shield, Mail, Globe, Lock, Eye, Zap, AlertCircle, CheckCircle2, Cookie } from "lucide-react";
 
 export default function Privacy() {
   const containerVariants = {
