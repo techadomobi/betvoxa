@@ -134,11 +134,6 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, userCountry, geoRestricted
               <p className="text-gray-500">
                 Available in: <span className="font-semibold text-gray-700">{offer.geo}</span>
               </p>
-              {geoRestricted && (
-                <p className="text-red-600 font-semibold mt-1">
-                  ⚠️ Not available in {userCountry.toUpperCase()}
-                </p>
-              )}
             </div>
           )}
 
