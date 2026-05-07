@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Globe, AlertCircle } from 'lucide-react';
+import { Search, Globe } from 'lucide-react';
 import OfferCard from '../components/OfferCard';
 
 interface Offer {
@@ -33,7 +33,6 @@ const Offers: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [userCountry, setUserCountry] = useState<string | null>(null);
-  const [showGeoWarning, setShowGeoWarning] = useState(false);
 
   // Detect user country on mount
   useEffect(() => {
@@ -97,47 +96,7 @@ const Offers: React.FC = () => {
     fetchOffers();
   }, []);
 
-  // Check if offer is available in user's country
-  const isOfferAvailable = (offer: Offer): boolean => {
-    if (!userCountry) return true; // Show all if we can't detect country
-
-    // Extract country codes from geo string
-    const geoCountries = parseCountryCodes(offer.geo);
-    
-    // If we found a country match, it's available
-    if (geoCountries.length > 0) {
-      return geoCountries.includes(userCountry);
-    }
-    
-    // If no specific country found in geo string, show as available (global offer)
-    return true;
-  };
-
-  const parseCountryCodes = (geoString: string): string[] => {
-    const countryMap: Record<string, string> = {
-      'United Kingdom': 'GB',
-      'United States': 'US',
-      'Australia': 'AU',
-      'Canada': 'CA',
-      'Germany': 'DE',
-      'India': 'IN',
-      'france': 'FR',
-      'spain': 'ES',
-      'italy': 'IT',
-      'netherlands': 'NL',
-      'belgium': 'BE',
-      'sweden': 'SE',
-      'norway': 'NO',
-      'ireland': 'IE',
-    };
-
-    for (const [country, code] of Object.entries(countryMap)) {
-      if (geoString.toLowerCase().includes(country.toLowerCase())) {
-        return [code];
-      }
-    }
-    return [];
-  };
+  // Show all offers to all users - no geo restrictions
 
   // Filter offers based on search term
   const filteredOffers = offers.filter(
@@ -147,18 +106,9 @@ const Offers: React.FC = () => {
       offer.geo.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Separate available and restricted offers
-  const availableOffers = filteredOffers.filter((o) => isOfferAvailable(o));
-  const restrictedOffers = filteredOffers.filter((o) => !isOfferAvailable(o));
-
-  // Update geo warning when offers change
-  useEffect(() => {
-    if (restrictedOffers.length > 0 && availableOffers.length > 0) {
-      setShowGeoWarning(true);
-    } else {
-      setShowGeoWarning(false);
-    }
-  }, [availableOffers, restrictedOffers]);
+  // Show all offers to all users - no geo restrictions
+  const availableOffers = filteredOffers;
+  const restrictedOffers: Offer[] = [];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -243,22 +193,7 @@ const Offers: React.FC = () => {
           />
         </motion.div>
 
-        {/* Geo Warning Alert */}
-        {showGeoWarning && userCountry && restrictedOffers.length > 0 && availableOffers.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-4 mb-8 flex gap-3"
-          >
-            <AlertCircle size={20} className="text-amber-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <p className="text-amber-900 font-semibold">Region Note</p>
-              <p className="text-amber-800 text-sm mt-1">
-                {restrictedOffers.length} offer{restrictedOffers.length !== 1 ? 's' : ''} may have restrictions in your region ({userCountry.toUpperCase()}). Please check terms before joining.
-              </p>
-            </div>
-          </motion.div>
-        )}
+        {/* Geo Warning Alert - REMOVED: Show all offers to all users */}
 
         {/* Loading State */}
         {loading && (
@@ -281,7 +216,7 @@ const Offers: React.FC = () => {
         {/* Offers List */}
         {!loading && offers.length > 0 && (
           <>
-            {/* All Offers - Show all offers available */}
+            {/* All Offers - Display to all users regardless of country */}
             {availableOffers.length > 0 && (
               <motion.div
                 variants={containerVariants}
@@ -294,37 +229,11 @@ const Offers: React.FC = () => {
                     <OfferCard 
                       offer={offer} 
                       userCountry={userCountry || undefined} 
-                      geoRestricted={restrictedOffers.some(ro => ro._id === offer._id)}
+                      geoRestricted={false}
                     />
                   </motion.div>
                 ))}
               </motion.div>
-            )}
-
-            {/* Restricted Offers - Only show if there are available offers to compare against */}
-            {restrictedOffers.length > 0 && availableOffers.length > 0 && (
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h2 className="text-xl font-bold text-gray-700 mb-4 flex items-center gap-2">
-                  <AlertCircle size={24} className="text-amber-600" />
-                  Region-Restricted Offers
-                </h2>
-                <motion.div
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="space-y-4 opacity-70"
-                >
-                  {restrictedOffers.map((offer) => (
-                    <motion.div key={offer._id} variants={itemVariants}>
-                      <OfferCard
-                        offer={offer}
-                        userCountry={userCountry || undefined}
-                        geoRestricted={true}
-                      />
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
             )}
 
             {/* No Results */}
