@@ -101,9 +101,16 @@ const Offers: React.FC = () => {
   const isOfferAvailable = (offer: Offer): boolean => {
     if (!userCountry) return true; // Show all if we can't detect country
 
-    // Extract country codes from geo string (e.g., "United Kingdom" -> "GB", "Australia" -> "AU")
+    // Extract country codes from geo string
     const geoCountries = parseCountryCodes(offer.geo);
-    return geoCountries.includes(userCountry);
+    
+    // If we found a country match, it's available
+    if (geoCountries.length > 0) {
+      return geoCountries.includes(userCountry);
+    }
+    
+    // If no specific country found in geo string, show as available (global offer)
+    return true;
   };
 
   const parseCountryCodes = (geoString: string): string[] => {
@@ -146,7 +153,7 @@ const Offers: React.FC = () => {
 
   // Update geo warning when offers change
   useEffect(() => {
-    if (restrictedOffers.length > 0 && availableOffers.length === 0) {
+    if (restrictedOffers.length > 0 && availableOffers.length > 0) {
       setShowGeoWarning(true);
     } else {
       setShowGeoWarning(false);
@@ -237,7 +244,7 @@ const Offers: React.FC = () => {
         </motion.div>
 
         {/* Geo Warning Alert */}
-        {showGeoWarning && userCountry && restrictedOffers.length > 0 && (
+        {showGeoWarning && userCountry && restrictedOffers.length > 0 && availableOffers.length > 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -245,9 +252,9 @@ const Offers: React.FC = () => {
           >
             <AlertCircle size={20} className="text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-amber-900 font-semibold">Limited Offers Available</p>
+              <p className="text-amber-900 font-semibold">Region Note</p>
               <p className="text-amber-800 text-sm mt-1">
-                {restrictedOffers.length} offer{restrictedOffers.length !== 1 ? 's' : ''} are not available in your country ({userCountry.toUpperCase()}). We're showing available options below.
+                {restrictedOffers.length} offer{restrictedOffers.length !== 1 ? 's' : ''} may have restrictions in your region ({userCountry.toUpperCase()}). Please check terms before joining.
               </p>
             </div>
           </motion.div>
@@ -274,7 +281,7 @@ const Offers: React.FC = () => {
         {/* Offers List */}
         {!loading && offers.length > 0 && (
           <>
-            {/* Available Offers */}
+            {/* All Offers - Show all offers available */}
             {availableOffers.length > 0 && (
               <motion.div
                 variants={containerVariants}
@@ -284,24 +291,28 @@ const Offers: React.FC = () => {
               >
                 {availableOffers.map((offer) => (
                   <motion.div key={offer._id} variants={itemVariants}>
-                    <OfferCard offer={offer} userCountry={userCountry || undefined} geoRestricted={false} />
+                    <OfferCard 
+                      offer={offer} 
+                      userCountry={userCountry || undefined} 
+                      geoRestricted={restrictedOffers.some(ro => ro._id === offer._id)}
+                    />
                   </motion.div>
                 ))}
               </motion.div>
             )}
 
-            {/* Restricted Offers */}
-            {restrictedOffers.length > 0 && (
+            {/* Restricted Offers - Only show if there are available offers to compare against */}
+            {restrictedOffers.length > 0 && availableOffers.length > 0 && (
               <div className="mt-8 pt-8 border-t border-gray-200">
                 <h2 className="text-xl font-bold text-gray-700 mb-4 flex items-center gap-2">
                   <AlertCircle size={24} className="text-amber-600" />
-                  Not Available in Your Region
+                  Region-Restricted Offers
                 </h2>
                 <motion.div
                   variants={containerVariants}
                   initial="hidden"
                   animate="visible"
-                  className="space-y-4 opacity-60"
+                  className="space-y-4 opacity-70"
                 >
                   {restrictedOffers.map((offer) => (
                     <motion.div key={offer._id} variants={itemVariants}>
