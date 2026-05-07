@@ -400,16 +400,19 @@ export default function CasinoBonuses() {
               { icon: Shield, title: "Check the Licence", desc: "Always verify the casino's licence before depositing. Look for UKGC, MGA, or Gibraltar seals — usually in the footer." },
               { icon: Clock, title: "Set a Budget", desc: "Decide how much you can afford to lose before you start. Use the casino's deposit limit tools to enforce this automatically." },
               { icon: CreditCard, title: "Use Safe Payments", desc: "Stick to reputable payment methods. E-wallets like PayPal add an extra layer of protection as you don't share card details." },
-            ].map((item, i) => (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                className="bg-white border border-[#ECE6DB] rounded-2xl p-6 text-center">
-                <div className="w-12 h-12 rounded-xl bg-[#F97316]/8 flex items-center justify-center mx-auto mb-4">
-                  <item.icon size={22} className="text-[#F97316]" />
-                </div>
-                <h3 className="font-semibold text-[#1F1A17] mb-2">{item.title}</h3>
-                <p className="text-[#6F665D] text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                  className="bg-white border border-[#ECE6DB] rounded-2xl p-6 text-center">
+                  <div className="w-12 h-12 rounded-xl bg-[#F97316]/8 flex items-center justify-center mx-auto mb-4">
+                    <Icon size={22} className="text-[#F97316]" />
+                  </div>
+                  <h3 className="font-semibold text-[#1F1A17] mb-2">{item.title}</h3>
+                  <p className="text-[#6F665D] text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

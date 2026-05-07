@@ -154,15 +154,18 @@ export default function Privacy() {
             { icon: Lock, label: "Data Protected", desc: "Your information is secured with industry-standard measures" },
             { icon: Eye, label: "Transparency", desc: "Clear policies on how we collect and use your data" },
             { icon: Shield, label: "Privacy First", desc: "Your privacy rights are our top priority" },
-          ].map((item, i) => (
-            <motion.div key={i} variants={itemVariants} className="bg-white/60 backdrop-blur-md border border-[#F97316]/20 rounded-2xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg hover:shadow-[#F97316]/10">
-              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }} className="mb-4">
-                <item.icon size={32} className="text-[#F97316]" />
+          ].map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <motion.div key={i} variants={itemVariants} className="bg-white/60 backdrop-blur-md border border-[#F97316]/20 rounded-2xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg hover:shadow-[#F97316]/10">
+                <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }} className="mb-4">
+                  <Icon size={32} className="text-[#F97316]" />
+                </motion.div>
+                <h3 className="font-semibold text-[#1F1A17] mb-2 text-lg">{item.label}</h3>
+                <p className="text-[#5F554C] text-sm">{item.desc}</p>
               </motion.div>
-              <h3 className="font-semibold text-[#1F1A17] mb-2 text-lg">{item.label}</h3>
-              <p className="text-[#5F554C] text-sm">{item.desc}</p>
-            </motion.div>
-          ))}
+            );
+          })}
         </motion.div>
       </section>
 
@@ -232,29 +235,32 @@ export default function Privacy() {
             {[
               { icon: Mail, title: "Email", value: "support@betvoxa.com", href: "mailto:support@betvoxa.com" },
               { icon: Globe, title: "Website", value: "https://www.betvoxa.com", href: "https://www.betvoxa.com" },
-            ].map((item, i) => (
-              <motion.a
-                key={i}
-                href={item.href}
-                variants={itemVariants}
-                className="bg-gradient-to-br from-white to-[#F97316]/5 border border-[#F97316]/20 rounded-2xl p-6 hover:shadow-lg hover:shadow-[#F97316]/15 transition-all duration-300 group cursor-pointer"
-                whileHover={{ y: -4 }}
-              >
-                <div className="flex items-center gap-4">
-                  <motion.div
-                    className="w-16 h-16 rounded-xl bg-[#F97316]/15 flex items-center justify-center flex-shrink-0"
-                    whileHover={{ rotate: 12, scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <item.icon size={28} className="text-[#F97316]" />
-                  </motion.div>
-                  <div>
-                    <div className="text-sm font-semibold text-[#1F1A17]">{item.title}</div>
-                    <div className="text-[#5F554C] text-base group-hover:text-[#F97316] transition-colors">{item.value}</div>
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.a
+                  key={i}
+                  href={item.href}
+                  variants={itemVariants}
+                  className="bg-gradient-to-br from-white to-[#F97316]/5 border border-[#F97316]/20 rounded-2xl p-6 hover:shadow-lg hover:shadow-[#F97316]/15 transition-all duration-300 group cursor-pointer"
+                  whileHover={{ y: -4 }}
+                >
+                  <div className="flex items-center gap-4">
+                    <motion.div
+                      className="w-16 h-16 rounded-xl bg-[#F97316]/15 flex items-center justify-center flex-shrink-0"
+                      whileHover={{ rotate: 12, scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <Icon size={28} className="text-[#F97316]" />
+                    </motion.div>
+                    <div>
+                      <div className="text-sm font-semibold text-[#1F1A17]">{item.title}</div>
+                      <div className="text-[#5F554C] text-base group-hover:text-[#F97316] transition-colors">{item.value}</div>
+                    </div>
                   </div>
-                </div>
-              </motion.a>
-            ))}
+                </motion.a>
+              );
+            })}
           </div>
         </motion.div>
 
