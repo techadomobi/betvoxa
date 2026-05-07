@@ -1,244 +1,71 @@
 import { Link } from "wouter";
-import {
-  TrendingUp, DollarSign, Zap, Trophy, Play, Search, BarChart3, Database, Shield,
-  Link as LinkIcon, BarChart2, Lock, AlertCircle, CheckCircle2, Mail, MessageCircle,
-  Phone, MapPin, Facebook, Twitter, Linkedin, Youtube, Instagram, HelpCircle, Book,
-  Activity, Code, Briefcase, Heart
-} from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 
 export default function Footer() {
-  const footerSections = [
-    {
-      title: "Solutions",
-      icon: TrendingUp,
-      links: [
-        { name: "Increase Website Traffic", icon: TrendingUp },
-        { name: "Maximize Affiliate Earnings", icon: DollarSign },
-        { name: "Boost E-Commerce Sales", icon: Zap },
-        { name: "Elevate Brand Recognition", icon: Trophy },
-        { name: "YouTube-SEO", icon: Play },
-        { name: "Google Ads", icon: Search },
-      ],
-    },
-    {
-      title: "Advertisers",
-      icon: BarChart3,
-      links: [
-        { name: "Programmatic DSP", icon: Database },
-        { name: "Advertising Inventory", icon: Shield },
-        { name: "Self-Serve or Managed", icon: Zap },
-        { name: "Ad Fraud Protection", icon: LinkIcon },
-        { name: "Campaign Migration", icon: BarChart2 },
-        { name: "Advertising Pricing", icon: DollarSign },
-      ],
-    },
-    {
-      title: "Ad Formats",
-      icon: Briefcase,
-      links: [
-        { name: "Pop-under Ads", icon: AlertCircle },
-        { name: "Push Notifications", icon: AlertCircle },
-        { name: "Display Ads", icon: AlertCircle },
-        { name: "Native Ads", icon: CheckCircle2 },
-        { name: "Video Ads", icon: Play },
-      ],
-    },
-    {
-      title: "Resources",
-      icon: Book,
-      links: [
-        { name: "Support Center", icon: HelpCircle },
-        { name: "Knowledge Base", icon: Book },
-        { name: "Marketing Blog", icon: Activity },
-        { name: "Server Status", icon: Activity },
-        { name: "API Access", icon: Code },
-      ],
-    },
-  ];
-
-  const moreLinks = [
-    {
-      title: "Partnerships",
-      links: [
-        { name: "Affiliate Program", icon: LinkIcon },
-        { name: "Non-Profit Support", icon: Heart },
-        { name: "Influencer Program", icon: Trophy },
-        { name: "White Label DSP", icon: Briefcase },
-      ],
-    },
-    {
-      title: "Publishers",
-      links: [
-        { name: "Website Monetization", icon: LinkIcon },
-        { name: "App Monetization", icon: AlertCircle },
-        { name: "SSP Integration", icon: Code },
-      ],
-    },
-    {
-      title: "Legal",
-      links: [
-        { name: "Refund Policy", icon: AlertCircle },
-        { name: "Terms of Service", icon: Book },
-        { name: "Privacy Policy", icon: Lock },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { name: "Money-Back Guarantee", icon: Trophy },
-        { name: "About BetVoxa", icon: AlertCircle },
-        { name: "Jobs and Careers", icon: Briefcase },
-        { name: "Contact Us", icon: Mail },
-      ],
-    },
-  ];
-
-  const socialLinks = [Facebook, Twitter, Linkedin, Youtube, Instagram];
-
   return (
-    <footer className="bg-white border-t border-gray-200 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Grid Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Brand Section */}
-          <div className="flex flex-col">
-            <div className="mb-6">
-              <Link href="/" data-testid="link-logo">
-                <div className="flex items-center gap-2 group cursor-pointer">
-                  <img
-                    src="/logo.png"
-                    alt="BetVoxa"
-                    className="w-49 h-59 rounded-md object-contain group-hover:scale-105 transition-transform"
-                  />
-                </div>
-              </Link>              <p className="text-gray-600 text-sm leading-relaxed">
-                Your trusted guide to betting and casino offers worldwide.
-              </p>
-            </div>
-
-            <div className="mb-8">
-              <h4 className="text-[#1F1A17] font-semibold text-sm mb-3 flex items-center gap-2">
-                <MessageCircle size={16} className="text-[#F97316]" />
-                Questions? Get in Touch
-              </h4>
-              <div className="flex gap-3">
-                <button className="p-2 text-gray-400 hover:text-[#F97316] transition-colors hover:bg-gray-100 rounded-lg">
-                  <MessageCircle size={18} />
-                </button>
-                <button className="p-2 text-gray-400 hover:text-[#F97316] transition-colors hover:bg-gray-100 rounded-lg">
-                  <Phone size={18} />
-                </button>
-                <button className="p-2 text-gray-400 hover:text-[#F97316] transition-colors hover:bg-gray-100 rounded-lg">
-                  <MapPin size={18} />
-                </button>
-                <button className="p-2 text-gray-400 hover:text-[#F97316] transition-colors hover:bg-gray-100 rounded-lg">
-                  <Mail size={18} />
-                </button>
-                <button className="p-2 text-gray-400 hover:text-[#F97316] transition-colors hover:bg-gray-100 rounded-lg">
-                  <HelpCircle size={18} />
-                </button>
+    <footer className="bg-[#070707] text-[#E6E6E6]">
+      <div className="max-w-7xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
+          {/* Brand */}
+          <div className="space-y-4">
+            <Link href="/" aria-label="BetVoxa home">
+              <div className="flex items-center gap-3 cursor-pointer">
+                <div className="w-10 h-10 bg-[#F1C40F] rounded flex items-center justify-center text-black font-bold">B</div>
+                <span className="text-xl font-semibold">BetVoxa</span>
               </div>
-            </div>
-
-            <div>
-              <h4 className="text-[#1F1A17] font-semibold text-sm mb-3">Connect on Social Media</h4>
-              <div className="flex gap-3">
-                {socialLinks.map((SocialIcon, i) => (
-                  <button key={i} className="p-2 text-gray-400 hover:text-[#F97316] transition-colors hover:bg-gray-100 rounded-lg">
-                    <SocialIcon size={18} />
-                  </button>
-                ))}
-              </div>
-            </div>
+            </Link>
+            <p className="text-[#BFBFBF] text-sm max-w-sm">Your trusted source for the best betting and casino offers worldwide.</p>
           </div>
 
-          {/* Dynamic Sections */}
-          {footerSections.map((section, idx) => {
-            const IconComponent = section.icon;
-            return (
-              <div key={idx} className="flex flex-col">
-                <h4 className="text-[#F97316] font-bold text-sm mb-4 uppercase tracking-wide flex items-center gap-2">
-                  <IconComponent size={16} />
-                  {section.title}
-                </h4>
-                <ul className="space-y-2.5">
-                  {section.links.map((link, linkIdx) => {
-                    const IconComp = link.icon;
-                    return (
-                      <li key={linkIdx}>
-                        <Link href="#">
-                          <span className="text-gray-700 hover:text-[#F97316] text-sm flex items-center gap-2 transition-colors group">
-                            <IconComp size={14} className="text-gray-400 group-hover:text-[#F97316]" />
-                            {link.name}
-                          </span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
+          {/* Quick links */}
+          <div>
+            <h4 className="text-sm font-semibold text-[#FFFFFF] mb-4">Quick links</h4>
+            <ul className="space-y-3 text-[#CFCFCF] text-sm">
+              <li><Link href="/" className="hover:text-white">Home</Link></li>
+              <li><Link href="/casino-bonuses" className="hover:text-white">Casino bonuses</Link></li>
+              <li><Link href="/betting-sites" className="hover:text-white">Betting sites</Link></li>
+            </ul>
+          </div>
 
-        {/* Additional Links Grid */}
-        <div className="border-t border-gray-200 pt-12 mb-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {moreLinks.map((section, idx) => (
-              <div key={idx} className="flex flex-col">
-                <h4 className="text-[#F97316] font-bold text-sm mb-4 uppercase tracking-wide">{section.title}</h4>
-                <ul className="space-y-2.5">
-                  {section.links.map((link, linkIdx) => {
-                    const IconComp = link.icon;
-                    return (
-                      <li key={linkIdx}>
-                        <Link href="#">
-                          <span className="text-gray-700 hover:text-[#F97316] text-sm flex items-center gap-2 transition-colors group">
-                            <IconComp size={14} className="text-gray-400 group-hover:text-[#F97316]" />
-                            {link.name}
-                          </span>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            ))}
+          {/* Countries */}
+          <div>
+            <h4 className="text-sm font-semibold text-[#FFFFFF] mb-4">Countries</h4>
+            <ul className="space-y-3 text-[#CFCFCF] text-sm">
+              <li>United Kingdom</li>
+              <li>United States</li>
+              <li>Australia</li>
+              <li>Canada</li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-sm font-semibold text-[#FFFFFF] mb-4">Legal</h4>
+            <ul className="space-y-3 text-[#CFCFCF] text-sm">
+              <li><Link href="/privacy" className="hover:text-white">Privacy policy</Link></li>
+              <li><Link href="/terms" className="hover:text-white">Terms & conditions</Link></li>
+              <li><Link href="/responsible-gambling" className="hover:text-white">Responsible gambling</Link></li>
+            </ul>
           </div>
         </div>
 
-        {/* Address Section */}
-        <div className="border-t border-gray-200 pt-8 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-[#1F1A17] font-bold text-sm mb-3 flex items-center gap-2">
-                <MapPin size={16} className="text-[#F97316]" />
-                Our Address
-              </h4>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                5th Floor, DLF Two Horizon Centre, Harizan Colony, DLF Phase 5, Sector 43, Gurugram, Haryana 122002
-              </p>
+        <div className="my-8 border-t border-[#1A1A1A]" />
+
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-[#1A1A1A] border border-[#3A2E18] rounded-lg p-4 flex items-start gap-4">
+            <div className="mt-0">
+              <AlertTriangle size={20} className="text-[#F0C457]" />
             </div>
             <div>
-              <h4 className="text-[#1F1A17] font-bold text-sm mb-3 flex items-center gap-2">
-                <Mail size={16} className="text-[#F97316]" />
-                Email Us
-              </h4>
-              <p className="text-[#F97316] text-sm hover:text-[#DC6803] transition-colors cursor-pointer">
-                support@betvoxa.com
-              </p>
+              <div className="font-semibold text-white">Responsible gambling</div>
+              <div className="text-[#BFBFBF] text-sm">Gambling can be addictive. Please play responsibly. 18+ only. BeGambleAware.org</div>
             </div>
           </div>
         </div>
 
-        {/* Responsible Gambling & Copyright */}
-        <div className="border-t border-gray-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-xs">
-            © {new Date().getFullYear()} BetVoxa. All rights reserved. For entertainment purposes only.
-          </p>
-          <p className="text-gray-600 text-xs max-w-2xl text-center sm:text-right">
-            <strong>Responsible Gambling:</strong> Gambling should be fun. If you have concerns, visit GamCare, BeGambleAware, or Gamblers Anonymous. Must be 18+ to bet.
-          </p>
+        <div className="mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-[#9A9A9A] text-sm">© {new Date().getFullYear()} BetVoxa. All rights reserved.</div>
+          <div className="text-[#9A9A9A] text-sm">Affiliate disclosure: We may earn commission from operators featured on this site. This does not influence our reviews.</div>
         </div>
       </div>
     </footer>
