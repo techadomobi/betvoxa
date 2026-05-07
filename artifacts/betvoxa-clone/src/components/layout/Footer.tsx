@@ -97,10 +97,16 @@ export default function Footer() {
             © 2025 BetVoxa. All rights reserved. For entertainment purposes only.
           </p>
           <div className="flex items-center gap-6">
-            {["Privacy Policy", "Terms of Use", "Cookie Policy"].map((item) => (
-              <span key={item} className="text-[#A89F94] hover:text-[#F5F0E8] text-xs cursor-pointer transition-colors">
-                {item}
-              </span>
+            {[
+              { label: "Privacy Policy", href: "/privacy" },
+              { label: "Terms of Use", href: "/terms" },
+              { label: "Cookie Policy", href: "/privacy" },
+            ].map((item) => (
+              <Link key={item.label} href={item.href}>
+                <span className="text-[#A89F94] hover:text-[#F5F0E8] text-xs cursor-pointer transition-colors">
+                  {item.label}
+                </span>
+              </Link>
             ))}
           </div>
         </div>

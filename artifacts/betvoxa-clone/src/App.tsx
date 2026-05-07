@@ -10,6 +10,8 @@ import Home from "@/pages/Home";
 import CasinoBonuses from "@/pages/CasinoBonuses";
 import BettingSites from "@/pages/BettingSites";
 import Country from "@/pages/Country";
+import Privacy from "@/pages/Privacy";
+import TermsAndConditions from "@/pages/TermsAndConditions";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +23,8 @@ function Router() {
         <Route path="/casino-bonuses" component={CasinoBonuses} />
         <Route path="/betting-sites" component={BettingSites} />
         <Route path="/country/:code" component={Country} />
+        <Route path="/privacy" component={Privacy} />
+        <Route path="/terms" component={TermsAndConditions} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
