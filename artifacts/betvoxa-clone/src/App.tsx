@@ -30,7 +30,7 @@ function Router() {
         <Route path="/privacy" component={Privacy} />
         <Route path="/terms-and-conditions" component={TermsAndConditions} />
         <Route path="/responsible-gambling" component={ResponsibleGambling} />
-        <Route path="/offers" component={Offers} />
+        <Route path="/casinos" component={Offers} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
         <Route component={NotFound} />
