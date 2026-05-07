@@ -18,12 +18,11 @@ export default function Footer() {
                     src="/logo.png"
                     alt="BetVoxa"
                     onError={() => setLogoError(true)}
-                    className="h-59 w-auto rounded-md object-contain group-hover:scale-105 transition-transform"
+                    className="h-49 w-auto rounded-md object-contain group-hover:scale-105 transition-transform"
                   />
                 ) : (
                   <div className="w-10 h-10 bg-[#F1C40F] rounded flex items-center justify-center text-black font-bold">B</div>
                 )}
-                <span className="text-xl font-semibold text-white">BetVoxa</span>
               </div>
             </Link>
             <p className="text-[#BFBFBF] text-sm max-w-sm">Your trusted source for the best betting and casino offers worldwide.</p>
