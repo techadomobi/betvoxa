@@ -2,7 +2,48 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { User, ArrowLeft, Share2 } from "lucide-react";
-import { fallbackBlogResponse, BlogApiResponse, BlogPost } from "@/lib/blogData";
+import { fallbackBlogResponse, BlogApiResponse, BlogPost, ContentBlock } from "@/lib/blogData";
+
+function buildLongFormContent(post: BlogPost): ContentBlock[] {
+  if (post.content.length >= 6) return post.content;
+
+  const expanded: ContentBlock[] = [...post.content];
+
+  expanded.push(
+    {
+      _id: `${post._id}-extended-1`,
+      type: "paragraph",
+      text: `<h3>Overview</h3><p>${post.title} is presented in this review-style format to help readers compare offer quality, risk profile, payout behavior, and mobile usability before they register.</p><p>We focus on practical factors that influence real-world experience: onboarding flow, support quality, withdrawal speed, and fair terms.</p>`,
+    },
+    {
+      _id: `${post._id}-extended-2`,
+      type: "paragraph",
+      text: "<h3>Bonuses and Promotions</h3><p>Always validate headline bonuses against wagering requirements, max bet clauses, and game contribution percentages. A large offer is only valuable when withdrawal conditions are realistic for your play style.</p><p>Check whether free spins are credited instantly or in daily batches, and confirm expiry windows before activation.</p>",
+    },
+    {
+      _id: `${post._id}-extended-3`,
+      type: "paragraph",
+      text: "<h3>Payments and Withdrawal Times</h3><p>Fast payouts are one of the strongest quality signals. Compare payment rails by speed and reliability, and verify if additional KYC checks are needed before first withdrawal.</p><p>Use smaller test withdrawals first to confirm processing consistency before scaling stake size.</p>",
+    },
+    {
+      _id: `${post._id}-extended-4`,
+      type: "paragraph",
+      text: "<h3>Game Selection and User Experience</h3><p>A strong platform should balance quantity and quality: modern slot releases, stable live tables, and filter/search tools that make discovery easy. Mobile rendering, load speed, and in-session navigation should remain smooth across devices.</p><p>Look for transparent RTP disclosures and stable provider diversity rather than relying only on headline game counts.</p>",
+    },
+    {
+      _id: `${post._id}-extended-5`,
+      type: "paragraph",
+      text: "<h3>Responsible Play Checklist</h3><ul><li>Set daily or weekly loss limits before you begin.</li><li>Use cool-off breaks when sessions run longer than planned.</li><li>Never chase losses with larger bets.</li><li>Treat gambling as paid entertainment, not income.</li></ul><p>Long-term sustainability matters more than short-term variance.</p>",
+    },
+    {
+      _id: `${post._id}-extended-6`,
+      type: "paragraph",
+      text: `<h3>Final Notes</h3><p>This article is categorized under <strong>${post.category || "Casino Reviews"}</strong> and is intended to provide clear, decision-ready context for readers comparing options in the current market.</p><p><em>Play responsibly and review local regulations before depositing.</em></p>`,
+    }
+  );
+
+  return expanded;
+}
 
 export default function BlogDetail() {
   const { slug } = useParams() as { slug: string };
@@ -56,6 +97,8 @@ export default function BlogDetail() {
       </div>
     );
   }
+
+  const displayContent = buildLongFormContent(blog);
 
   return (
     <div className="overflow-x-hidden">
@@ -137,7 +180,7 @@ export default function BlogDetail() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="prose prose-lg max-w-none"
         >
-          {blog.content.map((block, index) => (
+          {displayContent.map((block, index) => (
             <motion.div
               key={block._id}
               initial={{ opacity: 0, y: 10 }}
