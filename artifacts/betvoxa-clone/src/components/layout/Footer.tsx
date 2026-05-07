@@ -1,17 +1,29 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import { AlertTriangle } from "lucide-react";
 
 export default function Footer() {
+  const [logoError, setLogoError] = useState(false);
+
   return (
     <footer className="bg-[#070707] text-[#E6E6E6]">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" aria-label="BetVoxa home">
-              <div className="flex items-center gap-3 cursor-pointer">
-                <div className="w-10 h-10 bg-[#F1C40F] rounded flex items-center justify-center text-black font-bold">B</div>
-                <span className="text-xl font-semibold">BetVoxa</span>
+            <Link href="/" data-testid="link-logo">
+              <div className="flex items-center gap-3 group cursor-pointer">
+                {!logoError ? (
+                  <img
+                    src="/logo.png"
+                    alt="BetVoxa"
+                    onError={() => setLogoError(true)}
+                    className="h-59 w-auto rounded-md object-contain group-hover:scale-105 transition-transform"
+                  />
+                ) : (
+                  <div className="w-10 h-10 bg-[#F1C40F] rounded flex items-center justify-center text-black font-bold">B</div>
+                )}
+                <span className="text-xl font-semibold text-white">BetVoxa</span>
               </div>
             </Link>
             <p className="text-[#BFBFBF] text-sm max-w-sm">Your trusted source for the best betting and casino offers worldwide.</p>
