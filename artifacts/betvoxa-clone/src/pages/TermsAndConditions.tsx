@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { AlertCircle, BookOpen, FileText, Mail, Globe, CheckCircle2, Info, Scale, ExternalLink, Warning } from "lucide-react";
 
 export default function TermsAndConditions() {
   const containerVariants = {
@@ -25,12 +24,12 @@ export default function TermsAndConditions() {
   const sections = [
     {
       title: "1. Acceptance of Terms",
-      icon: CheckCircle2,
-      content: ["By accessing or using BetVoxa.com, you agree to comply with these Terms & Conditions. If you do not agree, please discontinue use of the website."],
+      content: [
+        "By accessing or using BetVoxa.com, you agree to comply with these Terms & Conditions. If you do not agree, please discontinue use of the website.",
+      ],
     },
     {
       title: "2. Nature of Service",
-      icon: FileText,
       content: [
         "BetVoxa is an informational and promotional platform that provides:",
         "• Reviews",
@@ -42,7 +41,6 @@ export default function TermsAndConditions() {
     },
     {
       title: "3. Third-Party Platforms",
-      icon: ExternalLink,
       content: [
         "• Our website contains links to third-party websites",
         "• We do not control or manage these platforms",
@@ -52,7 +50,6 @@ export default function TermsAndConditions() {
     },
     {
       title: "4. No Guarantees",
-      icon: Info,
       content: [
         "• We do not guarantee winnings, profits, or outcomes",
         "• Bonuses and offers are subject to third-party terms",
@@ -61,7 +58,6 @@ export default function TermsAndConditions() {
     },
     {
       title: "5. User Responsibilities",
-      icon: Scale,
       content: [
         "By using this website, you confirm that:",
         "• You are of legal age in your jurisdiction",
@@ -71,14 +67,12 @@ export default function TermsAndConditions() {
     },
     {
       title: "6. Intellectual Property",
-      icon: BookOpen,
       content: [
         "All content on BetVoxa (text, design, branding) is protected and may not be copied or reused without permission.",
       ],
     },
     {
       title: "7. Limitation of Liability",
-      icon: AlertCircle,
       content: [
         "BetVoxa shall not be held liable for:",
         "• Any financial losses",
@@ -88,7 +82,6 @@ export default function TermsAndConditions() {
     },
     {
       title: "8. Changes to Terms",
-      icon: Warning,
       content: [
         "We reserve the right to update these Terms at any time. Continued use of the website implies acceptance of changes.",
       ],
@@ -98,33 +91,31 @@ export default function TermsAndConditions() {
   const disclaimers = [
     {
       title: "General Disclaimer",
-      icon: AlertCircle,
-      content: "BetVoxa is an independent informational platform. We do not provide gambling services or operate any casino.",
+      content:
+        "BetVoxa is an independent informational platform. We do not provide gambling services or operate any casino.",
     },
     {
       title: "Affiliate Disclosure",
-      icon: ExternalLink,
-      content: "Some links on this website are affiliate links. We may earn a commission when users sign up through these links. This does not affect our reviews or content integrity.",
+      content:
+        "Some links on this website are affiliate links. We may earn a commission when users sign up through these links. This does not affect our reviews or content integrity.",
     },
     {
       title: "No Financial Advice",
-      icon: Info,
       content: "Content on this website is for informational purposes only. We do not provide financial, legal, or betting advice.",
     },
     {
       title: "Risk Warning",
-      icon: Warning,
       content: "Gambling involves risk and may lead to financial loss. Please play responsibly.",
     },
     {
       title: "Legal Compliance",
-      icon: Scale,
-      content: "Users must ensure that: Online gambling is legal in their country and they comply with local laws and regulations.",
+      content:
+        "Users must ensure that: Online gambling is legal in their country and they comply with local laws and regulations.",
     },
     {
       title: "Accuracy of Information",
-      icon: CheckCircle2,
-      content: "We strive to keep information accurate and updated, but: Offers may change without notice and third-party platforms may modify their terms anytime.",
+      content:
+        "We strive to keep information accurate and updated, but: Offers may change without notice and third-party platforms may modify their terms anytime.",
     },
   ];
 
@@ -218,7 +209,9 @@ export default function TermsAndConditions() {
                         whileHover={{ rotate: 10, scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <IconComponent size={24} className="text-[#F97316]" />
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                          <circle cx="12" cy="12" r="10" stroke="#F97316" strokeWidth="1.5" fill="rgba(249,115,22,0.06)" />
+                        </svg>
                       </motion.div>
                       <h2 className="font-serif text-2xl font-bold text-[#1F1A17] pt-2">{section.title}</h2>
                     </div>
@@ -312,7 +305,9 @@ export default function TermsAndConditions() {
                       whileHover={{ rotate: 12, scale: 1.15 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <IconComponent size={22} className="text-[#F97316]" />
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                        <rect x="3" y="3" width="18" height="18" rx="4" stroke="#F97316" strokeWidth="1.2" fill="rgba(249,115,22,0.04)" />
+                      </svg>
                     </motion.div>
                     <h3 className="font-semibold text-[#1F1A17] mb-3 text-base group-hover:text-[#F97316] transition-colors">
                       {disclaimer.title}
