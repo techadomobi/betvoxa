@@ -203,7 +203,10 @@ const ChartTooltipContent = React.forwardRef<
                   ) : (
                     <>
                       {itemConfig?.icon ? (
-                        <itemConfig.icon />
+                        (() => {
+                          const Icon = itemConfig.icon as React.ComponentType<any> | undefined
+                          return Icon ? <Icon /> : null
+                        })()
                       ) : (
                         !hideIndicator && (
                           <div
@@ -298,9 +301,19 @@ const ChartLegendContent = React.forwardRef<
                   "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"
                 )}
               >
-                {itemConfig?.icon && !hideIcon ? (
-                  <itemConfig.icon />
-                ) : (
+                {(() => {
+                  const Icon = itemConfig?.icon as React.ComponentType<any> | undefined
+                  return Icon && !hideIcon ? (
+                    <Icon />
+                  ) : (
+                    <div
+                      className="h-2 w-2 shrink-0 rounded-[2px]"
+                      style={{
+                        backgroundColor: item.color,
+                      }}
+                    />
+                  )
+                })()}
                   <div
                     className="h-2 w-2 shrink-0 rounded-[2px]"
                     style={{

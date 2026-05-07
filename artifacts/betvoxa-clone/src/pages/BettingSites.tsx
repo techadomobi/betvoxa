@@ -225,19 +225,22 @@ export default function BettingSites() {
             <p className="text-[#6F665D] max-w-xl mx-auto">Our rigorous scoring system ensures every recommendation is backed by real testing and independent analysis.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {methodologyPoints.map((p, i) => (
-              <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-                className="bg-white border border-[#ECE6DB] rounded-xl p-5 flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[#F97316]/8 flex items-center justify-center flex-shrink-0"><p.icon size={18} className="text-[#F97316]" /></div>
-                <div>
-                  <div className="flex items-baseline gap-2 mb-1">
-                    <span className="font-semibold text-[#1F1A17]">{p.title}</span>
-                    <span className="text-[#F97316] text-sm font-bold">{p.pct}</span>
+            {methodologyPoints.map((p, i) => {
+              const Icon = p.icon;
+              return (
+                <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                  className="bg-white border border-[#ECE6DB] rounded-xl p-5 flex gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-[#F97316]/8 flex items-center justify-center flex-shrink-0"><Icon size={18} className="text-[#F97316]" /></div>
+                  <div>
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className="font-semibold text-[#1F1A17]">{p.title}</span>
+                      <span className="text-[#F97316] text-sm font-bold">{p.pct}</span>
+                    </div>
+                    <p className="text-[#6F665D] text-sm leading-relaxed">{p.desc}</p>
                   </div>
-                  <p className="text-[#6F665D] text-sm leading-relaxed">{p.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>

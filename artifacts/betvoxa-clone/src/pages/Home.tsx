@@ -253,21 +253,24 @@ export default function Home() {
             <p className="text-[#6F665D] text-lg max-w-xl mx-auto">Understanding what each bonus type means helps you pick the right offer for your style of play.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {bonusTypes.map((b, i) => (
-              <motion.div key={b.title}
-                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -4, borderColor: "rgba(249,115,22,0.3)" }}
-                className="bg-white border border-[#ECE6DB] rounded-2xl p-6 transition-all duration-300">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="w-11 h-11 rounded-xl bg-[#F97316]/8 border border-[#F97316]/12 flex items-center justify-center">
-                    <b.icon size={20} className="text-[#F97316]" />
+            {bonusTypes.map((b, i) => {
+              const Icon = b.icon;
+              return (
+                <motion.div key={b.title}
+                  initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}
+                  whileHover={{ y: -4, borderColor: "rgba(249,115,22,0.3)" }}
+                  className="bg-white border border-[#ECE6DB] rounded-2xl p-6 transition-all duration-300">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="w-11 h-11 rounded-xl bg-[#F97316]/8 border border-[#F97316]/12 flex items-center justify-center">
+                      <Icon size={20} className="text-[#F97316]" />
+                    </div>
+                    <span className="bg-[#1B3950]/60 border border-[#1B3950] text-[#5F554C] text-[10px] font-bold uppercase px-2 py-0.5 rounded-full tracking-wider">{b.tag}</span>
                   </div>
-                  <span className="bg-[#1B3950]/60 border border-[#1B3950] text-[#5F554C] text-[10px] font-bold uppercase px-2 py-0.5 rounded-full tracking-wider">{b.tag}</span>
-                </div>
-                <h3 className="font-semibold text-[#1F1A17] text-lg mb-2">{b.title}</h3>
-                <p className="text-[#6F665D] text-sm leading-relaxed">{b.desc}</p>
-              </motion.div>
-            ))}
+                  <h3 className="font-semibold text-[#1F1A17] text-lg mb-2">{b.title}</h3>
+                  <p className="text-[#6F665D] text-sm leading-relaxed">{b.desc}</p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -348,18 +351,21 @@ export default function Home() {
           <p className="text-[#6F665D] text-lg max-w-xl mx-auto">Your trusted partner for safe and rewarding betting. We do the research so you don't have to.</p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {trustFeatures.map((f, i) => (
-            <motion.div key={f.title}
-              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -4 }}
-              className="bg-white border border-[#ECE6DB] rounded-2xl p-6 hover:border-[#F97316]/12 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-[#F97316]/8 border border-[#F97316]/12 flex items-center justify-center mb-4">
-                <f.icon size={22} className="text-[#F97316]" />
-              </div>
-              <h3 className="font-semibold text-[#1F1A17] text-lg mb-2">{f.title}</h3>
-              <p className="text-[#6F665D] text-sm leading-relaxed">{f.desc}</p>
-            </motion.div>
-          ))}
+          {trustFeatures.map((f, i) => {
+            const Icon = f.icon;
+            return (
+              <motion.div key={f.title}
+                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}
+                whileHover={{ y: -4 }}
+                className="bg-white border border-[#ECE6DB] rounded-2xl p-6 hover:border-[#F97316]/12 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-[#F97316]/8 border border-[#F97316]/12 flex items-center justify-center mb-4">
+                  <Icon size={22} className="text-[#F97316]" />
+                </div>
+                <h3 className="font-semibold text-[#1F1A17] text-lg mb-2">{f.title}</h3>
+                <p className="text-[#6F665D] text-sm leading-relaxed">{f.desc}</p>
+              </motion.div>
+            )
+          })}
         </div>
       </section>
 
