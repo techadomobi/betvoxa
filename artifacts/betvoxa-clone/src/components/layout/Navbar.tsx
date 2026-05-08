@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Menu, X, Trophy, MoreVertical } from "lucide-react";
+import { Home, Menu, X, Trophy, MoreVertical, Gift, BookOpen, Globe, Shield, FileText } from "lucide-react";
 
 const countries = [
   { name: "United Kingdom", code: "united-kingdom", flag: "🇬🇧" },
@@ -12,30 +12,25 @@ const countries = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [countryDropdown, setCountryDropdown] = useState(false);
   const [location] = useLocation();
 
-  const isCasinoRoute = location === '/casino' || location === '/casino-bonuses' || location.startsWith('/casino');
-
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    const onScroll = () => undefined;
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     setMobileOpen(false);
-    setCountryDropdown(false);
   }, [location]);
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/casino-bonuses", label: "Casino Bonuses" },
-    { href: "/betting-sites", label: "Betting Sites" },
-    { href: "/casinos", label: "casinos" },
-    { href: "/blog", label: "Blog" },
+    { href: "/", label: "Home", icon: Home },
+    { href: "/casino-bonuses", label: "Casino Bonuses", icon: Gift },
+    { href: "/betting-sites", label: "Betting Sites", icon: Trophy },
+    { href: "/casinos", label: "Live Offers", icon: Globe },
+    { href: "/blog", label: "Blog", icon: BookOpen },
   ];
 
   return (
@@ -84,9 +79,9 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="fixed inset-0 z-50 bg-black/45 pt-14 px-3 flex items-start justify-center"
+            className="fixed inset-0 z-50 bg-black/45 pt-14 px-3 flex items-start justify-start"
           >
-            <div className="w-full max-w-107.5 bg-[#0F1F33] rounded-b-[20px] shadow-2xl mt-2 overflow-auto border border-white/10" style={{ maxHeight: '90vh' }}>
+            <div className="w-full max-w-[320px] bg-[#0F1F33] rounded-r-[20px] shadow-2xl mt-2 overflow-auto border border-white/10" style={{ maxHeight: '90vh' }}>
               <div className="p-4">
                 <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
                   <div className="flex items-center gap-3">
@@ -98,28 +93,33 @@ export default function Navbar() {
                   </button>
                 </div>
 
-                <nav className="flex flex-col gap-2">
+                <nav className="grid grid-cols-1 gap-2">
                   {navLinks.map((link) => (
                     <Link key={link.href} href={link.href}>
-                      <div className="block w-full text-left px-4 py-3 bg-[#13253D] text-white rounded-lg cursor-pointer hover:bg-[#1B3950] transition-colors">
-                        {link.label}
+                      <div className="flex items-center gap-3 w-full text-left px-4 py-3 bg-[#13253D] text-white rounded-lg cursor-pointer hover:bg-[#1B3950] transition-colors">
+                        <link.icon size={16} className="text-[#2563EB] shrink-0" />
+                        <span>{link.label}</span>
                       </div>
                     </Link>
                   ))}
                 </nav>
 
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <Link href="/privacy"><a className="px-3 py-2 bg-[#2563EB] text-white rounded text-xs">Privacy Policy</a></Link>
-                  <Link href="/terms-and-conditions"><a className="px-3 py-2 bg-[#2563EB] text-white rounded text-xs">Terms & Conditions</a></Link>
-                  <Link href="/responsible-gambling"><a className="px-3 py-2 bg-[#2563EB] text-white rounded text-xs">Disclaimer</a></Link>
+                <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-3">
+                  <Link href="/privacy"><a className="flex items-center gap-2 px-3 py-2 bg-[#071122] border border-[#162233] text-[#C7D5E6] rounded text-xs"><Shield size={14} className="text-[#2563EB]" />Privacy Policy</a></Link>
+                  <Link href="/terms-and-conditions"><a className="flex items-center gap-2 px-3 py-2 bg-[#071122] border border-[#162233] text-[#C7D5E6] rounded text-xs"><FileText size={14} className="text-[#2563EB]" />Terms & Conditions</a></Link>
+                  <Link href="/responsible-gambling"><a className="flex items-center gap-2 px-3 py-2 bg-[#071122] border border-[#162233] text-[#C7D5E6] rounded text-xs"><Shield size={14} className="text-[#2563EB]" />Disclaimer</a></Link>
                 </div>
 
                 <div className="mt-5">
                   <div className="text-[11px] font-bold uppercase tracking-wider text-[#9DB3C9] mb-2">Country Pages</div>
-                  <div className="grid gap-1">
+                  <div className="grid grid-cols-2 gap-2">
                     {countries.map((c) => (
                       <Link key={c.code} href={`/country/${c.code}`}>
-                        <div className="px-4 py-2 text-[#C7D5E6] hover:text-white rounded-md cursor-pointer">{c.flag} {c.name}</div>
+                        <div className="flex items-center gap-2 px-3 py-2 text-[#C7D5E6] bg-[#071122] border border-[#162233] hover:text-white rounded-md cursor-pointer text-xs">
+                          <Globe size={13} className="text-[#2563EB] shrink-0" />
+                          <span>{c.flag}</span>
+                          <span className="truncate">{c.name}</span>
+                        </div>
                       </Link>
                     ))}
                   </div>
