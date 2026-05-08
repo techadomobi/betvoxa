@@ -320,7 +320,7 @@ export default function Country() {
                           href="#"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 px-4 py-2 flex-1 bg-[#2563EB] hover:bg-[#1D4ED8] text-[#0B0A09] rounded-md text-sm font-bold transition-colors"
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2 flex-1 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-md text-sm font-bold transition-colors"
                         >
                           Claim bonus
                         </a>

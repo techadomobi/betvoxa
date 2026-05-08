@@ -167,7 +167,7 @@ export default function Home() {
             className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/casino-bonuses" data-testid="button-hero-claim">
               <motion.button whileHover={{ scale: 1.04, boxShadow: "0 0 30px rgba(59,130,246,0.5)" }} whileTap={{ scale: 0.97 }}
-                className="px-8 py-4 bg-[#2563EB] text-[#0B0A09] rounded-xl font-bold text-lg hover:bg-[#1D4ED8] transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center gap-2">
+                className="px-8 py-4 bg-[#2563EB] text-white rounded-xl font-bold text-lg hover:bg-[#1D4ED8] transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center gap-2">
                 <Trophy size={18} /> Claim Bonus Now
               </motion.button>
             </Link>

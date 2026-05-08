@@ -118,7 +118,7 @@ export default function BonusCard({
       <motion.button
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="w-full px-4 py-2.5 bg-[#2563EB] text-[#0B0A09] rounded-lg text-sm font-bold hover:bg-[#1D4ED8] transition-colors shadow-[0_0_16px_rgba(37,99,235,0.2)] flex items-center justify-center gap-1.5"
+        className="w-full px-4 py-2.5 bg-[#2563EB] text-white rounded-lg text-sm font-bold hover:bg-[#1D4ED8] transition-colors shadow-[0_0_16px_rgba(37,99,235,0.2)] flex items-center justify-center gap-1.5"
         data-testid={`button-claim-${name.toLowerCase().replace(/\s+/g, "-")}`}
       >
         Claim bonus

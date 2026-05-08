@@ -173,7 +173,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link href="/casino-bonuses">
-              <button className="mt-6 w-full py-4 bg-[#2563EB] text-[#1F1A17] rounded-lg font-bold text-lg hover:bg-[#1D4ED8] transition-colors">
+              <button className="mt-6 w-full py-4 bg-[#2563EB] text-white rounded-lg font-bold text-lg hover:bg-[#1D4ED8] transition-colors">
                 Claim Bonus
               </button>
             </Link>

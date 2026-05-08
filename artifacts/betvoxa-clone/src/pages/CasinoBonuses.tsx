@@ -215,7 +215,7 @@ export default function CasinoBonuses() {
                       ))}
                     </div>
                     <div className="flex flex-wrap gap-3 mt-4">
-                      <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-[#0B0A09] rounded-md text-sm font-bold transition-colors">
+                      <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-md text-sm font-bold transition-colors">
                         Claim bonus
                         <ExternalLink className="w-4 h-4 ml-2" />
                       </a>
