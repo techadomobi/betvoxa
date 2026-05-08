@@ -72,7 +72,7 @@ export default function Navbar() {
                       location === link.href
                         ? "text-[#F97316]"
                         : isCasinoRoute && !scrolled
-                        ? "text-white hover:text-[#F97316]"
+                        ? "text-[#1F1A17] hover:text-[#F97316]"
                         : "text-[#1F1A17] hover:text-[#F97316]"
                     }`}
                   >
@@ -89,7 +89,7 @@ export default function Navbar() {
               >
                 <button
                   className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isCasinoRoute && !scrolled ? 'text-white hover:text-[#F97316]' : 'text-[#1F1A17] hover:text-[#F97316]'
+                    isCasinoRoute && !scrolled ? 'text-[#1F1A17] hover:text-[#F97316]' : 'text-[#1F1A17] hover:text-[#F97316]'
                   }`}
                   data-testid="button-country-dropdown"
                 >
@@ -134,7 +134,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className={`md:hidden p-2 ${isCasinoRoute && !scrolled ? 'text-white hover:text-[#F97316]' : 'text-[#1F1A17] hover:text-[#F97316]'}`}
+              className={`md:hidden p-2 ${isCasinoRoute && !scrolled ? 'text-[#1F1A17] hover:text-[#F97316]' : 'text-[#1F1A17] hover:text-[#F97316]'}`}
               onClick={() => setMobileOpen(!mobileOpen)}
               data-testid="button-mobile-menu"
             >

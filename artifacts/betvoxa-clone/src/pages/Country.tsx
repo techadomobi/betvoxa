@@ -138,6 +138,7 @@ const countryData: Record<string, {
 export default function Country() {
   const { code } = useParams<{ code: string }>();
   const data = countryData[code || "united-kingdom"] || countryData["united-kingdom"];
+  const isAustralia = code === "australia";
 
   const marketSnapshot = [
     {
@@ -191,7 +192,7 @@ export default function Country() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8F7F2]">
+    <div className="min-h-screen bg-background">
       {/* HERO */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         {/* hero background removed to improve text contrast */}
@@ -244,13 +245,13 @@ export default function Country() {
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl mb-4 font-bold text-[#1F1A17]">Featured {data.name} offers</h2>
             <p className="text-lg text-[#6F665D] max-w-2xl mx-auto">
-              {params.code === "australia" 
+              {isAustralia 
                 ? "Top betting sites for Australian players" 
                 : `Best betting sites and bonuses for ${data.name}`}
             </p>
           </div>
 
-          {params.code === "australia" ? (
+          {isAustralia ? (
             // Australian Featured Grid Layout
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {data.topBonuses.map((casino, idx) => (
@@ -280,7 +281,7 @@ export default function Country() {
                             <span className="text-sm text-[#8D847A]">({casino.reviews.toLocaleString()})</span>
                           </div>
                         </div>
-                        <div className="w-16 h-16 bg-white rounded-lg p-2 flex items-center justify-center ml-4 flex-shrink-0">
+                        <div className="w-16 h-16 bg-white rounded-lg p-2 flex items-center justify-center ml-4 shrink-0">
                           <span className="text-xs font-bold text-gray-800">{casino.initials}</span>
                         </div>
                       </div>
@@ -302,7 +303,7 @@ export default function Country() {
                         </div>
                         <div className="pt-2 border-t border-[#E5E4E2]">
                           <ul className="space-y-1">
-                            {casino.features.map((feature) => (
+                            {casino.features.map((feature: string) => (
                               <li key={feature} className="text-sm text-[#6F665D] flex items-start gap-2">
                                 <span className="text-[#F97316] mt-0.5">•</span>
                                 <span>{feature}</span>
@@ -343,7 +344,7 @@ export default function Country() {
             </div>
           )}
 
-          {params.code === "australia" && (
+          {isAustralia && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
                 <div className="flex items-center gap-3 mb-4">
@@ -401,7 +402,7 @@ export default function Country() {
                 whileHover={{ borderColor: "rgba(249,115,22,0.3)" }}
                 className="bg-white border border-[#ECE6DB] rounded-xl p-5 flex items-center gap-4 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#F97316]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#F97316] text-sm font-mono flex-shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-linear-to-br from-[#F97316]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#F97316] text-sm font-mono shrink-0">
                   {site.initials}
                 </div>
                 <div className="flex-1">
@@ -450,7 +451,7 @@ export default function Country() {
             <div className="flex flex-col gap-3">
               {data.tips.map((tip) => (
                 <div key={tip} className="flex items-start gap-3">
-                  <Check size={15} className="text-[#F97316] mt-0.5 flex-shrink-0" />
+                  <Check size={15} className="text-[#F97316] mt-0.5 shrink-0" />
                   <span className="text-[#5F554C] text-sm leading-relaxed">{tip}</span>
                 </div>
               ))}

@@ -76,7 +76,7 @@ export default function CasinoBonuses() {
   });
 
   return (
-    <div className="min-h-screen bg-[#F8F7F2]">
+    <div className="min-h-screen bg-background">
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         {/* hero background removed to improve text contrast */}
@@ -179,7 +179,7 @@ export default function CasinoBonuses() {
             <motion.div key={casino.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
               <div className="card-premium">
                 <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="w-24 h-24 bg-white rounded-xl p-3 flex items-center justify-center">
                       <span className="text-sm font-bold text-gray-800">{casino.initials}</span>
                     </div>
@@ -209,7 +209,7 @@ export default function CasinoBonuses() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-4">
                       {casino.features.slice(0, 3).map((feature) => (
                         <div key={feature} className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-[#F97316] mt-0.5 flex-shrink-0" />
+                          <Check className="w-4 h-4 text-[#F97316] mt-0.5 shrink-0" />
                           <span className="text-sm text-[#5F554C]">{feature}</span>
                         </div>
                       ))}
@@ -354,7 +354,7 @@ export default function CasinoBonuses() {
                   { term: "Max Win", def: "Maximum amount you can win from a bonus or single spin" },
                 ].map((item) => (
                   <div key={item.term} className="flex gap-3">
-                    <span className="text-[#F97316] font-semibold w-24 flex-shrink-0">{item.term}</span>
+                    <span className="text-[#F97316] font-semibold w-24 shrink-0">{item.term}</span>
                     <span className="text-[#5F554C]">{item.def}</span>
                   </div>
                 ))}
@@ -386,7 +386,7 @@ export default function CasinoBonuses() {
         </div>
         <div className="mt-10 bg-[#F97316]/5 border border-[#F97316]/12 rounded-2xl p-6 md:p-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-[#F97316]/15 flex items-center justify-center flex-shrink-0"><Gift size={28} className="text-[#F97316]" /></div>
+            <div className="w-14 h-14 rounded-2xl bg-[#F97316]/15 flex items-center justify-center shrink-0"><Gift size={28} className="text-[#F97316]" /></div>
             <div>
               <h3 className="font-serif text-2xl font-bold text-[#1F1A17] mb-2">How to Unlock VIP Status</h3>
               <p className="text-[#5F554C] leading-relaxed">VIP status is typically earned through loyalty points accumulated with real-money wagers. Some casinos invite high-rollers directly. Points are earned per £1–10 wagered and can be redeemed for bonus cash, free spins, or physical gifts.</p>
@@ -448,7 +448,7 @@ export default function CasinoBonuses() {
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 className="w-full flex items-center justify-between px-6 py-4 text-left" data-testid={`button-faq-casino-${i}`}>
                 <span className="font-medium text-[#1F1A17] text-sm">{faq.q}</span>
-                {openFaq === i ? <ChevronUp size={15} className="text-[#F97316] flex-shrink-0" /> : <ChevronDown size={15} className="text-[#8D847A] flex-shrink-0" />}
+                {openFaq === i ? <ChevronUp size={15} className="text-[#F97316] shrink-0" /> : <ChevronDown size={15} className="text-[#8D847A] shrink-0" />}
               </button>
               <AnimatePresence>
                 {openFaq === i && (
