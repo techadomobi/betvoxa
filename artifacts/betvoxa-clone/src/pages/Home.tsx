@@ -601,7 +601,7 @@ export default function Home() {
       </section>
 
       {/* ─── FINAL CTA ─── */}
-      <section className="py-28 relative overflow-hidden bg-[#F8F7F2]">
+      <section className="py-28 relative overflow-hidden bg-background">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(249,115,22,0.08),transparent)]" />
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="relative max-w-3xl mx-auto text-center px-4">

@@ -126,7 +126,7 @@ export default function BettingSites() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-[#F8F7F2]">
+    <div className="min-h-screen bg-background">
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-16 overflow-hidden">
         {/* hero background removed to improve text contrast */}
@@ -217,7 +217,7 @@ export default function BettingSites() {
       </section>
 
       {/* ─── HOW WE RATE ─── */}
-      <section className="bg-[#F3F1EA] py-20">
+      <section className="bg-muted/40 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Our methodology</div>
@@ -265,7 +265,7 @@ export default function BettingSites() {
       </section>
 
       {/* ─── ODDS COMPARISON ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-muted/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Find the best price</div>
@@ -336,7 +336,7 @@ export default function BettingSites() {
       </section>
 
       {/* ─── LIVE BETTING GUIDE ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-muted/40">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
@@ -416,7 +416,7 @@ export default function BettingSites() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-muted/40">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-3">Sports Betting FAQ</h2>

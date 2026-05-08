@@ -386,7 +386,7 @@ export default function Country() {
       </section>
 
       {/* TOP BETTING SITES */}
-      <section className="bg-[#F3F1EA] py-16">
+      <section className="bg-muted/40 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-6">
             Top Betting Sites in {data.name}
@@ -461,7 +461,7 @@ export default function Country() {
       </section>
 
       {/* PAYMENT METHODS */}
-      <section className="bg-[#F3F1EA] py-16">
+      <section className="bg-muted/40 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-6">Payment Methods in {data.name}</h2>
           <div className="flex flex-wrap gap-3">
