@@ -32,11 +32,11 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-[#1F1A17] mb-4">Quick links</h4>
             <ul className="space-y-3 text-[#5A5450] text-sm">
-              <li><Link href="/" className="hover:text-[#F97316]">Home</Link></li>
-              <li><Link href="/casino-bonuses" className="hover:text-[#F97316]">Casino bonuses</Link></li>
-              <li><Link href="/betting-sites" className="hover:text-[#F97316]">Betting sites</Link></li>
-              <li><Link href="/casinos" className="hover:text-[#F97316]">Offers</Link></li>
-              <li><Link href="/blog" className="hover:text-[#F97316]">Blog</Link></li>
+              <li><Link href="/" className="hover:text-[#2563EB]">Home</Link></li>
+              <li><Link href="/casino-bonuses" className="hover:text-[#2563EB]">Casino bonuses</Link></li>
+              <li><Link href="/betting-sites" className="hover:text-[#2563EB]">Betting sites</Link></li>
+              <li><Link href="/casinos" className="hover:text-[#2563EB]">Offers</Link></li>
+              <li><Link href="/blog" className="hover:text-[#2563EB]">Blog</Link></li>
             </ul>
           </div>
 
@@ -44,10 +44,10 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-[#1F1A17] mb-4">Countries</h4>
             <ul className="space-y-3 text-[#5A5450] text-sm">
-              <li><Link href="/country/united-kingdom" className="hover:text-[#F97316]">United Kingdom</Link></li>
-              <li><Link href="/country/united-states" className="hover:text-[#F97316]">United States</Link></li>
-              <li><Link href="/country/australia" className="hover:text-[#F97316]">Australia</Link></li>
-              <li><Link href="/country/canada" className="hover:text-[#F97316]">Canada</Link></li>
+              <li><Link href="/country/united-kingdom" className="hover:text-[#2563EB]">United Kingdom</Link></li>
+              <li><Link href="/country/united-states" className="hover:text-[#2563EB]">United States</Link></li>
+              <li><Link href="/country/australia" className="hover:text-[#2563EB]">Australia</Link></li>
+              <li><Link href="/country/canada" className="hover:text-[#2563EB]">Canada</Link></li>
             </ul>
           </div>
 
@@ -55,9 +55,9 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold text-[#1F1A17] mb-4">Legal</h4>
             <ul className="space-y-3 text-[#5A5450] text-sm">
-              <li><Link href="/privacy" className="hover:text-[#F97316]">Privacy policy</Link></li>
-              <li><Link href="/terms-and-conditions" className="hover:text-[#F97316]">Terms & conditions</Link></li>
-              <li><Link href="/responsible-gambling" className="hover:text-[#F97316]">Responsible gambling</Link></li>
+              <li><Link href="/privacy" className="hover:text-[#2563EB]">Privacy policy</Link></li>
+              <li><Link href="/terms-and-conditions" className="hover:text-[#2563EB]">Terms & conditions</Link></li>
+              <li><Link href="/responsible-gambling" className="hover:text-[#2563EB]">Responsible gambling</Link></li>
             </ul>
           </div>
         </div>
@@ -65,9 +65,9 @@ export default function Footer() {
         <div className="my-8 border-t border-[#E6DDD6]" />
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-[#FEF4E9] border border-[#F97316] rounded-lg p-4 flex items-start gap-4">
+          <div className="bg-[#FEF4E9] border border-[#2563EB] rounded-lg p-4 flex items-start gap-4">
             <div className="mt-0">
-              <AlertTriangle size={20} className="text-[#F97316]" />
+              <AlertTriangle size={20} className="text-[#2563EB]" />
             </div>
             <div>
               <div className="font-semibold text-[#1F1A17]">Responsible gambling</div>
@@ -84,3 +84,4 @@ export default function Footer() {
     </footer>
   );
 }
+

@@ -114,7 +114,7 @@ export default function TermsAndConditions() {
     <div className="min-h-screen bg-gradient-to-b from-[#F8F7F2] to-[#F3F1EA]">
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute -top-20 -right-20 w-[26rem] h-[26rem] rounded-full bg-[#F97316]/10 blur-3xl"
+          className="absolute -top-20 -right-20 w-[26rem] h-[26rem] rounded-full bg-[#2563EB]/10 blur-3xl"
           animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -127,7 +127,7 @@ export default function TermsAndConditions() {
           transition={{ duration: 0.6 }}
           className="space-y-4"
         >
-          <div className="inline-flex items-center gap-2 text-[#F97316] text-xs tracking-wider uppercase font-semibold bg-[#F97316]/10 px-3 py-1 rounded-full">
+          <div className="inline-flex items-center gap-2 text-[#2563EB] text-xs tracking-wider uppercase font-semibold bg-[#2563EB]/10 px-3 py-1 rounded-full">
             <FileText size={14} />
             Legal Page
           </div>
@@ -150,8 +150,8 @@ export default function TermsAndConditions() {
             const Icon = item.icon;
             return (
               <div key={item.title} className="bg-white border border-[#ECE6DB] rounded-2xl p-5">
-                <div className="w-10 h-10 rounded-xl bg-[#F97316]/10 flex items-center justify-center mb-3">
-                  <Icon size={20} className="text-[#F97316]" />
+                <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-3">
+                  <Icon size={20} className="text-[#2563EB]" />
                 </div>
                 <h3 className="font-semibold text-[#1F1A17] mb-1">{item.title}</h3>
                 <p className="text-[#5F554C] text-sm">{item.text}</p>
@@ -175,8 +175,8 @@ export default function TermsAndConditions() {
                 className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#F97316]/10 flex items-center justify-center flex-shrink-0">
-                    <Icon size={22} className="text-[#F97316]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
+                    <Icon size={22} className="text-[#2563EB]" />
                   </div>
                   <h2 className="font-serif text-2xl font-bold text-[#1F1A17]">{section.title}</h2>
                 </div>
@@ -217,7 +217,7 @@ export default function TermsAndConditions() {
 
           <div className="mt-8 border-t border-[#EFE8DB] pt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div className="text-[#5F554C] text-sm">Questions about these terms?</div>
-            <a href="mailto:support@betvoxa.com" className="inline-flex items-center gap-2 text-[#F97316] hover:text-[#DC6803] text-sm font-medium">
+            <a href="mailto:support@betvoxa.com" className="inline-flex items-center gap-2 text-[#2563EB] hover:text-[#1D4ED8] text-sm font-medium">
               <Mail size={16} />
               support@betvoxa.com
             </a>
@@ -227,3 +227,4 @@ export default function TermsAndConditions() {
     </div>
   );
 }
+

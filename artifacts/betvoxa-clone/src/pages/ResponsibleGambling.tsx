@@ -114,7 +114,7 @@ export default function ResponsibleGambling() {
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
-          <div className="inline-flex items-center gap-2 text-[#F97316] text-xs tracking-wider uppercase font-semibold bg-[#F97316]/10 px-3 py-1 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 text-[#2563EB] text-xs tracking-wider uppercase font-semibold bg-[#2563EB]/10 px-3 py-1 rounded-full mb-4">
             <AlertTriangle size={14} />
             Player Protection
           </div>
@@ -128,7 +128,7 @@ export default function ResponsibleGambling() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
           {impactStats.map((item) => (
             <div key={item.label} className="bg-white border border-[#ECE6DB] rounded-xl px-5 py-4">
-              <div className="text-[#F97316] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
+              <div className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
               <div className="text-[#1F1A17] font-semibold">{item.value}</div>
             </div>
           ))}
@@ -146,8 +146,8 @@ export default function ResponsibleGambling() {
                 transition={{ delay: idx * 0.08 }}
                 className="bg-white border border-[#ECE6DB] rounded-2xl p-6"
               >
-                <div className="w-11 h-11 rounded-xl bg-[#F97316]/10 flex items-center justify-center mb-4">
-                  <Icon size={22} className="text-[#F97316]" />
+                <div className="w-11 h-11 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-4">
+                  <Icon size={22} className="text-[#2563EB]" />
                 </div>
                 <h2 className="font-semibold text-[#1F1A17] mb-2">{card.title}</h2>
                 <p className="text-[#5F554C] text-sm leading-relaxed">{card.text}</p>
@@ -169,7 +169,7 @@ export default function ResponsibleGambling() {
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {warningSigns.map((item) => (
               <li key={item} className="flex items-start gap-3 text-[#3F3832] text-sm bg-[#FCFBF8] border border-[#EFE8DB] rounded-xl px-4 py-3">
-                <span className="mt-0.5 text-[#F97316]">•</span>
+                <span className="mt-0.5 text-[#2563EB]">•</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -186,7 +186,7 @@ export default function ResponsibleGambling() {
           <div className="space-y-4">
             {recoveryPlan.map((step) => (
               <div key={step.phase} className="border border-[#EFE8DB] rounded-xl p-4 bg-[#FCFBF8]">
-                <div className="text-[#F97316] text-xs font-semibold uppercase tracking-wider mb-1">{step.phase}</div>
+                <div className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider mb-1">{step.phase}</div>
                 <h3 className="font-semibold text-[#1F1A17] mb-2">{step.title}</h3>
                 <p className="text-[#5F554C] text-sm leading-relaxed">{step.detail}</p>
               </div>
@@ -205,7 +205,7 @@ export default function ResponsibleGambling() {
             {practicalSteps.map((step, idx) => (
               <div key={step.title} className="bg-white border border-[#ECE6DB] rounded-2xl p-5 md:p-6">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-[#F97316]/12 text-[#F97316] text-sm font-semibold flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-[#2563EB]/12 text-[#2563EB] text-sm font-semibold flex items-center justify-center">
                     {idx + 1}
                   </div>
                   <h3 className="font-semibold text-[#1F1A17]">{step.title}</h3>
@@ -262,3 +262,4 @@ export default function ResponsibleGambling() {
     </div>
   );
 }
+

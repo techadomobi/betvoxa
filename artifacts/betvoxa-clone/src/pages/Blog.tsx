@@ -51,7 +51,7 @@ export default function Blog() {
             className="mb-8"
           >
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1F1A17] mb-4">
-              Casino & Betting <span className="text-[#F97316]">Blog</span>
+              Casino & Betting <span className="text-[#2563EB]">Blog</span>
             </h1>
             <p className="text-[#5F554C] text-lg max-w-2xl mx-auto">
               Expert insights, guides, and reviews on the best online casinos,
@@ -73,7 +73,7 @@ export default function Blog() {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-lg border border-[#E4DED0] bg-white text-[#1F1A17] placeholder-[#A39B92] focus:outline-none focus:ring-2 focus:ring-[#F97316]"
+                className="w-full pl-12 pr-4 py-3 rounded-lg border border-[#E4DED0] bg-white text-[#1F1A17] placeholder-[#A39B92] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
               />
             </div>
           </motion.div>
@@ -114,7 +114,7 @@ export default function Blog() {
                       }}
                     />
                     <div className="absolute top-3 left-3">
-                      <span className="bg-[#F97316] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                      <span className="bg-[#2563EB] text-white text-xs font-semibold px-3 py-1 rounded-full">
                         {blog.category}
                       </span>
                     </div>
@@ -124,7 +124,7 @@ export default function Blog() {
                 {/* Content */}
                 <div className="p-5">
                   <Link href={`/blog/${blog.slug}`}>
-                    <h3 className="text-lg font-bold text-[#1F1A17] mb-2 line-clamp-2 hover:text-[#F97316] transition-colors cursor-pointer">
+                    <h3 className="text-lg font-bold text-[#1F1A17] mb-2 line-clamp-2 hover:text-[#2563EB] transition-colors cursor-pointer">
                       {blog.title}
                     </h3>
                   </Link>
@@ -146,7 +146,7 @@ export default function Blog() {
                   <Link href={`/blog/${blog.slug}`}>
                     <motion.button
                       whileHover={{ scale: 1.02 }}
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#F97316]/10 text-[#F97316] rounded-lg hover:bg-[#F97316]/20 transition-colors font-medium text-sm cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#2563EB]/10 text-[#2563EB] rounded-lg hover:bg-[#2563EB]/20 transition-colors font-medium text-sm cursor-pointer"
                     >
                       Read Article <ArrowRight size={14} />
                     </motion.button>
@@ -160,3 +160,4 @@ export default function Blog() {
     </div>
   );
 }
+

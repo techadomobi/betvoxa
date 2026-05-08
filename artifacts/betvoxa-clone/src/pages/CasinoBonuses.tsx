@@ -52,7 +52,7 @@ const faqs = [
 const vipTiers = [
   { tier: "Bronze", desc: "Entry level — cashback, priority support", color: "#CD7F32" },
   { tier: "Silver", desc: "Enhanced cashback, faster withdrawals, bonus boosts", color: "#C0C0C0" },
-  { tier: "Gold", desc: "Personal account manager, higher limits, exclusive events", color: "#F97316" },
+  { tier: "Gold", desc: "Personal account manager, higher limits, exclusive events", color: "#2563EB" },
   { tier: "Platinum", desc: "Luxury gifts, private jets, VIP event invitations, bespoke bonuses", color: "#E5E4E2" },
 ];
 
@@ -82,7 +82,7 @@ export default function CasinoBonuses() {
         {/* hero background removed to improve text contrast */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Expert-verified</div>
+            <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Expert-verified</div>
             <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1F1A17] mb-4">Casino Bonuses</h1>
             <p className="text-[#5F554C] text-lg max-w-xl">Compare and claim the best casino bonuses from top operators worldwide. Updated daily by our expert team.</p>
           </motion.div>
@@ -100,7 +100,7 @@ export default function CasinoBonuses() {
           ].map((stat, i) => (
             <motion.div key={stat.label} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
               className="bg-white border border-[#ECE6DB] rounded-xl p-4 text-center">
-              <div className="text-2xl font-bold text-[#F97316] mb-1">{stat.value}</div>
+              <div className="text-2xl font-bold text-[#2563EB] mb-1">{stat.value}</div>
               <div className="text-[#6F665D] text-xs">{stat.label}</div>
             </motion.div>
           ))}
@@ -110,13 +110,13 @@ export default function CasinoBonuses() {
       {/* ─── BEST PICKS ─── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-5 flex items-center gap-2">
-          <Trophy size={20} className="text-[#F97316]" /> Best Picks This Month
+          <Trophy size={20} className="text-[#2563EB]" /> Best Picks This Month
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {topPicks.map((pick, i) => (
             <motion.div key={pick.label} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
-              className="bg-[#F97316]/5 border border-[#F97316]/12 rounded-xl p-4">
-              <div className="text-[#F97316] text-xs font-bold uppercase tracking-wider mb-1">{pick.label}</div>
+              className="bg-[#2563EB]/5 border border-[#2563EB]/12 rounded-xl p-4">
+              <div className="text-[#2563EB] text-xs font-bold uppercase tracking-wider mb-1">{pick.label}</div>
               <div className="text-[#1F1A17] font-semibold mb-0.5">{pick.name}</div>
               <div className="text-[#6F665D] text-xs">{pick.detail}</div>
             </motion.div>
@@ -127,7 +127,7 @@ export default function CasinoBonuses() {
       {/* ─── COMPARISON TABLE ─── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-5 flex items-center gap-2">
-          <TrendingUp size={20} className="text-[#F97316]" /> Quick Comparison
+          <TrendingUp size={20} className="text-[#2563EB]" /> Quick Comparison
         </h2>
         <div className="overflow-x-auto rounded-xl border border-[#ECE6DB]">
           <table className="w-full text-sm">
@@ -143,21 +143,21 @@ export default function CasinoBonuses() {
             </thead>
             <tbody>
               {allBonuses.slice(0, 8).map((b, i) => (
-                <tr key={b.name} className={`border-b border-[#EFE9DE] ${i % 2 === 0 ? "bg-[#FAF8F3]" : "bg-white"} hover:bg-[#F97316]/5 transition-colors`}>
+                <tr key={b.name} className={`border-b border-[#EFE9DE] ${i % 2 === 0 ? "bg-[#FAF8F3]" : "bg-white"} hover:bg-[#2563EB]/5 transition-colors`}>
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-md bg-[#F97316]/15 flex items-center justify-center text-[#F97316] text-xs font-bold">{b.initials.slice(0, 3)}</div>
+                      <div className="w-7 h-7 rounded-md bg-[#2563EB]/15 flex items-center justify-center text-[#2563EB] text-xs font-bold">{b.initials.slice(0, 3)}</div>
                       <span className="text-[#1F1A17] font-medium">{b.name}</span>
                     </div>
                   </td>
-                  <td className="px-5 py-3.5 text-[#F97316] font-medium">{b.bonusTitle}</td>
+                  <td className="px-5 py-3.5 text-[#2563EB] font-medium">{b.bonusTitle}</td>
                   <td className="px-5 py-3.5 text-[#5F554C]">{b.wagering}</td>
                   <td className="px-5 py-3.5 text-[#5F554C]">{b.minDeposit}</td>
                   <td className="px-5 py-3.5">
-                    <div className="flex">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={11} className={j < Math.round(b.rating) ? "fill-[#F97316] text-[#F97316]" : "fill-white/20 text-[#C9C3B8]"} />)}</div>
+                    <div className="flex">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={11} className={j < Math.round(b.rating) ? "fill-[#2563EB] text-[#2563EB]" : "fill-white/20 text-[#C9C3B8]"} />)}</div>
                   </td>
                   <td className="px-5 py-3.5 text-right">
-                    <button className="px-3 py-1.5 bg-[#F97316] text-[#0B0A09] rounded-md text-xs font-bold hover:bg-[#DC6803] transition-colors" data-testid={`button-table-claim-${b.name.toLowerCase().replace(/\s+/g, "-")}`}>Claim</button>
+                    <button className="px-3 py-1.5 bg-[#2563EB] text-[#0B0A09] rounded-md text-xs font-bold hover:bg-[#1D4ED8] transition-colors" data-testid={`button-table-claim-${b.name.toLowerCase().replace(/\s+/g, "-")}`}>Claim</button>
                   </td>
                 </tr>
               ))}
@@ -191,35 +191,35 @@ export default function CasinoBonuses() {
                         <div className="flex items-center gap-2">
                           <div className="flex items-center gap-0.5">
                             {Array(5).fill(0).map((_, i) => (
-                              <Star key={i} className={`w-4 h-4 ${i < Math.round(casino.rating) ? "fill-[#F97316] text-[#F97316]" : "text-[#D4D0C8]"}`} />
+                              <Star key={i} className={`w-4 h-4 ${i < Math.round(casino.rating) ? "fill-[#2563EB] text-[#2563EB]" : "text-[#D4D0C8]"}`} />
                             ))}
                           </div>
                           <span className="text-sm text-[#8D847A]">({casino.reviews.toLocaleString()})</span>
                         </div>
                       </div>
                       {idx === 0 && (
-                        <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold bg-[#F97316] text-[#0B0A09] border-transparent">Featured</div>
+                        <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold bg-[#2563EB] text-[#0B0A09] border-transparent">Featured</div>
                       )}
                     </div>
                     <p className="text-[#6F665D] mb-4 leading-relaxed">{casino.bonusDetail || "Premium casino experience with instant bonuses and excellent gaming options."}</p>
                     <div className="inline-flex items-center gap-2 bg-[#E5E4E2]/50 text-[#1F1A17] px-3 py-1.5 rounded-md text-sm font-medium mb-4">
                       <span>Min deposit:</span>
-                      <span className="text-[#F97316]">{casino.minDeposit}</span>
+                      <span className="text-[#2563EB]">{casino.minDeposit}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-4">
                       {casino.features.slice(0, 3).map((feature) => (
                         <div key={feature} className="flex items-start gap-2">
-                          <Check className="w-4 h-4 text-[#F97316] mt-0.5 shrink-0" />
+                          <Check className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
                           <span className="text-sm text-[#5F554C]">{feature}</span>
                         </div>
                       ))}
                     </div>
                     <div className="flex flex-wrap gap-3 mt-4">
-                      <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#F97316] hover:bg-[#DC6803] text-[#0B0A09] rounded-md text-sm font-bold transition-colors">
+                      <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#2563EB] hover:bg-[#1D4ED8] text-[#0B0A09] rounded-md text-sm font-bold transition-colors">
                         Claim bonus
                         <ExternalLink className="w-4 h-4 ml-2" />
                       </a>
-                      <button className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-[#F97316]/20 bg-background hover:bg-[#F97316]/10 rounded-md text-sm font-medium transition-colors">
+                      <button className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-[#2563EB]/20 bg-background hover:bg-[#2563EB]/10 rounded-md text-sm font-medium transition-colors">
                         Read review
                       </button>
                     </div>
@@ -234,8 +234,8 @@ export default function CasinoBonuses() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-[#F97316]/10 rounded-lg flex items-center justify-center">
-                <CreditCard className="w-6 h-6 text-[#F97316]" />
+              <div className="w-12 h-12 bg-[#2563EB]/10 rounded-lg flex items-center justify-center">
+                <CreditCard className="w-6 h-6 text-[#2563EB]" />
               </div>
               <h3 className="text-2xl font-semibold text-[#1F1A17]">Payment methods</h3>
             </div>
@@ -243,7 +243,7 @@ export default function CasinoBonuses() {
             <ul className="space-y-2">
               {["Visa & Mastercard", "PayPal", "Skrill", "Neteller", "Bank transfer", "Apple Pay"].map((method) => (
                 <li key={method} className="flex items-center gap-2">
-                  <span className="text-[#F97316]">•</span>
+                  <span className="text-[#2563EB]">•</span>
                   <span className="text-[#5F554C]">{method}</span>
                 </li>
               ))}
@@ -251,8 +251,8 @@ export default function CasinoBonuses() {
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-[#F97316]/10 rounded-lg flex items-center justify-center">
-                <Shield className="w-6 h-6 text-[#F97316]" />
+              <div className="w-12 h-12 bg-[#2563EB]/10 rounded-lg flex items-center justify-center">
+                <Shield className="w-6 h-6 text-[#2563EB]" />
               </div>
               <h3 className="text-2xl font-semibold text-[#1F1A17]">UK regulation</h3>
             </div>
@@ -260,7 +260,7 @@ export default function CasinoBonuses() {
             <ul className="space-y-2">
               {["Fair gaming and RNG certification", "Segregated player funds", "Responsible gambling tools", "Dispute resolution services"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <span className="text-[#F97316]">•</span>
+                  <span className="text-[#2563EB]">•</span>
                   <span className="text-[#5F554C]">{item}</span>
                 </li>
               ))}
@@ -284,7 +284,7 @@ export default function CasinoBonuses() {
               { step: "4", title: "Make a Deposit", desc: "Meet the minimum deposit requirement and your bonus will be credited instantly." },
             ].map((s, i) => (
               <motion.div key={s.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center">
-                <div className="w-12 h-12 rounded-full bg-[#F97316] text-[#0B0A09] font-bold text-xl flex items-center justify-center mx-auto mb-3">{s.step}</div>
+                <div className="w-12 h-12 rounded-full bg-[#2563EB] text-[#0B0A09] font-bold text-xl flex items-center justify-center mx-auto mb-3">{s.step}</div>
                 <h3 className="text-[#1F1A17] font-semibold mb-1">{s.title}</h3>
                 <p className="text-[#6F665D] text-sm">{s.desc}</p>
               </motion.div>
@@ -296,19 +296,19 @@ export default function CasinoBonuses() {
       {/* ─── GAME TYPES ─── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
-          <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">What to play</div>
+          <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">What to play</div>
           <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">Casino Game Types</h2>
           <p className="text-[#6F665D] max-w-xl mx-auto">From classic slots to immersive live dealer tables — find games that match your style and budget.</p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {gameTypes.map((g, i) => (
             <motion.div key={g.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -4, borderColor: "rgba(224,174,46,0.25)" }}
+              whileHover={{ y: -4, borderColor: "rgba(59,130,246,0.25)" }}
               className="bg-white border border-[#ECE6DB] rounded-2xl p-6 transition-all duration-300">
               <div className="text-4xl mb-3">{g.icon}</div>
               <div className="flex items-baseline gap-2 mb-1">
                 <h3 className="font-semibold text-[#1F1A17]">{g.name}</h3>
-                <span className="text-[#F97316] text-xs font-bold">{g.count}</span>
+                <span className="text-[#2563EB] text-xs font-bold">{g.count}</span>
               </div>
               <p className="text-[#6F665D] text-sm leading-relaxed">{g.desc}</p>
             </motion.div>
@@ -327,7 +327,7 @@ export default function CasinoBonuses() {
               <div className="flex flex-col gap-2">
                 {[
                   { label: "Excellent", value: "0–20x", color: "bg-green-500" },
-                  { label: "Good", value: "21–35x", color: "bg-[#F97316]" },
+                  { label: "Good", value: "21–35x", color: "bg-[#2563EB]" },
                   { label: "Average", value: "36–50x", color: "bg-orange-500" },
                   { label: "Poor", value: "50x+", color: "bg-red-500" },
                 ].map((item) => (
@@ -341,7 +341,7 @@ export default function CasinoBonuses() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="bg-white border border-[#ECE6DB] rounded-2xl p-6">
-              <h3 className="font-semibold text-[#1F1A17] mb-4 flex items-center gap-2"><Check size={16} className="text-[#F97316]" /> Key Terms Glossary</h3>
+              <h3 className="font-semibold text-[#1F1A17] mb-4 flex items-center gap-2"><Check size={16} className="text-[#2563EB]" /> Key Terms Glossary</h3>
               <div className="flex flex-col gap-3 text-sm">
                 {[
                   { term: "RTP", def: "Return to Player — the theoretical payout % of a game" },
@@ -354,7 +354,7 @@ export default function CasinoBonuses() {
                   { term: "Max Win", def: "Maximum amount you can win from a bonus or single spin" },
                 ].map((item) => (
                   <div key={item.term} className="flex gap-3">
-                    <span className="text-[#F97316] font-semibold w-24 shrink-0">{item.term}</span>
+                    <span className="text-[#2563EB] font-semibold w-24 shrink-0">{item.term}</span>
                     <span className="text-[#5F554C]">{item.def}</span>
                   </div>
                 ))}
@@ -367,7 +367,7 @@ export default function CasinoBonuses() {
       {/* ─── VIP PROGRAMS ─── */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-          <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">For serious players</div>
+          <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">For serious players</div>
           <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">VIP &amp; Loyalty Programs</h2>
           <p className="text-[#6F665D] max-w-xl mx-auto">High-rollers and loyal players unlock exclusive perks that go far beyond standard welcome bonuses.</p>
         </motion.div>
@@ -384,9 +384,9 @@ export default function CasinoBonuses() {
             </motion.div>
           ))}
         </div>
-        <div className="mt-10 bg-[#F97316]/5 border border-[#F97316]/12 rounded-2xl p-6 md:p-8">
+        <div className="mt-10 bg-[#2563EB]/5 border border-[#2563EB]/12 rounded-2xl p-6 md:p-8">
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="w-14 h-14 rounded-2xl bg-[#F97316]/15 flex items-center justify-center shrink-0"><Gift size={28} className="text-[#F97316]" /></div>
+            <div className="w-14 h-14 rounded-2xl bg-[#2563EB]/15 flex items-center justify-center shrink-0"><Gift size={28} className="text-[#2563EB]" /></div>
             <div>
               <h3 className="font-serif text-2xl font-bold text-[#1F1A17] mb-2">How to Unlock VIP Status</h3>
               <p className="text-[#5F554C] leading-relaxed">VIP status is typically earned through loyalty points accumulated with real-money wagers. Some casinos invite high-rollers directly. Points are earned per £1–10 wagered and can be redeemed for bonus cash, free spins, or physical gifts.</p>
@@ -399,7 +399,7 @@ export default function CasinoBonuses() {
       <section className="py-20 bg-muted/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Life-changing wins</div>
+            <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Life-changing wins</div>
             <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">Top Progressive Jackpot Slots</h2>
             <p className="text-[#6F665D] max-w-xl mx-auto">These networked jackpot slots have paid out millions to lucky players. Available at multiple recommended casinos.</p>
           </motion.div>
@@ -413,7 +413,7 @@ export default function CasinoBonuses() {
               { name: "Beach Life", provider: "Playtech", record: "£3.4M", theme: "Summer Beach", rtp: "93.03%" },
             ].map((slot, i) => (
               <motion.div key={slot.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
-                whileHover={{ borderColor: "rgba(249,115,22,0.3)", y: -3 }}
+                whileHover={{ borderColor: "rgba(37,99,235,0.3)", y: -3 }}
                 className="bg-white border border-[#ECE6DB] rounded-xl p-5 transition-all duration-300">
                 <div className="flex items-start justify-between mb-3">
                   <div>
@@ -421,7 +421,7 @@ export default function CasinoBonuses() {
                     <div className="text-[#8D847A] text-xs">{slot.provider}</div>
                   </div>
                   <div className="text-right">
-                    <div className="text-[#F97316] font-bold text-sm">Record</div>
+                    <div className="text-[#2563EB] font-bold text-sm">Record</div>
                     <div className="text-[#1F1A17] font-semibold">{slot.record}</div>
                   </div>
                 </div>
@@ -444,11 +444,11 @@ export default function CasinoBonuses() {
         <div className="flex flex-col gap-3">
           {faqs.map((faq, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-              className={`bg-white border rounded-xl overflow-hidden transition-all duration-300 ${openFaq === i ? "border-[#F97316]/12" : "border-[#ECE6DB]"}`}>
+              className={`bg-white border rounded-xl overflow-hidden transition-all duration-300 ${openFaq === i ? "border-[#2563EB]/12" : "border-[#ECE6DB]"}`}>
               <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 className="w-full flex items-center justify-between px-6 py-4 text-left" data-testid={`button-faq-casino-${i}`}>
                 <span className="font-medium text-[#1F1A17] text-sm">{faq.q}</span>
-                {openFaq === i ? <ChevronUp size={15} className="text-[#F97316] shrink-0" /> : <ChevronDown size={15} className="text-[#8D847A] shrink-0" />}
+                {openFaq === i ? <ChevronUp size={15} className="text-[#2563EB] shrink-0" /> : <ChevronDown size={15} className="text-[#8D847A] shrink-0" />}
               </button>
               <AnimatePresence>
                 {openFaq === i && (
@@ -476,8 +476,8 @@ export default function CasinoBonuses() {
               return (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                   className="bg-white border border-[#ECE6DB] rounded-2xl p-6 text-center">
-                  <div className="w-12 h-12 rounded-xl bg-[#F97316]/8 flex items-center justify-center mx-auto mb-4">
-                    <Icon size={22} className="text-[#F97316]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#2563EB]/8 flex items-center justify-center mx-auto mb-4">
+                    <Icon size={22} className="text-[#2563EB]" />
                   </div>
                   <h3 className="font-semibold text-[#1F1A17] mb-2">{item.title}</h3>
                   <p className="text-[#6F665D] text-sm leading-relaxed">{item.desc}</p>
@@ -490,3 +490,4 @@ export default function CasinoBonuses() {
     </div>
   );
 }
+

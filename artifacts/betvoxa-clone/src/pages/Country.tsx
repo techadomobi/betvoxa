@@ -207,7 +207,7 @@ export default function Country() {
             <div className="flex items-center gap-4 mb-4">
               <span className="text-6xl">{data.flag}</span>
               <div>
-                <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-1">Country Guide</div>
+                <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-1">Country Guide</div>
                 <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1F1A17]">{data.name}</h1>
               </div>
             </div>
@@ -232,7 +232,7 @@ export default function Country() {
               transition={{ delay: i * 0.08 }}
               className="bg-white border border-[#ECE6DB] rounded-xl p-4"
             >
-              <div className="text-[#F97316] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
+              <div className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
               <div className="text-[#1F1A17] font-medium text-sm">{item.value}</div>
             </motion.div>
           ))}
@@ -274,7 +274,7 @@ export default function Country() {
                                 .map((_, i) => (
                                   <Star
                                     key={i}
-                                    className={`w-4 h-4 ${i < Math.round(casino.rating) ? "fill-[#F97316] text-[#F97316]" : "text-[#D4D0C8]"}`}
+                                    className={`w-4 h-4 ${i < Math.round(casino.rating) ? "fill-[#2563EB] text-[#2563EB]" : "text-[#D4D0C8]"}`}
                                   />
                                 ))}
                             </div>
@@ -285,10 +285,10 @@ export default function Country() {
                           <span className="text-xs font-bold text-gray-800">{casino.initials}</span>
                         </div>
                       </div>
-                      <div className="bg-[#F97316]/10 border border-[#F97316]/20 rounded-lg p-4 mb-4">
+                      <div className="bg-[#2563EB]/10 border border-[#2563EB]/20 rounded-lg p-4 mb-4">
                         <div className="flex items-center gap-2 mb-2">
-                          <Gift className="w-5 h-5 text-[#F97316]" />
-                          <span className="text-sm font-medium text-[#F97316]">Bonus offer</span>
+                          <Gift className="w-5 h-5 text-[#2563EB]" />
+                          <span className="text-sm font-medium text-[#2563EB]">Bonus offer</span>
                         </div>
                         <p className="text-2xl font-bold text-[#1F1A17] mb-1">{casino.bonusTitle}</p>
                       </div>
@@ -305,7 +305,7 @@ export default function Country() {
                           <ul className="space-y-1">
                             {casino.features.map((feature: string) => (
                               <li key={feature} className="text-sm text-[#6F665D] flex items-start gap-2">
-                                <span className="text-[#F97316] mt-0.5">•</span>
+                                <span className="text-[#2563EB] mt-0.5">•</span>
                                 <span>{feature}</span>
                               </li>
                             ))}
@@ -317,7 +317,7 @@ export default function Country() {
                           href="#"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 px-4 py-2 flex-1 bg-[#F97316] hover:bg-[#DC6803] text-[#0B0A09] rounded-md text-sm font-bold transition-colors"
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2 flex-1 bg-[#2563EB] hover:bg-[#1D4ED8] text-[#0B0A09] rounded-md text-sm font-bold transition-colors"
                         >
                           Claim bonus
                         </a>
@@ -325,7 +325,7 @@ export default function Country() {
                           href="#"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 px-2 py-2 w-9 border border-[#F97316]/20 bg-background hover:bg-[#F97316]/10 rounded-md transition-colors"
+                          className="inline-flex items-center justify-center gap-2 px-2 py-2 w-9 border border-[#2563EB]/20 bg-background hover:bg-[#2563EB]/10 rounded-md transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
                         </a>
@@ -348,8 +348,8 @@ export default function Country() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-[#F97316]/10 rounded-lg flex items-center justify-center">
-                    <CreditCard className="w-6 h-6 text-[#F97316]" />
+                  <div className="w-12 h-12 bg-[#2563EB]/10 rounded-lg flex items-center justify-center">
+                    <CreditCard className="w-6 h-6 text-[#2563EB]" />
                   </div>
                   <h3 className="text-2xl font-semibold text-[#1F1A17]">Payment methods</h3>
                 </div>
@@ -357,7 +357,7 @@ export default function Country() {
                 <ul className="space-y-2">
                   {["POLi (instant bank transfer)", "BPay", "Credit/debit cards", "Bank transfer"].map((method) => (
                     <li key={method} className="flex items-center gap-2">
-                      <span className="text-[#F97316]">•</span>
+                      <span className="text-[#2563EB]">•</span>
                       <span className="text-[#5F554C]">{method}</span>
                     </li>
                   ))}
@@ -365,8 +365,8 @@ export default function Country() {
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-[#F97316]/10 rounded-lg flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-[#F97316]" />
+                  <div className="w-12 h-12 bg-[#2563EB]/10 rounded-lg flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-[#2563EB]" />
                   </div>
                   <h3 className="text-2xl font-semibold text-[#1F1A17]">Australian regulation</h3>
                 </div>
@@ -374,7 +374,7 @@ export default function Country() {
                 <ul className="space-y-2">
                   {["Licensed by Northern Territory Racing Commission", "Responsible gambling tools", "Age verification required"].map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <span className="text-[#F97316]">•</span>
+                      <span className="text-[#2563EB]">•</span>
                       <span className="text-[#5F554C]">{item}</span>
                     </li>
                   ))}
@@ -399,24 +399,24 @@ export default function Country() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                whileHover={{ borderColor: "rgba(249,115,22,0.3)" }}
+                whileHover={{ borderColor: "rgba(37,99,235,0.3)" }}
                 className="bg-white border border-[#ECE6DB] rounded-xl p-5 flex items-center gap-4 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-linear-to-br from-[#F97316]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#F97316] text-sm font-mono shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-linear-to-br from-[#2563EB]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#2563EB] text-sm font-mono shrink-0">
                   {site.initials}
                 </div>
                 <div className="flex-1">
                   <div className="font-semibold text-[#1F1A17]">{site.name}</div>
-                  <div className="text-[#F97316] text-sm">{site.bonus}</div>
+                  <div className="text-[#2563EB] text-sm">{site.bonus}</div>
                   <div className="flex mt-1">
                     {Array.from({ length: 5 }).map((_, j) => (
-                      <span key={j} className={`text-[10px] ${j < Math.round(site.rating) ? "text-[#F97316]" : "text-[#C9C3B8]"}`}>★</span>
+                      <span key={j} className={`text-[10px] ${j < Math.round(site.rating) ? "text-[#2563EB]" : "text-[#C9C3B8]"}`}>★</span>
                     ))}
                   </div>
                 </div>
                 <motion.button
                   whileHover={{ scale: 1.04 }}
-                  className="px-4 py-2 bg-[#F97316] text-[#0B0A09] rounded-lg text-sm font-bold flex items-center gap-1 hover:bg-[#DC6803] transition-colors"
+                  className="px-4 py-2 bg-[#2563EB] text-[#0B0A09] rounded-lg text-sm font-bold flex items-center gap-1 hover:bg-[#1D4ED8] transition-colors"
                   data-testid={`button-visit-country-${site.name.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   Visit <ExternalLink size={11} />
@@ -436,7 +436,7 @@ export default function Country() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <Shield size={20} className="text-[#F97316]" />
+              <Shield size={20} className="text-[#2563EB]" />
               <h2 className="font-serif text-2xl font-bold text-[#1F1A17]">Legal Framework</h2>
             </div>
             <p className="text-[#5F554C] leading-relaxed">{data.legalInfo}</p>
@@ -451,7 +451,7 @@ export default function Country() {
             <div className="flex flex-col gap-3">
               {data.tips.map((tip) => (
                 <div key={tip} className="flex items-start gap-3">
-                  <Check size={15} className="text-[#F97316] mt-0.5 shrink-0" />
+                  <Check size={15} className="text-[#2563EB] mt-0.5 shrink-0" />
                   <span className="text-[#5F554C] text-sm leading-relaxed">{tip}</span>
                 </div>
               ))}
@@ -468,7 +468,7 @@ export default function Country() {
             {data.paymentMethods.map((method) => (
               <span
                 key={method}
-                className="bg-white border border-[#E7E1D6] text-[#4A433C] px-4 py-2 rounded-lg text-sm hover:border-[#F97316]/12 transition-colors"
+                className="bg-white border border-[#E7E1D6] text-[#4A433C] px-4 py-2 rounded-lg text-sm hover:border-[#2563EB]/12 transition-colors"
               >
                 {method}
               </span>
@@ -493,7 +493,7 @@ export default function Country() {
               transition={{ delay: i * 0.08 }}
               className="bg-white border border-[#ECE6DB] rounded-xl p-5"
             >
-              <div className="text-[#F97316] text-xs font-semibold uppercase tracking-wider mb-2">{item.label}</div>
+              <div className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider mb-2">{item.label}</div>
               <div className="font-semibold text-[#1F1A17] mb-2">{item.value}</div>
               <p className="text-[#5F554C] text-sm">{item.note}</p>
             </motion.div>
@@ -528,7 +528,7 @@ export default function Country() {
               <Link key={key} href={`/country/${key}`}>
                 <motion.div
                   whileHover={{ scale: 1.04 }}
-                  className="flex items-center gap-2 bg-white border border-[#ECE6DB] hover:border-[#F97316]/12 rounded-lg px-4 py-2.5 cursor-pointer transition-all"
+                  className="flex items-center gap-2 bg-white border border-[#ECE6DB] hover:border-[#2563EB]/12 rounded-lg px-4 py-2.5 cursor-pointer transition-all"
                   data-testid={`link-other-country-${key}`}
                 >
                   <span className="text-xl">{country.flag}</span>
@@ -554,3 +554,4 @@ export default function Country() {
     </div>
   );
 }
+

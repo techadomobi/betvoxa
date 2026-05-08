@@ -89,7 +89,7 @@ export default function BlogDetail() {
           Article not found
         </h1>
         <Link href="/blog">
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#F97316] text-white rounded-lg hover:bg-[#DC6803] transition-colors">
+          <button className="inline-flex items-center gap-2 px-6 py-3 bg-[#2563EB] text-white rounded-lg hover:bg-[#1D4ED8] transition-colors">
             <ArrowLeft size={18} />
             Back to Blog
           </button>
@@ -108,7 +108,7 @@ export default function BlogDetail() {
           <Link href="/blog">
             <motion.button
               whileHover={{ x: -4 }}
-              className="inline-flex items-center gap-2 text-[#F97316] font-medium hover:text-[#DC6803] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-[#2563EB] font-medium hover:text-[#1D4ED8] transition-colors cursor-pointer"
             >
               <ArrowLeft size={18} />
               Back to Blog
@@ -145,7 +145,7 @@ export default function BlogDetail() {
           className="mb-8"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="bg-[#F97316]/20 text-[#F97316] text-xs font-semibold px-3 py-1 rounded-full">
+            <span className="bg-[#2563EB]/20 text-[#2563EB] text-xs font-semibold px-3 py-1 rounded-full">
               {blog.category}
             </span>
             <span className="text-[#A39B92] text-sm">
@@ -226,7 +226,7 @@ export default function BlogDetail() {
               {blog.seoKeywords.map((keyword, index) => (
                 <span
                   key={index}
-                  className="bg-[#F97316]/10 text-[#F97316] text-xs px-3 py-1 rounded-full font-medium"
+                  className="bg-[#2563EB]/10 text-[#2563EB] text-xs px-3 py-1 rounded-full font-medium"
                 >
                   {keyword}
                 </span>
@@ -242,14 +242,14 @@ export default function BlogDetail() {
           viewport={{ once: true }}
           className="mt-12 pt-8 border-t border-[#E4DED0]"
         >
-          <div className="bg-gradient-to-r from-[#F97316]/10 to-[#F97316]/5 rounded-lg p-6 text-center">
+          <div className="bg-gradient-to-r from-[#2563EB]/10 to-[#2563EB]/5 rounded-lg p-6 text-center">
             <p className="text-[#5F554C] mb-4">
               Ready to find the best casino or betting site?
             </p>
             <Link href="/casino-bonuses">
               <motion.button
                 whileHover={{ scale: 1.04 }}
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#F97316] text-white rounded-lg hover:bg-[#DC6803] transition-all font-bold cursor-pointer"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-[#2563EB] text-white rounded-lg hover:bg-[#1D4ED8] transition-all font-bold cursor-pointer"
               >
                 Claim Bonus Now
               </motion.button>
@@ -260,3 +260,4 @@ export default function BlogDetail() {
     </div>
   );
 }
+
