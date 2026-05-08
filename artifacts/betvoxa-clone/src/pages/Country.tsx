@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { useParams } from "wouter";
+import { useEffect, useState } from "react";
 import { Shield, Check, ExternalLink, ArrowLeft, Gift, CreditCard, Star } from "lucide-react";
 import { Link } from "wouter";
 import BonusCard from "@/components/BonusCard";
 
-const countryData: Record<string, {
+const initialCountryData: Record<string, {
   name: string;
   flag: string;
   code: string;
@@ -140,6 +141,29 @@ const countryData: Record<string, {
 
 export default function Country() {
   const { code } = useParams<{ code: string }>();
+  const [countryData, setCountryData] = useState(initialCountryData);
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    const fetchCountryData = async () => {
+      try {
+        const response = await fetch(`https://betvoxa-api-server.vercel.app/countries/${code}`);
+        if (response.ok) {
+          const data = await response.json();
+          setCountryData(prev => ({
+            ...prev,
+            [code || 'united-kingdom']: data.responseResult || data
+          }));
+        }
+      } catch (err) {
+        console.error('Failed to fetch country data:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCountryData();
+  }, [code]);
+  
   const data = countryData[code || "united-kingdom"] || countryData["united-kingdom"];
   const isAustralia = code === "australia";
 

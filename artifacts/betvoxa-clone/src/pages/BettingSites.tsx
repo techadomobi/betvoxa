@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Check, ExternalLink, BookOpen, Zap, Globe, TrendingUp, Shield, Clock, ChevronDown, ChevronUp, BarChart2, Target } from "lucide-react";
 
-const sportsbooks = [
+const initialSportsbooks = [
   {
     initials: "BET", name: "Bet365", reviews: 18234, rating: 4.9, featured: true,
     desc: "Industry-leading sportsbook with extensive live betting options, competitive odds, and comprehensive coverage of sports worldwide. The benchmark all others are measured against.",
@@ -123,7 +123,31 @@ const faqs = [
 ];
 
 export default function BettingSites() {
+  const [sportsbooks, setSportsbooks] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchSportsbooks = async () => {
+      try {
+        const response = await fetch('https://betvoxa-api-server.vercel.app/sportsbooks');
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setSportsbooks(data);
+        } else if (data?.responseResult && Array.isArray(data.responseResult)) {
+          setSportsbooks(data.responseResult);
+        } else {
+          setSportsbooks(initialSportsbooks);
+        }
+      } catch (err) {
+        console.error('Failed to fetch sportsbooks:', err);
+        setSportsbooks(initialSportsbooks);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchSportsbooks();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -160,6 +184,8 @@ export default function BettingSites() {
       {/* ─── SPORTSBOOK LIST ─── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <h2 className="font-serif text-2xl font-bold text-[#FFD54A] mb-6">Top Recommended Sportsbooks</h2>
+        {loading && <div className="text-center py-8 text-[#C7D5E6]">Loading sportsbooks...</div>}
+        {!loading && sportsbooks.length === 0 && <div className="text-center py-8 text-[#C7D5E6]">No sportsbooks available</div>}
         <div className="flex flex-col gap-6">
           {sportsbooks.map((site, i) => (
             <motion.div key={site.name}
@@ -182,20 +208,20 @@ export default function BettingSites() {
                   <div className="text-[#2563EB] font-medium text-sm mb-3">{site.bonus}</div>
                   <p className="text-[#C7D5E6] text-sm leading-relaxed mb-4">{site.desc}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-4">
-                    {site.features.map((f) => <div key={f} className="flex items-center gap-2 text-sm text-[#C7D5E6]"><Check size={12} className="text-[#2563EB] shrink-0" />{f}</div>)}
+                    {site.features?.map((f: string) => <div key={f} className="flex items-center gap-2 text-sm text-[#C7D5E6]"><Check size={12} className="text-[#2563EB] shrink-0" />{f}</div>)}
                   </div>
                   <div className="grid grid-cols-2 gap-4 mb-3">
                     <div>
                       <div className="text-[10px] uppercase tracking-wider text-green-400 font-bold mb-1">Pros</div>
-                      {site.pros.map((p) => <div key={p} className="text-xs text-[#C7D5E6] flex items-center gap-1"><span className="text-green-400">+</span>{p}</div>)}
+                      {site.pros?.map((p: string) => <div key={p} className="text-xs text-[#C7D5E6] flex items-center gap-1"><span className="text-green-400">+</span>{p}</div>)}
                     </div>
                     <div>
                       <div className="text-[10px] uppercase tracking-wider text-red-400 font-bold mb-1">Cons</div>
-                      {site.cons.map((c) => <div key={c} className="text-xs text-[#C7D5E6] flex items-center gap-1"><span className="text-red-400">−</span>{c}</div>)}
+                      {site.cons?.map((c: string) => <div key={c} className="text-xs text-[#C7D5E6] flex items-center gap-1"><span className="text-red-400">−</span>{c}</div>)}
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-1.5">
-                    {site.sports.map((s) => <span key={s} className="bg-[#0B1220] border border-[#162233] text-[#C7D5E6] text-xs px-2 py-0.5 rounded-full">{s}</span>)}
+                    {site.sports?.map((s: string) => <span key={s} className="bg-[#0B1220] border border-[#162233] text-[#C7D5E6] text-xs px-2 py-0.5 rounded-full">{s}</span>)}
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 shrink-0 justify-start md:items-end">

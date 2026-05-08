@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Filter, Star, Check, Trophy, TrendingUp, Gift, Zap, ChevronDown, ChevronUp, Shield, Clock, CreditCard, ExternalLink } from "lucide-react";
 import BonusCard from "@/components/BonusCard";
 
-const allBonuses = [
+const initialBonuses = [
   { initials: "JB", name: "Jackbit", reviews: 5120, rating: 5, bonusTitle: "Wager Free Bonus", bonusDetail: "500 free spins + crypto welcome pack", wagering: "0x", minDeposit: "$30", features: ["Crypto specialist", "Instant payouts", "Wager-free"], featured: true, country: "global", type: "no-wagering", badge: "Editor's Pick" },
   { initials: "BET", name: "Bet365 Casino", reviews: 12847, rating: 4.8, bonusTitle: "£100 Welcome Bonus", bonusDetail: "50 free spins on Starburst", wagering: "35x", minDeposit: "£10", features: ["Live casino", "Slots", "Table games"], featured: true, country: "uk", type: "welcome" },
   { initials: "LV", name: "LeoVegas", reviews: 11456, rating: 4.8, bonusTitle: "€1,000 + 200 Free Spins", bonusDetail: "4-part welcome package", wagering: "35x", minDeposit: "€10", features: ["Mobile casino", "Live dealers", "Fast withdrawals"], country: "uk", type: "welcome" },
@@ -57,9 +57,33 @@ const vipTiers = [
 ];
 
 export default function CasinoBonuses() {
+  const [allBonuses, setAllBonuses] = useState<any[]>([]);
   const [countryFilter, setCountryFilter] = useState("All Countries");
   const [typeFilter, setTypeFilter] = useState("All Types");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBonuses = async () => {
+      try {
+        const response = await fetch('https://betvoxa-api-server.vercel.app/casinos');
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setAllBonuses(data);
+        } else if (data?.responseResult && Array.isArray(data.responseResult)) {
+          setAllBonuses(data.responseResult);
+        } else {
+          setAllBonuses(initialBonuses);
+        }
+      } catch (err) {
+        console.error('Failed to fetch bonuses:', err);
+        setAllBonuses(initialBonuses);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBonuses();
+  }, []);
 
   const filtered = allBonuses.filter((b) => {
     const countryMatch = countryFilter === "All Countries" ||
@@ -169,6 +193,8 @@ export default function CasinoBonuses() {
       {/* ─── FEATURED UK OFFERS ─── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="text-center mb-12">
+          {loading && <div className="text-center py-8 text-[#C7D5E6]">Loading bonuses...</div>}
+          {!loading && allBonuses.length === 0 && <div className="text-center py-8 text-[#C7D5E6]">No bonuses available</div>}
           <h2 className="font-serif text-3xl md:text-4xl mb-4 font-bold text-[#1F1A17]">Featured UK casino offers</h2>
           <p className="text-lg text-[#6F665D] max-w-2xl mx-auto">Exclusive bonuses from UKGC-licensed operators</p>
         </div>
@@ -207,7 +233,7 @@ export default function CasinoBonuses() {
                       <span className="text-[#2563EB]">{casino.minDeposit}</span>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-4">
-                      {casino.features.slice(0, 3).map((feature) => (
+                      {casino.features?.slice(0, 3).map((feature: string) => (
                         <div key={feature} className="flex items-start gap-2">
                           <Check className="w-4 h-4 text-[#2563EB] mt-0.5 shrink-0" />
                           <span className="text-sm text-[#5F554C]">{feature}</span>
