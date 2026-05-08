@@ -28,9 +28,11 @@ const countryData: Record<string, {
     intro: "The UK has one of the most mature and regulated gambling markets in the world. Licensed by the UK Gambling Commission, all operators must adhere to strict consumer protection standards, making it one of the safest places to bet online.",
     legalInfo: "Online gambling is fully legal in the UK under the Gambling Act 2003. The UKGC regulates all gambling activities and requires operators to implement responsible gambling tools, display odds clearly, and process withdrawals promptly. Winnings are tax-free for UK players.",
     topBonuses: [
-      { initials: "BET", name: "Bet365", reviews: 12847, rating: 4.9, bonusTitle: "Up to £100 in Bet Credits", wagering: "35x", minDeposit: "£10", features: ["Live streaming", "Best odds guaranteed", "Cash out"] },
-      { initials: "OJO", name: "PlayOJO", reviews: 8934, rating: 4.7, bonusTitle: "50 Free Spins, No Wagering", wagering: "0x", minDeposit: "£10", features: ["Zero wagering", "Cashback", "Fair play"] },
-      { initials: "LV", name: "LeoVegas", reviews: 11456, rating: 4.8, bonusTitle: "£100 + 200 Free Spins", wagering: "35x", minDeposit: "£10", features: ["Mobile casino", "Live dealers", "Fast withdrawals"] },
+      { initials: "JB", name: "Jackbit", reviews: 5120, rating: 5, bonusTitle: "Wager Free Bonus", wagering: "No wagering", minDeposit: "$25", features: ["Crypto specialist", "Instant payouts", "Wager-free bonuses"] },
+      { initials: "50C", name: "50crowns", reviews: 4210, rating: 4.5, bonusTitle: "Wager Free Welcome", wagering: "No wagering", minDeposit: "$25", features: ["Crypto specialist", "Instant payouts", "Sports betting"] },
+      { initials: "BS", name: "BloodySlots", reviews: 2840, rating: 4.5, bonusTitle: "$1,000 Bonus Package", wagering: "40x turnover", minDeposit: "$25", features: ["Unique theme", "Regular tournaments", "Great promotions"] },
+      { initials: "LJ", name: "LolaJack", reviews: 3105, rating: 4.5, bonusTitle: "$1,000 Bonus Package", wagering: "40x turnover", minDeposit: "$25", features: ["Extensive slots", "24/7 support", "Mobile friendly"] },
+      { initials: "RP", name: "RocketPlay", reviews: 4102, rating: 4.5, bonusTitle: "A$300 + 100 Free Spins", wagering: "30x turnover", minDeposit: "$25", features: ["Australian favorite", "Neosurf accepted", "Regular promotions"] },
     ],
     topSites: [
       { name: "Bet365", initials: "BET", bonus: "Up to £100 Bet Credits", rating: 4.9 },
@@ -74,9 +76,10 @@ const countryData: Record<string, {
     intro: "Australia has a vibrant sports betting culture centred around horse racing, cricket, AFL, and rugby. Online betting is legal with hundreds of licensed operators competing for Australian punters, offering some of the most generous welcome bonuses available.",
     legalInfo: "Online sports betting is regulated at the federal level by ACMA under the Interactive Gambling Act 2001. Betting must be placed with Australian-licensed operators. Casino-style games and poker are restricted online, but sports betting is fully legal with over 50 licensed operators.",
     topBonuses: [
-      { initials: "SB", name: "Sportsbet", reviews: 9200, rating: 4.6, bonusTitle: "A$500 Multi-Bet Bonus", wagering: "3x", minDeposit: "A$10", features: ["Same race multi", "Cash out", "Best odds AFL"] },
-      { initials: "LL", name: "Ladbrokes", reviews: 7800, rating: 4.5, bonusTitle: "A$250 Bonus Bet Match", wagering: "3x", minDeposit: "A$20", features: ["Racing specials", "Live betting", "Retail shops"] },
-      { initials: "VL", name: "VipLuck", reviews: 4210, rating: 4.5, bonusTitle: "Welcome Bonus Package", wagering: "35x", minDeposit: "A$30", features: ["Fast payouts", "Live casino", "Great support"] },
+      { initials: "VL", name: "VipLuck", reviews: 3421, rating: 4.5, bonusTitle: "A$1,000 Welcome Package", wagering: "35x turnover", minDeposit: "A$30", features: ["Premium VIP program", "Fast withdrawals", "Live dealer games"] },
+      { initials: "GL", name: "Glorion", reviews: 2845, rating: 4.5, bonusTitle: "A$500 Deposit Match", wagering: "40x turnover", minDeposit: "A$30", features: ["Extensive pokies", "Crypto accepted", "24/7 support"] },
+      { initials: "RP", name: "RocketPlay", reviews: 4102, rating: 4.5, bonusTitle: "A$300 + 100 Free Spins", wagering: "30x turnover", minDeposit: "A$30", features: ["Australian favorite", "Neosurf accepted", "Regular promotions"] },
+      { initials: "FG", name: "Fair Go Casino", reviews: 6832, rating: 4.6, bonusTitle: "A$1,000 Bonus Package", wagering: "30x turnover", minDeposit: "A$30", features: ["Aussie themed", "Daily free spins", "High roller bonuses"] },
     ],
     topSites: [
       { name: "Sportsbet", initials: "SB", bonus: "A$500 Multi Bonus", rating: 4.6 },
@@ -243,11 +246,11 @@ export default function Country() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl mb-4 font-bold text-[#1F1A17]">Featured {data.name} offers</h2>
+            <h2 className="font-serif text-3xl md:text-4xl mb-4 font-bold text-[#1F1A17]">
+              {isAustralia ? "Featured Australian offers" : "Featured UK casino offers"}
+            </h2>
             <p className="text-lg text-[#6F665D] max-w-2xl mx-auto">
-              {isAustralia 
-                ? "Top betting sites for Australian players" 
-                : `Best betting sites and bonuses for ${data.name}`}
+              {isAustralia ? "Top betting sites for Australian players" : "Exclusive bonuses from UKGC-licensed operators"}
             </p>
           </div>
 
@@ -386,7 +389,7 @@ export default function Country() {
       </section>
 
       {/* TOP BETTING SITES */}
-      <section className="bg-muted/40 py-16">
+      <section className="bg-[#eef6ff] py-16 border-t border-[#d6e7f7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-6">
             Top Betting Sites in {data.name}
@@ -461,7 +464,7 @@ export default function Country() {
       </section>
 
       {/* PAYMENT METHODS */}
-      <section className="bg-muted/40 py-16">
+      <section className="bg-[#eef6ff] py-16 border-t border-[#d6e7f7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-6">Payment Methods in {data.name}</h2>
           <div className="flex flex-wrap gap-3">
