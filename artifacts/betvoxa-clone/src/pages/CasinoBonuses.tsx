@@ -83,7 +83,7 @@ export default function CasinoBonuses() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Expert-verified</div>
-            <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1F1A17] mb-4">Casino Bonuses</h1>
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#FFD54A] mb-4">Casino Bonuses</h1>
             <p className="text-[#5F554C] text-lg max-w-xl">Compare and claim the best casino bonuses from top operators worldwide. Updated daily by our expert team.</p>
           </motion.div>
         </div>
@@ -99,7 +99,7 @@ export default function CasinoBonuses() {
             { label: "Average Wagering", value: "35x" },
           ].map((stat, i) => (
             <motion.div key={stat.label} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
-              className="bg-white border border-[#ECE6DB] rounded-xl p-4 text-center">
+              className="bg-[#0F1724] border border-[#162233] rounded-xl p-4 text-center">
               <div className="text-2xl font-bold text-[#2563EB] mb-1">{stat.value}</div>
               <div className="text-[#6F665D] text-xs">{stat.label}</div>
             </motion.div>
@@ -304,7 +304,7 @@ export default function CasinoBonuses() {
           {gameTypes.map((g, i) => (
             <motion.div key={g.name} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4, borderColor: "rgba(59,130,246,0.25)" }}
-              className="bg-white border border-[#ECE6DB] rounded-2xl p-6 transition-all duration-300">
+              className="bg-[#0F1724] border border-[#162233] rounded-2xl p-6 transition-all duration-300">
               <div className="text-4xl mb-3">{g.icon}</div>
               <div className="flex items-baseline gap-2 mb-1">
                 <h3 className="font-semibold text-[#1F1A17]">{g.name}</h3>
@@ -340,7 +340,7 @@ export default function CasinoBonuses() {
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-              className="bg-white border border-[#ECE6DB] rounded-2xl p-6">
+              className="bg-[#0F1724] border border-[#162233] rounded-2xl p-6">
               <h3 className="font-semibold text-[#1F1A17] mb-4 flex items-center gap-2"><Check size={16} className="text-[#2563EB]" /> Key Terms Glossary</h3>
               <div className="flex flex-col gap-3 text-sm">
                 {[
@@ -375,7 +375,7 @@ export default function CasinoBonuses() {
           {vipTiers.map((tier, i) => (
             <motion.div key={tier.tier} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="bg-white border border-[#ECE6DB] rounded-2xl p-6 text-center transition-all duration-300">
+              className="bg-[#0F1724] border border-[#162233] rounded-2xl p-6 text-center transition-all duration-300">
               <div className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style={{ backgroundColor: `${tier.color}20`, border: `1px solid ${tier.color}40` }}>
                 <Trophy size={22} style={{ color: tier.color }} />
               </div>
@@ -414,7 +414,7 @@ export default function CasinoBonuses() {
             ].map((slot, i) => (
               <motion.div key={slot.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
                 whileHover={{ borderColor: "rgba(37,99,235,0.3)", y: -3 }}
-                className="bg-white border border-[#ECE6DB] rounded-xl p-5 transition-all duration-300">
+                className="bg-[#0F1724] border border-[#162233] rounded-xl p-5 transition-all duration-300">
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <h3 className="font-semibold text-[#1F1A17]">{slot.name}</h3>
@@ -475,7 +475,7 @@ export default function CasinoBonuses() {
               const Icon = item.icon;
               return (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                  className="bg-white border border-[#ECE6DB] rounded-2xl p-6 text-center">
+                  className="bg-[#0F1724] border border-[#162233] rounded-2xl p-6 text-center">
                   <div className="w-12 h-12 rounded-xl bg-[#2563EB]/8 flex items-center justify-center mx-auto mb-4">
                     <Icon size={22} className="text-[#2563EB]" />
                   </div>

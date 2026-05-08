@@ -156,7 +156,7 @@ export default function Home() {
             <Star size={13} className="fill-[#2563EB]" /> Trusted by 2M+ bettors worldwide
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-serif text-5xl md:text-7xl font-bold text-[#1F1A17] leading-tight mb-6">
+            className="font-serif text-5xl md:text-7xl font-bold text-[#FFD54A] leading-tight mb-6">
             Best Betting <span style={{ fontFamily: 'Poppins, sans-serif' }} className="text-[#2563EB] text-glow">& </span> <span className="text-[#2563EB] text-glow">Casino Offers</span> Worldwide
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.45 }}
@@ -229,7 +229,7 @@ export default function Home() {
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
           <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Hand-picked for you</div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-4">Top Casino Offers</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#FFD54A] mb-4">Top Casino Offers</h2>
           <p className="text-[#6F665D] text-lg max-w-xl mx-auto">Exclusive bonuses from the world's leading operators, verified and updated daily.</p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -249,7 +249,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Know before you claim</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-4">Types of Casino Bonuses</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#FFD54A] mb-4">Types of Casino Bonuses</h2>
             <p className="text-[#6F665D] text-lg max-w-xl mx-auto">Understanding what each bonus type means helps you pick the right offer for your style of play.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -259,15 +259,15 @@ export default function Home() {
                 <motion.div key={b.title}
                   initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}
                   whileHover={{ y: -4, borderColor: "rgba(37,99,235,0.3)" }}
-                  className="bg-white border border-[#ECE6DB] rounded-2xl p-6 transition-all duration-300">
+                  className="bg-[#0F1724] border border-[#162233] rounded-2xl p-6 transition-all duration-300">
                   <div className="flex items-start justify-between mb-3">
                     <div className="w-11 h-11 rounded-xl bg-[#2563EB]/8 border border-[#2563EB]/12 flex items-center justify-center">
                       <Icon size={20} className="text-[#2563EB]" />
                     </div>
                     <span className="bg-[#1B3950]/60 border border-[#1B3950] text-[#5F554C] text-[10px] font-bold uppercase px-2 py-0.5 rounded-full tracking-wider">{b.tag}</span>
                   </div>
-                  <h3 className="font-semibold text-[#1F1A17] text-lg mb-2">{b.title}</h3>
-                  <p className="text-[#6F665D] text-sm leading-relaxed">{b.desc}</p>
+                  <h3 className="font-semibold text-[#F4F8FC] text-lg mb-2">{b.title}</h3>
+                  <p className="text-[#C7D5E6] text-sm leading-relaxed">{b.desc}</p>
                 </motion.div>
               )
             })}
@@ -280,7 +280,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Localised for you</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-4">Offers by Country</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#FFD54A] mb-4">Offers by Country</h2>
             <p className="text-[#6F665D] text-lg max-w-xl mx-auto">Find the best bonuses available in your region, tailored to local regulations and payment methods.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -288,18 +288,18 @@ export default function Home() {
               <motion.div key={c.code}
                 initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ delay: i * 0.08 }}
                 whileHover={{ y: -4, borderColor: "rgba(37,99,235,0.4)" }}
-                className="bg-white border border-[#ECE6DB] rounded-2xl p-6 group transition-all duration-300 cursor-pointer">
+                className="bg-[#0F1724] border border-[#162233] rounded-2xl p-6 group transition-all duration-300 cursor-pointer">
                 <Link href={`/country/${c.code}`} data-testid={`link-country-card-${c.code}`}>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-4xl">{c.flag}</span>
                     <div>
-                      <div className="font-semibold text-[#1F1A17] text-lg">{c.country}</div>
+                      <div className="font-semibold text-[#F4F8FC] text-lg">{c.country}</div>
                       <div className="text-[#2563EB] text-sm font-medium">{c.topBonus}</div>
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {c.sites.map((site) => (
-                      <span key={site} className="bg-white border border-[#E7E1D6] text-[#5F554C] text-xs px-2 py-0.5 rounded-full">{site}</span>
+                      <span key={site} className="bg-[#0B1220] border border-[#162233] text-[#C7D5E6] text-xs px-2 py-0.5 rounded-full">{site}</span>
                     ))}
                   </div>
                   <div className="flex items-center gap-1 text-[#2563EB] text-sm font-medium group-hover:gap-2 transition-all">
@@ -317,7 +317,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Bet on anything</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-4">Popular Sports &amp; Markets</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#FFD54A] mb-4">Popular Sports &amp; Markets</h2>
             <p className="text-[#6F665D] text-lg max-w-xl mx-auto">From football to esports — find the best sportsbook for your favourite sport.</p>
           </motion.div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -325,9 +325,9 @@ export default function Home() {
               <motion.div key={s.name}
                 initial={{ opacity: 0, scale: 0.92 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
                 whileHover={{ y: -4, borderColor: "rgba(59,130,246,0.35)" }}
-                className="bg-white border border-[#ECE6DB] rounded-2xl p-5 text-center transition-all duration-300 cursor-pointer">
+                className="bg-[#0F1724] border border-[#162233] rounded-2xl p-5 text-center transition-all duration-300 cursor-pointer">
                 <div className="text-4xl mb-3">{s.emoji}</div>
-                <div className="font-semibold text-[#1F1A17] mb-1">{s.name}</div>
+                <div className="font-semibold text-[#F4F8FC] mb-1">{s.name}</div>
                 <div className="text-[#2563EB] text-xs font-medium mb-2">{s.markets} markets</div>
                 <div className="text-[#8D847A] text-xs">Best: {s.bestSite}</div>
               </motion.div>
@@ -347,7 +347,7 @@ export default function Home() {
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
           <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Our promise</div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-4">Why Choose BetVoxa</h2>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#FFD54A] mb-4">Why Choose BetVoxa</h2>
           <p className="text-[#6F665D] text-lg max-w-xl mx-auto">Your trusted partner for safe and rewarding betting. We do the research so you don't have to.</p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -374,7 +374,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Deposit &amp; withdraw</div>
-            <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">Accepted Payment Methods</h2>
+            <h2 className="font-serif text-4xl font-bold text-[#FFD54A] mb-4">Accepted Payment Methods</h2>
             <p className="text-[#6F665D] max-w-xl mx-auto">All recommended operators support a wide range of safe payment options with fast processing times.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -401,7 +401,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Transparency first</div>
-            <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">How We Rate Operators</h2>
+            <h2 className="font-serif text-4xl font-bold text-[#FFD54A] mb-4">How We Rate Operators</h2>
             <p className="text-[#6F665D] max-w-xl mx-auto">Our expert team evaluates every operator on a strict set of criteria before recommending them to you.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -426,7 +426,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Sports betting</div>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-4">Top Betting Sites</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#FFD54A] mb-4">Top Betting Sites</h2>
             <p className="text-[#6F665D] text-lg max-w-xl mx-auto">Expert-reviewed sportsbooks with the best odds, widest markets, and fastest payouts.</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -475,7 +475,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">What bettors say</div>
-            <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">Real Player Reviews</h2>
+            <h2 className="font-serif text-4xl font-bold text-[#FFD54A] mb-4">Real Player Reviews</h2>
             <p className="text-[#6F665D] max-w-xl mx-auto">Thousands of bettors trust BetVoxa to find the best offers. Here's what they say.</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -507,7 +507,7 @@ export default function Home() {
           <div className="bg-linear-to-r from-[#1B3950]/40 via-[#2563EB]/5 to-[#1B3950]/40 border border-[#2563EB]/12 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
               <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Mobile experience</div>
-              <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">Bet On the Go</h2>
+              <h2 className="font-serif text-4xl font-bold text-[#FFD54A] mb-4">Bet On the Go</h2>
               <p className="text-[#5F554C] mb-6 leading-relaxed">All recommended operators have award-winning mobile apps for iOS and Android. Full feature parity, live streaming, and push notifications for your bets.</p>
               <div className="flex flex-wrap gap-3">
                 {["iOS App", "Android App", "Mobile Browser", "Live Betting", "Push Notifications"].map((feat) => (

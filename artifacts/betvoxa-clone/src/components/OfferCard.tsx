@@ -40,11 +40,11 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, userCountry, geoRestricted
   const categoryBadge = offer.categoryName || 'FEATURED';
 
   return (
-    <div className="w-full mb-4 border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-white">
+    <div className="w-full mb-4 border border-[#162233] rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 bg-[#0F1724] text-[#F4F8FC]">
       {/* Mobile Layout */}
       <div className="flex flex-col md:flex-row">
         {/* Left Section - Logo with Category Badge */}
-        <div className="relative w-full md:w-2/5 bg-gray-100">
+        <div className="relative w-full md:w-2/5 bg-[#071122]">
           {/* Category Badge - Red Ribbon on Left */}
           <div className="absolute top-0 left-0 bg-[#2563EB] text-white px-3 py-2 font-bold text-xs md:text-sm z-10 whitespace-nowrap transform -rotate-45 -translate-x-12 translate-y-4 origin-left md:rotate-0 md:translate-x-0 md:translate-y-0 md:transform-none md:w-full md:rounded-none md:px-4 md:py-2">
             {categoryBadge}
@@ -64,7 +64,7 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, userCountry, geoRestricted
           </div>
 
           {/* Rating Below Image - Mobile Hidden, Desktop Visible */}
-          <div className="hidden md:flex md:flex-col md:items-center md:justify-center md:p-3 md:border-t md:border-gray-200">
+          <div className="hidden md:flex md:flex-col md:items-center md:justify-center md:p-3 md:border-t md:border-[#162233]">
             <div className="flex gap-1 mb-2">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -80,20 +80,20 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, userCountry, geoRestricted
                 />
               ))}
             </div>
-            <p className="text-sm text-gray-600 font-semibold">{rating}</p>
+            <p className="text-sm text-[#9AA6B8] font-semibold">{rating}</p>
           </div>
         </div>
 
         {/* Right Section - Content */}
         <div className="w-full md:w-3/5 p-4 md:p-6 flex flex-col justify-between">
           {/* Small Label */}
-          <p className="text-gray-500 text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2">
+          <p className="text-[#9AA6B8] text-xs md:text-sm uppercase tracking-wide mb-1 md:mb-2">
             Welcome Bonus
           </p>
 
           {/* Main Bonus Text - Large and Bold */}
           <div className="mb-3 md:mb-4">
-            <h3 className="text-base md:text-xl font-bold text-[#1F1A17] mb-1 md:mb-2 font-poppins">
+            <h3 className="text-base md:text-xl font-bold text-[#F4F8FC] mb-1 md:mb-2 font-poppins">
               Bonus up to
             </h3>
             <div className="text-2xl md:text-3xl font-bold text-yellow-500 mb-2">
@@ -102,7 +102,7 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, userCountry, geoRestricted
           </div>
 
           {/* Descriptions - Show all on mobile */}
-          <div className="space-y-2 mb-4 text-xs md:text-sm text-gray-700">
+          <div className="space-y-2 mb-4 text-xs md:text-sm text-[#C7D5E6]">
             <p className="leading-tight">{offer.description1}</p>
             <p className="leading-tight">{offer.description2}</p>
             <p className="hidden md:block leading-tight">{offer.description3}</p>
@@ -151,7 +151,7 @@ const OfferCard: React.FC<OfferCardProps> = ({ offer, userCountry, geoRestricted
           </button>
 
           {/* T&C Text - Smaller on Mobile */}
-          <p className="text-xs text-gray-500 mt-2 leading-tight text-center md:text-left">
+            <p className="text-xs text-[#9AA6B8] mt-2 leading-tight text-center md:text-left">
             18+. New customers only. Min deposit & wagering terms apply. Full T&Cs apply.
           </p>
         </div>
