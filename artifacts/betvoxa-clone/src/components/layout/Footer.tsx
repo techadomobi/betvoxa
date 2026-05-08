@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, Send } from "lucide-react";
 
 export default function Footer() {
   const [logoError, setLogoError] = useState(false);
@@ -63,6 +63,20 @@ export default function Footer() {
         </div>
 
         <div className="my-8 border-t border-white/10" />
+
+        {/* Social Links */}
+        <div className="mb-8 flex items-center justify-center gap-4">
+          <a
+            href="https://t.me/gamezhunt"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-lg font-medium text-sm transition-colors hover:shadow-lg hover:shadow-[#2563EB]/20"
+            title="Join our Telegram channel"
+          >
+            <Send size={16} />
+            Join Our Telegram Channel
+          </a>
+        </div>
 
         <div className="max-w-4xl mx-auto">
           <div className="bg-[#13253D] border border-[#2C4C76] rounded-lg p-4 flex items-start gap-4">
