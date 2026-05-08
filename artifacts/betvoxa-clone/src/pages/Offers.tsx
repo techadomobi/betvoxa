@@ -58,34 +58,13 @@ const Offers: React.FC = () => {
 
       try {
         const apiUrl = import.meta.env.VITE_OFFERS_API || 'https://betvoxa-api-server.vercel.app/casinos';
-        let response: Response;
-
-        try {
-          response = await fetch(apiUrl);
-          // If the remote returns HTML (e.g. a 404 HTML page) or non-JSON, fall back to local file
-          const contentType = response.headers.get('content-type') || '';
-          if (!response.ok || !contentType.includes('application/json')) {
-            // try local fallback
-            response = await fetch('/offers.json');
-          }
-        } catch (e) {
-          // fallback to local file when API unreachable
-          response = await fetch('/offers.json');
-        }
+        const response = await fetch(apiUrl);
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        // Try to parse JSON, but be defensive against unexpected shapes (HTML, plain text)
-        let parsed: any;
-        try {
-          parsed = await response.json();
-        } catch (e) {
-          // If parsing fails, try the local file explicitly
-          const fallback = await fetch('/offers.json');
-          parsed = await fallback.json();
-        }
+        const parsed = await response.json();
 
         // Accept either the wrapped API shape or a plain array of offers
         if (Array.isArray(parsed)) {

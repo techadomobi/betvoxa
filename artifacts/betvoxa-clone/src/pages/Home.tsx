@@ -6,7 +6,25 @@ import {
   Trophy, CheckCircle, ArrowRight, ExternalLink, Flame, Clock,
   CreditCard, Smartphone, Award, BarChart2, Target, Gift, Lock, Users
 } from "lucide-react";
-import BonusCard from "@/components/BonusCard";
+import OfferCard from "@/components/OfferCard";
+
+interface Offer {
+  _id: string;
+  offerName: string;
+  image: string;
+  description1: string;
+  description2: string;
+  description3: string;
+  geo: string;
+  rating: string;
+  buttonName: string;
+  trackingLink: string;
+  rewardAmount: string;
+  slug: string;
+  seoTitle: string;
+  metaDescription?: string;
+  categoryName?: string;
+}
 
 const topCasinos = [
   { rank: 1, initials: "JB", name: "Jackbit", reviews: 5120, rating: 5, bonusTitle: "Wager Free Bonus", bonusDetail: "Crypto specialist — instant payouts", wagering: "0x", minDeposit: "A$30", features: ["Crypto specialist", "Instant payouts", "Wager-free"], featured: true },
@@ -130,10 +148,48 @@ function CounterStat({ value, label, prefix = "", suffix = "" }: { value: number
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [liveOffers, setLiveOffers] = useState<Offer[]>([]);
+  const [loadingOffers, setLoadingOffers] = useState(true);
+  const [offersError, setOffersError] = useState<string | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
+  useEffect(() => {
+    const loadOffers = async () => {
+      setLoadingOffers(true);
+      setOffersError(null);
+
+      try {
+        const response = await fetch(import.meta.env.VITE_OFFERS_API || 'https://betvoxa-api-server.vercel.app/casinos');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const payload = await response.json();
+        if (payload && typeof payload === 'object' && 'responseCode' in payload && Array.isArray(payload.responseResult)) {
+          setLiveOffers(payload.responseResult as Offer[]);
+          return;
+        }
+
+        if (Array.isArray(payload)) {
+          setLiveOffers(payload as Offer[]);
+          return;
+        }
+
+        throw new Error('Invalid response format');
+      } catch (error) {
+        console.error('Failed to load live offers:', error);
+        setOffersError('Live offers are unavailable right now.');
+        setLiveOffers([]);
+      } finally {
+        setLoadingOffers(false);
+      }
+    };
+
+    loadOffers();
+  }, []);
 
   return (
     <div className="overflow-x-hidden">
@@ -229,16 +285,26 @@ export default function Home() {
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
           <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Hand-picked for you</div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#FFD54A] mb-4">Top Casino Offers</h2>
-          <p className="text-[#6F665D] text-lg max-w-xl mx-auto">Exclusive bonuses from the world's leading operators, verified and updated daily.</p>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-[#FFD54A] mb-4">Live Casino Offers</h2>
+          <p className="text-[#C7D5E6] text-lg max-w-xl mx-auto">Real offers fetched from the API and displayed in a single live feed.</p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {topCasinos.map((casino) => <BonusCard key={casino.name} {...casino} />)}
-        </div>
+        {loadingOffers ? (
+          <div className="rounded-2xl border border-[#162233] bg-[#0F1724] px-4 py-10 text-center text-[#C7D5E6]">Loading live offers...</div>
+        ) : offersError ? (
+          <div className="rounded-2xl border border-[#162233] bg-[#0F1724] px-4 py-10 text-center text-[#C7D5E6]">{offersError}</div>
+        ) : (
+          <div className="flex flex-col gap-4">
+            {liveOffers.slice(0, 6).map((offer) => (
+              <motion.div key={offer._id} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+                <OfferCard offer={offer} />
+              </motion.div>
+            ))}
+          </div>
+        )}
         <div className="text-center mt-8">
-          <Link href="/casino-bonuses" data-testid="link-view-all-casinos">
+          <Link href="/casinos" data-testid="link-view-all-casinos">
             <motion.button whileHover={{ scale: 1.03 }} className="inline-flex items-center gap-2 px-6 py-3 border border-[#2563EB]/12 text-[#2563EB] rounded-lg hover:bg-[#2563EB]/8 transition-colors font-medium">
-              View All Casino Bonuses <ArrowRight size={16} />
+              View All Live Offers <ArrowRight size={16} />
             </motion.button>
           </Link>
         </div>
