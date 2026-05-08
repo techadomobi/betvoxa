@@ -111,7 +111,7 @@ export default function TermsAndConditions() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F8F7F2] to-[#F3F1EA]">
+    <div className="min-h-screen bg-gradient-to-b from-[#f7fbff] to-[#eef6ff]">
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <motion.div
           className="absolute -top-20 -right-20 w-[26rem] h-[26rem] rounded-full bg-[#2563EB]/10 blur-3xl"

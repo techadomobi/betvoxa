@@ -370,7 +370,7 @@ export default function Home() {
       </section>
 
       {/* ─── PAYMENT METHODS ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-[#eef6ff] border-y border-[#d6e7f7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Deposit &amp; withdraw</div>
@@ -422,7 +422,7 @@ export default function Home() {
       </section>
 
       {/* ─── TOP BETTING SITES PREVIEW ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-[#eef6ff] border-y border-[#d6e7f7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Sports betting</div>
@@ -502,7 +502,7 @@ export default function Home() {
       </section>
 
       {/* ─── MOBILE APP CTA ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-[#eef6ff] border-y border-[#d6e7f7]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-linear-to-r from-[#1B3950]/40 via-[#2563EB]/5 to-[#1B3950]/40 border border-[#2563EB]/12 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
@@ -548,7 +548,7 @@ export default function Home() {
       </section>
 
       {/* ─── FAQ ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-[#eef6ff] border-y border-[#d6e7f7]">
         <div className="max-w-3xl mx-auto px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-3">Got questions?</div>

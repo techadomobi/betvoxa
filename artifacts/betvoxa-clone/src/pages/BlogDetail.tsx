@@ -103,7 +103,7 @@ export default function BlogDetail() {
   return (
     <div className="overflow-x-hidden">
       {/* Back Button */}
-      <div className="bg-[#F3F1EA]">
+      <div className="bg-[#eef6ff]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link href="/blog">
             <motion.button
@@ -122,7 +122,7 @@ export default function BlogDetail() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="h-96 bg-[#F3F1EA] overflow-hidden"
+        className="h-96 bg-[#eef6ff] overflow-hidden"
       >
         <img
           src={blog.coverImage}
@@ -166,7 +166,7 @@ export default function BlogDetail() {
               <User size={18} />
               <span className="font-medium">By {blog.writerName}</span>
             </div>
-            <button className="inline-flex items-center gap-2 px-4 py-2 border border-[#E4DED0] rounded-lg hover:bg-[#F3F1EA] transition-colors text-[#5F554C]">
+            <button className="inline-flex items-center gap-2 px-4 py-2 border border-[#d6e7f7] rounded-lg hover:bg-[#eef6ff] transition-colors text-[#5F554C]">
               <Share2 size={18} />
               Share
             </button>

@@ -18,7 +18,7 @@ export default function Privacy() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
+      transition: { duration: 0.6 },
     },
   };
 
@@ -109,7 +109,7 @@ export default function Privacy() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F8F7F2] to-[#F3F1EA]">
+    <div className="min-h-screen bg-linear-to-b from-[#f7fbff] to-[#eef6ff]">
       {/* ─── ANIMATED BACKGROUND ─── */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -185,7 +185,7 @@ export default function Privacy() {
                 <motion.div className="bg-white border border-[#ECE6DB] rounded-2xl p-8 shadow-md hover:shadow-lg hover:shadow-[#2563EB]/10 transition-all duration-300 overflow-hidden relative">
                   {/* Background gradient effect */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-[#2563EB]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-linear-to-r from-[#2563EB]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     initial={{ x: -400 }}
                     whileHover={{ x: 400 }}
                     transition={{ duration: 0.6 }}
@@ -194,7 +194,7 @@ export default function Privacy() {
                   <div className="relative z-10">
                     <div className="flex items-start gap-4 mb-4">
                       <motion.div
-                        className="w-14 h-14 rounded-xl bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0"
+                        className="w-14 h-14 rounded-xl bg-[#2563EB]/10 flex items-center justify-center shrink-0"
                         whileHover={{ rotate: 10, scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
@@ -242,12 +242,12 @@ export default function Privacy() {
                   key={i}
                   href={item.href}
                   variants={itemVariants}
-                  className="bg-gradient-to-br from-white to-[#2563EB]/5 border border-[#2563EB]/20 rounded-2xl p-6 hover:shadow-lg hover:shadow-[#2563EB]/15 transition-all duration-300 group cursor-pointer"
+                  className="bg-linear-to-br from-white to-[#2563EB]/5 border border-[#2563EB]/20 rounded-2xl p-6 hover:shadow-lg hover:shadow-[#2563EB]/15 transition-all duration-300 group cursor-pointer"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex items-center gap-4">
                     <motion.div
-                      className="w-16 h-16 rounded-xl bg-[#2563EB]/15 flex items-center justify-center flex-shrink-0"
+                      className="w-16 h-16 rounded-xl bg-[#2563EB]/15 flex items-center justify-center shrink-0"
                       whileHover={{ rotate: 12, scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
@@ -273,7 +273,7 @@ export default function Privacy() {
           className="mt-16"
         >
           <motion.div
-            className="relative bg-gradient-to-br from-[#FEF2E8] to-[#FEF9F3] border-2 border-[#2563EB]/30 rounded-2xl p-8 overflow-hidden"
+            className="relative bg-linear-to-br from-[#eef6ff] to-[#f8fbff] border-2 border-[#2563EB]/30 rounded-2xl p-8 overflow-hidden"
             whileHover={{ borderColor: "#2563EB" }}
             transition={{ duration: 0.3 }}
           >
@@ -285,7 +285,7 @@ export default function Privacy() {
 
             <div className="relative z-10 flex gap-4">
               <motion.div animate={{ rotate: [0, -5, 5, 0] }} transition={{ duration: 4, repeat: Infinity }}>
-                <AlertCircle size={28} className="text-[#2563EB] flex-shrink-0 mt-1" />
+                <AlertCircle size={28} className="text-[#2563EB] shrink-0 mt-1" />
               </motion.div>
               <div>
                 <h3 className="font-serif text-xl font-bold text-[#1F1A17] mb-2">Important Disclaimer</h3>
@@ -303,7 +303,7 @@ export default function Privacy() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="relative py-16 bg-gradient-to-r from-[#2563EB]/10 to-[#2563EB]/5 border-t border-[#2563EB]/20"
+        className="relative py-16 bg-linear-to-r from-[#2563EB]/10 to-[#2563EB]/5 border-t border-[#2563EB]/20"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.p className="text-[#5F554C] text-base leading-relaxed" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.2 }}>

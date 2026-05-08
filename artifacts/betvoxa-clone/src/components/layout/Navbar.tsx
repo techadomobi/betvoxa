@@ -152,7 +152,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-[#F8F7F2] pt-16 px-6 flex flex-col gap-2 overflow-y-auto"
+            className="fixed inset-0 z-40 bg-[#eef6ff] pt-16 px-6 flex flex-col gap-2 overflow-y-auto"
           >
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>

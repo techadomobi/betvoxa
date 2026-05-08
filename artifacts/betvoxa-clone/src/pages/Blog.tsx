@@ -42,7 +42,7 @@ export default function Blog() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-[#F3F1EA] to-[#F8F7F2] py-20">
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-linear-to-br from-[#eef6ff] to-[#f8fbff] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export default function Blog() {
               >
                 {/* Cover Image */}
                 <Link href={`/blog/${blog.slug}`}>
-                  <div className="relative h-48 overflow-hidden bg-[#F3F1EA] cursor-pointer">
+                  <div className="relative h-48 overflow-hidden bg-[#eef6ff] cursor-pointer">
                     <img
                       src={blog.coverImage}
                       alt={blog.title}
