@@ -59,7 +59,7 @@
   --elevate-2: rgba(16,24,40, .07);
 
   /* Very Light Sky Blue */
-  --background: 210 100% 97%;
+  --background: 210 100% 96%;
   --foreground: 30 10% 12%;
   --border: 210 30% 85%;
   
@@ -79,8 +79,8 @@
   --secondary: 206 25% 92%;
   --secondary-foreground: 30 10% 12%;
   
-  --muted: 42 22% 94%;
-  --muted-foreground: 30 8% 42%;
+  --muted: 210 70% 97%;
+  --muted-foreground: 215 18% 42%;
   
   --accent: 43 76% 92%;
   --accent-foreground: 30 10% 12%;
@@ -124,7 +124,7 @@
 }
 
 .dark {
-  --background: 210 100% 97%;
+  --background: 210 100% 96%;
   --foreground: 30 10% 12%;
   --border: 210 30% 85%;
   --card: 210 100% 99%;
@@ -139,7 +139,10 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground selection:bg-primary selection:text-primary-foreground;
-    background-image: radial-gradient(circle at top, rgba(147, 197, 253, 0.28), transparent 42%);
+    background-image:
+      radial-gradient(circle at top, rgba(191, 219, 254, 0.45), transparent 40%),
+      radial-gradient(circle at 80% 0%, rgba(219, 234, 254, 0.55), transparent 30%),
+      linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background)) 100%);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;

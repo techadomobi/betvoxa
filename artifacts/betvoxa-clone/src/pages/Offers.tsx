@@ -149,7 +149,7 @@ const Offers: React.FC = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-background"
     >
-      <div className="bg-linear-to-br from-background via-card to-background text-[#1F1A17] py-12 px-4 md:py-16 border-b border-border/60">
+      <div className="bg-linear-to-br from-background via-[#eef6ff] to-background text-[#1F1A17] py-12 px-4 md:py-16 border-b border-border/60">
         <div className="max-w-6xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -247,7 +247,7 @@ const Offers: React.FC = () => {
         )}
       </div>
 
-      <div className="bg-muted/40 py-12 px-4 mt-12">
+      <div className="bg-[#eef6ff] py-12 px-4 mt-12 border-t border-[#d6e7f7]">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1F1A17] mb-6 font-poppins">About Our Offers</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

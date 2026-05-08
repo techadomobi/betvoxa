@@ -138,9 +138,9 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* ─── HERO ─── */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-b from-background via-[#f7fbff] to-[#eaf4ff]">
         <motion.div style={{ y }} className="absolute inset-0">
-          {/* background overlays removed to ensure hero text visibility */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.92),transparent_40%),radial-gradient(circle_at_20%_20%,rgba(191,219,254,0.45),transparent_28%),radial-gradient(circle_at_80%_10%,rgba(147,197,253,0.24),transparent_22%)]" />
         </motion.div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {Array.from({ length: 24 }).map((_, i) => (
@@ -187,7 +187,7 @@ export default function Home() {
       </section>
 
       {/* ─── STATS TICKER ─── */}
-      <section className="bg-[#F97316]/5 border-y border-[#F97316]/10 py-14">
+      <section className="bg-[#eef6ff] border-y border-[#d6e7f7] py-14">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
           <CounterStat value={250} suffix="+" label="Verified Operators" />
           <CounterStat value={50} suffix="+" label="Countries Covered" />
@@ -197,9 +197,9 @@ export default function Home() {
       </section>
 
       {/* ─── LIVE WINNERS TICKER ─── */}
-      <section className="bg-[#F3F1EA] border-b border-[#EFE9DE] py-4 overflow-hidden">
+      <section className="bg-[#f4f9ff] border-b border-[#d6e7f7] py-4 overflow-hidden">
         <div className="flex items-center gap-4 px-4 mb-1">
-          <div className="flex items-center gap-1.5 flex-shrink-0">
+          <div className="flex items-center gap-1.5 shrink-0">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             <span className="text-green-400 text-xs font-bold uppercase tracking-wider">Live Winners</span>
           </div>
@@ -211,7 +211,7 @@ export default function Home() {
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {[...recentWinners, ...recentWinners].map((w, i) => (
-              <div key={i} className="flex items-center gap-2 text-sm flex-shrink-0">
+              <div key={i} className="flex items-center gap-2 text-sm shrink-0">
                 <span>{w.country}</span>
                 <span className="text-[#4A433C] font-medium">{w.name}</span>
                 <span className="text-[#8D847A]">won</span>
@@ -245,7 +245,7 @@ export default function Home() {
       </section>
 
       {/* ─── BONUS TYPES GUIDE ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-[#eef6ff] border-y border-[#d6e7f7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Know before you claim</div>
@@ -313,7 +313,7 @@ export default function Home() {
       </section>
 
       {/* ─── POPULAR SPORTS ─── */}
-      <section className="py-20 bg-[#F3F1EA]">
+      <section className="py-20 bg-[#eef6ff] border-y border-[#d6e7f7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Bet on anything</div>
@@ -397,7 +397,7 @@ export default function Home() {
       </section>
 
       {/* ─── HOW WE RATE ─── */}
-      <section className="py-20 bg-gradient-to-b from-[#0B0A09] via-[#1B3950]/10 to-[#0B0A09]">
+      <section className="py-20 bg-linear-to-b from-[#0B0A09] via-[#1B3950]/10 to-[#0B0A09]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Transparency first</div>
@@ -443,7 +443,7 @@ export default function Home() {
                 whileHover={{ y: -4, borderColor: "rgba(224,174,46,0.35)" }}
                 className="bg-white border border-[#ECE6DB] rounded-2xl p-6 transition-all duration-300">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F97316]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#F97316] text-sm font-mono">{site.initials}</div>
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#F97316]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#F97316] text-sm font-mono">{site.initials}</div>
                   <div className="flex">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={11} className={j < Math.round(site.rating) ? "fill-[#F97316] text-[#F97316]" : "fill-white/20 text-[#C9C3B8]"} />)}</div>
                 </div>
                 <h3 className="font-semibold text-[#1F1A17] text-lg mb-1">{site.name}</h3>
@@ -504,7 +504,7 @@ export default function Home() {
       {/* ─── MOBILE APP CTA ─── */}
       <section className="py-20 bg-[#F3F1EA]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-[#1B3950]/40 via-[#F97316]/5 to-[#1B3950]/40 border border-[#F97316]/12 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-8">
+          <div className="bg-linear-to-r from-[#1B3950]/40 via-[#F97316]/5 to-[#1B3950]/40 border border-[#F97316]/12 rounded-3xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
               <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Mobile experience</div>
               <h2 className="font-serif text-4xl font-bold text-[#1F1A17] mb-4">Bet On the Go</h2>
@@ -526,7 +526,7 @@ export default function Home() {
 
       {/* ─── NEWSLETTER ─── */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1B3950]/30 via-[#F97316]/5 to-[#1B3950]/30" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#1B3950]/30 via-[#F97316]/5 to-[#1B3950]/30" />
         <div className="relative max-w-2xl mx-auto text-center px-4">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="text-[#F97316] text-sm font-semibold uppercase tracking-widest mb-3">Stay ahead</div>
@@ -563,7 +563,7 @@ export default function Home() {
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between px-6 py-4 text-left" data-testid={`button-faq-${i}`}>
                   <span className="font-medium text-[#1F1A17]">{faq.q}</span>
-                  {openFaq === i ? <ChevronUp size={16} className="text-[#F97316] flex-shrink-0" /> : <ChevronDown size={16} className="text-[#8D847A] flex-shrink-0" />}
+                  {openFaq === i ? <ChevronUp size={16} className="text-[#F97316] shrink-0" /> : <ChevronDown size={16} className="text-[#8D847A] shrink-0" />}
                 </button>
                 <AnimatePresence>
                   {openFaq === i && (
@@ -582,7 +582,7 @@ export default function Home() {
       <section className="py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white border border-[#ECE6DB] rounded-2xl p-8 flex flex-col md:flex-row items-start gap-6">
-            <div className="w-12 h-12 rounded-xl bg-[#1B3950]/50 flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-[#1B3950]/50 flex items-center justify-center shrink-0">
               <Shield size={24} className="text-[#F97316]" />
             </div>
             <div>
