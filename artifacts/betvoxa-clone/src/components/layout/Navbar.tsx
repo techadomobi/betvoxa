@@ -58,7 +58,7 @@ export default function Navbar() {
                 <img
                   src="/logo.png"
                   alt="BetVoxa"
-                  className="w-auto h-59 sm:h-49 max-h-34 object-contain group-hover:scale-105 transition-transform"
+                  className="w-auto m-1 h-59 sm:h-49 max-h-34 object-contain group-hover:scale-105 transition-transform"
                 />
               </div>
             </Link>
