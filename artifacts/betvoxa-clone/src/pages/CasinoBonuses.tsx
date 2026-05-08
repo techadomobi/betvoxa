@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Filter, Star, Check, Trophy, TrendingUp, Gift, Zap, ChevronDown, ChevronUp, Shield, Clock, CreditCard } from "lucide-react";
+import { Filter, Star, Check, Trophy, TrendingUp, Gift, Zap, ChevronDown, ChevronUp, Shield, Clock, CreditCard, ExternalLink } from "lucide-react";
 import BonusCard from "@/components/BonusCard";
 
 const allBonuses = [
@@ -166,35 +166,106 @@ export default function CasinoBonuses() {
         </div>
       </section>
 
-      {/* ─── FILTER + LIST ─── */}
+      {/* ─── FEATURED UK OFFERS ─── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="flex flex-wrap items-center gap-4 mb-8 p-4 bg-white border border-[#ECE6DB] rounded-xl">
-          <div className="flex items-center gap-2 text-[#5F554C] text-sm"><Filter size={14} /><span>Filter:</span></div>
-          <div className="flex flex-wrap gap-2">
-            {countries.map((c) => (
-              <button key={c} onClick={() => setCountryFilter(c)}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${countryFilter === c ? "bg-[#F97316] text-[#0B0A09]" : "bg-white text-[#5F554C] hover:bg-[#FAF8F3] border border-[#E7E1D6]"}`}
-                data-testid={`filter-country-${c.toLowerCase().replace(/\s+/g, "-")}`}>{c}</button>
-            ))}
-          </div>
-          <div className="h-5 w-px bg-[#FAF8F3] hidden sm:block" />
-          <div className="flex flex-wrap gap-2">
-            {bonusTypes.map((t) => (
-              <button key={t} onClick={() => setTypeFilter(t)}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all ${typeFilter === t ? "bg-[#1B3950] text-[#1F1A17] border border-[#1B3950]" : "bg-white text-[#5F554C] hover:bg-[#FAF8F3] border border-[#E7E1D6]"}`}
-                data-testid={`filter-type-${t.toLowerCase().replace(/\s+/g, "-")}`}>{t}</button>
-            ))}
-          </div>
+        <div className="text-center mb-12">
+          <h2 className="font-serif text-3xl md:text-4xl mb-4 font-bold text-[#1F1A17]">Featured UK casino offers</h2>
+          <p className="text-lg text-[#6F665D] max-w-2xl mx-auto">Exclusive bonuses from UKGC-licensed operators</p>
         </div>
-        <div className="text-[#8D847A] text-sm mb-5">Showing <span className="text-[#1F1A17]">{filtered.length}</span> bonuses</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filtered.map((bonus, i) => <BonusCard key={bonus.name} rank={i + 1} {...bonus} />)}
-          {filtered.length === 0 && (
-            <div className="text-center py-16 text-[#A39B92]">
-              <Trophy size={40} className="mx-auto mb-3 opacity-30" />
-              <p>No bonuses match your filters. Try broadening your search.</p>
+        
+        {/* Premium Featured Cards */}
+        <div className="space-y-6 mb-16">
+          {allBonuses.filter(b => b.featured && b.country === "uk").slice(0, 4).map((casino, idx) => (
+            <motion.div key={casino.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
+              <div className="card-premium">
+                <div className="flex flex-col md:flex-row gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-24 h-24 bg-white rounded-xl p-3 flex items-center justify-center">
+                      <span className="text-sm font-bold text-gray-800">{casino.initials}</span>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h3 className="text-2xl font-semibold mb-2 text-[#1F1A17]">{casino.name}</h3>
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-0.5">
+                            {Array(5).fill(0).map((_, i) => (
+                              <Star key={i} className={`w-4 h-4 ${i < Math.round(casino.rating) ? "fill-[#F97316] text-[#F97316]" : "text-[#D4D0C8]"}`} />
+                            ))}
+                          </div>
+                          <span className="text-sm text-[#8D847A]">({casino.reviews.toLocaleString()})</span>
+                        </div>
+                      </div>
+                      {idx === 0 && (
+                        <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold bg-[#F97316] text-[#0B0A09] border-transparent">Featured</div>
+                      )}
+                    </div>
+                    <p className="text-[#6F665D] mb-4 leading-relaxed">{casino.bonusDetail || "Premium casino experience with instant bonuses and excellent gaming options."}</p>
+                    <div className="inline-flex items-center gap-2 bg-[#E5E4E2]/50 text-[#1F1A17] px-3 py-1.5 rounded-md text-sm font-medium mb-4">
+                      <span>Min deposit:</span>
+                      <span className="text-[#F97316]">{casino.minDeposit}</span>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mb-4">
+                      {casino.features.slice(0, 3).map((feature) => (
+                        <div key={feature} className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-[#F97316] mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-[#5F554C]">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-3 mt-4">
+                      <a href="#" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#F97316] hover:bg-[#DC6803] text-[#0B0A09] rounded-md text-sm font-bold transition-colors">
+                        Claim bonus
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
+                      <button className="inline-flex items-center justify-center gap-2 px-4 py-2 border border-[#F97316]/20 bg-background hover:bg-[#F97316]/10 rounded-md text-sm font-medium transition-colors">
+                        Read review
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Info Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-[#F97316]/10 rounded-lg flex items-center justify-center">
+                <CreditCard className="w-6 h-6 text-[#F97316]" />
+              </div>
+              <h3 className="text-2xl font-semibold text-[#1F1A17]">Payment methods</h3>
             </div>
-          )}
+            <p className="text-[#6F665D] mb-4">UK players have access to a wide range of secure payment options:</p>
+            <ul className="space-y-2">
+              {["Visa & Mastercard", "PayPal", "Skrill", "Neteller", "Bank transfer", "Apple Pay"].map((method) => (
+                <li key={method} className="flex items-center gap-2">
+                  <span className="text-[#F97316]">•</span>
+                  <span className="text-[#5F554C]">{method}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-[#F97316]/10 rounded-lg flex items-center justify-center">
+                <Shield className="w-6 h-6 text-[#F97316]" />
+              </div>
+              <h3 className="text-2xl font-semibold text-[#1F1A17]">UK regulation</h3>
+            </div>
+            <p className="text-[#6F665D] mb-4">All featured operators are licensed by the UK Gambling Commission, ensuring:</p>
+            <ul className="space-y-2">
+              {["Fair gaming and RNG certification", "Segregated player funds", "Responsible gambling tools", "Dispute resolution services"].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="text-[#F97316]">•</span>
+                  <span className="text-[#5F554C]">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </section>
 

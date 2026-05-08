@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useParams } from "wouter";
-import { Shield, Check, ExternalLink, ArrowLeft } from "lucide-react";
+import { Shield, Check, ExternalLink, ArrowLeft, Gift, CreditCard, Star } from "lucide-react";
 import { Link } from "wouter";
 import BonusCard from "@/components/BonusCard";
 
@@ -239,14 +239,148 @@ export default function Country() {
       </section>
 
       {/* TOP BONUSES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-6">
-          Top Casino Bonuses in {data.name}
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.topBonuses.map((bonus, i) => (
-            <BonusCard key={bonus.name} rank={i + 1} {...bonus} />
-          ))}
+      <section className="section-padding">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl mb-4 font-bold text-[#1F1A17]">Featured {data.name} offers</h2>
+            <p className="text-lg text-[#6F665D] max-w-2xl mx-auto">
+              {params.code === "australia" 
+                ? "Top betting sites for Australian players" 
+                : `Best betting sites and bonuses for ${data.name}`}
+            </p>
+          </div>
+
+          {params.code === "australia" ? (
+            // Australian Featured Grid Layout
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+              {data.topBonuses.map((casino, idx) => (
+                <motion.div
+                  key={casino.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                >
+                  <div className="card-premium group h-full flex flex-col">
+                    <div className="flex flex-col h-full">
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="flex-1">
+                          <h3 className="text-xl font-semibold mb-2 text-[#1F1A17]">{casino.name}</h3>
+                          <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-0.5">
+                              {Array(5)
+                                .fill(0)
+                                .map((_, i) => (
+                                  <Star
+                                    key={i}
+                                    className={`w-4 h-4 ${i < Math.round(casino.rating) ? "fill-[#F97316] text-[#F97316]" : "text-[#D4D0C8]"}`}
+                                  />
+                                ))}
+                            </div>
+                            <span className="text-sm text-[#8D847A]">({casino.reviews.toLocaleString()})</span>
+                          </div>
+                        </div>
+                        <div className="w-16 h-16 bg-white rounded-lg p-2 flex items-center justify-center ml-4 flex-shrink-0">
+                          <span className="text-xs font-bold text-gray-800">{casino.initials}</span>
+                        </div>
+                      </div>
+                      <div className="bg-[#F97316]/10 border border-[#F97316]/20 rounded-lg p-4 mb-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Gift className="w-5 h-5 text-[#F97316]" />
+                          <span className="text-sm font-medium text-[#F97316]">Bonus offer</span>
+                        </div>
+                        <p className="text-2xl font-bold text-[#1F1A17] mb-1">{casino.bonusTitle}</p>
+                      </div>
+                      <div className="space-y-2 mb-4 flex-1">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-[#8D847A]">Wagering</span>
+                          <span className="font-medium text-[#1F1A17]">{casino.wagering}</span>
+                        </div>
+                        <div className="flex justify-between text-sm">
+                          <span className="text-[#8D847A]">Min deposit</span>
+                          <span className="font-medium text-[#1F1A17]">{casino.minDeposit}</span>
+                        </div>
+                        <div className="pt-2 border-t border-[#E5E4E2]">
+                          <ul className="space-y-1">
+                            {casino.features.map((feature) => (
+                              <li key={feature} className="text-sm text-[#6F665D] flex items-start gap-2">
+                                <span className="text-[#F97316] mt-0.5">•</span>
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="flex gap-2 mt-auto">
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 px-4 py-2 flex-1 bg-[#F97316] hover:bg-[#DC6803] text-[#0B0A09] rounded-md text-sm font-bold transition-colors"
+                        >
+                          Claim bonus
+                        </a>
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 px-2 py-2 w-9 border border-[#F97316]/20 bg-background hover:bg-[#F97316]/10 rounded-md transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            // Default grid for other countries
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {data.topBonuses.map((bonus, i) => (
+                <BonusCard key={bonus.name} rank={i + 1} {...bonus} />
+              ))}
+            </div>
+          )}
+
+          {params.code === "australia" && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-[#F97316]/10 rounded-lg flex items-center justify-center">
+                    <CreditCard className="w-6 h-6 text-[#F97316]" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-[#1F1A17]">Payment methods</h3>
+                </div>
+                <p className="text-[#6F665D] mb-4">Popular payment options for Australian players:</p>
+                <ul className="space-y-2">
+                  {["POLi (instant bank transfer)", "BPay", "Credit/debit cards", "Bank transfer"].map((method) => (
+                    <li key={method} className="flex items-center gap-2">
+                      <span className="text-[#F97316]">•</span>
+                      <span className="text-[#5F554C]">{method}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-[#F97316]/10 rounded-lg flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-[#F97316]" />
+                  </div>
+                  <h3 className="text-2xl font-semibold text-[#1F1A17]">Australian regulation</h3>
+                </div>
+                <p className="text-[#6F665D] mb-4">All featured operators comply with Australian gambling laws:</p>
+                <ul className="space-y-2">
+                  {["Licensed by Northern Territory Racing Commission", "Responsible gambling tools", "Age verification required"].map((item) => (
+                    <li key={item} className="flex items-center gap-2">
+                      <span className="text-[#F97316]">•</span>
+                      <span className="text-[#5F554C]">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+          )}
         </div>
       </section>
 
