@@ -58,18 +58,18 @@
   --elevate-1: rgba(16,24,40, .03);
   --elevate-2: rgba(16,24,40, .07);
 
-  /* Light Indigo */
-  --background: 270 100% 95%;
+  /* Very Light Sky Blue */
+  --background: 210 100% 95%;
   --foreground: 30 10% 12%;
-  --border: 270 30% 85%;
+  --border: 210 30% 85%;
   
-  --card: 270 100% 98%;
+  --card: 210 100% 98%;
   --card-foreground: 30 10% 12%;
-  --card-border: 270 30% 88%;
+  --card-border: 210 30% 88%;
   
-  --popover: 270 100% 98%;
+  --popover: 210 100% 98%;
   --popover-foreground: 30 10% 12%;
-  --popover-border: 270 30% 88%;
+  --popover-border: 210 30% 88%;
   
   /* Gold */
   --primary: 43 76% 53%;
@@ -91,9 +91,9 @@
   --input: 30 12% 86%;
   --ring: 43 76% 53%;
   
-  --sidebar: 270 100% 98%;
+  --sidebar: 210 100% 98%;
   --sidebar-foreground: 30 10% 12%;
-  --sidebar-border: 270 30% 88%;
+  --sidebar-border: 210 30% 88%;
   --sidebar-primary: 43 76% 53%;
   --sidebar-primary-foreground: 30 10% 12%;
   --sidebar-accent: 42 22% 94%;
@@ -124,12 +124,12 @@
 }
 
 .dark {
-  --background: 270 100% 95%;
+  --background: 210 100% 95%;
   --foreground: 30 10% 12%;
-  --border: 270 30% 85%;
-  --card: 270 100% 98%;
+  --border: 210 30% 85%;
+  --card: 210 100% 98%;
   --card-foreground: 30 10% 12%;
-  --popover: 270 100% 98%;
+  --popover: 210 100% 98%;
   --popover-foreground: 30 10% 12%;
 }
 
