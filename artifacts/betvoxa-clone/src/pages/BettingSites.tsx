@@ -200,7 +200,7 @@ export default function BettingSites() {
                 </div>
                 <div className="flex flex-col gap-2 flex-shrink-0 justify-start md:items-end">
                   <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                    className="flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] text-[#0B0A09] rounded-lg font-bold text-sm hover:bg-[#1D4ED8] transition-colors shadow-[0_0_16px_rgba(37,99,235,0.2)]"
+                    className="flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] text-white rounded-lg font-bold text-sm hover:bg-[#1D4ED8] transition-colors shadow-[0_0_16px_rgba(37,99,235,0.2)]"
                     data-testid={`button-visit-${site.name.toLowerCase().replace(/\s+/g, "-")}`}>
                     Visit Site <ExternalLink size={13} />
                   </motion.button>

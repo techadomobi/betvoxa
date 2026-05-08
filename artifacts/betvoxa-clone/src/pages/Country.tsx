@@ -419,7 +419,7 @@ export default function Country() {
                 </div>
                 <motion.button
                   whileHover={{ scale: 1.04 }}
-                  className="px-4 py-2 bg-[#2563EB] text-[#0B0A09] rounded-lg text-sm font-bold flex items-center gap-1 hover:bg-[#1D4ED8] transition-colors"
+                  className="px-4 py-2 bg-[#2563EB] text-white rounded-lg text-sm font-bold flex items-center gap-1 hover:bg-[#1D4ED8] transition-colors"
                   data-testid={`button-visit-country-${site.name.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   Visit <ExternalLink size={11} />

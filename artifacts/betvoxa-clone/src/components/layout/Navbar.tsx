@@ -125,7 +125,7 @@ export default function Navbar() {
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
                 <Link href="/casino-bonuses" data-testid="button-claim-bonus-nav">
-                  <button className={`flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] ${isCasinoRoute && !scrolled ? 'text-white' : 'text-[#1F1A17]'} rounded-md text-sm font-bold hover:bg-[#1D4ED8] transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.28)] active:scale-95`}>
+                  <button className="flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] text-white rounded-md text-sm font-bold hover:bg-[#1D4ED8] transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.28)] active:scale-95">
                     <Trophy size={14} />
                     Claim Bonus
                   </button>

@@ -537,7 +537,7 @@ export default function Home() {
                 className="flex-1 px-4 py-3 bg-white border border-[#DAD3C6] rounded-lg text-[#1F1A17] placeholder-white/30 focus:outline-none focus:border-[#2563EB]/50 text-sm"
                 data-testid="input-newsletter-email" />
               <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
-                className="px-6 py-3 bg-[#2563EB] text-[#0B0A09] rounded-lg font-bold text-sm hover:bg-[#1D4ED8] transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)]"
+                className="px-6 py-3 bg-[#2563EB] text-white rounded-lg font-bold text-sm hover:bg-[#1D4ED8] transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)]"
                 data-testid="button-newsletter-subscribe">
                 Subscribe
               </motion.button>
@@ -611,7 +611,7 @@ export default function Home() {
           <p className="text-[#6F665D] text-lg mb-8 max-w-xl mx-auto">Join millions of bettors who trust BetVoxa to find the best offers. Your next big win is waiting.</p>
           <Link href="/casino-bonuses">
             <motion.button whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(59,130,246,0.5)" }} whileTap={{ scale: 0.97 }}
-              className="px-10 py-5 bg-[#2563EB] text-[#0B0A09] rounded-xl font-bold text-xl hover:bg-[#1D4ED8] transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)]"
+              className="px-10 py-5 bg-[#2563EB] text-white rounded-xl font-bold text-xl hover:bg-[#1D4ED8] transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)]"
               data-testid="button-final-cta">
               Explore All Bonuses
             </motion.button>

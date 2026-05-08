@@ -157,7 +157,7 @@ export default function CasinoBonuses() {
                     <div className="flex">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={11} className={j < Math.round(b.rating) ? "fill-[#2563EB] text-[#2563EB]" : "fill-white/20 text-[#C9C3B8]"} />)}</div>
                   </td>
                   <td className="px-5 py-3.5 text-right">
-                    <button className="px-3 py-1.5 bg-[#2563EB] text-[#0B0A09] rounded-md text-xs font-bold hover:bg-[#1D4ED8] transition-colors" data-testid={`button-table-claim-${b.name.toLowerCase().replace(/\s+/g, "-")}`}>Claim</button>
+                    <button className="px-3 py-1.5 bg-[#2563EB] text-white rounded-md text-xs font-bold hover:bg-[#1D4ED8] transition-colors" data-testid={`button-table-claim-${b.name.toLowerCase().replace(/\s+/g, "-")}`}>Claim</button>
                   </td>
                 </tr>
               ))}
@@ -198,7 +198,7 @@ export default function CasinoBonuses() {
                         </div>
                       </div>
                       {idx === 0 && (
-                        <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold bg-[#2563EB] text-[#0B0A09] border-transparent">Featured</div>
+                        <div className="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold bg-[#2563EB] text-white border-transparent">Featured</div>
                       )}
                     </div>
                     <p className="text-[#6F665D] mb-4 leading-relaxed">{casino.bonusDetail || "Premium casino experience with instant bonuses and excellent gaming options."}</p>
