@@ -54,11 +54,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" data-testid="link-logo">
-              <div className="flex items-center gap-2 group cursor-pointer">
+              <div className="flex items-center gap-2 group cursor-pointer h-16">
                 <img
                   src="/logo.png"
                   alt="BetVoxa"
-                  className="w-49 h-49 rounded-md object-contain group-hover:scale-105 transition-transform"
+                  className="w-auto h-32 sm:h-14 max-h-14 object-contain group-hover:scale-105 transition-transform"
                 />
               </div>
             </Link>
