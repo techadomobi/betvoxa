@@ -137,7 +137,7 @@ const Offers: React.FC = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.4, ease: 'easeOut' },
+      transition: { duration: 0.4 },
     },
   };
 
@@ -147,10 +147,9 @@ const Offers: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-white"
+      className="min-h-screen bg-background"
     >
-      {/* Hero Section */}
-      <div className="bg-linear-to-r from-[#1F1A17] to-[#3D3531] text-white py-12 px-4 md:py-16">
+      <div className="bg-linear-to-br from-background via-card to-background text-[#1F1A17] py-12 px-4 md:py-16 border-b border-border/60">
         <div className="max-w-6xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -164,16 +163,14 @@ const Offers: React.FC = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg text-gray-200"
+            className="text-lg text-[#5F554C]"
           >
             Discover the best casino and betting offers for your region
           </motion.p>
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Search Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -190,16 +187,12 @@ const Offers: React.FC = () => {
           />
         </motion.div>
 
-        {/* Geo Warning Alert - REMOVED: Show all offers to all users */}
-
-        {/* Loading State */}
         {loading && (
           <div className="flex justify-center items-center py-16">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-600"></div>
           </div>
         )}
 
-        {/* Error State */}
         {error && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -210,10 +203,8 @@ const Offers: React.FC = () => {
           </motion.div>
         )}
 
-        {/* Offers List */}
         {!loading && offers.length > 0 && (
           <>
-            {/* All Offers - Display to all users regardless of country */}
             {availableOffers.length > 0 && (
               <motion.div
                 variants={containerVariants}
@@ -223,9 +214,9 @@ const Offers: React.FC = () => {
               >
                 {availableOffers.map((offer) => (
                   <motion.div key={offer._id} variants={itemVariants}>
-                    <OfferCard 
-                      offer={offer} 
-                      userCountry={userCountry || undefined} 
+                    <OfferCard
+                      offer={offer}
+                      userCountry={userCountry || undefined}
                       geoRestricted={false}
                     />
                   </motion.div>
@@ -233,22 +224,18 @@ const Offers: React.FC = () => {
               </motion.div>
             )}
 
-            {/* No Results */}
             {filteredOffers.length === 0 && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="text-center py-12"
               >
-                <p className="text-xl text-gray-600">
-                  No offers found matching your search.
-                </p>
+                <p className="text-xl text-gray-600">No offers found matching your search.</p>
               </motion.div>
             )}
           </>
         )}
 
-        {/* Empty State */}
         {!loading && offers.length === 0 && !error && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -260,36 +247,21 @@ const Offers: React.FC = () => {
         )}
       </div>
 
-      {/* Info Section */}
-      <div className="bg-[#F3F1EA] py-12 px-4 mt-12">
+      <div className="bg-muted/40 py-12 px-4 mt-12">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1F1A17] mb-6 font-poppins">
-            About Our Offers
-          </h2>
+          <h2 className="text-2xl font-bold text-[#1F1A17] mb-6 font-poppins">About Our Offers</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
-              <h3 className="text-lg font-semibold text-red-600 mb-2 font-poppins">
-                Curated Selection
-              </h3>
-              <p className="text-gray-700">
-                We carefully select the best casino and betting platforms for our users.
-              </p>
+              <h3 className="text-lg font-semibold text-red-600 mb-2 font-poppins">Curated Selection</h3>
+              <p className="text-gray-700">We carefully select the best casino and betting platforms for our users.</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-red-600 mb-2 font-poppins">
-                Region-Specific
-              </h3>
-              <p className="text-gray-700">
-                Find offers specifically tailored to your country and region.
-              </p>
+              <h3 className="text-lg font-semibold text-red-600 mb-2 font-poppins">Region-Specific</h3>
+              <p className="text-gray-700">Find offers specifically tailored to your country and region.</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-red-600 mb-2 font-poppins">
-                Generous Bonuses
-              </h3>
-              <p className="text-gray-700">
-                Discover exclusive welcome bonuses and ongoing promotional offers.
-              </p>
+              <h3 className="text-lg font-semibold text-red-600 mb-2 font-poppins">Generous Bonuses</h3>
+              <p className="text-gray-700">Discover exclusive welcome bonuses and ongoing promotional offers.</p>
             </div>
           </div>
         </div>

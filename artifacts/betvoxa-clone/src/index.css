@@ -59,7 +59,7 @@
   --elevate-2: rgba(16,24,40, .07);
 
   /* Very Light Sky Blue */
-  --background: 210 100% 96%;
+  --background: 210 100% 97%;
   --foreground: 30 10% 12%;
   --border: 210 30% 85%;
   
@@ -124,7 +124,7 @@
 }
 
 .dark {
-  --background: 210 100% 96%;
+  --background: 210 100% 97%;
   --foreground: 30 10% 12%;
   --border: 210 30% 85%;
   --card: 210 100% 99%;
