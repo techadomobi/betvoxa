@@ -106,7 +106,7 @@ export default function ResponsibleGambling() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f7fbff] to-[#eef6ff]">
+    <div className="min-h-screen bg-linear-to-b from-[#f7fbff] to-[#eef6ff]">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

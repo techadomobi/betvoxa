@@ -111,10 +111,10 @@ export default function TermsAndConditions() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#f7fbff] to-[#eef6ff]">
+    <div className="min-h-screen bg-linear-to-b from-[#f7fbff] to-[#eef6ff]">
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute -top-20 -right-20 w-[26rem] h-[26rem] rounded-full bg-[#2563EB]/10 blur-3xl"
+          className="absolute -top-20 -right-20 w-104 h-104 rounded-full bg-[#2563EB]/10 blur-3xl"
           animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -175,7 +175,7 @@ export default function TermsAndConditions() {
                 className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center shrink-0">
                     <Icon size={22} className="text-[#2563EB]" />
                   </div>
                   <h2 className="font-serif text-2xl font-bold text-[#1F1A17]">{section.title}</h2>

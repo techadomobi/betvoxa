@@ -242,7 +242,7 @@ export default function BlogDetail() {
           viewport={{ once: true }}
           className="mt-12 pt-8 border-t border-[#E4DED0]"
         >
-          <div className="bg-gradient-to-r from-[#2563EB]/10 to-[#2563EB]/5 rounded-lg p-6 text-center">
+          <div className="bg-linear-to-r from-[#2563EB]/10 to-[#2563EB]/5 rounded-lg p-6 text-center">
             <p className="text-[#5F554C] mb-4">
               Ready to find the best casino or betting site?
             </p>
