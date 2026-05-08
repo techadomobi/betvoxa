@@ -172,8 +172,8 @@ export default function BettingSites() {
                 </div>
               )}
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#2563EB]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#2563EB] text-xl font-mono mb-3">{site.initials}</div>
+                <div className="shrink-0">
+                  <div className="w-16 h-16 rounded-xl bg-linear-to-br from-[#2563EB]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#2563EB] text-xl font-mono mb-3">{site.initials}</div>
                   <div className="flex mb-1">{Array.from({ length: 5 }).map((_, j) => <Star key={j} size={12} className={j < Math.round(site.rating) ? "fill-[#2563EB] text-[#2563EB]" : "fill-white/20 text-[#C9C3B8]"} />)}</div>
                   <div className="text-[#8D847A] text-xs">({site.reviews.toLocaleString()})</div>
                 </div>
@@ -182,7 +182,7 @@ export default function BettingSites() {
                   <div className="text-[#2563EB] font-medium text-sm mb-3">{site.bonus}</div>
                   <p className="text-[#5F554C] text-sm leading-relaxed mb-4">{site.desc}</p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-4">
-                    {site.features.map((f) => <div key={f} className="flex items-center gap-2 text-sm text-[#5F554C]"><Check size={12} className="text-[#2563EB] flex-shrink-0" />{f}</div>)}
+                    {site.features.map((f) => <div key={f} className="flex items-center gap-2 text-sm text-[#5F554C]"><Check size={12} className="text-[#2563EB] shrink-0" />{f}</div>)}
                   </div>
                   <div className="grid grid-cols-2 gap-4 mb-3">
                     <div>
@@ -198,7 +198,7 @@ export default function BettingSites() {
                     {site.sports.map((s) => <span key={s} className="bg-white border border-[#ECE6DB] text-[#6F665D] text-xs px-2 py-0.5 rounded-full">{s}</span>)}
                   </div>
                 </div>
-                <div className="flex flex-col gap-2 flex-shrink-0 justify-start md:items-end">
+                <div className="flex flex-col gap-2 shrink-0 justify-start md:items-end">
                   <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
                     className="flex items-center gap-2 px-5 py-2.5 bg-[#2563EB] text-white rounded-lg font-bold text-sm hover:bg-[#1D4ED8] transition-colors shadow-[0_0_16px_rgba(37,99,235,0.2)]"
                     data-testid={`button-visit-${site.name.toLowerCase().replace(/\s+/g, "-")}`}>
@@ -230,7 +230,7 @@ export default function BettingSites() {
               return (
                 <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
                   className="bg-white border border-[#ECE6DB] rounded-xl p-5 flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#2563EB]/8 flex items-center justify-center flex-shrink-0"><Icon size={18} className="text-[#2563EB]" /></div>
+                  <div className="w-10 h-10 rounded-lg bg-[#2563EB]/8 flex items-center justify-center shrink-0"><Icon size={18} className="text-[#2563EB]" /></div>
                   <div>
                     <div className="flex items-baseline gap-2 mb-1">
                       <span className="font-semibold text-[#1F1A17]">{p.title}</span>
@@ -429,7 +429,7 @@ export default function BettingSites() {
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   className="w-full flex items-center justify-between px-6 py-4 text-left" data-testid={`button-faq-betting-${i}`}>
                   <span className="font-medium text-[#1F1A17] text-sm">{faq.q}</span>
-                  {openFaq === i ? <ChevronUp size={15} className="text-[#2563EB] flex-shrink-0" /> : <ChevronDown size={15} className="text-[#8D847A] flex-shrink-0" />}
+                  {openFaq === i ? <ChevronUp size={15} className="text-[#2563EB] shrink-0" /> : <ChevronDown size={15} className="text-[#8D847A] shrink-0" />}
                 </button>
                 <AnimatePresence>
                   {openFaq === i && (
