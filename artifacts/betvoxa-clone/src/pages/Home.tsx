@@ -189,26 +189,13 @@ export default function Home() {
           <div className="inline-flex items-center gap-2 rounded-full border border-[#a855f7]/12 bg-[#a855f7]/8 px-4 py-1.5 text-[#a855f7] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             <Trophy size={12} className="fill-[#a855f7]" /> Popular Games
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-3">Game Platforms</h1>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-3">Best Bonus Casinos</h1>
           <p className="text-[#5F554C] text-base max-w-2xl mx-auto">
             Explore exciting gaming platforms with exclusive bonuses and premium features.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-          {[
-            { label: "Game offers", value: gameOffers.length || 0 },
-            { label: "Top rating", value: gameOffers.length ? Math.max(...gameOffers.map((offer) => Number.parseFloat(offer.rating) || 0)).toFixed(1) : "0.0" },
-            { label: "Fresh feed", value: "API" },
-            { label: "Category", value: "Games" },
-          ].map((item) => (
-            <div key={item.label} className="rounded-2xl border border-[#e9d5ff] bg-white px-4 py-4 text-center shadow-[0_14px_35px_rgba(168,85,247,0.08)]">
-              <div className="text-2xl font-bold text-[#a855f7] mb-1">{item.value}</div>
-              <div className="text-xs uppercase tracking-wider text-[#6F665D]">{item.label}</div>
-            </div>
-          ))}
-        </div>
-
+    
         {loadingGames ? (
           <div className="rounded-2xl border border-[#e9d5ff] bg-white px-4 py-10 text-center text-[#5F554C]">Loading game offers...</div>
         ) : gamesError ? (
