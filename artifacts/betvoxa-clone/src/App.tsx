@@ -16,6 +16,7 @@ import ResponsibleGambling from "@/pages/ResponsibleGambling";
 import Blog from "@/pages/Blog";
 import BlogDetail from "@/pages/BlogDetail";
 import Offers from "@/pages/Offers";
+import GameDetail from "@/pages/GameDetail";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ function Router() {
         <Route path="/casinos" component={Offers} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
+        <Route path="/game/:slug" component={GameDetail} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

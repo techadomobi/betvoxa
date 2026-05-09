@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'wouter';
 import { Star } from 'lucide-react';
 
 interface Offer {
@@ -26,12 +27,14 @@ interface MobileOfferCardProps {
 }
 
 const MobileOfferCard: React.FC<MobileOfferCardProps> = ({ offer }) => {
+  const [, navigate] = useLocation();
   const rating = parseFloat(offer.rating);
   const starCount = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
 
   const handleJoinClick = () => {
-    window.open(offer.trackingLink, '_blank', 'noopener,noreferrer');
+    sessionStorage.setItem('currentOffer', JSON.stringify(offer));
+    navigate(`/game/${offer.slug}`);
   };
 
   return (

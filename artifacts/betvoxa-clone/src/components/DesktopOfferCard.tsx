@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'wouter';
 import { Star, Radio } from 'lucide-react';
 
 interface Offer {
@@ -25,8 +26,11 @@ interface DesktopOfferCardProps {
 }
 
 const DesktopOfferCard: React.FC<DesktopOfferCardProps> = ({ offer }) => {
+  const [, navigate] = useLocation();
+
   const handleJoinClick = () => {
-    window.open(offer.trackingLink, '_blank', 'noopener,noreferrer');
+    sessionStorage.setItem('currentOffer', JSON.stringify(offer));
+    navigate(`/game/${offer.slug}`);
   };
 
   // Simulated user count for LIVE status
