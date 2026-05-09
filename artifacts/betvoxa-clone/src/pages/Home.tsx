@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       {/* Game Offers Section */}
-      <section className="relative py-12 sm:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-0 pb-12 sm:pb-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-x-4 top-10 -z-10 h-40 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.16),transparent_70%),linear-gradient(135deg,rgba(255,255,255,0.96),rgba(243,232,255,0.86))] blur-2xl" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
