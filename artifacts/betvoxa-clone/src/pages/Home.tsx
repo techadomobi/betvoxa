@@ -107,13 +107,13 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Best Bonus Casino Section */}
-      <section className="relative py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-12 sm:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-x-4 top-10 -z-10 h-40 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.16),transparent_70%),linear-gradient(135deg,rgba(255,255,255,0.96),rgba(239,246,255,0.86))] blur-2xl" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="text-center mb-6"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/12 bg-[#2563EB]/8 px-4 py-1.5 text-[#2563EB] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             <Sparkles size={12} className="fill-[#2563EB]" /> Live casino feed
@@ -165,13 +165,13 @@ export default function Home() {
       </section>
 
       {/* Game Offers Section */}
-      <section className="relative py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-12 sm:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-x-4 top-10 -z-10 h-40 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.16),transparent_70%),linear-gradient(135deg,rgba(255,255,255,0.96),rgba(243,232,255,0.86))] blur-2xl" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="text-center mb-6"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-[#a855f7]/12 bg-[#a855f7]/8 px-4 py-1.5 text-[#a855f7] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             <Trophy size={12} className="fill-[#a855f7]" /> Popular Games
