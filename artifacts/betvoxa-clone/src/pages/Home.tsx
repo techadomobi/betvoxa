@@ -171,7 +171,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-6"
+          className="text-center mb-2"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-[#a855f7]/12 bg-[#a855f7]/8 px-4 py-1.5 text-[#a855f7] text-xs font-semibold uppercase tracking-[0.2em] mb-6">
             <Trophy size={12} className="fill-[#a855f7]" /> Popular Games
