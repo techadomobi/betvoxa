@@ -106,7 +106,7 @@ export default function Home() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* Gambling Casinos Section */}
+      {/* Best Bonus Casino Section */}
       <section className="relative py-16 sm:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-x-4 top-10 -z-10 h-40 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.16),transparent_70%),linear-gradient(135deg,rgba(255,255,255,0.96),rgba(239,246,255,0.86))] blur-2xl" />
         <motion.div
@@ -118,25 +118,12 @@ export default function Home() {
           <div className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/12 bg-[#2563EB]/8 px-4 py-1.5 text-[#2563EB] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             <Sparkles size={12} className="fill-[#2563EB]" /> Live casino feed
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-3">Gambling Casinos</h1>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-3">Best Bonus Casino</h1>
           <p className="text-[#5F554C] text-base max-w-2xl mx-auto">
-            Top gambling casino offers with exciting bonuses and rewards.
+            Top Bonus casino offers with exciting bonuses and rewards.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-          {[
-            { label: "Live offers", value: liveOffers.length || 0 },
-            { label: "Top rating", value: liveOffers.length ? Math.max(...liveOffers.map((offer) => Number.parseFloat(offer.rating) || 0)).toFixed(1) : "0.0" },
-            { label: "Fresh feed", value: "API" },
-            { label: "Theme", value: "Blue Gold" },
-          ].map((item) => (
-            <div key={item.label} className="rounded-2xl border border-[#d8e7f7] bg-white px-4 py-4 text-center shadow-[0_14px_35px_rgba(37,99,235,0.08)]">
-              <div className="text-2xl font-bold text-[#2563EB] mb-1">{item.value}</div>
-              <div className="text-xs uppercase tracking-wider text-[#6F665D]">{item.label}</div>
-            </div>
-          ))}
-        </div>
 
         {loadingOffers ? (
           <div className="rounded-2xl border border-[#d8e7f7] bg-white px-4 py-10 text-center text-[#5F554C]">Loading live offers...</div>
