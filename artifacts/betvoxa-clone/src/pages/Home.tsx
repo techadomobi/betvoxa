@@ -119,9 +119,6 @@ export default function Home() {
             <Sparkles size={12} className="fill-[#2563EB]" /> Live casino feed
           </div>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-3">Best Bonus Casino</h1>
-          <p className="text-[#5F554C] text-base max-w-2xl mx-auto">
-            Top Bonus casino offers with exciting bonuses and rewards.
-          </p>
         </motion.div>
 
 
@@ -177,9 +174,6 @@ export default function Home() {
             <Trophy size={12} className="fill-[#a855f7]" /> Popular Games
           </div>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-3">Best Bonus Casinos</h1>
-          <p className="text-[#5F554C] text-base max-w-2xl mx-auto">
-            Explore exciting gaming platforms with exclusive bonuses and premium features.
-          </p>
         </motion.div>
 
     
