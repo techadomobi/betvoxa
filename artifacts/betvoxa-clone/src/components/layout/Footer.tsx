@@ -16,7 +16,7 @@ export default function Footer() {
                   src="/logo.png"
                   alt="BetVoxa"
                   onError={() => setLogoError(true)}
-                  className="h-10 w-auto object-contain"
+                  className="h-42 w-auto object-contain"
                 />
               ) : (
                 <div className="w-9 h-9 bg-[#2563EB] rounded flex items-center justify-center text-white font-bold">B</div>
