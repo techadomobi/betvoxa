@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import OfferCard from "@/components/OfferCard";
+import CompactOfferCard from "@/components/CompactOfferCard";
 import { ExternalLink, Trophy, Sparkles } from "lucide-react";
 
 interface Offer {
@@ -32,7 +32,9 @@ export default function Home() {
       setOffersError(null);
 
       try {
-        const response = await fetch(import.meta.env.VITE_OFFERS_API || 'https://betvoxa-api-server.vercel.app/casinos');
+        const response = await fetch(
+          import.meta.env.VITE_OFFERS_API || 'https://click.creditsdeal.com/api/offerList?categoryId=14'
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -99,15 +101,16 @@ export default function Home() {
         ) : offersError ? (
           <div className="rounded-2xl border border-[#d8e7f7] bg-white px-4 py-10 text-center text-[#5F554C]">{offersError}</div>
         ) : (
-          <div className="flex flex-col gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {liveOffers.map((offer) => (
               <motion.div
                 key={offer._id}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
               >
-                <OfferCard offer={offer} />
+                <CompactOfferCard offer={offer} />
               </motion.div>
             ))}
           </div>
