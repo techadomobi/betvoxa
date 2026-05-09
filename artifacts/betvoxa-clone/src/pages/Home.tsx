@@ -115,7 +115,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="text-center mb-6"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/12 bg-[#2563EB]/8 px-4 py-1.5 text-[#2563EB] text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#2563EB]/12 bg-[#2563EB]/8 px-1.5 py-1.5 text-[#2563EB] text-xs font-semibold uppercase tracking-[0.2em] mb-2">
             <Sparkles size={12} className="fill-[#2563EB]" /> Live casino feed
           </div>
           <h1 className="font-serif text-3xl md:text-4xl font-bold text-[#1F1A17] mb-3">Best Bonus Casino</h1>
@@ -170,7 +170,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="text-center mb-4"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#a855f7]/12 bg-[#a855f7]/8 px-4 py-1.5 text-[#a855f7] text-xs font-semibold uppercase tracking-[0.2em]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#a855f7]/12 bg-[#a855f7]/8 px-1.5 py-1.5 text-[#a855f7] text-xs font-semibold uppercase tracking-[0.2em]">
             <Trophy size={12} className="fill-[#a855f7]" /> Popular Games
           </div>
           <h1 className="font-serif text-3xl md:text-4xl font-bold text-[#1F1A17] mb-3">Best Bonus Casino</h1>
