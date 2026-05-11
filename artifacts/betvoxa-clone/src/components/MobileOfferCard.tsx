@@ -109,7 +109,7 @@ const MobileOfferCard: React.FC<MobileOfferCardProps> = ({ offer }) => {
         </span>
         <button
           onClick={handleJoinClick}
-          className="bg-linear-to-r from-[#0f5132] to-[#0b3d27] hover:from-[#0d4329] hover:to-[#092f1f] text-white font-bold py-2 px-6 rounded-lg transition-all duration-200 active:scale-95 text-xs shadow-md hover:shadow-lg"
+          className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg transition-all duration-200 active:scale-95 text-xs shadow-md hover:shadow-lg"
         >
           {offer.buttonName || 'GET BONUS'}
         </button>
