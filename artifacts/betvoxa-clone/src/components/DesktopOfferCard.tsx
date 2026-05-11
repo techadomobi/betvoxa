@@ -92,7 +92,7 @@ const DesktopOfferCard: React.FC<DesktopOfferCardProps> = ({ offer }) => {
             onClick={handleJoinClick}
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-2.5 px-8 rounded-lg transition-all duration-200 active:scale-95 text-sm shadow-lg hover:shadow-xl"
           >
-            PLAY
+            Get Bonus
           </button>
         </div>
       </div>
