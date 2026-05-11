@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <>
       <motion.nav
-        className="sticky top-0 z-50 w-full border-b border-[#d8e7f7] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,251,255,0.96))] shadow-[0_8px_24px_rgba(37,99,235,0.06)] backdrop-blur-sm"
+        className="sticky top-0 z-50 w-full border-b border-[#1d3565] bg-[linear-gradient(180deg,rgba(7,17,34,0.96),rgba(11,22,48,0.94))] shadow-[0_8px_24px_rgba(8,17,34,0.28)] backdrop-blur-md"
         initial={{ y: -20 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-14">
             {/* Left menu */}
             <button
-              className="p-2 rounded-md text-[#1F1A17] hover:text-[#2563EB] hover:bg-[#2563EB]/8 transition-colors"
+              className="p-2 rounded-md text-[#e8edff] hover:text-white hover:bg-white/8 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               data-testid="button-mobile-menu"
               aria-label="Open menu"
@@ -64,7 +64,7 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <button className="p-2 rounded-md text-[#5F554C] hover:text-[#2563EB] hover:bg-[#2563EB]/8 transition-colors" aria-label="More">
+            <button className="p-2 rounded-md text-[#c5cce2] hover:text-white hover:bg-white/8 transition-colors" aria-label="More">
               <MoreVertical size={18} />
             </button>
           </div>
@@ -79,16 +79,16 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="fixed inset-0 z-50 bg-[#1B3950]/28 pt-14 px-3 flex items-start justify-start"
+            className="fixed inset-0 z-50 bg-[#071122]/56 pt-14 px-3 flex items-start justify-start backdrop-blur-[2px]"
           >
-            <div className="w-full max-w-[320px] bg-white rounded-r-[20px] shadow-2xl mt-2 overflow-auto border border-[#d8e7f7]" style={{ maxHeight: '90vh' }}>
+            <div className="w-full max-w-[320px] bg-[linear-gradient(180deg,rgba(11,22,48,0.98),rgba(7,17,34,0.98))] text-[#e8edff] rounded-r-[20px] shadow-2xl mt-2 overflow-auto border border-[#1d3565]" style={{ maxHeight: '90vh' }}>
               <div className="p-4">
-                <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#e5eef8]">
+                <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#1d3565]">
                   <div className="flex items-center gap-3">
                     <img src="/logo.png" alt="BetVoxa" className="h-9 w-auto" />
-                    <div className="text-base font-bold text-[#1F1A17]">BetVoxa</div>
+                    <div className="text-base font-bold text-[#e8edff]">BetVoxa</div>
                   </div>
-                  <button onClick={() => setMobileOpen(false)} className="text-[#1F1A17]">
+                  <button onClick={() => setMobileOpen(false)} className="text-[#e8edff]">
                     <X size={20} />
                   </button>
                 </div>
@@ -96,8 +96,8 @@ export default function Navbar() {
                 <nav className="grid grid-cols-1 gap-2">
                   {navLinks.map((link) => (
                     <Link key={link.href} href={link.href}>
-                      <div className="flex items-center gap-3 w-full text-left px-4 py-3 bg-[#f7fbff] text-[#1F1A17] rounded-lg cursor-pointer hover:bg-[#eef6ff] transition-colors border border-[#e5eef8]">
-                        <link.icon size={16} className="text-[#2563EB] shrink-0" />
+                      <div className="flex items-center gap-3 w-full text-left px-4 py-3 bg-[#0d1b39] text-[#e8edff] rounded-lg cursor-pointer hover:bg-[#14254b] transition-colors border border-[#1d3565]">
+                        <link.icon size={16} className="text-[#60a5fa] shrink-0" />
                         <span>{link.label}</span>
                       </div>
                     </Link>
@@ -105,9 +105,9 @@ export default function Navbar() {
                 </nav>
 
                 <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-3">
-                  <Link href="/privacy"><a className="flex items-center gap-2 px-3 py-2 bg-white border border-[#d8e7f7] text-[#5F554C] rounded text-xs"><Shield size={14} className="text-[#2563EB]" />Privacy Policy</a></Link>
-                  <Link href="/terms-and-conditions"><a className="flex items-center gap-2 px-3 py-2 bg-white border border-[#d8e7f7] text-[#5F554C] rounded text-xs"><FileText size={14} className="text-[#2563EB]" />Terms & Conditions</a></Link>
-                  <Link href="/responsible-gambling"><a className="flex items-center gap-2 px-3 py-2 bg-white border border-[#d8e7f7] text-[#5F554C] rounded text-xs"><Shield size={14} className="text-[#2563EB]" />Disclaimer</a></Link>
+                  <Link href="/privacy"><a className="flex items-center gap-2 px-3 py-2 bg-[#0d1b39] border border-[#1d3565] text-[#c5cce2] rounded text-xs"><Shield size={14} className="text-[#60a5fa]" />Privacy Policy</a></Link>
+                  <Link href="/terms-and-conditions"><a className="flex items-center gap-2 px-3 py-2 bg-[#0d1b39] border border-[#1d3565] text-[#c5cce2] rounded text-xs"><FileText size={14} className="text-[#60a5fa]" />Terms & Conditions</a></Link>
+                  <Link href="/responsible-gambling"><a className="flex items-center gap-2 px-3 py-2 bg-[#0d1b39] border border-[#1d3565] text-[#c5cce2] rounded text-xs"><Shield size={14} className="text-[#60a5fa]" />Disclaimer</a></Link>
                 </div>
 
                 <div className="mt-5">
@@ -115,8 +115,8 @@ export default function Navbar() {
                   <div className="grid grid-cols-2 gap-2">
                     {countries.map((c) => (
                       <Link key={c.code} href={`/country/${c.code}`}>
-                        <div className="flex items-center gap-2 px-3 py-2 text-[#5F554C] bg-white border border-[#d8e7f7] hover:text-[#1F1A17] rounded-md cursor-pointer text-xs">
-                          <Globe size={13} className="text-[#2563EB] shrink-0" />
+                        <div className="flex items-center gap-2 px-3 py-2 text-[#c5cce2] bg-[#0d1b39] border border-[#1d3565] hover:text-white rounded-md cursor-pointer text-xs">
+                          <Globe size={13} className="text-[#60a5fa] shrink-0" />
                           <span>{c.flag}</span>
                           <span className="truncate">{c.name}</span>
                         </div>
