@@ -86,7 +86,7 @@ const GameDetail: React.FC = () => {
         <div className="flex items-center gap-3">
           <div className="text-center">
             <div className="text-xs text-[#a0a0b8]">Points</div>
-            <div className="text-lg font-bold text-yellow-400">0 Pt.</div>
+            <div className="text-lg font-bold text-yellow-400">0 $.</div>
           </div>
           <Trophy size={24} className="text-yellow-400" />
         </div>
@@ -115,7 +115,7 @@ const GameDetail: React.FC = () => {
           {/* Reward Amount */}
           <div className="mb-4">
             <p className="text-4xl font-bold text-yellow-400 mb-1">
-              Win PT. {offer.rewardAmount}
+              Win $. {offer.rewardAmount}
             </p>
             <p className="text-sm text-green-400">
               ✓ Winner announcement available

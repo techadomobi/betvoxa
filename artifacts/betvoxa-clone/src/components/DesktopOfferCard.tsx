@@ -71,7 +71,7 @@ const DesktopOfferCard: React.FC<DesktopOfferCardProps> = ({ offer }) => {
           {/* Reward Amount - Large and Yellow */}
           <div className="mb-2">
             <p className="text-3xl font-bold text-yellow-400">
-              Win PT. {offer.rewardAmount}
+              Win $. {offer.rewardAmount}
             </p>
           </div>
 
