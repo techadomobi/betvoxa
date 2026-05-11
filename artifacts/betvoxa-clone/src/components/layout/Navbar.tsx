@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Menu, X, Trophy, MoreVertical, Gift, BookOpen, Globe, Shield, FileText } from "lucide-react";
+import { Home, Menu, X, Trophy, Gift, BookOpen, Globe, Shield, FileText } from "lucide-react";
 
 const countries = [
   { name: "United Kingdom", code: "united-kingdom", flag: "🇬🇧" },
@@ -64,9 +64,7 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <button className="p-2 rounded-md text-[#c5cce2] hover:text-white hover:bg-white/8 transition-colors" aria-label="More">
-              <MoreVertical size={18} />
-            </button>
+            <div className="w-9" aria-hidden="true" />
           </div>
         </div>
       </motion.nav>
