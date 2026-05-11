@@ -9,10 +9,10 @@ export default function Layout({ children }: { children: ReactNode }) {
   const isGameDetail = location.includes("/game/");
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.12),transparent_34%),radial-gradient(circle_at_50%_18%,rgba(96,165,250,0.10),transparent_22%),linear-gradient(180deg,#f7fbff,#eef6ff)]">
-      <div className={isGameDetail ? "w-full h-screen flex flex-col overflow-hidden bg-gradient-to-b from-[#1a1a3e] to-[#0f0f2e]" : isHomePage ? "mx-auto flex min-h-screen w-full max-w-107.5 flex-col overflow-hidden bg-transparent shadow-[0_24px_80px_rgba(37,99,235,0.08)] sm:rounded-b-[2rem]" : "flex min-h-screen w-full flex-col bg-transparent"}>
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.20),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(16,185,129,0.12),transparent_24%),radial-gradient(circle_at_20%_15%,rgba(59,130,246,0.10),transparent_26%),linear-gradient(180deg,#071122,#0b1630 52%,#08111f)]">
+      <div className={isGameDetail ? "w-full h-screen flex flex-col overflow-hidden bg-linear-to-b from-[#1a1a3e] to-[#0f0f2e]" : isHomePage ? "mx-auto flex min-h-screen w-full max-w-107.5 flex-col overflow-hidden bg-transparent shadow-[0_24px_80px_rgba(8,17,34,0.24)] sm:rounded-b-4xl" : "flex min-h-screen w-full flex-col bg-transparent"}>
         {!isGameDetail && <Navbar />}
-        <main className={isGameDetail ? "flex-1 overflow-y-auto bg-gradient-to-b from-[#1a1a3e] to-[#0f0f2e]" : isHomePage ? "flex-1 bg-transparent" : "flex-1 bg-transparent w-full"}>{children}</main>
+        <main className={isGameDetail ? "flex-1 overflow-y-auto bg-linear-to-b from-[#1a1a3e] to-[#0f0f2e]" : isHomePage ? "flex-1 bg-transparent" : "flex-1 bg-transparent w-full"}>{children}</main>
         {!isGameDetail && <Footer />}
       </div>
     </div>
