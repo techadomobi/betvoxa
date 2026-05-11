@@ -111,15 +111,7 @@ export default function TermsAndConditions() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#f7fbff] to-[#eef6ff]">
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          className="absolute -top-20 -right-20 w-104 h-104 rounded-full bg-[#2563EB]/10 blur-3xl"
-          animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-
+    <div className="min-h-screen bg-background">
       <section className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-14">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -127,16 +119,16 @@ export default function TermsAndConditions() {
           transition={{ duration: 0.6 }}
           className="space-y-4"
         >
-          <div className="inline-flex items-center gap-2 text-[#2563EB] text-xs tracking-wider uppercase font-semibold bg-[#2563EB]/10 px-3 py-1 rounded-full">
+          <div className="inline-flex items-center gap-2 text-[#60a5fa] text-xs tracking-wider uppercase font-semibold bg-[#0d1b39] border border-[#28406f] px-3 py-1 rounded-full shadow-[0_10px_26px_rgba(8,17,34,0.22)]">
             <FileText size={14} />
             Legal Page
           </div>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-[#1F1A17]">Terms & Conditions</h1>
-          <p className="text-[#5F554C] max-w-3xl text-lg leading-relaxed">
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-white drop-shadow-[0_8px_24px_rgba(8,17,34,0.34)]">Terms & Conditions</h1>
+          <p className="text-[#c5cce2] max-w-3xl text-lg leading-relaxed">
             These Terms define how BetVoxa content may be used, what responsibilities users hold, and how third-party links should be interpreted.
             Please read carefully before using offers or visiting partner platforms.
           </p>
-          <p className="text-[#6A5E53] text-sm">Effective date: 07 May 2026</p>
+          <p className="text-[#9ca7c5] text-sm">Effective date: 07 May 2026</p>
         </motion.div>
       </section>
 
@@ -149,12 +141,12 @@ export default function TermsAndConditions() {
           ].map((item) => {
             const Icon = item.icon;
             return (
-              <div key={item.title} className="bg-white border border-[#ECE6DB] rounded-2xl p-5">
-                <div className="w-10 h-10 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-3">
-                  <Icon size={20} className="text-[#2563EB]" />
+              <div key={item.title} className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-5 shadow-[0_14py_35px_rgba(8,17,34,0.22)]">
+                <div className="w-10 h-10 rounded-xl bg-[#0d1b39] flex items-center justify-center mb-3 border border-[#28406f]">
+                  <Icon size={20} className="text-[#60a5fa]" />
                 </div>
-                <h3 className="font-semibold text-[#1F1A17] mb-1">{item.title}</h3>
-                <p className="text-[#5F554C] text-sm">{item.text}</p>
+                <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                <p className="text-[#c5cce2] text-sm">{item.text}</p>
               </div>
             );
           })}
@@ -172,17 +164,17 @@ export default function TermsAndConditions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8"
+                className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-6 md:p-8 shadow-[0_14py_35px_rgba(8,17,34,0.22)]"
               >
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center shrink-0">
-                    <Icon size={22} className="text-[#2563EB]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#0d1b39] flex items-center justify-center shrink-0 border border-[#28406f]">
+                    <Icon size={22} className="text-[#60a5fa]" />
                   </div>
-                  <h2 className="font-serif text-2xl font-bold text-[#1F1A17]">{section.title}</h2>
+                  <h2 className="font-serif text-2xl font-bold text-white">{section.title}</h2>
                 </div>
                 <div className="space-y-2">
                   {section.body.map((line) => (
-                    <p key={line} className="text-[#5F554C] leading-relaxed">{line}</p>
+                    <p key={line} className="text-[#c5cce2] leading-relaxed">{line}</p>
                   ))}
                 </div>
               </motion.article>
@@ -192,32 +184,32 @@ export default function TermsAndConditions() {
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="bg-[#1F1A17] rounded-2xl p-6 md:p-8 text-[#F1ECE3]">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3">Responsible Use Checklist</h2>
-          <p className="text-[#DDD3C5] mb-4">Before joining any partner platform, use this checklist:</p>
+        <div className="bg-[#071122] rounded-2xl p-6 md:p-8 text-[#c5cce2] border border-[#28406f]">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-white">Responsible Use Checklist</h2>
+          <p className="text-[#9ca7c5] mb-4">Before joining any partner platform, use this checklist:</p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {quickRules.map((rule) => (
-              <li key={rule} className="text-sm bg-white/5 border border-white/10 rounded-lg px-4 py-3">{rule}</li>
+              <li key={rule} className="text-sm bg-[#0d1b39] border border-[#28406f] rounded-lg px-4 py-3 text-[#c5cce2]">{rule}</li>
             ))}
           </ul>
         </div>
       </section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1F1A17] mb-5">Frequently Asked Questions</h2>
+        <div className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-6 md:p-8 shadow-[0_14py_35px_rgba(8,17,34,0.22)]">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-5">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faq.map((item) => (
-              <div key={item.q} className="border border-[#EFE8DB] rounded-xl p-4 bg-[#FCFBF8]">
-                <h3 className="font-semibold text-[#1F1A17] mb-2">{item.q}</h3>
-                <p className="text-[#5F554C] text-sm leading-relaxed">{item.a}</p>
+              <div key={item.q} className="border border-[#28406f] rounded-xl p-4 bg-[#0d1b39]">
+                <h3 className="font-semibold text-white mb-2">{item.q}</h3>
+                <p className="text-[#c5cce2] text-sm leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 border-t border-[#EFE8DB] pt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-            <div className="text-[#5F554C] text-sm">Questions about these terms?</div>
-            <a href="mailto:support@betvoxa.com" className="inline-flex items-center gap-2 text-[#2563EB] hover:text-[#1D4ED8] text-sm font-medium">
+          <div className="mt-8 border-t border-[#28406f] pt-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <div className="text-[#9ca7c5] text-sm">Questions about these terms?</div>
+            <a href="mailto:support@betvoxa.com" className="inline-flex items-center gap-2 text-[#60a5fa] hover:text-[#3b82f6] text-sm font-medium">
               <Mail size={16} />
               support@betvoxa.com
             </a>

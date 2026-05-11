@@ -106,7 +106,7 @@ export default function ResponsibleGambling() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#f7fbff] to-[#eef6ff]">
+    <div className="min-h-screen bg-background">
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -114,12 +114,12 @@ export default function ResponsibleGambling() {
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
-          <div className="inline-flex items-center gap-2 text-[#2563EB] text-xs tracking-wider uppercase font-semibold bg-[#2563EB]/10 px-3 py-1 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 text-[#60a5fa] text-xs tracking-wider uppercase font-semibold bg-[#0d1b39] border border-[#28406f] px-3 py-1 rounded-full mb-4 shadow-[0_10px_26px_rgba(8,17,34,0.22)]">
             <AlertTriangle size={14} />
             Player Protection
           </div>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-[#1F1A17] mb-4">Responsible Gambling</h1>
-          <p className="text-[#5F554C] text-lg max-w-3xl">
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-[0_8px_24px_rgba(8,17,34,0.34)]">Responsible Gambling</h1>
+          <p className="text-[#c5cce2] text-lg max-w-3xl">
             Gambling should be entertaining, not a source of stress. BetVoxa encourages safe play,
             informed decisions, and timely support when needed.
           </p>
@@ -127,9 +127,9 @@ export default function ResponsibleGambling() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
           {impactStats.map((item) => (
-            <div key={item.label} className="bg-white border border-[#ECE6DB] rounded-xl px-5 py-4">
-              <div className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
-              <div className="text-[#1F1A17] font-semibold">{item.value}</div>
+            <div key={item.label} className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-xl px-5 py-4 shadow-[0_14py_35px_rgba(8,17,34,0.22)]">
+              <div className="text-[#60a5fa] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
+              <div className="text-white font-semibold">{item.value}</div>
             </div>
           ))}
         </div>
@@ -144,13 +144,13 @@ export default function ResponsibleGambling() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="bg-white border border-[#ECE6DB] rounded-2xl p-6"
+                className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-6 shadow-[0_14py_35px_rgba(8,17,34,0.22)]"
               >
-                <div className="w-11 h-11 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-4">
-                  <Icon size={22} className="text-[#2563EB]" />
+                <div className="w-11 h-11 rounded-xl bg-[#0d1b39] flex items-center justify-center mb-4 border border-[#28406f]">
+                  <Icon size={22} className="text-[#60a5fa]" />
                 </div>
-                <h2 className="font-semibold text-[#1F1A17] mb-2">{card.title}</h2>
-                <p className="text-[#5F554C] text-sm leading-relaxed">{card.text}</p>
+                <h2 className="font-semibold text-white mb-2">{card.title}</h2>
+                <p className="text-[#c5cce2] text-sm leading-relaxed">{card.text}</p>
               </motion.div>
             );
           })}
@@ -160,16 +160,16 @@ export default function ResponsibleGambling() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8 mb-8"
+          className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-6 md:p-8 mb-8 shadow-[0_14py_35px_rgba(8,17,34,0.22)]"
         >
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1F1A17] mb-4">Warning Signs to Watch For</h2>
-          <p className="text-[#5F554C] mb-5">
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-4">Warning Signs to Watch For</h2>
+          <p className="text-[#c5cce2] mb-5">
             Problem gambling often develops gradually. Recognizing early signs helps you take action before it affects your finances and wellbeing.
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {warningSigns.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-[#3F3832] text-sm bg-[#FCFBF8] border border-[#EFE8DB] rounded-xl px-4 py-3">
-                <span className="mt-0.5 text-[#2563EB]">•</span>
+              <li key={item} className="flex items-start gap-3 text-[#c5cce2] text-sm bg-[#0d1b39] border border-[#28406f] rounded-xl px-4 py-3">
+                <span className="mt-0.5 text-[#60a5fa]">•</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -180,15 +180,15 @@ export default function ResponsibleGambling() {
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white border border-[#ECE6DB] rounded-2xl p-6 md:p-8 mb-8"
+          className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-6 md:p-8 mb-8 shadow-[0_14py_35px_rgba(8,17,34,0.22)]"
         >
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1F1A17] mb-4">90-Day Recovery Plan</h2>
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-4">90-Day Recovery Plan</h2>
           <div className="space-y-4">
             {recoveryPlan.map((step) => (
-              <div key={step.phase} className="border border-[#EFE8DB] rounded-xl p-4 bg-[#FCFBF8]">
-                <div className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider mb-1">{step.phase}</div>
-                <h3 className="font-semibold text-[#1F1A17] mb-2">{step.title}</h3>
-                <p className="text-[#5F554C] text-sm leading-relaxed">{step.detail}</p>
+              <div key={step.phase} className="border border-[#28406f] rounded-xl p-4 bg-[#0d1b39]">
+                <div className="text-[#60a5fa] text-xs font-semibold uppercase tracking-wider mb-1">{step.phase}</div>
+                <h3 className="font-semibold text-white mb-2">{step.title}</h3>
+                <p className="text-[#c5cce2] text-sm leading-relaxed">{step.detail}</p>
               </div>
             ))}
           </div>
@@ -200,17 +200,17 @@ export default function ResponsibleGambling() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-[#1F1A17] mb-4">Practical Safer Gambling Steps</h2>
+          <h2 className="font-serif text-2xl md:text-3xl font-bold text-white mb-4">Practical Safer Gambling Steps</h2>
           <div className="space-y-4">
             {practicalSteps.map((step, idx) => (
-              <div key={step.title} className="bg-white border border-[#ECE6DB] rounded-2xl p-5 md:p-6">
+              <div key={step.title} className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-5 md:p-6 shadow-[0_14py_35px_rgba(8,17,34,0.22)]">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 rounded-full bg-[#2563EB]/12 text-[#2563EB] text-sm font-semibold flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-[#0d1b39] text-[#60a5fa] text-sm font-semibold flex items-center justify-center border border-[#28406f]">
                     {idx + 1}
                   </div>
-                  <h3 className="font-semibold text-[#1F1A17]">{step.title}</h3>
+                  <h3 className="font-semibold text-white">{step.title}</h3>
                 </div>
-                <p className="text-[#5F554C] text-sm leading-relaxed">{step.text}</p>
+                <p className="text-[#c5cce2] text-sm leading-relaxed">{step.text}</p>
               </div>
             ))}
           </div>

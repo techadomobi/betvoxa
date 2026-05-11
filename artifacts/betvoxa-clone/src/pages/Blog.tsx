@@ -42,18 +42,19 @@ export default function Blog() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center bg-linear-to-br from-[#eef6ff] to-[#f8fbff] py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-background pt-32 pb-16">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.18),transparent_42%),radial-gradient(circle_at_70%_10%,rgba(16,185,129,0.10),transparent_25%),linear-gradient(180deg,rgba(7,17,34,0.10),transparent_70%)]" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1F1A17] mb-4">
-              Casino & Betting <span className="text-[#2563EB]">Blog</span>
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-[0_8px_24px_rgba(8,17,34,0.34)]">
+              Casino & Betting <span className="text-[#60a5fa]">Blog</span>
             </h1>
-            <p className="text-[#5F554C] text-lg max-w-2xl mx-auto">
+            <p className="text-[#c5cce2] text-lg max-w-2xl mx-auto">
               Expert insights, guides, and reviews on the best online casinos,
               betting sites, and bonuses worldwide.
             </p>
@@ -67,13 +68,13 @@ export default function Blog() {
             className="max-w-md mx-auto"
           >
             <div className="relative">
-              <Search className="absolute left-4 top-3.5 text-[#A39B92]" size={20} />
+              <Search className="absolute left-4 top-3.5 text-[#9ca7c5]" size={20} />
               <input
                 type="text"
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 rounded-lg border border-[#E4DED0] bg-white text-[#1F1A17] placeholder-[#A39B92] focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
+                className="w-full pl-12 pr-4 py-3 rounded-lg border border-[#28406f] bg-[#0d1b39] text-white placeholder-[#7f8aac] focus:outline-none focus:ring-2 focus:ring-[#60a5fa]"
               />
             </div>
           </motion.div>
@@ -84,11 +85,11 @@ export default function Blog() {
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {loading ? (
           <div className="text-center py-12">
-            <p className="text-[#5F554C]">Loading articles...</p>
+            <p className="text-[#c5cce2]">Loading articles...</p>
           </div>
         ) : filteredBlogs.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-[#5F554C]">No articles found matching your search.</p>
+            <p className="text-[#c5cce2]">No articles found matching your search.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -99,11 +100,11 @@ export default function Blog() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group rounded-lg overflow-hidden bg-white border border-[#E4DED0] hover:shadow-lg transition-shadow"
+                className="group rounded-lg overflow-hidden bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] hover:shadow-[0_14px_35px_rgba(8,17,34,0.22)] transition-shadow"
               >
                 {/* Cover Image */}
                 <Link href={`/blog/${blog.slug}`}>
-                  <div className="relative h-48 overflow-hidden bg-[#eef6ff] cursor-pointer">
+                  <div className="relative h-48 overflow-hidden bg-[#071122] cursor-pointer">
                     <img
                       src={blog.coverImage}
                       alt={blog.title}
@@ -124,17 +125,17 @@ export default function Blog() {
                 {/* Content */}
                 <div className="p-5">
                   <Link href={`/blog/${blog.slug}`}>
-                    <h3 className="text-lg font-bold text-[#1F1A17] mb-2 line-clamp-2 hover:text-[#2563EB] transition-colors cursor-pointer">
+                    <h3 className="text-lg font-bold text-white mb-2 line-clamp-2 hover:text-[#60a5fa] transition-colors cursor-pointer">
                       {blog.title}
                     </h3>
                   </Link>
 
-                  <p className="text-[#5F554C] text-sm mb-4 line-clamp-2">
+                  <p className="text-[#c5cce2] text-sm mb-4 line-clamp-2">
                     {blog.excerpt}
                   </p>
 
                   {/* Meta Info */}
-                  <div className="flex items-center justify-between text-xs text-[#A39B92] mb-4 border-t border-[#E4DED0] pt-3">
+                  <div className="flex items-center justify-between text-xs text-[#9ca7c5] mb-4 border-t border-[#28406f] pt-3">
                     <div className="flex items-center gap-1">
                       <Calendar size={14} />
                       {new Date(blog.date).toLocaleDateString()}
@@ -146,7 +147,7 @@ export default function Blog() {
                   <Link href={`/blog/${blog.slug}`}>
                     <motion.button
                       whileHover={{ scale: 1.02 }}
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#2563EB]/10 text-[#2563EB] rounded-lg hover:bg-[#2563EB]/20 transition-colors font-medium text-sm cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#0d1b39] text-[#60a5fa] rounded-lg border border-[#28406f] hover:bg-[#1a2a4a] transition-colors font-medium text-sm cursor-pointer"
                     >
                       Read Article <ArrowRight size={14} />
                     </motion.button>

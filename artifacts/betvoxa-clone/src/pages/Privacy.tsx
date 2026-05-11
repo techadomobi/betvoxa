@@ -109,38 +109,25 @@ export default function Privacy() {
   ];
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#f7fbff] to-[#eef6ff]">
-      {/* ─── ANIMATED BACKGROUND ─── */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-[#2563EB]/5 rounded-full blur-3xl"
-          animate={{ y: [0, 30, 0], x: [0, -20, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-0 left-0 w-96 h-96 bg-[#2563EB]/3 rounded-full blur-3xl"
-          animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        />
-      </div>
-
+    <div className="min-h-screen bg-background">
       {/* ─── HERO ─── */}
       <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.18),transparent_42%),radial-gradient(circle_at_70%_10%,rgba(16,185,129,0.10),transparent_25%),linear-gradient(180deg,rgba(7,17,34,0.10),transparent_70%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="space-y-4">
             <motion.div className="flex items-center gap-3" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
               <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
-                <Shield size={40} className="text-[#2563EB]" />
+                <Shield size={40} className="text-[#60a5fa] drop-shadow-[0_8px_24px_rgba(8,17,34,0.34)]" />
               </motion.div>
-              <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest">Privacy Protected</div>
+              <div className="text-[#60a5fa] text-sm font-semibold uppercase tracking-widest">Privacy Protected</div>
             </motion.div>
-            <motion.h1 className="font-serif text-6xl md:text-7xl font-bold text-[#1F1A17] mb-4" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+            <motion.h1 className="font-serif text-6xl md:text-7xl font-bold text-white mb-4 drop-shadow-[0_8px_24px_rgba(8,17,34,0.34)]" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
               Privacy Policy
             </motion.h1>
-            <motion.p className="text-[#5F554C] text-lg max-w-2xl leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
-              Effective Date: <span className="font-semibold text-[#2563EB]">05 May 2026</span>
+            <motion.p className="text-[#c5cce2] text-lg max-w-2xl leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
+              Effective Date: <span className="font-semibold text-[#60a5fa]">05 May 2026</span>
             </motion.p>
-            <motion.p className="text-[#5F554C] text-lg max-w-3xl leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+            <motion.p className="text-[#c5cce2] text-lg max-w-3xl leading-relaxed" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
               At BetVoxa.com, we are committed to protecting your privacy and ensuring transparency in how your information is collected, used, and safeguarded. This Privacy Policy outlines our practices when you access or interact with our website.
             </motion.p>
           </motion.div>
@@ -157,12 +144,12 @@ export default function Privacy() {
           ].map((item, i) => {
             const Icon = item.icon;
             return (
-              <motion.div key={i} variants={itemVariants} className="bg-white/60 backdrop-blur-md border border-[#2563EB]/20 rounded-2xl p-6 hover:bg-white/80 transition-all duration-300 hover:shadow-lg hover:shadow-[#2563EB]/10">
+              <motion.div key={i} variants={itemVariants} className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-6 hover:border-[#3b82f6] transition-all duration-300 hover:shadow-[0_14px_35px_rgba(8,17,34,0.22)]">
                 <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity, delay: i * 0.2 }} className="mb-4">
-                  <Icon size={32} className="text-[#2563EB]" />
+                  <Icon size={32} className="text-[#60a5fa]" />
                 </motion.div>
-                <h3 className="font-semibold text-[#1F1A17] mb-2 text-lg">{item.label}</h3>
-                <p className="text-[#5F554C] text-sm">{item.desc}</p>
+                <h3 className="font-semibold text-white mb-2 text-lg">{item.label}</h3>
+                <p className="text-[#c5cce2] text-sm">{item.desc}</p>
               </motion.div>
             );
           })}
@@ -182,10 +169,10 @@ export default function Privacy() {
                 whileHover={{ x: 8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <motion.div className="bg-white border border-[#ECE6DB] rounded-2xl p-8 shadow-md hover:shadow-lg hover:shadow-[#2563EB]/10 transition-all duration-300 overflow-hidden relative">
+                <motion.div className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-8 shadow-[0_14px_35px_rgba(8,17,34,0.22)] hover:border-[#3b82f6] transition-all duration-300 overflow-hidden relative">
                   {/* Background gradient effect */}
                   <motion.div
-                    className="absolute inset-0 bg-linear-to-r from-[#2563EB]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-linear-to-r from-[#60a5fa]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     initial={{ x: -400 }}
                     whileHover={{ x: 400 }}
                     transition={{ duration: 0.6 }}
@@ -194,20 +181,20 @@ export default function Privacy() {
                   <div className="relative z-10">
                     <div className="flex items-start gap-4 mb-4">
                       <motion.div
-                        className="w-14 h-14 rounded-xl bg-[#2563EB]/10 flex items-center justify-center shrink-0"
+                        className="w-14 h-14 rounded-xl bg-[#0d1b39] flex items-center justify-center shrink-0 border border-[#28406f]"
                         whileHover={{ rotate: 10, scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <IconComponent size={24} className="text-[#2563EB]" />
+                        <IconComponent size={24} className="text-[#60a5fa]" />
                       </motion.div>
-                      <h2 className="font-serif text-2xl font-bold text-[#1F1A17] pt-2">{section.title}</h2>
+                      <h2 className="font-serif text-2xl font-bold text-white pt-2">{section.title}</h2>
                     </div>
 
                     <div className="space-y-3 ml-0">
                       {section.content.map((paragraph, j) => (
                         <motion.p
                           key={j}
-                          className="text-[#5F554C] leading-relaxed text-base"
+                          className="text-[#c5cce2] leading-relaxed text-base"
                           initial={{ opacity: 0 }}
                           whileInView={{ opacity: 1 }}
                           transition={{ delay: j * 0.1 }}
@@ -227,8 +214,8 @@ export default function Privacy() {
         {/* ─── CONTACT SECTION ─── */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="mt-20">
           <motion.div className="text-center mb-8">
-            <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-3">10. Contact Information</h2>
-            <p className="text-[#5F554C] text-lg">Have questions? We're here to help</p>
+            <h2 className="font-serif text-3xl font-bold text-white mb-3">10. Contact Information</h2>
+            <p className="text-[#c5cce2] text-lg">Have questions? We're here to help</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -242,20 +229,20 @@ export default function Privacy() {
                   key={i}
                   href={item.href}
                   variants={itemVariants}
-                  className="bg-linear-to-br from-white to-[#2563EB]/5 border border-[#2563EB]/20 rounded-2xl p-6 hover:shadow-lg hover:shadow-[#2563EB]/15 transition-all duration-300 group cursor-pointer"
+                  className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-2xl p-6 hover:border-[#3b82f6] hover:shadow-[0_14px_35px_rgba(8,17,34,0.22)] transition-all duration-300 group cursor-pointer"
                   whileHover={{ y: -4 }}
                 >
                   <div className="flex items-center gap-4">
                     <motion.div
-                      className="w-16 h-16 rounded-xl bg-[#2563EB]/15 flex items-center justify-center shrink-0"
+                      className="w-16 h-16 rounded-xl bg-[#0d1b39] flex items-center justify-center shrink-0 border border-[#28406f]"
                       whileHover={{ rotate: 12, scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
-                      <Icon size={28} className="text-[#2563EB]" />
+                      <Icon size={28} className="text-[#60a5fa]" />
                     </motion.div>
                     <div>
-                      <div className="text-sm font-semibold text-[#1F1A17]">{item.title}</div>
-                      <div className="text-[#5F554C] text-base group-hover:text-[#2563EB] transition-colors">{item.value}</div>
+                      <div className="text-sm font-semibold text-white">{item.title}</div>
+                      <div className="text-[#c5cce2] text-base group-hover:text-[#60a5fa] transition-colors">{item.value}</div>
                     </div>
                   </div>
                 </motion.a>

@@ -47,7 +47,7 @@ const GameDetail: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#1a1a3e] to-[#0f0f2e] flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-white text-lg">Loading...</div>
       </div>
     );
@@ -55,11 +55,11 @@ const GameDetail: React.FC = () => {
 
   if (error || !offer) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#1a1a3e] to-[#0f0f2e] flex flex-col items-center justify-center px-4">
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center px-4">
         <div className="text-white text-lg mb-4">{error || 'Offer not found'}</div>
         <button
           onClick={() => navigate('/')}
-          className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-lg"
+          className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold py-2 px-6 rounded-lg"
         >
           Go Home
         </button>
@@ -72,9 +72,9 @@ const GameDetail: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#1a1a3e] to-[#0f0f2e] text-white">
+    <div className="min-h-screen bg-background text-white">
       {/* Header */}
-      <div className="sticky top-0 z-50 bg-[#16152b]/95 backdrop-blur border-b border-[#2563EB]/20 px-4 py-3 flex items-center justify-between">
+      <div className="sticky top-0 z-50 bg-[#071122]/95 backdrop-blur border-b border-[#28406f] px-4 py-3 flex items-center justify-between">
         <button
           onClick={() => navigate('/')}
           className="flex items-center gap-2 hover:opacity-80 transition-opacity"
@@ -85,19 +85,19 @@ const GameDetail: React.FC = () => {
 
         <div className="flex items-center gap-3">
           <div className="text-center">
-            <div className="text-xs text-[#a0a0b8]">Points</div>
-            <div className="text-lg font-bold text-yellow-400">0 $.</div>
+            <div className="text-xs text-[#9ca7c5]">Points</div>
+            <div className="text-lg font-bold text-[#60a5fa]">0 $.</div>
           </div>
-          <Trophy size={24} className="text-yellow-400" />
+          <Trophy size={24} className="text-[#60a5fa]" />
         </div>
       </div>
 
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-4 py-6">
         {/* Game Card */}
-        <div className="rounded-2xl border border-[#2563EB]/20 bg-gradient-to-br from-[#1f1f45] to-[#16152b] p-6 mb-6 shadow-2xl">
+        <div className="rounded-2xl border border-[#28406f] bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] p-6 mb-6 shadow-[0_14py_35px_rgba(8,17,34,0.22)]">
           {/* Image */}
-          <div className="w-full h-48 rounded-xl overflow-hidden mb-6 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.2),transparent_60%)] flex items-center justify-center border border-[#2563EB]/20">
+          <div className="w-full h-48 rounded-xl overflow-hidden mb-6 bg-[#0d1b39] flex items-center justify-center border border-[#28406f]">
             <img
               src={offer.image}
               alt={offer.offerName}
@@ -114,16 +114,16 @@ const GameDetail: React.FC = () => {
 
           {/* Reward Amount */}
           <div className="mb-4">
-            <p className="text-4xl font-bold text-yellow-400 mb-1">
+            <p className="text-4xl font-bold text-[#60a5fa] mb-1">
               Win $. {offer.rewardAmount}
             </p>
-            <p className="text-sm text-green-400">
+            <p className="text-sm text-[#10b981]">
               ✓ Winner announcement available
             </p>
           </div>
 
           {/* Rating */}
-          <div className="flex items-center gap-3 mb-6 pb-6 border-b border-[#2563EB]/20">
+          <div className="flex items-center gap-3 mb-6 pb-6 border-b border-[#28406f]">
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -131,8 +131,8 @@ const GameDetail: React.FC = () => {
                   size={18}
                   className={`${
                     i < Math.floor(parseFloat(offer.rating))
-                      ? 'fill-yellow-400 text-yellow-400'
-                      : 'text-gray-600'
+                      ? 'fill-[#60a5fa] text-[#60a5fa]'
+                      : 'text-[#334155]'
                   }`}
                 />
               ))}
@@ -142,23 +142,23 @@ const GameDetail: React.FC = () => {
 
           {/* Description */}
           <div className="space-y-4 mb-6">
-            <p className="text-base text-[#d0d0e8] leading-relaxed">
+            <p className="text-base text-[#c5cce2] leading-relaxed">
               {offer.t1 || offer.description1}
             </p>
             {offer.description2 && (
-              <p className="text-base text-[#d0d0e8] leading-relaxed">
+              <p className="text-base text-[#c5cce2] leading-relaxed">
                 {offer.description2}
               </p>
             )}
           </div>
 
           {/* Entry Info */}
-          <div className="bg-[#1a1a3e]/50 rounded-lg p-4 mb-6 border border-[#2563EB]/10">
-            <p className="text-sm text-[#a0a0b8]">
+          <div className="bg-[#0d1b39] rounded-lg p-4 mb-6 border border-[#28406f]">
+            <p className="text-sm text-[#9ca7c5]">
               <span className="font-semibold">ENTRY:</span>{' '}
-              <span className="text-yellow-400 font-bold">FREE</span>
+              <span className="text-[#60a5fa] font-bold">FREE</span>
             </p>
-            <p className="text-sm text-[#a0a0b8] mt-2">
+            <p className="text-sm text-[#9ca7c5] mt-2">
               <span className="font-semibold">LOCATION:</span>{' '}
               <span className="font-bold">{offer.geo}</span>
             </p>
@@ -167,28 +167,28 @@ const GameDetail: React.FC = () => {
           {/* Play Button */}
           <button
             onClick={handlePlayClick}
-            className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 active:scale-95 text-lg shadow-lg hover:shadow-xl"
+            className="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-bold py-4 px-6 rounded-lg transition-all duration-200 active:scale-95 text-lg shadow-[0_10px_26px_rgba(37,99,235,0.22)] hover:shadow-[0_14px_35px_rgba(37,99,235,0.33)]"
           >
             PLAY NOW
           </button>
         </div>
 
         {/* Disclaimer */}
-        <div className="bg-[#16152b]/50 rounded-xl p-6 border border-[#2563EB]/10 text-center">
-          <p className="text-xs text-[#a0a0b8] leading-relaxed mb-3">
+        <div className="bg-[#0d1b39]/50 rounded-xl p-6 border border-[#28406f] text-center">
+          <p className="text-xs text-[#9ca7c5] leading-relaxed mb-3">
             <span className="font-semibold">Disclaimer:</span> This quiz game and content on this page is published in good faith
             for entertainment and general information purposes only. The points won in the quizzes have no real money value. It can't be converted
             into money.
           </p>
-          <p className="text-xs text-[#8a8a9a]">
+          <p className="text-xs text-[#6b7280]">
             © 2026 GameHub. All rights reserved.
           </p>
         </div>
 
         {/* Additional Info */}
-        <div className="mt-8 bg-[#1a1a3e]/30 rounded-lg p-4 border border-[#2563EB]/10">
+        <div className="mt-8 bg-[#0d1b39]/30 rounded-lg p-4 border border-[#28406f]">
           <h3 className="text-sm font-bold text-white mb-2">About this game:</h3>
-          <p className="text-xs text-[#a0a0b8] leading-relaxed">
+          <p className="text-xs text-[#9ca7c5] leading-relaxed">
             {offer.description3 || offer.description2 || 'An exciting gaming experience with thrilling rewards and entertainment.'}
           </p>
         </div>

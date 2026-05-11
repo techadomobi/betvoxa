@@ -108,7 +108,7 @@ export default function Home() {
     <div className="overflow-x-hidden">
       {/* Best Bonus Casino Section */}
       <section className="relative py-12 sm:py-14 max-w-7xl mx-auto px-1.5 sm:px-1.5 lg:px-2">
-        <div className="absolute inset-x-4 top-3 -z-10 h-20 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.16),transparent_70%),linear-gradient(135deg,rgba(255,255,255,0.96),rgba(239,246,255,0.86))] blur-2xl" />
+        <div className="absolute inset-x-4 top-3 -z-10 h-20 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(96,165,250,0.12),transparent_70%),linear-gradient(135deg,rgba(13,27,57,0.96),rgba(7,17,34,0.96))] blur-2xl" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,9 +123,9 @@ export default function Home() {
 
 
         {loadingOffers ? (
-          <div className="rounded-2xl border border-[#d8e7f7] bg-white px-4 py-10 text-center text-[#5F554C]">Loading live offers...</div>
+          <div className="rounded-2xl border border-[#28406f] bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] px-4 py-10 text-center text-[#c5cce2]">Loading live offers...</div>
         ) : offersError ? (
-          <div className="rounded-2xl border border-[#d8e7f7] bg-white px-4 py-10 text-center text-[#5F554C]">{offersError}</div>
+          <div className="rounded-2xl border border-[#28406f] bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] px-4 py-10 text-center text-[#c5cce2]">{offersError}</div>
         ) : (
           <>
             {/* Desktop View */}
@@ -163,7 +163,7 @@ export default function Home() {
 
       {/* Game Offers Section */}
       <section className="relative pt-0 pb-12 sm:pb-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-x-4 top-10 -z-10 h-40 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.16),transparent_70%),linear-gradient(135deg,rgba(255,255,255,0.96),rgba(243,232,255,0.86))] blur-2xl" />
+        <div className="absolute inset-x-4 top-10 -z-10 h-40 rounded-4xl bg-[radial-gradient(circle_at_top,rgba(96,165,250,0.12),transparent_70%),linear-gradient(135deg,rgba(13,27,57,0.96),rgba(7,17,34,0.96))] blur-2xl" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -175,9 +175,9 @@ export default function Home() {
 
     
         {loadingGames ? (
-          <div className="rounded-2xl border border-[#e9d5ff] bg-white px-4 py-10 text-center text-[#5F554C]">Loading game offers...</div>
+          <div className="rounded-2xl border border-[#28406f] bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] px-4 py-10 text-center text-[#c5cce2]">Loading game offers...</div>
         ) : gamesError ? (
-          <div className="rounded-2xl border border-[#e9d5ff] bg-white px-4 py-10 text-center text-[#5F554C]">{gamesError}</div>
+          <div className="rounded-2xl border border-[#28406f] bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] px-4 py-10 text-center text-[#c5cce2]">{gamesError}</div>
         ) : (
           <>
             {/* Desktop View */}

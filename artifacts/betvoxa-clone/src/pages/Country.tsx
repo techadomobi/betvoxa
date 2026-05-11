@@ -225,7 +225,7 @@ export default function Country() {
         {/* hero background removed to improve text contrast */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/">
-            <div className="flex items-center gap-2 text-[#6F665D] hover:text-[#1F1A17] transition-colors mb-6 cursor-pointer w-fit" data-testid="link-back-home">
+            <div className="flex items-center gap-2 text-[#9ca7c5] hover:text-[#60a5fa] transition-colors mb-6 cursor-pointer w-fit" data-testid="link-back-home">
               <ArrowLeft size={15} />
               <span className="text-sm">Back to Home</span>
             </div>
@@ -234,11 +234,11 @@ export default function Country() {
             <div className="flex items-center gap-4 mb-4">
               <span className="text-6xl">{data.flag}</span>
               <div>
-                <div className="text-[#2563EB] text-sm font-semibold uppercase tracking-widest mb-1">Country Guide</div>
-                <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#1F1A17]">{data.name}</h1>
+                <div className="text-[#60a5fa] text-sm font-semibold uppercase tracking-widest mb-1">Country Guide</div>
+                <h1 className="font-serif text-5xl md:text-6xl font-bold text-white">{data.name}</h1>
               </div>
             </div>
-            <p className="text-[#5F554C] text-lg max-w-2xl leading-relaxed">{data.intro}</p>
+            <p className="text-[#c5cce2] text-lg max-w-2xl leading-relaxed">{data.intro}</p>
           </motion.div>
         </div>
       </section>
@@ -257,10 +257,10 @@ export default function Country() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 }}
-              className="bg-white border border-[#ECE6DB] rounded-xl p-4"
+              className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-xl p-4 shadow-[0_14py_35px_rgba(8,17,34,0.22)]"
             >
-              <div className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
-              <div className="text-[#1F1A17] font-medium text-sm">{item.value}</div>
+              <div className="text-[#60a5fa] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
+              <div className="text-white font-medium text-sm">{item.value}</div>
             </motion.div>
           ))}
         </div>
@@ -270,10 +270,10 @@ export default function Country() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl mb-4 font-bold text-[#1F1A17]">
+            <h2 className="font-serif text-3xl md:text-4xl mb-4 font-bold text-white">
               {isAustralia ? "Featured Australian offers" : "Featured UK casino offers"}
             </h2>
-            <p className="text-lg text-[#6F665D] max-w-2xl mx-auto">
+            <p className="text-lg text-[#c5cce2] max-w-2xl mx-auto">
               {isAustralia ? "Top betting sites for Australian players" : "Exclusive bonuses from UKGC-licensed operators"}
             </p>
           </div>
@@ -293,7 +293,7 @@ export default function Country() {
                     <div className="flex flex-col h-full">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
-                          <h3 className="text-xl font-semibold mb-2 text-[#1F1A17]">{casino.name}</h3>
+                          <h3 className="text-xl font-semibold mb-2 text-white">{casino.name}</h3>
                           <div className="flex items-center gap-2">
                             <div className="flex items-center gap-0.5">
                               {Array(5)
@@ -301,38 +301,38 @@ export default function Country() {
                                 .map((_, i) => (
                                   <Star
                                     key={i}
-                                    className={`w-4 h-4 ${i < Math.round(casino.rating) ? "fill-[#2563EB] text-[#2563EB]" : "text-[#D4D0C8]"}`}
+                                    className={`w-4 h-4 ${i < Math.round(casino.rating) ? "fill-[#60a5fa] text-[#60a5fa]" : "text-[#334155]"}`}
                                   />
                                 ))}
                             </div>
-                            <span className="text-sm text-[#8D847A]">({casino.reviews.toLocaleString()})</span>
+                            <span className="text-sm text-[#9ca7c5]">({casino.reviews.toLocaleString()})</span>
                           </div>
                         </div>
-                        <div className="w-16 h-16 bg-white rounded-lg p-2 flex items-center justify-center ml-4 shrink-0">
-                          <span className="text-xs font-bold text-gray-800">{casino.initials}</span>
+                        <div className="w-16 h-16 bg-[#0d1b39] rounded-lg p-2 flex items-center justify-center ml-4 shrink-0 border border-[#28406f]">
+                          <span className="text-xs font-bold text-[#60a5fa]">{casino.initials}</span>
                         </div>
                       </div>
-                      <div className="bg-[#2563EB]/10 border border-[#2563EB]/20 rounded-lg p-4 mb-4">
+                      <div className="bg-[#0d1b39] border border-[#28406f] rounded-lg p-4 mb-4">
                         <div className="flex items-center gap-2 mb-2">
-                          <Gift className="w-5 h-5 text-[#2563EB]" />
-                          <span className="text-sm font-medium text-[#2563EB]">Bonus offer</span>
+                          <Gift className="w-5 h-5 text-[#60a5fa]" />
+                          <span className="text-sm font-medium text-[#60a5fa]">Bonus offer</span>
                         </div>
-                        <p className="text-2xl font-bold text-[#1F1A17] mb-1">{casino.bonusTitle}</p>
+                        <p className="text-2xl font-bold text-white mb-1">{casino.bonusTitle}</p>
                       </div>
                       <div className="space-y-2 mb-4 flex-1">
                         <div className="flex justify-between text-sm">
-                          <span className="text-[#8D847A]">Wagering</span>
-                          <span className="font-medium text-[#1F1A17]">{casino.wagering}</span>
+                          <span className="text-[#9ca7c5]">Wagering</span>
+                          <span className="font-medium text-white">{casino.wagering}</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-[#8D847A]">Min deposit</span>
-                          <span className="font-medium text-[#1F1A17]">{casino.minDeposit}</span>
+                          <span className="text-[#9ca7c5]">Min deposit</span>
+                          <span className="font-medium text-white">{casino.minDeposit}</span>
                         </div>
-                        <div className="pt-2 border-t border-[#E5E4E2]">
+                        <div className="pt-2 border-t border-[#28406f]">
                           <ul className="space-y-1">
                             {casino.features.map((feature: string) => (
-                              <li key={feature} className="text-sm text-[#6F665D] flex items-start gap-2">
-                                <span className="text-[#2563EB] mt-0.5">•</span>
+                              <li key={feature} className="text-sm text-[#c5cce2] flex items-start gap-2">
+                                <span className="text-[#60a5fa] mt-0.5">•</span>
                                 <span>{feature}</span>
                               </li>
                             ))}
@@ -375,29 +375,29 @@ export default function Country() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-[#2563EB]/10 rounded-lg flex items-center justify-center">
-                    <CreditCard className="w-6 h-6 text-[#2563EB]" />
+                  <div className="w-12 h-12 bg-[#0d1b39] rounded-lg flex items-center justify-center border border-[#28406f]">
+                    <CreditCard className="w-6 h-6 text-[#60a5fa]" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-[#1F1A17]">Payment methods</h3>
+                  <h3 className="text-2xl font-semibold text-white">Payment methods</h3>
                 </div>
-                <p className="text-[#6F665D] mb-4">Popular payment options for Australian players:</p>
+                <p className="text-[#c5cce2] mb-4">Popular payment options for Australian players:</p>
                 <ul className="space-y-2">
                   {["POLi (instant bank transfer)", "BPay", "Credit/debit cards", "Bank transfer"].map((method) => (
                     <li key={method} className="flex items-center gap-2">
-                      <span className="text-[#2563EB]">•</span>
-                      <span className="text-[#5F554C]">{method}</span>
+                      <span className="text-[#60a5fa]">•</span>
+                      <span className="text-[#c5cce2]">{method}</span>
                     </li>
                   ))}
                 </ul>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="card-premium">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-[#2563EB]/10 rounded-lg flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-[#2563EB]" />
+                  <div className="w-12 h-12 bg-[#0d1b39] rounded-lg flex items-center justify-center border border-[#28406f]">
+                    <Shield className="w-6 h-6 text-[#60a5fa]" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-[#1F1A17]">Australian regulation</h3>
+                  <h3 className="text-2xl font-semibold text-white">Australian regulation</h3>
                 </div>
-                <p className="text-[#6F665D] mb-4">All featured operators comply with Australian gambling laws:</p>
+                <p className="text-[#c5cce2] mb-4">All featured operators comply with Australian gambling laws:</p>
                 <ul className="space-y-2">
                   {["Licensed by Northern Territory Racing Commission", "Responsible gambling tools", "Age verification required"].map((item) => (
                     <li key={item} className="flex items-center gap-2">

@@ -103,12 +103,12 @@ export default function BlogDetail() {
   return (
     <div className="overflow-x-hidden">
       {/* Back Button */}
-      <div className="bg-[#eef6ff]">
+      <div className="bg-background border-b border-[#28406f]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link href="/blog">
             <motion.button
               whileHover={{ x: -4 }}
-              className="inline-flex items-center gap-2 text-[#2563EB] font-medium hover:text-[#1D4ED8] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-2 text-[#60a5fa] font-medium hover:text-[#3b82f6] transition-colors cursor-pointer"
             >
               <ArrowLeft size={18} />
               Back to Blog
@@ -122,7 +122,7 @@ export default function BlogDetail() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="h-96 bg-[#eef6ff] overflow-hidden"
+        className="h-96 bg-[#071122] overflow-hidden border-b border-[#28406f]"
       >
         <img
           src={blog.coverImage}
@@ -145,10 +145,10 @@ export default function BlogDetail() {
           className="mb-8"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="bg-[#2563EB]/20 text-[#2563EB] text-xs font-semibold px-3 py-1 rounded-full">
+            <span className="bg-[#0d1b39] text-[#60a5fa] text-xs font-semibold px-3 py-1 rounded-full border border-[#28406f]">
               {blog.category}
             </span>
-            <span className="text-[#A39B92] text-sm">
+            <span className="text-[#9ca7c5] text-sm">
               {new Date(blog.date).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -157,16 +157,16 @@ export default function BlogDetail() {
             </span>
           </div>
 
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-[#1F1A17] mb-4 leading-tight">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
             {blog.title}
           </h1>
 
-          <div className="flex items-center justify-between border-t border-[#E4DED0] pt-4">
-            <div className="flex items-center gap-2 text-[#5F554C]">
+          <div className="flex items-center justify-between border-t border-[#28406f] pt-4">
+            <div className="flex items-center gap-2 text-[#c5cce2]">
               <User size={18} />
               <span className="font-medium">By {blog.writerName}</span>
             </div>
-            <button className="inline-flex items-center gap-2 px-4 py-2 border border-[#d6e7f7] rounded-lg hover:bg-[#eef6ff] transition-colors text-[#5F554C]">
+            <button className="inline-flex items-center gap-2 px-4 py-2 border border-[#28406f] rounded-lg hover:bg-[#1a2a4a] transition-colors text-[#9ca7c5]">
               <Share2 size={18} />
               Share
             </button>
@@ -178,7 +178,7 @@ export default function BlogDetail() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="prose prose-lg max-w-none"
+          className="prose prose-lg max-w-none prose-invert"
         >
           {displayContent.map((block, index) => (
             <motion.div
@@ -191,7 +191,7 @@ export default function BlogDetail() {
             >
               {block.type === "paragraph" && (
                 <div
-                  className="text-[#5F554C] leading-8 text-base"
+                  className="text-[#c5cce2] leading-8 text-base"
                   dangerouslySetInnerHTML={{ __html: block.text || "" }}
                 />
               )}
