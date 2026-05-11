@@ -21,6 +21,20 @@ interface Offer {
   categoryName?: string;
 }
 
+const FALLBACK_OFFERS_URL = "/offers.json";
+
+const parseOffersPayload = (payload: unknown): Offer[] => {
+  if (Array.isArray(payload)) {
+    return payload as Offer[];
+  }
+
+  if (payload && typeof payload === "object" && Array.isArray((payload as { responseResult?: unknown }).responseResult)) {
+    return (payload as { responseResult: Offer[] }).responseResult;
+  }
+
+  throw new Error("Invalid response format");
+};
+
 interface OffersResponse {
   responseCode: number;
   responseMessage: string;
@@ -57,27 +71,34 @@ const Offers: React.FC = () => {
       setError(null);
 
       try {
-        const apiUrl = import.meta.env.VITE_OFFERS_API || 'https://betvoxa-api-server.vercel.app/casinos';
-        const response = await fetch(apiUrl);
+        const apiUrl = import.meta.env.VITE_OFFERS_API;
+        let response = await fetch(apiUrl || FALLBACK_OFFERS_URL);
+
+        if (!response.ok && apiUrl) {
+          response = await fetch(FALLBACK_OFFERS_URL);
+        }
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const parsed = await response.json();
-
-        // Accept either the wrapped API shape or a plain array of offers
-        if (Array.isArray(parsed)) {
-          setOffers(parsed as Offer[]);
-        } else if (parsed && typeof parsed === 'object' && 'responseCode' in parsed && parsed.responseResult) {
-          setOffers(parsed.responseResult as Offer[]);
-        } else {
-          throw new Error('Invalid response format');
-        }
+        setOffers(parseOffersPayload(await response.json()));
       } catch (err) {
         console.error('Error fetching offers:', err);
-        setError('Failed to load offers. Please try again later.');
-        setOffers([]);
+        try {
+          const fallbackResponse = await fetch(FALLBACK_OFFERS_URL);
+
+          if (!fallbackResponse.ok) {
+            throw new Error(`HTTP error! status: ${fallbackResponse.status}`);
+          }
+
+          setOffers(parseOffersPayload(await fallbackResponse.json()));
+          setError(null);
+        } catch (fallbackError) {
+          console.error('Failed to load fallback offers:', fallbackError);
+          setError('Failed to load offers. Please try again later.');
+          setOffers([]);
+        }
       } finally {
         setLoading(false);
       }

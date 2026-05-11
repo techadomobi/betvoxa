@@ -31,6 +31,20 @@ interface Offer {
   categoryName?: string;
 }
 
+const FALLBACK_OFFERS_URL = "/offers.json";
+
+const parseOffersPayload = (payload: unknown): Offer[] => {
+  if (Array.isArray(payload)) {
+    return payload as Offer[];
+  }
+
+  if (payload && typeof payload === "object" && Array.isArray((payload as { responseResult?: unknown }).responseResult)) {
+    return (payload as { responseResult: Offer[] }).responseResult;
+  }
+
+  throw new Error("Invalid response format");
+};
+
 const faqItems = [
   {
     q: "What is the difference between a casino bonus and free spins?",
@@ -81,23 +95,34 @@ export default function CasinoBonuses() {
       setError(null);
 
       try {
-        const response = await fetch(import.meta.env.VITE_OFFERS_API || "https://betvoxa-api-server.vercel.app/casinos");
+        const apiUrl = import.meta.env.VITE_OFFERS_API;
+        let response = await fetch(apiUrl || FALLBACK_OFFERS_URL);
+
+        if (!response.ok && apiUrl) {
+          response = await fetch(FALLBACK_OFFERS_URL);
+        }
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const payload = await response.json();
-        if (Array.isArray(payload)) {
-          setOffers(payload as Offer[]);
-        } else if (payload && typeof payload === "object" && Array.isArray(payload.responseResult)) {
-          setOffers(payload.responseResult as Offer[]);
-        } else {
-          throw new Error("Invalid response format");
-        }
+        setOffers(parseOffersPayload(await response.json()));
       } catch (fetchError) {
         console.error("Failed to load casino offers:", fetchError);
-        setError("Live casino offers are unavailable right now.");
-        setOffers([]);
+        try {
+          const fallbackResponse = await fetch(FALLBACK_OFFERS_URL);
+
+          if (!fallbackResponse.ok) {
+            throw new Error(`HTTP error! status: ${fallbackResponse.status}`);
+          }
+
+          setOffers(parseOffersPayload(await fallbackResponse.json()));
+          setError(null);
+        } catch (fallbackError) {
+          console.error("Failed to load fallback casino offers:", fallbackError);
+          setError("Live casino offers are unavailable right now.");
+          setOffers([]);
+        }
       } finally {
         setLoading(false);
       }
