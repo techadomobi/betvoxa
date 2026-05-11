@@ -37,9 +37,9 @@ const DesktopOfferCard: React.FC<DesktopOfferCardProps> = ({ offer }) => {
   const userCount = Math.floor(Math.random() * 10000) + 1000;
 
   return (
-    <div className="w-full rounded-2xl border border-[#d8e7f7] bg-gradient-to-br from-[#1a1a3e] to-[#0f0f2e] text-white shadow-[0_18px_50px_rgba(37,99,235,0.15)] transition-all duration-300 hover:shadow-[0_24px_70px_rgba(37,99,235,0.2)] p-6 flex gap-6">
+    <div className="w-full rounded-2xl border border-[#7dd3fc]/40 ring-1 ring-[#2563EB]/15 bg-linear-to-br from-[#1a1a3e] to-[#0f0f2e] text-white shadow-[0_18px_50px_rgba(37,99,235,0.18)] transition-all duration-300 hover:shadow-[0_24px_70px_rgba(37,99,235,0.24)] p-6 flex gap-6">
       {/* Left: Image Container */}
-      <div className="w-32 h-32 flex-shrink-0">
+      <div className="w-32 h-32 shrink-0">
         <div className="w-full h-full rounded-xl overflow-hidden bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.2),transparent_60%)] flex items-center justify-center border border-[#2563EB]/30">
           <img
             src={offer.image}

@@ -38,7 +38,7 @@ const MobileOfferCard: React.FC<MobileOfferCardProps> = ({ offer }) => {
   };
 
   return (
-    <div className="w-full mb-4 rounded-2xl border border-[#2563EB]/20 bg-linear-to-br from-[#1a1a3e] to-[#0f0f2e] text-white shadow-[0_18px_50px_rgba(37,99,235,0.15)] overflow-hidden">
+    <div className="w-full mb-4 rounded-2xl border border-[#7dd3fc]/40 ring-1 ring-[#2563EB]/15 bg-linear-to-br from-[#1a1a3e] to-[#0f0f2e] text-white shadow-[0_18px_50px_rgba(37,99,235,0.18)] overflow-hidden">
       {/* Category Banner */}
       <div className="bg-green-500 text-white px-4 py-2 font-bold text-xs uppercase tracking-wider">
         {offer.categoryName === 'Games' ? '🔥 HOT & TRENDING' : '⭐ MOST GENEROUS BONUS'}
