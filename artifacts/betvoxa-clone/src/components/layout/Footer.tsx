@@ -39,17 +39,17 @@ export default function Footer() {
           Disclaimer: This page is published in good faith for entertainment and general information purposes only. The points won in the quizzes have no real money value. It can't be converted into money.
         </div>
 
-        <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-[#9ca7c5]">
+        <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-[11px] text-white font-bold text-center">
           <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
           <Link href="/terms-and-conditions" className="hover:text-white">Terms & Conditions</Link>
           <Link href="/responsible-gambling" className="hover:text-white">Disclaimer</Link>
         </div>
 
-        <div className="text-[#7f8aac] text-[11px]">
+        <div className="text-[11px] text-white font-bold text-center">
           Powered By <a href="https://www.adomobi.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white underline underline-offset-2">AdoMobi.com</a>
         </div>
 
-        <div className="text-[#7f8aac] text-[11px]">Copyright © {new Date().getFullYear()} BetVoxa. All rights reserved.</div>
+        <div className="text-[11px] text-white font-bold text-center">Copyright © {new Date().getFullYear()} BetVoxa. All rights reserved.</div>
       </div>
     </footer>
   );
