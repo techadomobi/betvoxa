@@ -219,13 +219,13 @@ export default function Country() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       {/* HERO */}
       <section className="relative pt-32 pb-16 overflow-hidden">
-        {/* hero background removed to improve text contrast */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.18),transparent_36%),radial-gradient(circle_at_80%_10%,rgba(16,185,129,0.10),transparent_24%),linear-gradient(180deg,rgba(7,17,34,0.18),rgba(7,17,34,0))]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/">
-            <div className="flex items-center gap-2 text-[#9ca7c5] hover:text-[#60a5fa] transition-colors mb-6 cursor-pointer w-fit" data-testid="link-back-home">
+            <div className="flex items-center gap-2 text-[#c5cce2] hover:text-white transition-colors mb-6 cursor-pointer w-fit" data-testid="link-back-home">
               <ArrowLeft size={15} />
               <span className="text-sm">Back to Home</span>
             </div>
@@ -257,7 +257,7 @@ export default function Country() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 }}
-              className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-xl p-4 shadow-[0_14py_35px_rgba(8,17,34,0.22)]"
+              className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-xl p-4 shadow-[0_14px_35px_rgba(8,17,34,0.22)]"
             >
               <div className="text-[#60a5fa] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</div>
               <div className="text-white font-medium text-sm">{item.value}</div>
@@ -402,7 +402,7 @@ export default function Country() {
                   {["Licensed by Northern Territory Racing Commission", "Responsible gambling tools", "Age verification required"].map((item) => (
                     <li key={item} className="flex items-center gap-2">
                       <span className="text-[#2563EB]">•</span>
-                      <span className="text-[#5F554C]">{item}</span>
+                      <span className="text-[#c5cce2]">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -413,9 +413,9 @@ export default function Country() {
       </section>
 
       {/* TOP BETTING SITES */}
-      <section className="bg-[#eef6ff] py-16 border-t border-[#d6e7f7]">
+      <section className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] py-16 border-t border-[#28406f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-6">
+          <h2 className="font-serif text-3xl font-bold text-white mb-6">
             Top Betting Sites in {data.name}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -427,17 +427,17 @@ export default function Country() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
                 whileHover={{ borderColor: "rgba(37,99,235,0.3)" }}
-                className="bg-white border border-[#ECE6DB] rounded-xl p-5 flex items-center gap-4 transition-all duration-300"
+                className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-xl p-5 flex items-center gap-4 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-lg bg-linear-to-br from-[#2563EB]/20 to-[#1B3950]/40 border border-[#E7E1D6] flex items-center justify-center font-bold text-[#2563EB] text-sm font-mono shrink-0">
+                <div className="w-12 h-12 rounded-lg bg-linear-to-br from-[#2563EB]/20 to-[#1B3950]/40 border border-[#28406f] flex items-center justify-center font-bold text-[#60a5fa] text-sm font-mono shrink-0">
                   {site.initials}
                 </div>
                 <div className="flex-1">
-                  <div className="font-semibold text-[#1F1A17]">{site.name}</div>
-                  <div className="text-[#2563EB] text-sm">{site.bonus}</div>
+                  <div className="font-semibold text-white">{site.name}</div>
+                  <div className="text-[#9ca7c5] text-sm">{site.bonus}</div>
                   <div className="flex mt-1">
                     {Array.from({ length: 5 }).map((_, j) => (
-                      <span key={j} className={`text-[10px] ${j < Math.round(site.rating) ? "text-[#2563EB]" : "text-[#C9C3B8]"}`}>★</span>
+                      <span key={j} className={`text-[10px] ${j < Math.round(site.rating) ? "text-[#60a5fa]" : "text-[#334155]"}`}>★</span>
                     ))}
                   </div>
                 </div>
@@ -464,9 +464,9 @@ export default function Country() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Shield size={20} className="text-[#2563EB]" />
-              <h2 className="font-serif text-2xl font-bold text-[#1F1A17]">Legal Framework</h2>
+              <h2 className="font-serif text-2xl font-bold text-white">Legal Framework</h2>
             </div>
-            <p className="text-[#5F554C] leading-relaxed">{data.legalInfo}</p>
+            <p className="text-[#c5cce2] leading-relaxed">{data.legalInfo}</p>
           </motion.div>
 
           <motion.div
@@ -474,12 +474,12 @@ export default function Country() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-4">Player Tips</h2>
+            <h2 className="font-serif text-2xl font-bold text-white mb-4">Player Tips</h2>
             <div className="flex flex-col gap-3">
               {data.tips.map((tip) => (
                 <div key={tip} className="flex items-start gap-3">
                   <Check size={15} className="text-[#2563EB] mt-0.5 shrink-0" />
-                  <span className="text-[#5F554C] text-sm leading-relaxed">{tip}</span>
+                  <span className="text-[#c5cce2] text-sm leading-relaxed">{tip}</span>
                 </div>
               ))}
             </div>
@@ -488,14 +488,14 @@ export default function Country() {
       </section>
 
       {/* PAYMENT METHODS */}
-      <section className="bg-[#eef6ff] py-16 border-t border-[#d6e7f7]">
+      <section className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] py-16 border-t border-[#28406f]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-6">Payment Methods in {data.name}</h2>
+          <h2 className="font-serif text-2xl font-bold text-white mb-6">Payment Methods in {data.name}</h2>
           <div className="flex flex-wrap gap-3">
             {data.paymentMethods.map((method) => (
               <span
                 key={method}
-                className="bg-white border border-[#E7E1D6] text-[#4A433C] px-4 py-2 rounded-lg text-sm hover:border-[#2563EB]/12 transition-colors"
+                className="bg-[#0d1b39] border border-[#28406f] text-[#c5cce2] px-4 py-2 rounded-lg text-sm hover:border-[#60a5fa]/35 transition-colors"
               >
                 {method}
               </span>
@@ -506,8 +506,8 @@ export default function Country() {
 
       {/* MARKET SNAPSHOT */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-3">Market Snapshot: {data.name}</h2>
-        <p className="text-[#5F554C] mb-6 max-w-3xl">
+        <h2 className="font-serif text-3xl font-bold text-white mb-3">Market Snapshot: {data.name}</h2>
+        <p className="text-[#c5cce2] mb-6 max-w-3xl">
           This quick snapshot helps players evaluate operator quality, compliance standards, and practical onboarding expectations in {data.name}.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -518,11 +518,11 @@ export default function Country() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-white border border-[#ECE6DB] rounded-xl p-5"
+              className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-xl p-5"
             >
-              <div className="text-[#2563EB] text-xs font-semibold uppercase tracking-wider mb-2">{item.label}</div>
-              <div className="font-semibold text-[#1F1A17] mb-2">{item.value}</div>
-              <p className="text-[#5F554C] text-sm">{item.note}</p>
+              <div className="text-[#60a5fa] text-xs font-semibold uppercase tracking-wider mb-2">{item.label}</div>
+              <div className="font-semibold text-white mb-2">{item.value}</div>
+              <p className="text-[#c5cce2] text-sm">{item.note}</p>
             </motion.div>
           ))}
         </div>
@@ -547,7 +547,7 @@ export default function Country() {
 
       {/* OTHER COUNTRIES */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-2xl font-bold text-[#1F1A17] mb-6">Other Country Guides</h2>
+        <h2 className="font-serif text-2xl font-bold text-white mb-6">Other Country Guides</h2>
         <div className="flex flex-wrap gap-3">
           {Object.entries(countryData)
             .filter(([key]) => key !== code)
@@ -555,11 +555,11 @@ export default function Country() {
               <Link key={key} href={`/country/${key}`}>
                 <motion.div
                   whileHover={{ scale: 1.04 }}
-                  className="flex items-center gap-2 bg-white border border-[#ECE6DB] hover:border-[#2563EB]/12 rounded-lg px-4 py-2.5 cursor-pointer transition-all"
+                  className="flex items-center gap-2 bg-[#0d1b39] border border-[#28406f] hover:border-[#60a5fa]/35 rounded-lg px-4 py-2.5 cursor-pointer transition-all"
                   data-testid={`link-other-country-${key}`}
                 >
                   <span className="text-xl">{country.flag}</span>
-                  <span className="text-[#4A433C] text-sm hover:text-[#1F1A17] transition-colors">{country.name}</span>
+                  <span className="text-[#c5cce2] text-sm hover:text-white transition-colors">{country.name}</span>
                 </motion.div>
               </Link>
             ))}
@@ -568,12 +568,12 @@ export default function Country() {
 
       {/* FAQ */}
       <section className="pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-serif text-3xl font-bold text-[#1F1A17] mb-6">Frequently Asked Questions</h2>
+        <h2 className="font-serif text-3xl font-bold text-white mb-6">Frequently Asked Questions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {countryFaq.map((item) => (
-            <div key={item.q} className="bg-white border border-[#ECE6DB] rounded-xl p-5">
-              <h3 className="font-semibold text-[#1F1A17] mb-2">{item.q}</h3>
-              <p className="text-[#5F554C] text-sm leading-relaxed">{item.a}</p>
+            <div key={item.q} className="bg-[linear-gradient(180deg,rgba(11,22,48,0.96),rgba(7,17,34,0.96))] border border-[#28406f] rounded-xl p-5">
+              <h3 className="font-semibold text-white mb-2">{item.q}</h3>
+              <p className="text-[#c5cce2] text-sm leading-relaxed">{item.a}</p>
             </div>
           ))}
         </div>

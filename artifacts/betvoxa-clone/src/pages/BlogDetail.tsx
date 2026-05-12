@@ -76,16 +76,16 @@ export default function BlogDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-[#5F554C]">Loading article...</p>
+      <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
+        <p className="text-foreground">Loading article...</p>
       </div>
     );
   }
 
   if (!blog) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-[#1F1A17] mb-4">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background text-foreground">
+        <h1 className="text-2xl font-bold text-foreground mb-4">
           Article not found
         </h1>
         <Link href="/blog">

@@ -147,9 +147,9 @@ const Offers: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-background"
+      className="min-h-screen bg-background text-foreground"
     >
-      <div className="bg-linear-to-br from-background via-[#eef6ff] to-background text-[#1F1A17] py-12 px-4 md:py-16 border-b border-border/60">
+      <div className="bg-linear-to-br from-background via-[#eef6ff] to-background text-foreground py-12 px-4 md:py-16 border-b border-border/60">
         <div className="max-w-6xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
@@ -163,7 +163,7 @@ const Offers: React.FC = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg text-[#5F554C]"
+            className="text-lg text-[#c5cce2]"
           >
             Discover the best casino and betting offers for your region
           </motion.p>
@@ -177,13 +177,13 @@ const Offers: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="relative mb-8"
         >
-          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#9ca7c5]" />
           <input
             type="text"
             placeholder="Search by casino name, location, or offer..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 rounded-lg border-2 border-gray-200 focus:border-red-600 focus:outline-none transition-colors font-poppins"
+            className="w-full pl-12 pr-4 py-3 rounded-lg border-2 border-[#28406f] bg-[#0d1b39] text-white placeholder:text-[#7f8aac] focus:border-[#60a5fa] focus:outline-none transition-colors font-poppins"
           />
         </motion.div>
 
@@ -230,7 +230,7 @@ const Offers: React.FC = () => {
                 animate={{ opacity: 1 }}
                 className="text-center py-12"
               >
-                <p className="text-xl text-gray-600">No offers found matching your search.</p>
+                <p className="text-xl text-[#c5cce2]">No offers found matching your search.</p>
               </motion.div>
             )}
           </>
@@ -242,7 +242,7 @@ const Offers: React.FC = () => {
             animate={{ opacity: 1 }}
             className="text-center py-12"
           >
-            <p className="text-xl text-gray-600">No offers available at the moment.</p>
+            <p className="text-xl text-[#c5cce2]">No offers available at the moment.</p>
           </motion.div>
         )}
       </div>
