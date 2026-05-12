@@ -39,7 +39,7 @@ export default function Footer() {
           Disclaimer: This page is published in good faith for entertainment and general information purposes only. The points won in the quizzes have no real money value. It can't be converted into money.
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 text-[11px] text-white font-bold text-center">
+        <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 rounded-2xl border border-[#21365d] bg-[linear-gradient(180deg,rgba(10,20,40,0.9),rgba(7,17,34,0.9))] px-4 py-3 text-[#b7bcd3] text-[11px] leading-relaxed font-normal text-center">
           <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
           <Link href="/terms-and-conditions" className="hover:text-white">Terms & Conditions</Link>
           <Link href="/responsible-gambling" className="hover:text-white">Disclaimer</Link>
@@ -49,7 +49,7 @@ export default function Footer() {
           Powered By <a href="https://www.adomobi.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white underline underline-offset-2">AdoMobi.com</a>
         </div>
 
-        <div className="text-[11px] text-white font-bold text-center">Copyright © {new Date().getFullYear()} BetVoxa. All rights reserved.</div>
+        <div className="rounded-2xl border border-[#21365d] bg-[linear-gradient(180deg,rgba(10,20,40,0.9),rgba(7,17,34,0.9))] px-4 py-3 text-[#b7bcd3] text-[11px] leading-relaxed font-normal text-center">Copyright © {new Date().getFullYear()} BetVoxa. All rights reserved.</div>
       </div>
     </footer>
   );
