@@ -45,7 +45,9 @@ export default function Footer() {
           <Link href="/responsible-gambling" className="hover:text-white">Disclaimer</Link>
         </div>
 
-        <div className="text-[#7f8aac] text-[11px]">Powered By AdoMobi.com</div>
+        <div className="text-[#7f8aac] text-[11px]">
+          Powered By <a href="https://www.adomobi.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white underline underline-offset-2">AdoMobi.com</a>
+        </div>
 
         <div className="text-[#7f8aac] text-[11px]">Copyright © {new Date().getFullYear()} BetVoxa. All rights reserved.</div>
       </div>
